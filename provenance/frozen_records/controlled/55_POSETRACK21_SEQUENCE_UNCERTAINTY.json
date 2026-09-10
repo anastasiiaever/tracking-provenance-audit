@@ -1,0 +1,362 @@
+{
+  "record": 55,
+  "title": "PoseTrack21 VAL sequence-clustered uncertainty (SUPPLEMENTARY)",
+  "date": "2026-08-22",
+  "branch": "tpami-q1-20260821",
+  "status": "SUPPLEMENTARY \u2014 DOWNSTREAM OF THE FROZEN PROSPECTIVE RESULT",
+  "supplementary": true,
+  "downstream_of": {
+    "record": 54,
+    "commit": "60ded1973568045735394263073c47119552cae1",
+    "protocol_record": 53,
+    "protocol_commit": "588b4a252313dfc479bac0bdc96938df5c3e3a0b"
+  },
+  "executing_authority": {
+    "plan": "Plan_Q1_TPAMI_v3_2_canonical_20260822.md",
+    "commit": "26f66ee11113963d02863f2bf3b04cf07846538e",
+    "section": "6.A"
+  },
+  "does_not": [
+    "recompute or alter any frozen point estimate",
+    "modify record 53 or record 54",
+    "modify any protocol rule",
+    "open project final_test",
+    "train, reselect checkpoints or change architecture"
+  ],
+  "recovery_of_contributions": {
+    "why": "record 54 stored per-sequence dispersion quantiles but not the per-sequence values; the clustered bootstrap needs the values",
+    "method": "the FROZEN evaluation functions in scripts/posetrack21/evaluate_val.py (byte-identical to commit 60ded19) were imported and re-driven over the same VAL population; the frozen evaluate_val.py was NOT modified",
+    "reproduces_frozen_point_estimates_exactly": true,
+    "reproduction_checks": [
+      {
+        "method": "linear",
+        "recovered": 0.28373618281875884,
+        "frozen": 0.28373618281875884,
+        "bitwise_equal": true,
+        "abs_diff": 0.0
+      },
+      {
+        "method": "spline",
+        "recovered": 0.32038581125266863,
+        "frozen": 0.32038581125266863,
+        "bitwise_equal": true,
+        "abs_diff": 0.0
+      },
+      {
+        "method": "kalman",
+        "recovered": 0.28569476746423905,
+        "frozen": 0.28569476746423905,
+        "bitwise_equal": true,
+        "abs_diff": 0.0
+      },
+      {
+        "method": "bigru_seed0",
+        "recovered": 4.055232356827414,
+        "frozen": 4.055232356827414,
+        "bitwise_equal": true,
+        "abs_diff": 0.0
+      },
+      {
+        "method": "bigru_seed1",
+        "recovered": 3.8698706282568267,
+        "frozen": 3.8698706282568267,
+        "bitwise_equal": true,
+        "abs_diff": 0.0
+      },
+      {
+        "method": "bigru_seed2",
+        "recovered": 3.8651997286194546,
+        "frozen": 3.8651997286194546,
+        "bitwise_equal": true,
+        "abs_diff": 0.0
+      },
+      {
+        "method": "mae",
+        "recovered": 2.4061696522525082,
+        "frozen": 2.4061696522525082,
+        "bitwise_equal": true,
+        "abs_diff": 0.0
+      }
+    ],
+    "identical_support_all_methods": true,
+    "support_matches_record_54": true,
+    "train_opened": false
+  },
+  "frozen_specification": {
+    "file": "data/posetrack21/audit/bootstrap_spec.json",
+    "sha256": "cffa7760bfbb347bf40b7ff1cf7bd2c7dbcf2dac0a797280b8b5c8895ab2bd66",
+    "frozen_before_any_interval_was_computed": true,
+    "independent_unit": "PoseTrack21 VAL sequence",
+    "resampling_frame": "all 170 distributed VAL sequences",
+    "resampling_frame_rationale": "the sampling unit of the population is the sequence. Drawing from all 170 - not only the 125 that happen to contribute a primary-g cell - propagates BOTH the variability in which sequences contribute and the variability in their values. This is the more conservative choice and it is fixed here, before any interval is seen.",
+    "cluster_integrity": "when a sequence is drawn, its ENTIRE within-sequence contribution structure is carried with it: every case, at every gap length, for every method. Individual gaps/cases are NEVER resampled as independent observations.",
+    "n_draws": 10000,
+    "seed": 20260822,
+    "interval_convention": "percentile",
+    "interval_level": 0.95,
+    "bca_rejected_reason": "BCa needs a jackknife acceleration term over clusters; the percentile interval is simpler, makes fewer assumptions here, and is not tuned to any observed result. Chosen before seeing intervals and not revisited.",
+    "missing_g_handling": "inherited from the frozen estimator and NOT special-cased: within a drawn sequence the equal-per-g step averages over the PRIMARY_G values that sequence actually has. A drawn sequence with no primary-g cell contributes nothing to that draw, exactly as in the frozen point estimate.",
+    "empty_draw_handling": "a draw in which NO drawn sequence contributes a primary-g cell yields an undefined aggregate; such draws are DISCARDED and COUNTED. If discarded draws exceed 0.1 percent of n_draws the analysis is reported as unstable rather than patched.",
+    "cross_g_construction": "unchanged from the frozen protocol: (1) mean over cases sharing (sequence, g); (2) equal weight per g within the sequence, restricted to PRIMARY_G = {1,2,3,5}; (3) equal weight per contributing sequence. Sparse g {8,10,20} are structurally refused and can never enter.",
+    "pairing": "within a single bootstrap draw the SAME resampled multiset of sequences is used for every method, so per-draw differences between methods are paired by construction. All methods share an identical 1270-case support, so a sequence that contributes to one method contributes to all.",
+    "bigru_summary": "bigru_mean = the per-draw mean of the three frozen BiGRU seed aggregates. Seeds are three training realisations of one frozen family, not independent evaluation units; they are summarised, never pooled into a manufactured seed-level interval (record 24 rule).",
+    "interpretation_rule": {
+      "linear_vs_kalman": "if the 95 percent percentile interval for the paired difference includes zero, the ordering of linear and Kalman is reported as UNRESOLVED. No additional significance threshold is invented.",
+      "classical_vs_learned": "the classical-vs-learned gap may be described only to the extent the sequence-clustered interval supports it.",
+      "no_post_hoc_tuning": "seed, draw count, interval convention, resampling frame and handling rules are fixed by this file and are NOT revised after intervals are seen."
+    }
+  },
+  "execution": {
+    "draws": 10000,
+    "seed": 20260822,
+    "discarded_draws": 0,
+    "resampling_frame_size": 170,
+    "contributing_sequences": 125,
+    "primary_g": [
+      1,
+      2,
+      3,
+      5
+    ],
+    "sparse_g_excluded": [
+      8,
+      10,
+      20
+    ]
+  },
+  "results": {
+    "linear": {
+      "frozen_point_estimate": 0.28373618281875884,
+      "ci95": {
+        "lo": 0.2011739794623282,
+        "hi": 0.3892160111781886,
+        "bootstrap_mean": 0.2835153151331887,
+        "bootstrap_sd": 0.04840172064736126
+      },
+      "sequence_level_dispersion": {
+        "n_sequences": 125,
+        "min": 0.003468126978499269,
+        "q1": 0.08277263756516909,
+        "median": 0.1408601444171328,
+        "q3": 0.25803148524321134,
+        "max": 4.752260813144616,
+        "iqr": 0.17525884767804226
+      }
+    },
+    "kalman": {
+      "frozen_point_estimate": 0.28569476746423905,
+      "ci95": {
+        "lo": 0.19959387242976367,
+        "hi": 0.3967162736230016,
+        "bootstrap_mean": 0.2854349222726153,
+        "bootstrap_sd": 0.05063532238800622
+      },
+      "sequence_level_dispersion": {
+        "n_sequences": 125,
+        "min": 0.005504551608582505,
+        "q1": 0.08123983230161076,
+        "median": 0.1343289141271789,
+        "q3": 0.242368650753767,
+        "max": 4.939954399185997,
+        "iqr": 0.16112881845215626
+      }
+    },
+    "spline": {
+      "frozen_point_estimate": 0.32038581125266863,
+      "ci95": {
+        "lo": 0.22246376239948484,
+        "hi": 0.4422268226259602,
+        "bootstrap_mean": 0.32024710182582933,
+        "bootstrap_sd": 0.05650381415352143
+      },
+      "sequence_level_dispersion": {
+        "n_sequences": 125,
+        "min": 0.004436139260334571,
+        "q1": 0.085424327219577,
+        "median": 0.14485225729643242,
+        "q3": 0.2973328338361639,
+        "max": 5.04902099853824,
+        "iqr": 0.2119085066165869
+      }
+    },
+    "mae": {
+      "frozen_point_estimate": 2.4061696522525082,
+      "ci95": {
+        "lo": 1.529867257030378,
+        "hi": 3.4793867702527495,
+        "bootstrap_mean": 2.406454709970777,
+        "bootstrap_sd": 0.5019080546006579
+      },
+      "sequence_level_dispersion": {
+        "n_sequences": 125,
+        "min": 0.017726647074159753,
+        "q1": 0.33039711305162367,
+        "median": 0.5329758950735207,
+        "q3": 1.6796057139576568,
+        "max": 41.515928002693116,
+        "iqr": 1.3492086009060331
+      }
+    },
+    "bigru_seed0": {
+      "frozen_point_estimate": 4.055232356827414,
+      "ci95": {
+        "lo": 2.852295490176428,
+        "hi": 5.523979451131118,
+        "bootstrap_mean": 4.053418936706292,
+        "bootstrap_sd": 0.688042564135166
+      },
+      "sequence_level_dispersion": {
+        "n_sequences": 125,
+        "min": 0.19854274029507357,
+        "q1": 1.0724153857018834,
+        "median": 1.5683839958331882,
+        "q3": 3.617520966518667,
+        "max": 62.23679911285783,
+        "iqr": 2.5451055808167835
+      }
+    },
+    "bigru_seed1": {
+      "frozen_point_estimate": 3.8698706282568267,
+      "ci95": {
+        "lo": 2.720937617467275,
+        "hi": 5.298594516196241,
+        "bootstrap_mean": 3.868956504171359,
+        "bootstrap_sd": 0.6659009419264132
+      },
+      "sequence_level_dispersion": {
+        "n_sequences": 125,
+        "min": 0.23013172353582498,
+        "q1": 0.9931965518025478,
+        "median": 1.5369060106403802,
+        "q3": 3.5593701481393665,
+        "max": 62.02575448094952,
+        "iqr": 2.5661735963368186
+      }
+    },
+    "bigru_seed2": {
+      "frozen_point_estimate": 3.8651997286194546,
+      "ci95": {
+        "lo": 2.7042828473697487,
+        "hi": 5.301919293929186,
+        "bootstrap_mean": 3.8638709222046783,
+        "bootstrap_sd": 0.6719060037963971
+      },
+      "sequence_level_dispersion": {
+        "n_sequences": 125,
+        "min": 0.14901913704609965,
+        "q1": 0.9555771625510328,
+        "median": 1.4297576829632124,
+        "q3": 3.4594819848491642,
+        "max": 61.88881215537483,
+        "iqr": 2.5039048222981313
+      }
+    },
+    "bigru_mean": {
+      "frozen_point_estimate": 3.9301009045678987,
+      "ci95": {
+        "lo": 2.7665738236424295,
+        "hi": 5.371801268748194,
+        "bootstrap_mean": 3.928748787694109,
+        "bootstrap_sd": 0.6734816321449322
+      },
+      "sequence_level_dispersion": null
+    }
+  },
+  "paired_differences": {
+    "linear - kalman": {
+      "observed_difference": -0.0019585846454802103,
+      "lo": -0.008415936524167902,
+      "hi": 0.0037162210093665644,
+      "bootstrap_mean": -0.0019196071394265886,
+      "bootstrap_sd": 0.003098511186448302,
+      "interval_includes_zero": true,
+      "conclusion": "UNRESOLVED \u2014 interval includes zero"
+    },
+    "linear - spline": {
+      "observed_difference": -0.03664962843390979,
+      "lo": -0.06999124340922289,
+      "hi": -0.013747135486696009,
+      "bootstrap_mean": -0.036731786692640635,
+      "bootstrap_sd": 0.014799823856506118,
+      "interval_includes_zero": false,
+      "conclusion": "resolved: linear < spline"
+    },
+    "kalman - spline": {
+      "observed_difference": -0.034691043788429576,
+      "lo": -0.06766382273426201,
+      "hi": -0.013036074878085188,
+      "bootstrap_mean": -0.034812179553214036,
+      "bootstrap_sd": 0.014508898158382192,
+      "interval_includes_zero": false,
+      "conclusion": "resolved: kalman < spline"
+    },
+    "mae - linear": {
+      "observed_difference": 2.122433469433749,
+      "lo": 1.2521400366130169,
+      "hi": 3.1806429289174196,
+      "bootstrap_mean": 2.122939394837588,
+      "bootstrap_sd": 0.4965091778312685,
+      "interval_includes_zero": false,
+      "conclusion": "resolved: mae > linear"
+    },
+    "bigru_mean - linear": {
+      "observed_difference": 3.6463647217491397,
+      "lo": 2.495126536313006,
+      "hi": 5.060927784603562,
+      "bootstrap_mean": 3.6452334725609203,
+      "bootstrap_sd": 0.6623436007757706,
+      "interval_includes_zero": false,
+      "conclusion": "resolved: bigru_mean > linear"
+    }
+  },
+  "conclusions": {
+    "linear_vs_kalman": {
+      "observed_difference": -0.0019585846454802103,
+      "ci95": [
+        -0.008415936524167902,
+        0.0037162210093665644
+      ],
+      "includes_zero": true,
+      "verdict": "UNRESOLVED",
+      "statement": "The ordering of linear and Kalman is UNRESOLVED. The paired sequence-level difference is -0.0020 with a 95 % percentile interval of [-0.0084, +0.0037], which includes zero. No ranking between them is asserted, and no significance threshold beyond the frozen interval coverage is invented."
+    },
+    "spline_vs_linear_and_kalman": {
+      "statement": "Spline is resolved as WORSE than both linear and Kalman: the paired differences are linear \u2212 spline -0.0366 CI [-0.0700, -0.0137] and kalman \u2212 spline -0.0347 CI [-0.0677, -0.0130], both excluding zero. This SUPPORTS the record-54 spline FAILS_TO_SUPPORT verdict at the sequence level.",
+      "supports_record_54_spline_verdict": true
+    },
+    "classical_vs_learned": {
+      "statement": "The classical-vs-learned gap is supported by the sequence-clustered uncertainty. MAE \u2212 linear is +2.1224 CI [+1.2521, +3.1806] and BiGRU(mean) \u2212 linear is +3.6464 CI [+2.4951, +5.0609]; both intervals exclude zero by a wide margin. The frozen learned models are worse than the classical operators on this population by an amount the data support.",
+      "supported": true
+    },
+    "why_paired_intervals_are_tighter": "the marginal interval for each method is wide (linear [0.2012, 0.3892]) because it carries the variability of which sequences are drawn. The PAIRED difference intervals are far tighter because both methods are evaluated on the SAME resampled sequences in every draw, so the shared sequence-composition variance cancels. Comparing overlapping marginal intervals would be the wrong test; the paired interval is the correct one and is what the conclusions use."
+  },
+  "caveats": [
+    "supplementary and downstream: this analysis adds uncertainty to the frozen record-54 point estimates and replaces none of them",
+    "the percentile interval is a bootstrap approximation, not an exact coverage guarantee, and 125 of 170 VAL sequences contribute a primary-g cell",
+    "the three BiGRU seeds are training realisations of one frozen family, summarised as a mean rather than pooled into a seed-level interval (record 24 rule)",
+    "sparse g {8,10,20} are structurally excluded from the primary aggregate and therefore carry no interval here; they remain descriptive in record 54"
+  ],
+  "confirmations": {
+    "frozen_point_estimates_altered": false,
+    "record_53_modified": false,
+    "record_54_modified": false,
+    "protocol_modified": false,
+    "training_performed": false,
+    "checkpoint_reselection": false,
+    "project_final_test_opened": false,
+    "jta_corrected_contract_diagnostic_run": false,
+    "new_dataset_added": false,
+    "new_model_family_added": false,
+    "record_55_committed": false
+  },
+  "provenance": {
+    "spec": "data/posetrack21/audit/bootstrap_spec.json",
+    "contributions": "data/posetrack21/audit/val_sequence_contributions.json",
+    "result": "data/posetrack21/audit/val_uncertainty.json",
+    "result_sha256": "8675fac6d6f1c39b84411fa88898f14b837876243e8b229dfaed1f48d85d1650",
+    "scripts": [
+      "scripts/posetrack21/recover_sequence_contributions.py",
+      "scripts/posetrack21/bootstrap_val_uncertainty.py"
+    ]
+  }
+}

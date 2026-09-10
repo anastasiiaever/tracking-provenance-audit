@@ -1,0 +1,191 @@
+{
+ "TPAMI_V9_MOT20_DEEP_RESULT_VERIFIED": true,
+ "all_critical_pass": true,
+ "checks": [
+  {
+   "check": "execution_completion_evidence",
+   "class": "CRITICAL",
+   "evidence": "zero occurrences of Traceback / Exception / Error / Killed / CUDA-OOM / segfault / assertion in 108,500 B stdout and 630 B stderr; stderr contains one PyTorch UserWarning only; both terminal messages present exactly once; 4 R0 + 4 R2 files; 4 embedding caches + 1 detector cache; monotone timestamps 10:43:08 -> 11:49:37; no live process",
+   "verdict": "PASS"
+  },
+  {
+   "check": "process_exit_code",
+   "class": "PROVENANCE_LIMITATION",
+   "evidence": "the job was detached per the standing long-GPU-job policy, so no integer shell exit code was preserved. It is NOT inferred as 0. This limitation remains visible even though completion evidence PASSes.",
+   "verdict": "UNAVAILABLE"
+  },
+  {
+   "check": "remote_result_witness",
+   "class": "CRITICAL",
+   "evidence": "clean tree; result tag object 4263f23f local == origin and resolves to 9a5109a6; origin branch head == HEAD; authorization, activation and preflight tags are ancestors",
+   "verdict": "PASS"
+  },
+  {
+   "check": "single_run_universe",
+   "class": "CRITICAL",
+   "evidence": "exactly one MOT20 scientific run exists; no -002, no -003, no artifact of any other MOT20 deployment",
+   "verdict": "PASS"
+  },
+  {
+   "check": "execution_identity",
+   "class": "CRITICAL",
+   "evidence": "run_id, cwd, environment and argv identical to 10A and 12B; population, detector and ReID hashes identical at launch and now; the V9-B36 fast_reid prerequisite resolves to the frozen repository",
+   "verdict": "PASS"
+  },
+  {
+   "check": "population_identity",
+   "class": "CRITICAL",
+   "evidence": "parsed from every R0 and R2 file: exactly MOT20-01/02/03/05, local domains 1..214 / 1..1390 / 1..1202 / 1..1657, mapping by +215/+1392/+1203/+1658 onto 216..429 / 1393..2782 / 1204..2405 / 1659..3315; zero test, MOT17 or out-of-population frames",
+   "verdict": "PASS"
+  },
+  {
+   "check": "state_hashes",
+   "class": "CRITICAL",
+   "evidence": "29 artifacts recomputed (4 R0, 4 R1, 4 R2, 6 evaluator files, 4 audit reports, 5 record self-hashes, 2 execution logs); 0 mismatches",
+   "verdict": "PASS"
+  },
+  {
+   "check": "row_additive_invariant",
+   "class": "CRITICAL",
+   "evidence": "independently recomputed by own set arithmetic: shared 529,865 = n_R0, R0-only 0, R2-only 34,814, coordinate rewrites 0, ID rewrites 0, ambiguous identity changes 0",
+   "verdict": "PASS"
+  },
+  {
+   "check": "stv_partition",
+   "class": "CRITICAL",
+   "evidence": "independently re-implemented (own IoU, own gate-before-assignment cost matrix, scipy Hungarian, own bracketing and classification); the frozen stv module was not invoked. Aggregate and per-sequence counts agree exactly with record 13; classes mutually exclusive and exhaustive; sum equals n_synthesized",
+   "verdict": "PASS"
+  },
+  {
+   "check": "r1_equality",
+   "class": "CRITICAL",
+   "evidence": "R1 row-identity set equals R0 plus the SEMANTICALLY_ADMITTED synthesized rows in every sequence; n_R1 = n_R0 + admitted = 555,928; zero non-admitted rows in R1; every coordinate equals round(source, 2) with zero exceptions over 2,223,712 coordinates",
+   "verdict": "PASS"
+  },
+  {
+   "check": "trackeval_identity",
+   "class": "CRITICAL",
+   "evidence": "pin 12c8791b verified in the working clone; BENCHMARK=MOT20, SPLIT_TO_EVAL=val, CLASSES_TO_EVAL=pedestrian, DO_PREPROC=True read from the frozen run log; seqmap and all four GT hashes and seqLengths match the 09B adapter record; the non_mot_vehicle branch is active for BENCHMARK=MOT20",
+   "verdict": "PASS"
+  },
+  {
+   "check": "metric_extraction",
+   "class": "CRITICAL",
+   "evidence": "read directly from pedestrian_detailed.csv COMBINED at full precision, no rerun and no transcription; 15 values and 10 deltas agree with record 13 within 1e-12",
+   "verdict": "PASS"
+  },
+  {
+   "check": "post_execution_test_transition",
+   "class": "CRITICAL",
+   "evidence": "the diff touches only zero-output and sandbox-emptiness assertions. Zero authorization or refusal assertions were deleted. Replacements are exact allowlists rather than relaxations, and the spent run id is now asserted to raise RunIdReuse. A ByteTrack MOT20 _post path, a foreign audit path and a -002 path all still fail the new assertions",
+   "verdict": "PASS"
+  },
+  {
+   "check": "spent_run_id",
+   "class": "CRITICAL",
+   "evidence": "live guard: 7 canonical artifacts present, require_no_run_artifacts and preflight both raise RunIdReuse; -002 and -003 raise CellNotAuthorized; run_guard contains no rmtree, os.remove or unlink",
+   "verdict": "PASS"
+  },
+  {
+   "check": "mot17_non_regression",
+   "class": "CRITICAL",
+   "evidence": "all MOT17 tracker state hashes, evaluator summary hashes and 21 audit report content hashes unchanged; ordering matrix still 50 cells with exactly 5 flips and 45 unchanged; no MOT20 entry in it; MOT17 population manifest still verifies",
+   "verdict": "PASS"
+  },
+  {
+   "check": "six_stopped_mot20_cells",
+   "class": "CRITICAL",
+   "evidence": "ByteTrack, BoT-SORT, OC-SORT, OC-SORT-GPR, Hybrid-SORT and StrongSORT++ all remain STOPPED_BEFORE_EXECUTION historically and effectively, remain unlicensed, are refused by the live guard, and have produced no output",
+   "verdict": "PASS"
+  },
+  {
+   "check": "no_mot20_ranking_matrix",
+   "class": "CRITICAL",
+   "evidence": "no MOT20 ordering or ranking record exists and none was computed",
+   "verdict": "PASS"
+  }
+ ],
+ "companion_records": {
+  "14_MOT20_DEEP_METRIC_RECOMPUTATION.json": "84ed095543c666f58e899de0259139799dba3c1eab806cd3effdac54d4f86178",
+  "14_MOT20_DEEP_STATE_RECOMPUTATION.json": "4884740d686798cd57338a7c79c6a8df3310a9c55f6705aec3e7bf5084c793f3",
+  "14_MOT20_DEEP_STV_RECOMPUTATION.json": "10c562ef1eae09411294dc3f303f601fd106d65eb6abad2a53b01848539250b5"
+ },
+ "dti_rerun": false,
+ "findings": [
+  {
+   "affects_scientific_result": false,
+   "detail": "the detached launch preserved no integer shell exit code. Completion is established by artifact and log evidence only. This is a permanent provenance limitation of this run and must not be reported as exit code 0.",
+   "id": "V14-F1",
+   "severity": "PROVENANCE_LIMITATION",
+   "title": "Process exit code unavailable",
+   "verdict": "UNRESOLVED_BY_DESIGN"
+  },
+  {
+   "affects_scientific_result": false,
+   "detail": "run_guard.canonical_artifacts names the TrackEval target as <trackers>/MOT20-val/<run_id>, but the evaluator was staged as <run_id>__R0/__R1/__R2, so that path does not exist and that leg of the non-reuse guard never fires. Re-launch is still refused by the other seven legs (R0, R2, detector_cache, embedding_cache_dir, run_log_dir, run_manifest, stv_output), so the single-use property holds. Not repaired here.",
+   "id": "V14-F2",
+   "priority": "P2",
+   "severity": "RISK",
+   "title": "run_guard trackeval_output leg is not armed for the __R0/__R1/__R2 staging convention",
+   "verdict": "RECORDED"
+  },
+  {
+   "affects_scientific_result": false,
+   "detail": "every R1 coordinate equals round(source, 2) exactly, with zero exceptions over 2,223,712 coordinates; 97.11 percent are already bit-identical and the maximum deviation is 0.005, the half-ulp of two-decimal rendering. Unlike the tracker score field, coordinates ARE evaluated, so this rendering is visible to the evaluator. It is the same writer convention as the frozen MOT17 V9 R1 files, which the execution task reproduced byte-for-byte, so R1 is comparable across the two datasets.",
+   "id": "V14-F3",
+   "severity": "CHARACTERISTIC",
+   "title": "R1 coordinates are the two-decimal rendering of their source, not bit-identical copies",
+   "verdict": "RECORDED"
+  }
+ ],
+ "frozen_on": "2026-08-31",
+ "interpretation_boundary": {
+  "does_not_establish": [
+   "MOT20 pairwise ranking replication",
+   "multi-pipeline MOT20 ranking instability",
+   "prevalence of ranking flips across datasets",
+   "direct official-download byte provenance for the MOT20 corpus"
+  ],
+  "establishes": [
+   "a second-dataset clean quantitative Deep-OC-SORT audit",
+   "the row-additive composition result",
+   "STV composition materiality",
+   "R0/R1/R2 evaluator behaviour"
+  ]
+ },
+ "manifest": "TPAMI V9 MOT20 Deep-OC-SORT independent verification",
+ "manuscript_modified": false,
+ "metric_files_altered": false,
+ "mismatches_repaired_silently": 0,
+ "n_checks": 17,
+ "n_critical": 16,
+ "protocol_modified": false,
+ "recomputed_summary": {
+  "materiality": "STV_COMPOSITION_MATERIAL",
+  "n_R0": 529865,
+  "n_R1": 555928,
+  "n_R2": 564679,
+  "n_synthesized": 34814,
+  "nonadmitted": 8751,
+  "nonadmitted_over_synthesized": 0.25136439363474467,
+  "stv": {
+   "ANCHOR_ID_MISMATCH": 2165,
+   "ANCHOR_UNMATCHED": 6586,
+   "SEMANTICALLY_ADMITTED": 26063,
+   "TARGET_REFERENCE_ABSENT": 0
+  }
+ },
+ "record": "14",
+ "record_13_modified": false,
+ "record_13_used_as_computation_oracle": false,
+ "record_13_used_only_for_comparison_after_computation": true,
+ "run_id": "V9-MOT20-DEEPOCSORT-001",
+ "states_altered": false,
+ "stv_rerun_via_frozen_module": false,
+ "tracker_rerun": false,
+ "trackeval_rerun": false,
+ "verdict": "PASS",
+ "verification_sha256": "246ed58cebb8b9b8b7b0fea658fbef0457a1df668c782d80424f9af4800252dc",
+ "verifies_result_commit": "9a5109a65d5da2ed85273cfe255e3e0cf5194fb0",
+ "verifies_result_tag": "tpami-v9-mot20-deep-results-20260831"
+}

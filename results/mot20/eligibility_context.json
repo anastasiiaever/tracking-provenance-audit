@@ -1,0 +1,66 @@
+{
+ "amendment": {
+  "amends": "10",
+  "checkpoints_substituted": 0,
+  "chronology": {
+   "1_sequence_universe_and_split_rule": "the MOT20 sequence universe (MOT20-01/02/03/05) and the second-half split rule were frozen in 02_PROSPECTIVE_PROTOCOL BEFORE any MOT17 execution.",
+   "2_evaluator_native_semantics": "MOT20 evaluator-native GT semantics (09A) were completed AFTER MOT17 outcomes were known but BEFORE any MOT20 outcome existed.",
+   "3_readiness_audit": "the readiness audit (record 10) then established that most public MOT20 checkpoints are unsuitable for the held-out half-train estimand because of evaluation leakage.",
+   "4_selection_basis": "Deep-OC-SORT was carried forward for possible execution ONLY because that pre-existing readiness audit classified its documented validation path as the sole NO_KNOWN_EVAL_LEAKAGE cell.",
+   "no_mot20_outcome_existed_at_selection": true,
+   "selection_is_not_outcome_based": true,
+   "wording_prohibition": "this selection must NOT be described as a prospectively selected winner, nor as outcome-based selection, nor as a best-performing method."
+  },
+  "clean_cell": {
+   "cell": "Deep-OC-SORT x MOT20",
+   "checkpoint_provenance": "NO_KNOWN_EVAL_LEAKAGE",
+   "detector": "external/weights/bytetrack_x_mot17.pth.tar",
+   "documentation_role": "PRIMARY_DOCUMENTED_VALIDATION",
+   "execution_authorized": false
+  },
+  "mode": "APPEND_ONLY"
+ },
+ "commands_selected_using_mot17_outcomes": false,
+ "counts": {
+  "BLOCKED_ASSET": 2,
+  "BLOCKED_CHECKPOINT_PROVENANCE": 3,
+  "BLOCKED_COMMAND": 2,
+  "BLOCKED_ENVIRONMENT": 0,
+  "BLOCKED_INDEXING": 0,
+  "BLOCKED_OTHER": 0,
+  "READY": 0,
+  "TOTAL": 7
+ },
+ "execution_authorized_at_freeze": false,
+ "population": {
+  "dataset": "MOT20",
+  "mirror_source_manifest_sha256": "c2d55f8020c83833f31fc345a100875296d938227ba19d9199e80630ce407eba",
+  "population_manifest_reverified": true,
+  "population_manifest_sha256": "aabe4907077934fb834a7639b9722b9120de0a007553bbc98a6132b768d3e232",
+  "provenance_caveat": "the corpus came from a Kaggle mirror; byte identity to an official MOT20.zip is NOT established and no wording may claim a direct MOTChallenge download",
+  "provenance_status": "MIRROR_TRANSPORT_FALLBACK",
+  "sequences": [
+   "MOT20-01",
+   "MOT20-02",
+   "MOT20-03",
+   "MOT20-05"
+  ],
+  "total_frames": 4463
+ },
+ "readiness_vocabulary": [
+  "READY",
+  "BLOCKED_ASSET",
+  "BLOCKED_ENVIRONMENT",
+  "BLOCKED_COMMAND",
+  "BLOCKED_CHECKPOINT_PROVENANCE",
+  "BLOCKED_INDEXING",
+  "BLOCKED_OTHER"
+ ],
+ "ready_definition": "dataset ready AND exact command frozen AND assets verified AND environment verified AND checkpoint provenance acceptable AND frame mapping deterministic AND output state semantics frozen. Repository support for MOT20 is never sufficient.",
+ "universe": {
+  "added": 0,
+  "cells": 7,
+  "excluded_documentation_only": "SparseTrack x MOT20 remains DOCUMENTATION_ONLY_IMPLEMENTED / NO_QUANTITATIVE_OUTCOME_PLANNED and is not an eighth quantitative cell",
+  "removed": 0
+ }
+}

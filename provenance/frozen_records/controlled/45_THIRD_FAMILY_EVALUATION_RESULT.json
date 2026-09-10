@@ -1,0 +1,998 @@
+{
+  "record_type": "evaluation_result",
+  "schema_version": 1,
+  "id": 45,
+  "title": "Third-Family Reserved Evaluation: RESULT",
+  "date": "2026-08-21",
+  "branch": "wacv-supplement-20260813",
+  "head_commit": "bc3ffb828a154f628e2930da481874f1b40299f9",
+  "status": "EVALUATION_COMPLETE",
+  "scientific_authority": {
+    "record": 41,
+    "md_sha256_16": "ef073e10a69355c0",
+    "json_sha256_16": "bbe9580ac5c7cb31",
+    "changed": false
+  },
+  "implementation_authority": {
+    "record": 44,
+    "md_sha256": "f3bfa4caede85da12807dce918c2e7351e0e41acf9d18b49482ec0dc5a2fa58a",
+    "json_sha256": "2f14cd717c480ceff9ecd5514ead26dda15b2f560ab4fbd2e8136d56bc1220f5",
+    "changed": false
+  },
+  "predecessor_records": {
+    "42": "historical, superseded for execution",
+    "43": "ABORTED_NO_SCIENTIFIC_OUTCOME, immutable, not counted as an evaluation attempt with a result"
+  },
+  "required_statements": {
+    "evaluation_complete": true,
+    "all_three_model_seeds_evaluated": true,
+    "best_seed_selection_used": false,
+    "final_test_used": false,
+    "scientific_choices_changed": false,
+    "evaluation_protocol_41_changed": false,
+    "evaluation_implementation_44_changed": false
+  },
+  "pre_run_integrity": {
+    "n_checks": 43,
+    "n_failed": 0,
+    "note": "one reported failure was an artifact of the check itself (pgrep matched its own shell); re-verified with a process-name filter: 0 driver processes"
+  },
+  "execution": {
+    "driver": "scripts/run_ntu_e5_stgcn_learned_only.py",
+    "driver_sha256": "dc3d45f7fccd250e7794127d2a6d72a981854fedd88e9ea4a8cb58e3dce70249",
+    "resume_used": false,
+    "retries": 0,
+    "best_seed_selection_used": false,
+    "seeds": [
+      {
+        "seed": 0,
+        "checkpoint_sha256": "01da9dd674796f9650bb4d4002ae74538dc8b8d13e011ffe64b8dc85a3ee172f",
+        "output_dir": "results/benchmarks/stgcn_confirmatory_20260821/relock_seed0_learned_only",
+        "start_utc": "2026-08-21T09:59:56Z",
+        "end_utc": "2026-08-21T10:19:23Z",
+        "wall_seconds": 1167,
+        "exit_code": 0,
+        "chunks": 12,
+        "output_parquet_sha256": "82bff4cca48066bead59064f2c14ca5965957fef56d5f6dd24a62f336aa98a7b",
+        "verification_json_sha256": "f11e9a05603e6881bb6fd9d2b4ce16c106718458d1165d1532cd57cd4a0b1e8b",
+        "n_rows": 9829434,
+        "n_cells": 73080
+      },
+      {
+        "seed": 1,
+        "checkpoint_sha256": "51542af4c965871c8d51a900bc213a99d29d4cfdaade11301b717f837cff2642",
+        "output_dir": "results/benchmarks/stgcn_confirmatory_20260821/relock_seed1_learned_only",
+        "start_utc": "2026-08-21T10:19:23Z",
+        "end_utc": "2026-08-21T10:38:42Z",
+        "wall_seconds": 1159,
+        "exit_code": 0,
+        "chunks": 12,
+        "output_parquet_sha256": "63f6eb5f0d34d06146646840ee037f332af25d0d408378704e058e8613bbf852",
+        "verification_json_sha256": "17503c00c8d9d382c9e901d0bce0847ed97b5d1053d3609d7dddd5a27c87bfe6",
+        "n_rows": 9829434,
+        "n_cells": 73080
+      },
+      {
+        "seed": 2,
+        "checkpoint_sha256": "01767b71a336bc1eb10938b89c068e74ff89789de4b34a0912c9ccca42fbbe47",
+        "output_dir": "results/benchmarks/stgcn_confirmatory_20260821/relock_seed2_learned_only",
+        "start_utc": "2026-08-21T10:38:42Z",
+        "end_utc": "2026-08-21T10:58:07Z",
+        "wall_seconds": 1165,
+        "exit_code": 0,
+        "chunks": 12,
+        "output_parquet_sha256": "6f1da1e51f8764ed924f5623d090ba3147fcaac1c92fd4dc8ebe5847e6dcafe9",
+        "verification_json_sha256": "00eaaa460d2451a1c7f0fa2dc7efbfff0962c11e8ec30db4a12aa5fc72155be1",
+        "n_rows": 9829434,
+        "n_cells": 73080
+      }
+    ]
+  },
+  "artifact_validation": {
+    "n_checks": 123,
+    "n_failed": 0,
+    "all_seeds_pass": true,
+    "paired_columns_copied_through_unchanged": [
+      "linear_sq_error",
+      "spline_sq_error",
+      "kalman_sq_error",
+      "L_torso",
+      "target_mask_hash",
+      "innovation_seed",
+      "n_frames_scored",
+      "target_mask_ratio",
+      "achieved_occlusion_ratio"
+    ],
+    "silent_drops": 0,
+    "expected_rows": 9829434,
+    "expected_cells": 73080,
+    "expected_gap_ids": 338946
+  },
+  "population_and_support": {
+    "splits": [
+      "router_train",
+      "router_validation"
+    ],
+    "n_subjects": 14,
+    "n_sequences": 120,
+    "n_rows": 9829434,
+    "n_cells": 73080,
+    "n_unique_gaps": 338946,
+    "set": "bulk_p95",
+    "C": 2,
+    "sigma_range": {
+      "frozen_range": "F1",
+      "predicate": "sigma <= 0.12",
+      "values": [
+        0.0,
+        0.02,
+        0.05,
+        0.08,
+        0.12
+      ]
+    },
+    "bulk_support_per_gap_length": {
+      "g1": {
+        "n_clean_gaps": 146835,
+        "n_bulk_p95": 139495,
+        "n_bulk_p90": 132178,
+        "n_transferred_threshold": 93008,
+        "transferred_threshold_held_seed": 0
+      },
+      "g2": {
+        "n_clean_gaps": 73428,
+        "n_bulk_p95": 69756,
+        "n_bulk_p90": 66086,
+        "n_transferred_threshold": 46523,
+        "transferred_threshold_held_seed": 0
+      },
+      "g3": {
+        "n_clean_gaps": 48933,
+        "n_bulk_p95": 46482,
+        "n_bulk_p90": 44037,
+        "n_transferred_threshold": 31022,
+        "transferred_threshold_held_seed": 0
+      },
+      "g5": {
+        "n_clean_gaps": 29370,
+        "n_bulk_p95": 27899,
+        "n_bulk_p90": 26430,
+        "n_transferred_threshold": 18642,
+        "transferred_threshold_held_seed": 0
+      },
+      "g8": {
+        "n_clean_gaps": 18354,
+        "n_bulk_p95": 17429,
+        "n_bulk_p90": 16514,
+        "n_transferred_threshold": 11568,
+        "transferred_threshold_held_seed": 0
+      },
+      "g10": {
+        "n_clean_gaps": 14679,
+        "n_bulk_p95": 13938,
+        "n_bulk_p90": 13205,
+        "n_transferred_threshold": 9265,
+        "transferred_threshold_held_seed": 0
+      },
+      "g20": {
+        "n_clean_gaps": 7347,
+        "n_bulk_p95": 6976,
+        "n_bulk_p90": 6607,
+        "n_transferred_threshold": 4670,
+        "transferred_threshold_held_seed": 0
+      }
+    },
+    "total_clean_gaps": 338946,
+    "total_p95_bulk": 321975,
+    "support_identical_across_all_seven_analyses": true,
+    "pairedness_status": "DIRECTLY_PAIRED"
+  },
+  "aggregation_provenance": {
+    "note": "the generating script for the historical f1_summary.json is not preserved in the repo; the aggregation was rebuilt on the frozen scripts/e5_extended primitives and validated by recomputing the frozen BiGRU seed-0 result from its preserved parquet",
+    "frozen_primitives_reused": [
+      "io.load_clean",
+      "io.load_arm",
+      "bulk.bulk_ids",
+      "bulk.subject_table",
+      "bulk.arm_curve",
+      "bulk.subject_fits",
+      "stats.cluster_boot_ci",
+      "stats.ols",
+      "contract.C_COORDS"
+    ],
+    "validation_target": "results/benchmarks/bigru_confirmatory_20260814/seed0_learned_only_full_20260814/f1_summary.json",
+    "worst_absolute_deviation": 9.714e-17,
+    "verdict": "REPRODUCES THE FROZEN AGGREGATION"
+  },
+  "estimand": "within-subject OLS slope of the equal-gap-length-weighted mean <method>_sq_error on sigma^2, divided by C=2; point estimate is the equal-weight mean over the 14 subjects",
+  "bootstrap": {
+    "seed": 20260730,
+    "replicates": 10000,
+    "cluster_unit": "subject_id",
+    "resampling": "whole subjects",
+    "scope": "within-checkpoint"
+  },
+  "results": {
+    "linear": {
+      "beta_by_phi": [
+        {
+          "phi": 0.0,
+          "beta": 0.6048986657762325,
+          "ci95": [
+            0.5713651492388779,
+            0.6424736734931795
+          ],
+          "n_subjects": 14,
+          "mean_within_subject_r2": 0.9916043905513322
+        },
+        {
+          "phi": 0.5,
+          "beta": 0.6207427044817434,
+          "ci95": [
+            0.5734083430183506,
+            0.6592224965829765
+          ],
+          "n_subjects": 14,
+          "mean_within_subject_r2": 0.9883109999438157
+        },
+        {
+          "phi": 0.7,
+          "beta": 0.6629171059526168,
+          "ci95": [
+            0.6131667940932317,
+            0.7004265934667544
+          ],
+          "n_subjects": 14,
+          "mean_within_subject_r2": 0.9868843748511811
+        },
+        {
+          "phi": 0.85,
+          "beta": 0.7452359523910754,
+          "ci95": [
+            0.7007314664922012,
+            0.7780295116208763
+          ],
+          "n_subjects": 14,
+          "mean_within_subject_r2": 0.9883860051044335
+        }
+      ],
+      "beta_0": 0.6048986657762325,
+      "beta_0p85": 0.7452359523910754,
+      "beta_0p85_over_beta_0": 1.2320013161787289,
+      "d_beta_d_phi": 0.14092683770989392,
+      "d_beta_d_phi_ci95": [
+        0.11215032425547715,
+        0.16359547675449834
+      ],
+      "monotonic_increasing_in_phi": true
+    },
+    "spline": {
+      "beta_by_phi": [
+        {
+          "phi": 0.0,
+          "beta": 10.54642885195228,
+          "ci95": [
+            9.852213795129058,
+            11.160516479991927
+          ],
+          "n_subjects": 14,
+          "mean_within_subject_r2": 0.9911022009894861
+        },
+        {
+          "phi": 0.5,
+          "beta": 4.977100042012066,
+          "ci95": [
+            4.438488737432969,
+            5.377047830949534
+          ],
+          "n_subjects": 14,
+          "mean_within_subject_r2": 0.9583844562808584
+        },
+        {
+          "phi": 0.7,
+          "beta": 3.1393842314689095,
+          "ci95": [
+            2.7216336157279635,
+            3.441636837771121
+          ],
+          "n_subjects": 14,
+          "mean_within_subject_r2": 0.936108170637587
+        },
+        {
+          "phi": 0.85,
+          "beta": 1.9098830686765549,
+          "ci95": [
+            1.5924001011761963,
+            2.1466014267915994
+          ],
+          "n_subjects": 14,
+          "mean_within_subject_r2": 0.9126408728449983
+        }
+      ],
+      "beta_0": 10.54642885195228,
+      "beta_0p85": 1.9098830686765549,
+      "beta_0p85_over_beta_0": 0.1810928699645104,
+      "d_beta_d_phi": -10.279911279082093,
+      "d_beta_d_phi_ci95": [
+        -10.88842836043965,
+        -9.72408165927995
+      ],
+      "monotonic_increasing_in_phi": false
+    },
+    "kalman": {
+      "beta_by_phi": [
+        {
+          "phi": 0.0,
+          "beta": 1.4368561539889355,
+          "ci95": [
+            1.3548324347695029,
+            1.5334943504596272
+          ],
+          "n_subjects": 14,
+          "mean_within_subject_r2": 0.9844557646878573
+        },
+        {
+          "phi": 0.5,
+          "beta": 1.3225644210395857,
+          "ci95": [
+            1.2730988569769004,
+            1.3797296613126568
+          ],
+          "n_subjects": 14,
+          "mean_within_subject_r2": 0.9844770720943835
+        },
+        {
+          "phi": 0.7,
+          "beta": 1.173411826062821,
+          "ci95": [
+            1.1208804410006148,
+            1.2237044842886482
+          ],
+          "n_subjects": 14,
+          "mean_within_subject_r2": 0.9913335230443509
+        },
+        {
+          "phi": 0.85,
+          "beta": 1.037595326545066,
+          "ci95": [
+            0.9771433526663762,
+            1.0863924030068066
+          ],
+          "n_subjects": 14,
+          "mean_within_subject_r2": 0.9896438190376341
+        }
+      ],
+      "beta_0": 1.4368561539889355,
+      "beta_0p85": 1.037595326545066,
+      "beta_0p85_over_beta_0": 0.7221288809353257,
+      "d_beta_d_phi": -0.44362414345756795,
+      "d_beta_d_phi_ci95": [
+        -0.613073613057819,
+        -0.31269721380870225
+      ],
+      "monotonic_increasing_in_phi": false
+    },
+    "mae": {
+      "beta_by_phi": [
+        {
+          "phi": 0.0,
+          "beta": 0.11684075790804067,
+          "ci95": [
+            0.10363958392082609,
+            0.1301016129666221
+          ],
+          "n_subjects": 14,
+          "mean_within_subject_r2": 0.9303140025167239
+        },
+        {
+          "phi": 0.5,
+          "beta": 0.2189903848221586,
+          "ci95": [
+            0.19864613004592158,
+            0.23775540825590108
+          ],
+          "n_subjects": 14,
+          "mean_within_subject_r2": 0.976926242232879
+        },
+        {
+          "phi": 0.7,
+          "beta": 0.30728043225872376,
+          "ci95": [
+            0.2834884793520084,
+            0.3293106621541168
+          ],
+          "n_subjects": 14,
+          "mean_within_subject_r2": 0.9903953321983682
+        },
+        {
+          "phi": 0.85,
+          "beta": 0.44185683061210146,
+          "ci95": [
+            0.4138974739785862,
+            0.4694728691554051
+          ],
+          "n_subjects": 14,
+          "mean_within_subject_r2": 0.9951191346827689
+        }
+      ],
+      "beta_0": 0.11684075790804067,
+      "beta_0p85": 0.44185683061210146,
+      "beta_0p85_over_beta_0": 3.7817011676684276,
+      "d_beta_d_phi": 0.34992046893340717,
+      "d_beta_d_phi_ci95": [
+        0.32506640898673866,
+        0.37377062728240334
+      ],
+      "monotonic_increasing_in_phi": true
+    },
+    "bigru": {
+      "seed0": {
+        "beta_by_phi": [
+          {
+            "phi": 0.0,
+            "beta": 0.07855550501878819,
+            "ci95": [
+              0.0641763975072583,
+              0.09220783370084809
+            ],
+            "n_subjects": 14,
+            "mean_within_subject_r2": 0.8663576947695152
+          },
+          {
+            "phi": 0.5,
+            "beta": 0.12669943736928527,
+            "ci95": [
+              0.10817685840188862,
+              0.14459081679203606
+            ],
+            "n_subjects": 14,
+            "mean_within_subject_r2": 0.8723694535483718
+          },
+          {
+            "phi": 0.7,
+            "beta": 0.16986181323033955,
+            "ci95": [
+              0.1450675456519932,
+              0.19358092600324475
+            ],
+            "n_subjects": 14,
+            "mean_within_subject_r2": 0.8884118629749475
+          },
+          {
+            "phi": 0.85,
+            "beta": 0.24213836794953747,
+            "ci95": [
+              0.2102900946795688,
+              0.27133716910275235
+            ],
+            "n_subjects": 14,
+            "mean_within_subject_r2": 0.9375067205520108
+          }
+        ],
+        "beta_0": 0.07855550501878819,
+        "beta_0p85": 0.24213836794953747,
+        "beta_0p85_over_beta_0": 3.0823857333948146,
+        "d_beta_d_phi": 0.17414834567383927,
+        "d_beta_d_phi_ci95": [
+          0.15010292255302246,
+          0.19627018381924233
+        ],
+        "monotonic_increasing_in_phi": true
+      },
+      "seed1": {
+        "beta_by_phi": [
+          {
+            "phi": 0.0,
+            "beta": 0.07495930813788336,
+            "ci95": [
+              0.05887430327651294,
+              0.09083200093805455
+            ],
+            "n_subjects": 14,
+            "mean_within_subject_r2": 0.7809576836265875
+          },
+          {
+            "phi": 0.5,
+            "beta": 0.12113692775911179,
+            "ci95": [
+              0.09606287541147715,
+              0.144902151464382
+            ],
+            "n_subjects": 14,
+            "mean_within_subject_r2": 0.7966352194557003
+          },
+          {
+            "phi": 0.7,
+            "beta": 0.16508023490709167,
+            "ci95": [
+              0.13276349668316573,
+              0.19421768344381224
+            ],
+            "n_subjects": 14,
+            "mean_within_subject_r2": 0.8132834400104875
+          },
+          {
+            "phi": 0.85,
+            "beta": 0.23883487661588237,
+            "ci95": [
+              0.20118810834227407,
+              0.27320059814771436
+            ],
+            "n_subjects": 14,
+            "mean_within_subject_r2": 0.8611844040434893
+          }
+        ],
+        "beta_0": 0.07495930813788336,
+        "beta_0p85": 0.23883487661588237,
+        "beta_0p85_over_beta_0": 3.186193716950526,
+        "d_beta_d_phi": 0.1739082437275529,
+        "d_beta_d_phi_ci95": [
+          0.14700554625566378,
+          0.19752758616547472
+        ],
+        "monotonic_increasing_in_phi": true
+      },
+      "seed2": {
+        "beta_by_phi": [
+          {
+            "phi": 0.0,
+            "beta": 0.09015077519060176,
+            "ci95": [
+              0.0739947676867303,
+              0.1127394029042253
+            ],
+            "n_subjects": 14,
+            "mean_within_subject_r2": 0.9074252595067064
+          },
+          {
+            "phi": 0.5,
+            "beta": 0.14004078273447412,
+            "ci95": [
+              0.12089272362152399,
+              0.16436952459397036
+            ],
+            "n_subjects": 14,
+            "mean_within_subject_r2": 0.9102373656571173
+          },
+          {
+            "phi": 0.7,
+            "beta": 0.18266223602553205,
+            "ci95": [
+              0.1644718261441133,
+              0.20277159570301978
+            ],
+            "n_subjects": 14,
+            "mean_within_subject_r2": 0.9233576118498678
+          },
+          {
+            "phi": 0.85,
+            "beta": 0.24799856683402943,
+            "ci95": [
+              0.23150174585980168,
+              0.26469465168625433
+            ],
+            "n_subjects": 14,
+            "mean_within_subject_r2": 0.9382477783959068
+          }
+        ],
+        "beta_0": 0.09015077519060176,
+        "beta_0p85": 0.24799856683402943,
+        "beta_0p85_over_beta_0": 2.750931052003681,
+        "d_beta_d_phi": 0.1699445304811116,
+        "d_beta_d_phi_ci95": [
+          0.142459282994891,
+          0.19231176444452575
+        ],
+        "monotonic_increasing_in_phi": true
+      }
+    },
+    "stgcn": {
+      "seed0": {
+        "beta_by_phi": [
+          {
+            "phi": 0.0,
+            "beta": -0.06582819908412722,
+            "ci95": [
+              -0.11599786264366366,
+              -0.019609243023413752
+            ],
+            "n_subjects": 14,
+            "mean_within_subject_r2": 0.6444881537211881
+          },
+          {
+            "phi": 0.5,
+            "beta": -0.011002901721215022,
+            "ci95": [
+              -0.08662229466290428,
+              0.05695743618158903
+            ],
+            "n_subjects": 14,
+            "mean_within_subject_r2": 0.6258093493558636
+          },
+          {
+            "phi": 0.7,
+            "beta": 0.037593784371024494,
+            "ci95": [
+              -0.0554593260185016,
+              0.12122340911773577
+            ],
+            "n_subjects": 14,
+            "mean_within_subject_r2": 0.5610525776372052
+          },
+          {
+            "phi": 0.85,
+            "beta": 0.10202626949175643,
+            "ci95": [
+              -0.015568622144298366,
+              0.2112928618962539
+            ],
+            "n_subjects": 14,
+            "mean_within_subject_r2": 0.5631401397970033
+          }
+        ],
+        "beta_0": -0.06582819908412722,
+        "beta_0p85": 0.10202626949175643,
+        "beta_0p85_over_beta_0": -1.5498869923718974,
+        "d_beta_d_phi": 0.18296130822498397,
+        "d_beta_d_phi_ci95": [
+          0.09982205699785585,
+          0.2621317771943493
+        ],
+        "monotonic_increasing_in_phi": true
+      },
+      "seed1": {
+        "beta_by_phi": [
+          {
+            "phi": 0.0,
+            "beta": 0.10447134944139906,
+            "ci95": [
+              0.09355804546514461,
+              0.11484056565658116
+            ],
+            "n_subjects": 14,
+            "mean_within_subject_r2": 0.7960203794811599
+          },
+          {
+            "phi": 0.5,
+            "beta": 0.19477787130610105,
+            "ci95": [
+              0.1651912334848635,
+              0.22534295669642487
+            ],
+            "n_subjects": 14,
+            "mean_within_subject_r2": 0.8180306563004601
+          },
+          {
+            "phi": 0.7,
+            "beta": 0.2646020301838613,
+            "ci95": [
+              0.2230996764694215,
+              0.30230449524590686
+            ],
+            "n_subjects": 14,
+            "mean_within_subject_r2": 0.8330096036380104
+          },
+          {
+            "phi": 0.85,
+            "beta": 0.3614587008810611,
+            "ci95": [
+              0.31657474445847883,
+              0.3999749680566859
+            ],
+            "n_subjects": 14,
+            "mean_within_subject_r2": 0.8754495720055363
+          }
+        ],
+        "beta_0": 0.10447134944139906,
+        "beta_0p85": 0.3614587008810611,
+        "beta_0p85_over_beta_0": 3.459883526093568,
+        "d_beta_d_phi": 0.28073785062649786,
+        "d_beta_d_phi_ci95": [
+          0.2311143497045404,
+          0.32200033518261056
+        ],
+        "monotonic_increasing_in_phi": true
+      },
+      "seed2": {
+        "beta_by_phi": [
+          {
+            "phi": 0.0,
+            "beta": 0.08859563232514958,
+            "ci95": [
+              0.05188746209033559,
+              0.1256273092944491
+            ],
+            "n_subjects": 14,
+            "mean_within_subject_r2": 0.6585990352158658
+          },
+          {
+            "phi": 0.5,
+            "beta": 0.19685744663641105,
+            "ci95": [
+              0.14402455675072295,
+              0.24793898502919307
+            ],
+            "n_subjects": 14,
+            "mean_within_subject_r2": 0.7383852002024834
+          },
+          {
+            "phi": 0.7,
+            "beta": 0.29411035413603626,
+            "ci95": [
+              0.2329164263577061,
+              0.3507532280892583
+            ],
+            "n_subjects": 14,
+            "mean_within_subject_r2": 0.8339721967381799
+          },
+          {
+            "phi": 0.85,
+            "beta": 0.43808372407680707,
+            "ci95": [
+              0.3716208092058477,
+              0.5003172163401111
+            ],
+            "n_subjects": 14,
+            "mean_within_subject_r2": 0.9202965915790529
+          }
+        ],
+        "beta_0": 0.08859563232514958,
+        "beta_0p85": 0.43808372407680707,
+        "beta_0p85_over_beta_0": 4.9447553178357815,
+        "d_beta_d_phi": 0.3766506066812379,
+        "d_beta_d_phi_ci95": [
+          0.3251128816910463,
+          0.42525558270114305
+        ],
+        "monotonic_increasing_in_phi": true
+      }
+    }
+  },
+  "three_seed_summary": {
+    "convention": "arithmetic descriptive mean across seeds 0/1/2; dispersion = range; model seeds are NOT inferential replicates",
+    "stgcn": {
+      "beta_0": {
+        "values": [
+          -0.06582819908412722,
+          0.10447134944139906,
+          0.08859563232514958
+        ],
+        "mean": 0.04241292756080714,
+        "range": [
+          -0.06582819908412722,
+          0.10447134944139906
+        ],
+        "width": 0.17029954852552628
+      },
+      "beta_0p85": {
+        "values": [
+          0.10202626949175643,
+          0.3614587008810611,
+          0.43808372407680707
+        ],
+        "mean": 0.3005228981498749,
+        "range": [
+          0.10202626949175643,
+          0.43808372407680707
+        ],
+        "width": 0.33605745458505065
+      },
+      "beta_0p85_over_beta_0": {
+        "values": [
+          -1.5498869923718974,
+          3.459883526093568,
+          4.9447553178357815
+        ],
+        "mean": 2.2849172838524843,
+        "range": [
+          -1.5498869923718974,
+          4.9447553178357815
+        ],
+        "width": 6.494642310207679
+      },
+      "d_beta_d_phi": {
+        "values": [
+          0.18296130822498397,
+          0.28073785062649786,
+          0.3766506066812379
+        ],
+        "mean": 0.28011658851090654,
+        "range": [
+          0.18296130822498397,
+          0.3766506066812379
+        ],
+        "width": 0.19368929845625393
+      }
+    },
+    "bigru": {
+      "beta_0": {
+        "values": [
+          0.07855550501878819,
+          0.07495930813788336,
+          0.09015077519060176
+        ],
+        "mean": 0.08122186278242444,
+        "range": [
+          0.07495930813788336,
+          0.09015077519060176
+        ],
+        "width": 0.0151914670527184
+      },
+      "beta_0p85": {
+        "values": [
+          0.24213836794953747,
+          0.23883487661588237,
+          0.24799856683402943
+        ],
+        "mean": 0.2429906037998164,
+        "range": [
+          0.23883487661588237,
+          0.24799856683402943
+        ],
+        "width": 0.009163690218147058
+      },
+      "beta_0p85_over_beta_0": {
+        "values": [
+          3.0823857333948146,
+          3.186193716950526,
+          2.750931052003681
+        ],
+        "mean": 3.006503500783007,
+        "range": [
+          2.750931052003681,
+          3.186193716950526
+        ],
+        "width": 0.43526266494684496
+      },
+      "d_beta_d_phi": {
+        "values": [
+          0.17414834567383927,
+          0.1739082437275529,
+          0.1699445304811116
+        ],
+        "mean": 0.17266703996083457,
+        "range": [
+          0.1699445304811116,
+          0.17414834567383927
+        ],
+        "width": 0.004203815192727667
+      }
+    }
+  },
+  "seed_disagreement": {
+    "seeds_disagree_strongly": true,
+    "seed0_is_qualitatively_apart": true,
+    "seed0_beta_0": -0.06583297849767678,
+    "seed0_beta_0_ci95": [
+      -0.11599786264366366,
+      -0.019609243023413752
+    ],
+    "seed0_beta_0_significantly_negative": true,
+    "seed0_all_phi_gt_0_cis_include_zero": true,
+    "mean_within_subject_r2_by_stgcn_seed": [
+      0.599,
+      0.831,
+      0.788
+    ],
+    "mean_within_subject_r2_reference": {
+      "mae": 0.973,
+      "bigru": [
+        0.891,
+        0.813,
+        0.92
+      ]
+    },
+    "seed_dropped_or_downweighted": false,
+    "ratio_statistic_caveat": "beta_0.85/beta_0 is ill-conditioned when beta_0 is near zero and changes sign when beta_0 < 0; seed 0's ratio of -1.5499 is not commensurable with a positive ratio and inflates the ST-GCN ratio range. Reported as a limitation of the frozen statistic under this outcome; no substitute statistic was introduced and no threshold was redefined."
+  },
+  "frozen_interpretation": {
+    "rules_source": "docs/wacv/plan/41_THIRD_FAMILY_EVALUATION_PROTOCOL.json::interpretation_rules_frozen_before_outcomes",
+    "frozen_before_outcomes": true,
+    "rule1_limited_architecture_sensitivity_satisfied": true,
+    "rule2_materially_differs_satisfied": false,
+    "same_direction_as_both_existing_families": true,
+    "ratio_disjoint_from_bigru": false,
+    "ratio_disjoint_from_mae": false,
+    "rule3_seed_variability_dominates": true,
+    "rule3_per_statistic": [
+      {
+        "statistic": "beta_0",
+        "stgcn_seed_range_width": 0.17029954852552628,
+        "mae_vs_bigru_gap": 0.026689982717438915,
+        "seed_range_ge_gap": true,
+        "stgcn_range_spans_both_families": false
+      },
+      {
+        "statistic": "beta_0.85",
+        "stgcn_seed_range_width": 0.33605745458505065,
+        "mae_vs_bigru_gap": 0.19385826377807203,
+        "seed_range_ge_gap": true,
+        "stgcn_range_spans_both_families": false
+      },
+      {
+        "statistic": "ratio",
+        "stgcn_seed_range_width": 6.494642310207679,
+        "mae_vs_bigru_gap": 0.5955074507179017,
+        "seed_range_ge_gap": true,
+        "stgcn_range_spans_both_families": true
+      },
+      {
+        "statistic": "d_beta_d_phi",
+        "stgcn_seed_range_width": 0.19368929845625393,
+        "mae_vs_bigru_gap": 0.1757721232595679,
+        "seed_range_ge_gap": true,
+        "stgcn_range_spans_both_families": false
+      }
+    ],
+    "rule4_no_new_threshold_introduced": true,
+    "verdict": "No material difference is established under the frozen rule. The DIRECTION of the learned-family effect (beta rising monotonically with phi) replicates across a third, structurally distinct architecture in all three seeds. The MAGNITUDE comparison is inconclusive at the architecture level: rule 3 fires on every reported statistic, with ST-GCN within-family seed variability exceeding the between-family MAE-vs-BiGRU gap by factors of 1.1x to 10.9x and fully spanning both families on the ratio. Attributing any magnitude difference to architecture rather than training seed is not supportable from this evidence, in either direction.",
+    "short_answer": "direction replicates; magnitude is dominated by seed variability, not architecture",
+    "stgcn_role": "controlled architectural probe, NOT a proposed method (frozen in record 41)"
+  },
+  "non_learned_context": {
+    "linear": {
+      "beta_0": 0.6048986657762325,
+      "ratio": 1.2320013161787289,
+      "d_beta_d_phi": 0.14092683770989392
+    },
+    "spline": {
+      "beta_0": 10.54642885195228,
+      "ratio": 0.1810928699645104,
+      "d_beta_d_phi": -10.279911279082093,
+      "note": "strongly decreasing; the applicability anomaly documented in records 32/33"
+    },
+    "kalman": {
+      "beta_0": 1.4368561539889355,
+      "ratio": 0.7221288809353257,
+      "d_beta_d_phi": -0.44362414345756795
+    },
+    "learned_vs_classical_direction_contrast_undisturbed": true
+  },
+  "final_test_seal": {
+    "opened": false,
+    "used": false,
+    "split_manifest_sha256_unchanged": "a31f32056adcd1a07e7bbe4a51f3909a3f7c3cfa22d4a14cc018dd8aa2386db9",
+    "final_test_sample_ids": 3587,
+    "final_test_subjects": 6,
+    "per_seed_final_test_rows": [
+      0,
+      0,
+      0
+    ],
+    "per_seed_sample_id_overlap": [
+      0,
+      0,
+      0
+    ],
+    "per_seed_subject_overlap": [
+      0,
+      0,
+      0
+    ],
+    "verified_before_during_and_after": true
+  },
+  "record_43_preserved": {
+    "status": "ABORTED_NO_SCIENTIFIC_OUTCOME",
+    "abort_evidence_byte_identical_to_pre_run": true,
+    "n_files": 6,
+    "counted_as_evaluation_attempt_with_a_result": false
+  },
+  "preserved_analysis_tables": {
+    "directory": "results/benchmarks/stgcn_confirmatory_20260821/analysis/",
+    "files": [
+      "stgcn_seed0.json",
+      "stgcn_seed1.json",
+      "stgcn_seed2.json",
+      "historical_mae_base.json",
+      "historical_bigru_seed0.json",
+      "historical_bigru_seed1.json",
+      "historical_bigru_seed2.json",
+      "artifact_verification.json",
+      "frozen_interpretation_verdict.json"
+    ],
+    "analysis_code": [
+      "scripts/analyze_stgcn_relock_f1.py",
+      "scripts/verify_stgcn_relock_artifacts.py"
+    ]
+  }
+}

@@ -1,0 +1,15 @@
+# Frozen protocol constants, transcribed from
+# provenance/frozen_records/02_PROSPECTIVE_PROTOCOL.json (frozen 2026-08-30).
+# These values are READ, never tuned. Editing this file does not make the audit
+# agree with the released results; it makes it disagree.
+
+status: SECONDARY_DESCRIPTIVE_ONLY
+not_the_headline_hypothesis: true
+criterion: STV_COMPOSITION_MATERIAL = total_non_admitted_synthesized_rows / synthesized_rows >= 0.10
+denominator_justification: The denominator is synthesized rows because the criterion concerns the composition
+  of what the post-processor produced, not of the whole submission.
+mandatory_companion: the corresponding fraction of total submitted R2 rows must ALWAYS be reported alongside,
+  so a large conditional fraction cannot be read as a submission-wide effect
+carries_no_significance_or_generalization_claim: true
+threshold_frozen_at: 0.1
+no_post_hoc_adjustment: true

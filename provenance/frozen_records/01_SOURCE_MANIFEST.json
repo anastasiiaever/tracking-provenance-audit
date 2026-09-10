@@ -1,0 +1,153 @@
+{
+ "generated": "2026-08-30",
+ "authority": "official author repositories only; no forks, blogs or third-party reproductions",
+ "note": "Local clones are read-only census copies held OUTSIDE this git repository; no third-party tree is committed.",
+ "repositories": [
+  {
+   "name": "ByteTrack",
+   "url": "https://github.com/ifzhang/ByteTrack",
+   "upstream_head_at_census": "d1bf0191adff59bc8fcfeaa0b33d3d1642552a99",
+   "local_clone_head": "d1bf0191adff59bc8fcfeaa0b33d3d1642552a99",
+   "files": [
+    {
+     "path": "tools/interpolation.py",
+     "sha256": "af74b7507822bda6e56aefe9a69251f5c94d033951eac83310c9d3254981666b",
+     "bytes": 5589
+    },
+    {
+     "path": "README.md",
+     "sha256": "126d307a421e4421aa9d3917e7849d1cf63c95f7b36864e1ca92a9d1a451c247",
+     "bytes": 15448
+    }
+   ]
+  },
+  {
+   "name": "BoT-SORT",
+   "url": "https://github.com/NirAharon/BoT-SORT",
+   "upstream_head_at_census": "251985436d6712aaf682aaaf5f71edb4987224bd",
+   "local_clone_head": "251985436d6712aaf682aaaf5f71edb4987224bd",
+   "files": [
+    {
+     "path": "tools/interpolation.py",
+     "sha256": "874a16ff967a615e5c1109595caa47eaef3cfdf113a3a90c8b169afe9dd75538",
+     "bytes": 3928
+    },
+    {
+     "path": "README.md",
+     "sha256": "b742de781491ad017d606fb2b46d2b1d5eea9f4be1817106321d96547d8d1465",
+     "bytes": 9719
+    }
+   ]
+  },
+  {
+   "name": "OC_SORT",
+   "url": "https://github.com/noahcao/OC_SORT",
+   "upstream_head_at_census": "8462e7e729a93ccd3bd995c0a79a890336cb3a0b",
+   "local_clone_head": "a9e24b6732b5d453b13399047207c0a515e0b8ae",
+   "files": [
+    {
+     "path": "tools/interpolation.py",
+     "sha256": "f63602edfe018db500650a181faa452f63c0bdfa396612d3a38ba133afa04dcd",
+     "bytes": 7407
+    },
+    {
+     "path": "tools/gp_interpolation.py",
+     "sha256": "c2a5c3d044265c79de939cbd16cd02d1cb0f7305739c3ad5f90de8906290afc4",
+     "bytes": 5729
+    },
+    {
+     "path": "docs/GET_STARTED.md",
+     "sha256": "2eb37a3789173ce121738a06cb5848df9f11c7a6aaeb41650f67408db93ee08f",
+     "bytes": 8620
+    }
+   ]
+  },
+  {
+   "name": "Deep-OC-SORT",
+   "url": "https://github.com/GerardMaggiolino/Deep-OC-SORT",
+   "upstream_head_at_census": "6bb51d027b137233f5c520b6fcc4f2ae387a6ba9",
+   "local_clone_head": "6bb51d027b137233f5c520b6fcc4f2ae387a6ba9",
+   "files": [
+    {
+     "path": "utils.py",
+     "sha256": "bb8977634df9bc7bc4112803c9f14e4bfd5e402db417ae1f9abe38b9013d86cb",
+     "bytes": 4987
+    },
+    {
+     "path": "main.py",
+     "sha256": "a7282fb5fd54357d54941ba2db274d7d1f1c8bd7ceb0ec20afb57612328306da",
+     "bytes": 6962
+    },
+    {
+     "path": "README.md",
+     "sha256": "e28064fd39b395eaf80ecb87ed6d0d3dbad1e8768987f409a536fb0c561e5305",
+     "bytes": 5220
+    }
+   ]
+  },
+  {
+   "name": "HybridSORT",
+   "url": "https://github.com/ymzis69/HybridSORT",
+   "upstream_head_at_census": "396f8d30db13304c0cbaf1dcf2e16ded93ce1701",
+   "local_clone_head": "396f8d30db13304c0cbaf1dcf2e16ded93ce1701",
+   "files": [
+    {
+     "path": "tools/interpolation.py",
+     "sha256": "a4e515e831a391bf4c3e3df09f442d7c9471623f8257e85d58fae42739b64e2c",
+     "bytes": 8266
+    },
+    {
+     "path": "README.md",
+     "sha256": "2ebbaee7842daa9e8cded8bc717f0b30c713034a3c9d3bf7e2cf68d4f8e4809e",
+     "bytes": 18737
+    }
+   ]
+  },
+  {
+   "name": "StrongSORT",
+   "url": "https://github.com/dyhBUPT/StrongSORT",
+   "upstream_head_at_census": "ee995076da5083e28d0da1f885297df62705ebd7",
+   "local_clone_head": "ee995076da5083e28d0da1f885297df62705ebd7",
+   "files": [
+    {
+     "path": "GSI.py",
+     "sha256": "89e7d9577d6d48e1d903cc9b3597ae1663496a11515e049acec7374a064147a3",
+     "bytes": 2421
+    },
+    {
+     "path": "strong_sort.py",
+     "sha256": "b38c635f9026ee6696e42d5e081b0aa293fdb18ebda6257bba5a23ba4222b0c1",
+     "bytes": 1759
+    },
+    {
+     "path": "README.md",
+     "sha256": "57c31bb7ad6acfb07179e893f1e6bbcd9dd93035ff05313bf7d3d862f5c3dac7",
+     "bytes": 9732
+    }
+   ]
+  },
+  {
+   "name": "SparseTrack",
+   "url": "https://github.com/hustvl/SparseTrack",
+   "upstream_head_at_census": "499844f32c5bb2332f9811f26cd70cf4e517d4e7",
+   "local_clone_head": "499844f32c5bb2332f9811f26cd70cf4e517d4e7",
+   "files": [
+    {
+     "path": "interpolation.py",
+     "sha256": "b121bcca39cc04bea0b036f7a2690ab5efb52687200794bbc4380fecb5becc44",
+     "bytes": 12145
+    },
+    {
+     "path": "README.md",
+     "sha256": "b0d202189611eb07adaed56adca6fbba3982b06667b7bd9b206c7f4b06023583",
+     "bytes": 11581
+    }
+   ]
+  }
+ ],
+ "pin_notes": {
+  "OC_SORT": "Local clone is a9e24b6732b5d453b13399047207c0a515e0b8ae; upstream HEAD has advanced 25 commits to 8462e7e729a93ccd3bd995c0a79a890336cb3a0b. Evidence for pin choice: tools/interpolation.py and tools/gp_interpolation.py are BYTE-IDENTICAL across that range (blob 3eaf014ff261 and c46434d3a82d respectively at both ends), so the post-processing census is invariant to the pin. The 25 commits touch trackers/ocsort_tracker/{association,kalmanfilter,ocsort}.py and the C++ deploy path only.",
+  "ByteTrack": "ifzhang/ByteTrack and FoundationVision/ByteTrack resolve to the SAME HEAD d1bf0191adff59bc8fcfeaa0b33d3d1642552a99 (organisation rename, not a source conflict).",
+  "others": "Local clone HEAD equals upstream HEAD at census time."
+ }
+}

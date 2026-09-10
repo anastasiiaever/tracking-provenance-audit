@@ -1,0 +1,11 @@
+[gate] started_utc=2026-08-24T01:34:58.645091+00:00
+[gate] VALIDATION_RELEASED=True -- frozen execution released
+[gate] archive sha256 verified 6ad1fa0125e3cddcbe4d182e41cd12a854a11b0c733b26c706595f6db5c254e0
+[gate] protocol sha256 verified 83c7f5c630b3136ef19c38c5f14d1d26e302fa0d2a4b3139ae6b8f90caa8b32f
+[gate] schema ok; 21 label files
+[run ] parsed 65301 label rows
+[run ] global exact-partition invariant holds
+[run ] candidate cases built; common support computed
+[run ] all-method identical-case-key invariant holds
+[run ] reconstruction complete on common support
+[run ] finished_utc=2026-08-24T01:35:00.750021+00:00

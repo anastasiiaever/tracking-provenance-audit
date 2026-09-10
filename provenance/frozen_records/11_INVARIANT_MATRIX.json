@@ -1,0 +1,359 @@
+{
+ "audit_type": "READ_ONLY",
+ "counts": {
+  "BUG_CONFIRMED": 6,
+  "MIXED": 1,
+  "PASS": 45,
+  "PASS_WITH_RISK": 1,
+  "RISK": 1
+ },
+ "frozen_on": "2026-08-31",
+ "invariant_matrix_sha256": "447159fa0f6f766027ab383db90228d803cb0a165cf3b8145bd09c2380a5d17b",
+ "invariants": [
+  {
+   "evidence": "20 tags, all annotated; strict linear ancestry over 19 consecutive links; no tag predates its commit; HEAD == clean-candidate tag",
+   "invariant": "every V9 tag points at its intended immutable commit",
+   "section": "2",
+   "verdict": "PASS"
+  },
+  {
+   "evidence": "tag objects and target commits re-read; the readiness tag object e028bf5d still targets 4dbcf125",
+   "invariant": "no tag was moved, deleted or rewritten",
+   "section": "2",
+   "verdict": "PASS"
+  },
+  {
+   "evidence": "12c8791b in 14 records and in the working clone HEAD",
+   "invariant": "TrackEval pin identical everywhere",
+   "section": "3",
+   "verdict": "PASS"
+  },
+  {
+   "evidence": "20260830; string form only inside env_vars",
+   "invariant": "GPR seed identical everywhere",
+   "section": "3",
+   "verdict": "PASS"
+  },
+  {
+   "evidence": "no competing value; 0.3/0.25 are tracker association thresholds",
+   "invariant": "STV gate 0.5 and materiality 0.10 identical everywhere",
+   "section": "3",
+   "verdict": "PASS"
+  },
+  {
+   "evidence": "47 of 48 verify; 02_PROTOCOL_MANIFEST -> 02_PROSPECTIVE_PROTOCOL does not",
+   "finding": "V9-B22",
+   "invariant": "every recorded file hash verifies under its own convention",
+   "priority": "P2",
+   "section": "3",
+   "verdict": "BUG_CONFIRMED"
+  },
+  {
+   "evidence": "file-byte and canonical-self-hash conventions coexist undeclared",
+   "finding": "V9-B27",
+   "invariant": "one declared hashing convention",
+   "priority": "P2",
+   "section": "3",
+   "verdict": "BUG_CONFIRMED"
+  },
+  {
+   "evidence": "StrongSORT S0 has two meanings across V8 and V9",
+   "finding": "V9-B24",
+   "invariant": "state names denote one state each",
+   "priority": "P2",
+   "section": "3",
+   "verdict": "BUG_CONFIRMED"
+  },
+  {
+   "evidence": "zero evaluator directories for any -001 run other than DEEPOCSORT-001; failed dirs hold only failure records and logs",
+   "invariant": "failed attempts contribute zero rows, files and metrics",
+   "section": "4",
+   "verdict": "PASS"
+  },
+  {
+   "evidence": "all 50 ordering cells re-derived from the frozen pedestrian_detailed.csv COMBINED rows of the 10 authorized state directories; 0 mismatches",
+   "invariant": "the five verified flips come only from authorized scientific states",
+   "section": "4",
+   "verdict": "PASS"
+  },
+  {
+   "evidence": "excluded_deployments names OC-SORT-GPR with the non-row-additive protocol reason",
+   "invariant": "GPR is excluded from the R0/R2 ordering matrix",
+   "section": "4",
+   "verdict": "PASS"
+  },
+  {
+   "evidence": "structurally excluded but NOT listed in excluded_deployments",
+   "finding": "V9-B25",
+   "invariant": "StrongSORT++ x MOT17 is also excluded by the same rule",
+   "priority": "P2",
+   "section": "4",
+   "verdict": "BUG_CONFIRMED"
+  },
+  {
+   "evidence": "all 12 state directories x 7 sequences; GT also inside 1..seqLength",
+   "invariant": "MOT17 tracker frame ids lie inside 1..seqLength",
+   "section": "5",
+   "verdict": "PASS"
+  },
+  {
+   "evidence": "MOT17-val and MOT17-val_half GT byte-identical for all 7 sequences; both 2652 frames",
+   "invariant": "MOT17 prospective and historical splits share one GT",
+   "section": "5",
+   "verdict": "PASS"
+  },
+  {
+   "evidence": "DeepSORT n_init confirmation delay; missing frames are absent detections, not out-of-domain ids",
+   "invariant": "StrongSORT MOT17 states start at frame 3",
+   "section": "5",
+   "verdict": "PASS"
+  },
+  {
+   "evidence": "run_states.py:118-119 and final_audit.py:206 assert R0w == R0",
+   "invariant": "R0w is a writer control equal to R0",
+   "section": "5",
+   "verdict": "PASS"
+  },
+  {
+   "evidence": "4 sequences, 216-429/1393-2782/1204-2405/1659-3315, 4463 frames, all four GT sha256 match the frozen manifest; population_manifest_sha256 recomputes",
+   "invariant": "MOT20 canonical population unchanged",
+   "section": "6",
+   "verdict": "PASS"
+  },
+  {
+   "evidence": "canonical keeps native ids; MOT20-val keeps local 1..N; tracker input keeps full native 1..seqLength",
+   "invariant": "canonical, evaluator and tracker adapters are separate layers",
+   "section": "6",
+   "verdict": "PASS"
+  },
+  {
+   "evidence": "Deep-OC-SORT/data holds BOTH MOT20 (full) and MOT20_v9 (halved) side by side",
+   "finding": "V9-B10",
+   "invariant": "no directory serves contradictory indexing semantics",
+   "priority": "P1",
+   "section": "6",
+   "verdict": "RISK"
+  },
+  {
+   "evidence": "only Deep-OC-SORT is correctly wired; ByteTrack, BoT-SORT, OC-SORT and Hybrid-SORT would evaluate 2228 under the adapter currently on disk",
+   "finding": "V9-B10",
+   "invariant": "every MOT20 pipeline would evaluate exactly 4463 frames",
+   "priority": "P1",
+   "section": "7",
+   "verdict": "BUG_CONFIRMED"
+  },
+  {
+   "evidence": "mix_data_test_mot20.py:17 loads the FULL MOT20 train annotation file; BoT-SORT ignores the ablation flag when MOT==20",
+   "invariant": "MOT20 detector leakage independently reconfirmed from source",
+   "section": "8",
+   "verdict": "PASS"
+  },
+  {
+   "evidence": "mot20_sbs_S50 carries MODEL_SELECTION_LEAKAGE and POTENTIAL_IDENTITY_LEAKAGE, recorded as one label",
+   "finding": "V9-B32",
+   "invariant": "leakage taxonomy is not collapsed",
+   "priority": "P2",
+   "section": "8",
+   "verdict": "BUG_CONFIRMED"
+  },
+  {
+   "evidence": "AFLink/dataset.py:56 reads gt_train_half.txt for mode 'train'; train.py:53 has validate() COMMENTED OUT and saves once after the final epoch. No training and no model-selection leakage on MOT17; no MOT20 data at all",
+   "invariant": "AFLink_epoch20 provenance resolved",
+   "section": "8",
+   "verdict": "PASS"
+  },
+  {
+   "evidence": "main.py:71-78 verified by stubbed replay; e3945f35..., 792835731 bytes, byte-identical to the ByteTrack model zoo copy",
+   "invariant": "Deep-OC-SORT MOT20 detector is bytetrack_x_mot17",
+   "section": "9",
+   "verdict": "PASS"
+  },
+  {
+   "evidence": "mix_data_test_mot17.py loads MOT17 train + CrowdHuman + ETHZ + Cityscapes; zero MOT20 references in the file",
+   "invariant": "Deep-OC-SORT MOT20 detector contains no MOT20 data",
+   "section": "9",
+   "verdict": "PASS"
+  },
+  {
+   "evidence": "initialize_model() replayed with stubs: _get_general_model(), 552 tensors, num_classes 2510; mot20_sbs_S50 never referenced",
+   "invariant": "Deep-OC-SORT MOT20 ReID is the general osnet model",
+   "section": "9",
+   "verdict": "PASS"
+  },
+  {
+   "evidence": "resolved argparse namespace and main.py:78",
+   "invariant": "track_thresh 0.4 and input size 800x1440",
+   "section": "9",
+   "verdict": "PASS"
+  },
+  {
+   "evidence": "copytree before in-place dti; R0 provably survives",
+   "invariant": "--post boundary R0 -> R2 exact",
+   "section": "9",
+   "verdict": "PASS"
+  },
+  {
+   "evidence": "val_half.json 4463 images; Deep-OC-SORT loader len 4463 with 4 resets; gt_val_half.txt rebases onto the canonical native GT with zero symmetric difference",
+   "invariant": "exact 4463 frame mapping proven",
+   "section": "9",
+   "verdict": "PASS"
+  },
+  {
+   "evidence": "Deep-OC-SORT and Hybrid-SORT resolve OWN_REPO in their own environments; four repositories have no environment and are shadowed in the others",
+   "finding": "V9-B18",
+   "invariant": "each pipeline imports its own vendored packages",
+   "priority": "P1",
+   "section": "10",
+   "verdict": "PASS_WITH_RISK"
+  },
+  {
+   "evidence": "GPR PASS; Deep-OC-SORT PASS for R0; BoT-SORT and StrongSORT require explicit copies",
+   "finding": "V9-B12",
+   "invariant": "prior scientific state survives the next stage",
+   "priority": "P1",
+   "section": "11",
+   "verdict": "MIXED"
+  },
+  {
+   "evidence": "06B invokes tracking_provenance_audit.gpr_entry with seed 20260830",
+   "invariant": "GPR seed wrapper is the invoked entry point",
+   "section": "12",
+   "verdict": "PASS"
+  },
+  {
+   "evidence": "byte-identical for all 7 sequences",
+   "invariant": "GPR canonical == fresh-process replay",
+   "section": "12",
+   "verdict": "PASS"
+  },
+  {
+   "evidence": "staging directory re-listed",
+   "invariant": "GPR input set is exactly 7 files with no detections contamination",
+   "section": "12",
+   "verdict": "PASS"
+  },
+  {
+   "evidence": "referenced only in 06A/06B/06C at its recorded hash",
+   "invariant": "the failed GPR-001 partial never enters a scientific state",
+   "section": "12",
+   "verdict": "PASS"
+  },
+  {
+   "evidence": "stv.py:75 builds the cost matrix with BIG for sub-gate pairs and line 78 rejects any selected BIG pair",
+   "invariant": "STV gates before assignment",
+   "section": "13",
+   "verdict": "PASS"
+  },
+  {
+   "evidence": "scipy linear_sum_assignment; the fallback enumerates injective permutations",
+   "invariant": "STV assignment is one-to-one",
+   "section": "13",
+   "verdict": "PASS"
+  },
+  {
+   "evidence": "assign_reference and frames_by_track are built from r0_rows",
+   "invariant": "STV anchors come from R0 only",
+   "section": "13",
+   "verdict": "PASS"
+  },
+  {
+   "evidence": "single if/elif/else chain; partition_counts asserts the partition is exact",
+   "invariant": "the four STV classes are mutually exclusive and exhaustive",
+   "section": "13",
+   "verdict": "PASS"
+  },
+  {
+   "evidence": "la != ra, i.e. the two anchors resolve to different reference identities under the frozen assignment",
+   "invariant": "ANCHOR_ID_MISMATCH matches the licensed wording",
+   "section": "13",
+   "verdict": "PASS"
+  },
+  {
+   "evidence": "the CLI reads R0/R2 from disk and never writes them; GT enters only the classifier",
+   "invariant": "no GT leaks into R0 or R2 construction",
+   "section": "13",
+   "verdict": "PASS"
+  },
+  {
+   "evidence": "build_R1 asserts R0 subset R1 subset R2; the ordering matrix uses only R0 and R2",
+   "invariant": "R1 is GT-informed and diagnostic only",
+   "section": "13",
+   "verdict": "PASS"
+  },
+  {
+   "evidence": "mark != 0 AND class == 1 excludes every distractor class in both MOT17 and MOT20; the MOT20 distractor set matters to TrackEval preprocessing, not to STV",
+   "invariant": "STV scoreable-GT predicate is dataset-independent",
+   "section": "13",
+   "verdict": "PASS"
+  },
+  {
+   "evidence": "12c8791b303e0a0b50f753af204249e622d0281a",
+   "invariant": "TrackEval pin verified in the working clone",
+   "section": "14",
+   "verdict": "PASS"
+  },
+  {
+   "evidence": "mot_challenge_2d_box.py:325-328 appends non_mot_vehicle iff benchmark == 'MOT20'; the split name is irrelevant to the distractor set",
+   "invariant": "MOT20 keeps BENCHMARK=MOT20 although the split is named val",
+   "section": "14",
+   "verdict": "PASS"
+  },
+  {
+   "evidence": "seqmap lists MOT20-01/02/03/05 only",
+   "invariant": "MOT20-val seqmap is exactly the four sequences",
+   "section": "14",
+   "verdict": "PASS"
+  },
+  {
+   "evidence": "precision_source is pedestrian_detailed.csv COMBINED with HOTA/DetA/AssA as alpha means; rounding_artifacts 0",
+   "invariant": "ordering uses full-precision evaluator values",
+   "section": "15",
+   "verdict": "PASS"
+  },
+  {
+   "evidence": "50 cells, canonical alphabetical orientation, no reversed duplicates",
+   "invariant": "all 10 eligible pairs x 5 metrics are present",
+   "section": "15",
+   "verdict": "PASS"
+  },
+  {
+   "evidence": "independently demonstrated: the GPR S0 and S2 3-decimal summaries collide byte-for-byte while the full-precision CSVs differ",
+   "invariant": "no dependence on 3-decimal presentation values",
+   "section": "15",
+   "verdict": "PASS"
+  },
+  {
+   "evidence": "08, 07, 09B, 10 and 10A: 226 table numbers, 0 unmatched (the 5 apparent misses in 09B are zero-padded image filenames)",
+   "invariant": "every markdown numeric table traces to a source JSON",
+   "section": "16",
+   "verdict": "PASS"
+  },
+  {
+   "evidence": "0 checkpoint files, 0 gt/det files, 0 six-digit frame images tracked",
+   "invariant": "no weights, datasets, GT or dataset frames are committed",
+   "section": "17",
+   "verdict": "PASS"
+  },
+  {
+   "evidence": "present only in failure_records",
+   "invariant": "failed runs and the partial GPR artifact are excluded from result manifests",
+   "section": "17",
+   "verdict": "PASS"
+  },
+  {
+   "evidence": "git grep finds only documentation ABOUT credential scanning; kagglehub is not referenced in manuscript sources",
+   "invariant": "no credentials and no mirror paths in the manuscript",
+   "section": "17",
+   "verdict": "PASS"
+  },
+  {
+   "evidence": "no finding could invalidate an existing scientific result",
+   "invariant": "no P0 finding exists",
+   "section": "19",
+   "verdict": "PASS"
+  }
+ ],
+ "manifest": "TPAMI V9 invariant matrix",
+ "n_invariants": 54,
+ "record": "11"
+}

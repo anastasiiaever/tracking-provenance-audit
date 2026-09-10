@@ -1,0 +1,2 @@
+population,primary_targets,anchors,out_of_frame,eligible_strictly_interior,ineligible_leading,ineligible_trailing,no_anchor,partition_sum,exact_partition,eligible_rate_pct,excluded_undefined,excluded_undefined_rate_pct,sequences
+JTA val+test,48854154,39973340,2789938,20266544,7378225,5472388,15736997,48854154,True,41.483768197070816,28587610,58.516231802929184,256

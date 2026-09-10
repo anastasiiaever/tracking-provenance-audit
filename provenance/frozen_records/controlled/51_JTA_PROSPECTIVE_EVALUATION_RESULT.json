@@ -1,0 +1,876 @@
+{
+  "record": 51,
+  "headline": {
+    "classical_best": "spline",
+    "classical_best_estimate": 0.45621332519577534,
+    "learned_best": "mae",
+    "learned_best_estimate": 14.859643180621761,
+    "learned_worse_than_best_classical_by_factor": 32.571699159039305,
+    "learned_per_g_profile": "flat and NON-monotone in g (error at g=1 exceeds error at g=8), unlike every classical method, whose error rises monotonically with gap length. A method whose error does not grow with gap difficulty is not failing at interpolation; it is mis-conditioned on its input.",
+    "bigru_seed_range": 0.4611867374868375,
+    "reading": "On this external population the frozen learned checkpoints, AS DEPLOYED HERE, do not transfer. The degradation is dominated by an input-conditioning shift (section 6 diagnostic), not by gap difficulty, and record 50 sec 9 froze the interpretation of these numbers as a sensitivity test rather than a benchmark BEFORE any of them existed.",
+    "what_this_result_is": "a frozen DEPLOYMENT SENSITIVITY FAILURE: the measured quantity is how the frozen checkpoints behave when driven through an inference path whose normalization domain does not match the one they were trained under. That is a property of the deployment, and it is exactly what a prospective cross-dataset sensitivity test is designed to expose.",
+    "what_this_result_is_NOT": "evidence of intrinsic inferiority of the MAE or BiGRU architectures, or of learned skeleton infilling in general. No claim about model capacity, architecture quality, or learned-vs-classical superiority may be drawn from these numbers. The three BiGRU seeds agreeing to within 0.46 shows the effect is systematic rather than stochastic; it does not show the models are weak. A corrected deployment contract is frozen for the NEXT population in record 53 and these JTA scores are NOT recomputed, replaced or retracted under it."
+  },
+  "title": "JTA prospective evaluation result (VAL+TEST, frozen protocol 50)",
+  "status": "OUTCOMES_COMPUTED_UNDER_FROZEN_PROTOCOL",
+  "protocol_50_commit": "96f3185d4c0413489394ada9cb891ae5e7483d90",
+  "protocol_50_hashes": {
+    "md": "72d3aa44b841d02f357840881c69064ba70ce5bfacf263138e75100560aac6fc",
+    "json": "4352e5a67fc9808d70a3134896f007cfcbfb6fd94cf1282615dc0c000b7f82d2"
+  },
+  "record_49_commit": "13c82aa4aa1448d4c00627444eb8e9ffa4bf059c",
+  "population": "JTA val + test",
+  "sequences": 256,
+  "manifest": {
+    "aggregate_sha256": "7dff9158519f45d7e6d4032bd80f48ebb97dc47207b9d6758b70aed8e4f11bc4",
+    "n_val": 128,
+    "n_test": 128,
+    "n_members": 256,
+    "videos_downloaded": false,
+    "manifest_file_sha256": "3e8835563679db75f85fc85ddeb23e63aa752329ac5f62050eb1dec41353fac0"
+  },
+  "integrity_check": {
+    "verdict": "PASS",
+    "violations": {},
+    "assumption_checks": {
+      "all_22_joint_types_present_every_person_frame": true,
+      "common12_present_every_person_frame": true,
+      "frame_person_joint_unique": true,
+      "all_coordinates_finite": true,
+      "occlusion_flags_binary": true,
+      "no_malformed_rows": true,
+      "joint_types_in_range": true,
+      "hips_always_paired": true
+    },
+    "ltorso": {
+      "person_frames_with_both_hips": 7634786,
+      "undefined_excluded_never_repaired": 100363
+    },
+    "totals": {
+      "rows": 167965292,
+      "on_screen": 162204329,
+      "out_of_frame": 5760963,
+      "person_frames": 7634786,
+      "hips_both_present": 7634786,
+      "ltorso_undefined": 100363,
+      "tracks": 16150
+    }
+  },
+  "applicability": {
+    "primary_targets": 48854154,
+    "anchors": 39973340,
+    "out_of_frame": 2789938,
+    "gate_1r": {
+      "eligible_strictly_interior": 20266544,
+      "ineligible_leading": 7378225,
+      "ineligible_trailing": 5472388,
+      "no_anchor": 15736997,
+      "sum": 48854154,
+      "exact_partition": true,
+      "eligible_rate": 41.483768197070816,
+      "excluded_undefined": 28587610,
+      "excluded_undefined_rate": 58.516231802929184
+    },
+    "per_sequence_eligibility_pct": {
+      "n": 256,
+      "min": 3.17183370008203,
+      "q1": 29.301020358535897,
+      "median": 46.11589317274334,
+      "q3": 64.6168779399828,
+      "max": 95.43875897198426
+    },
+    "per_joint": {
+      "left_shoulder": {
+        "target": 3540640,
+        "anchor": 3778463,
+        "off_screen": 315683,
+        "eligible": 1325599,
+        "support_at_g": {
+          "1": 5713,
+          "2": 8392,
+          "3": 7917,
+          "5": 5028,
+          "8": 2724,
+          "10": 1941,
+          "20": 651
+        }
+      },
+      "right_shoulder": {
+        "target": 3541256,
+        "anchor": 3776660,
+        "off_screen": 316870,
+        "eligible": 1336724,
+        "support_at_g": {
+          "1": 5467,
+          "2": 8049,
+          "3": 7870,
+          "5": 5133,
+          "8": 2729,
+          "10": 1877,
+          "20": 630
+        }
+      },
+      "left_elbow": {
+        "target": 4005619,
+        "anchor": 3359030,
+        "off_screen": 270137,
+        "eligible": 1647544,
+        "support_at_g": {
+          "1": 8570,
+          "2": 9416,
+          "3": 8666,
+          "5": 5724,
+          "8": 3956,
+          "10": 3119,
+          "20": 901
+        }
+      },
+      "right_elbow": {
+        "target": 4016208,
+        "anchor": 3343411,
+        "off_screen": 275167,
+        "eligible": 1684279,
+        "support_at_g": {
+          "1": 8204,
+          "2": 9227,
+          "3": 8494,
+          "5": 6475,
+          "8": 4019,
+          "10": 3471,
+          "20": 959
+        }
+      },
+      "left_wrist": {
+        "target": 4206443,
+        "anchor": 3194070,
+        "off_screen": 234273,
+        "eligible": 1837353,
+        "support_at_g": {
+          "1": 12120,
+          "2": 12061,
+          "3": 11501,
+          "5": 9623,
+          "8": 5896,
+          "10": 4965,
+          "20": 989
+        }
+      },
+      "right_wrist": {
+        "target": 4233068,
+        "anchor": 3156352,
+        "off_screen": 245366,
+        "eligible": 1885618,
+        "support_at_g": {
+          "1": 13816,
+          "2": 12659,
+          "3": 12829,
+          "5": 9687,
+          "8": 6089,
+          "10": 5108,
+          "20": 1015
+        }
+      },
+      "left_hip": {
+        "target": 4192052,
+        "anchor": 3217726,
+        "off_screen": 225008,
+        "eligible": 1730075,
+        "support_at_g": {
+          "1": 32703,
+          "2": 26420,
+          "3": 13620,
+          "5": 7853,
+          "8": 3805,
+          "10": 2690,
+          "20": 854
+        }
+      },
+      "right_hip": {
+        "target": 4190183,
+        "anchor": 3215309,
+        "off_screen": 229294,
+        "eligible": 1731683,
+        "support_at_g": {
+          "1": 31359,
+          "2": 26563,
+          "3": 13396,
+          "5": 7906,
+          "8": 3945,
+          "10": 2639,
+          "20": 827
+        }
+      },
+      "left_knee": {
+        "target": 4151141,
+        "anchor": 3296789,
+        "off_screen": 186856,
+        "eligible": 1733151,
+        "support_at_g": {
+          "1": 19948,
+          "2": 25693,
+          "3": 16563,
+          "5": 9039,
+          "8": 5258,
+          "10": 3346,
+          "20": 960
+        }
+      },
+      "right_knee": {
+        "target": 4162001,
+        "anchor": 3286934,
+        "off_screen": 185851,
+        "eligible": 1748981,
+        "support_at_g": {
+          "1": 20533,
+          "2": 26078,
+          "3": 16544,
+          "5": 9293,
+          "8": 5534,
+          "10": 3573,
+          "20": 834
+        }
+      },
+      "left_ankle": {
+        "target": 4299842,
+        "anchor": 3181862,
+        "off_screen": 153082,
+        "eligible": 1794334,
+        "support_at_g": {
+          "1": 60563,
+          "2": 31193,
+          "3": 18340,
+          "5": 9194,
+          "8": 5924,
+          "10": 2938,
+          "20": 1056
+        }
+      },
+      "right_ankle": {
+        "target": 4315701,
+        "anchor": 3166734,
+        "off_screen": 152351,
+        "eligible": 1811203,
+        "support_at_g": {
+          "1": 61024,
+          "2": 31514,
+          "3": 19053,
+          "5": 9712,
+          "8": 6228,
+          "10": 2986,
+          "20": 1086
+        }
+      }
+    },
+    "support_at_g_total": {
+      "1": 280020,
+      "2": 227265,
+      "3": 154793,
+      "5": 94667,
+      "8": 56107,
+      "10": 38653,
+      "20": 10762
+    },
+    "runs_off_grid": 891114
+  },
+  "reconstruction_support": {
+    "evaluated_cases": 862267,
+    "identical_support_for_every_method": true,
+    "per_method_n_cases": {
+      "linear": 862267,
+      "spline": 862267,
+      "kalman": 862267,
+      "bigru_seed0": 862267,
+      "bigru_seed1": 862267,
+      "bigru_seed2": 862267,
+      "mae": 862267
+    },
+    "support_at_g": {
+      "1": 280020,
+      "2": 227265,
+      "3": 154793,
+      "5": 94667,
+      "8": 56107,
+      "10": 38653,
+      "20": 10762
+    },
+    "n_sequences": 256,
+    "n_cells_sequence_x_g": 1791,
+    "admission_rule": "Gate 1R strictly-interior AND >=2 in-segment anchors AND L_torso finite and positive on every target frame"
+  },
+  "methods": {
+    "linear": {
+      "sequence_first_estimate": 0.5835815155210942,
+      "n_sequences": 256,
+      "n_cells": 1791,
+      "n_cases": 862267,
+      "per_sequence_dispersion": {
+        "min": 0.11660811853852471,
+        "q1": 0.2553251871399337,
+        "median": 0.382896573916197,
+        "q3": 0.5785233572437526,
+        "max": 4.442356380776912
+      },
+      "per_g_mean": {
+        "1": 0.14485423361343974,
+        "2": 0.19845824208647,
+        "3": 0.25294993058649345,
+        "5": 0.36306644859505405,
+        "8": 0.5738669946095664,
+        "10": 0.7917543424398412,
+        "20": 1.3131886415578764
+      },
+      "per_g_n": {
+        "1": 280020,
+        "2": 227265,
+        "3": 154793,
+        "5": 94667,
+        "8": 56107,
+        "10": 38653,
+        "20": 10762
+      }
+    },
+    "spline": {
+      "sequence_first_estimate": 0.45621332519577534,
+      "n_sequences": 256,
+      "n_cells": 1791,
+      "n_cases": 862267,
+      "per_sequence_dispersion": {
+        "min": 0.09839464215421702,
+        "q1": 0.20784907212726278,
+        "median": 0.3024509551440301,
+        "q3": 0.4734863309384224,
+        "max": 2.7832941018218817
+      },
+      "per_g_mean": {
+        "1": 0.13399201436576902,
+        "2": 0.16328029864984142,
+        "3": 0.191215330206021,
+        "5": 0.2600286643772862,
+        "8": 0.4040923072815538,
+        "10": 0.551592320147235,
+        "20": 1.3234840200882563
+      },
+      "per_g_n": {
+        "1": 280020,
+        "2": 227265,
+        "3": 154793,
+        "5": 94667,
+        "8": 56107,
+        "10": 38653,
+        "20": 10762
+      }
+    },
+    "kalman": {
+      "sequence_first_estimate": 0.5079153594896085,
+      "n_sequences": 256,
+      "n_cells": 1791,
+      "n_cases": 862267,
+      "per_sequence_dispersion": {
+        "min": 0.11158093290235802,
+        "q1": 0.2072573768521682,
+        "median": 0.31904985989194184,
+        "q3": 0.5033870404767143,
+        "max": 3.7011144777969673
+      },
+      "per_g_mean": {
+        "1": 0.16180621489683597,
+        "2": 0.19249699900985848,
+        "3": 0.22232098049256374,
+        "5": 0.2864364004855091,
+        "8": 0.42971552408623825,
+        "10": 0.6054410193491675,
+        "20": 1.3562414025880398
+      },
+      "per_g_n": {
+        "1": 280020,
+        "2": 227265,
+        "3": 154793,
+        "5": 94667,
+        "8": 56107,
+        "10": 38653,
+        "20": 10762
+      }
+    },
+    "bigru_seed0": {
+      "sequence_first_estimate": 27.758016025248242,
+      "n_sequences": 256,
+      "n_cells": 1791,
+      "n_cases": 862267,
+      "per_sequence_dispersion": {
+        "min": 3.8601299043467687,
+        "q1": 11.404532811292443,
+        "median": 21.96985536924395,
+        "q3": 38.58916541128765,
+        "max": 124.795843337309
+      },
+      "per_g_mean": {
+        "1": 38.88845272201345,
+        "2": 35.173537558741224,
+        "3": 28.586783085782844,
+        "5": 26.43856561094872,
+        "8": 21.712472343629074,
+        "10": 25.296679091553322,
+        "20": 31.01079014616662
+      },
+      "per_g_n": {
+        "1": 280020,
+        "2": 227265,
+        "3": 154793,
+        "5": 94667,
+        "8": 56107,
+        "10": 38653,
+        "20": 10762
+      }
+    },
+    "bigru_seed1": {
+      "sequence_first_estimate": 27.585857586278426,
+      "n_sequences": 256,
+      "n_cells": 1791,
+      "n_cases": 862267,
+      "per_sequence_dispersion": {
+        "min": 3.88892243859392,
+        "q1": 11.440235134322393,
+        "median": 21.66188497758224,
+        "q3": 38.19944550203015,
+        "max": 124.38810648738857
+      },
+      "per_g_mean": {
+        "1": 38.6959589324487,
+        "2": 34.958088211255784,
+        "3": 28.37611542682305,
+        "5": 26.21358767600185,
+        "8": 21.52953374397802,
+        "10": 25.08518011587542,
+        "20": 30.84461628078579
+      },
+      "per_g_n": {
+        "1": 280020,
+        "2": 227265,
+        "3": 154793,
+        "5": 94667,
+        "8": 56107,
+        "10": 38653,
+        "20": 10762
+      }
+    },
+    "bigru_seed2": {
+      "sequence_first_estimate": 27.296829287761405,
+      "n_sequences": 256,
+      "n_cells": 1791,
+      "n_cases": 862267,
+      "per_sequence_dispersion": {
+        "min": 3.8523295838767715,
+        "q1": 11.138213981731067,
+        "median": 21.325027542458763,
+        "q3": 37.977918304527755,
+        "max": 123.78032587356326
+      },
+      "per_g_mean": {
+        "1": 38.58546529112964,
+        "2": 34.82222878894223,
+        "3": 28.129708947389332,
+        "5": 25.913686086052767,
+        "8": 21.269107185828258,
+        "10": 24.762791307327365,
+        "20": 30.268533216508626
+      },
+      "per_g_n": {
+        "1": 280020,
+        "2": 227265,
+        "3": 154793,
+        "5": 94667,
+        "8": 56107,
+        "10": 38653,
+        "20": 10762
+      }
+    },
+    "mae": {
+      "sequence_first_estimate": 14.859643180621761,
+      "n_sequences": 256,
+      "n_cells": 1791,
+      "n_cases": 862267,
+      "per_sequence_dispersion": {
+        "min": 1.1192793428234178,
+        "q1": 4.818925416389481,
+        "median": 11.701300642292491,
+        "q3": 19.493561257397705,
+        "max": 87.27973924821598
+      },
+      "per_g_mean": {
+        "1": 18.243583944624742,
+        "2": 16.731661923689938,
+        "3": 15.193408438244473,
+        "5": 14.932064660445686,
+        "8": 11.994992569611906,
+        "10": 14.665223417602219,
+        "20": 19.73579974375313
+      },
+      "per_g_n": {
+        "1": 280020,
+        "2": 227265,
+        "3": 154793,
+        "5": 94667,
+        "8": 56107,
+        "10": 38653,
+        "20": 10762
+      }
+    }
+  },
+  "method_provenance": {
+    "classical_run": {
+      "file": "valtest_eval_classical.json",
+      "methods": [
+        "linear",
+        "spline",
+        "kalman"
+      ],
+      "sha256": "0e8253e85a2a9830bbb72325457695c2769e57aa34089bc466957986a713b034"
+    },
+    "learned_run": {
+      "file": "valtest_eval_learned.json",
+      "methods": [
+        "bigru_seed0",
+        "bigru_seed1",
+        "bigru_seed2",
+        "mae"
+      ],
+      "sha256": "9dbb24bb59249c4f7101315d2de500516dadc503f233965726bd1ffb1b4f63a3"
+    },
+    "same_frozen_script": "scripts/jta/evaluate_valtest.py",
+    "post_access_script_change": "additive only: a --skip-classical switch (which methods are computed) and a --case-dump sidecar (crash recovery). No protocol rule, no estimator, no aggregation, no admission rule was touched.",
+    "cross_validation": {
+      "protocol_string_identical": true,
+      "population_identical": true,
+      "corpus_identical": true,
+      "applicability_identical": true,
+      "cases_per_sequence_identical": true,
+      "classical_run_computed_classical": true,
+      "learned_run_skipped_classical": true,
+      "integrity_rows_match_corpus": true,
+      "integrity_tracks_match_corpus": true,
+      "integrity_ltorso_matches_corpus": true,
+      "integrity_verdict_pass": true,
+      "manifest_val_128": true,
+      "manifest_test_128": true,
+      "manifest_members_256": true,
+      "gate_1r_exact_partition": true,
+      "all_methods_same_case_support": true,
+      "support_equals_total_cases": true
+    }
+  },
+  "learned_cross_dataset_sensitivity": {
+    "interpretation_frozen_in_record_50_sec_9": "cross-dataset sensitivity test under structural input shift, NOT a matched-input benchmark",
+    "input_contract": {
+      "slots": 17,
+      "unavailable_on_jta": [
+        "nose",
+        "left_eye",
+        "right_eye",
+        "left_ear",
+        "right_ear"
+      ],
+      "unavailable_state": "NATIVE_INVALID",
+      "unavailable_never_padding": true,
+      "unavailable_never_target": true,
+      "confidence_value": 0,
+      "confidence_available": false,
+      "confidence_synthesized": false,
+      "scored_joints": [
+        "left_shoulder",
+        "right_shoulder",
+        "left_elbow",
+        "right_elbow",
+        "left_wrist",
+        "right_wrist",
+        "left_hip",
+        "right_hip",
+        "left_knee",
+        "right_knee",
+        "left_ankle",
+        "right_ankle"
+      ]
+    },
+    "no_retraining": true,
+    "no_checkpoint_reselection": true,
+    "no_architecture_change": true,
+    "seed_spread_bigru": {
+      "min": 27.296829287761405,
+      "max": 27.758016025248242,
+      "range": 0.4611867374868375,
+      "mean": 27.54690096642936,
+      "n_seeds": 3
+    },
+    "e5_noise_sensitivity_transfer": {
+      "transferred": false,
+      "reason": "the frozen E5 noise-sensitivity design is a synthetic positional-jitter sweep (arms {(iid,0.0),(ar1,0.5),(ar1,0.7),(ar1,0.85)} x 8 sigmas) injected into clean coordinates. Protocol 50 freezes NO jitter rule for JTA, and the JTA construct is NATURAL occlusion with clean engine ground truth. Choosing a jitter rule now would be a post-access protocol change, which is forbidden.",
+      "what_does_transfer": "the sigma = 0 clean-input condition only; JTA results are reported at that single condition",
+      "invented_here": "nothing"
+    },
+    "input_envelope_diagnostic": {
+      "diagnostic": "learned input normalization envelope, POST-HOC",
+      "changes_any_rule_or_reported_number": false,
+      "mechanism": "the frozen backends normalize over the WHOLE request before tiling into W=120 windows, while training normalized per 120-frame window; on NTU the two coincide because sequences are shorter than the window, on JTA they do not",
+      "ntu_control": {
+        "n_samples": 50,
+        "track_length": {
+          "median": 97.5,
+          "max": 224
+        },
+        "max_abs_normalized": {
+          "median": 3.7724395990371704,
+          "p90": 4.6214484691619875,
+          "max": 8.023918151855469
+        },
+        "window_length_W": 120,
+        "sequences_shorter_than_window": true
+      },
+      "jta_sample": {
+        "sequences": 10,
+        "n_cases": 31601,
+        "track_length": {
+          "median": 764.0,
+          "max": 900
+        },
+        "max_abs_normalized": {
+          "median": 86.15735626220703,
+          "p90": 246.39784240722656,
+          "max": 1251.6171875
+        },
+        "scale_fallback_cases": 726
+      },
+      "error_by_envelope_bin": [
+        {
+          "envelope_bin": "[0,8)",
+          "n_cases": 972,
+          "mae_mean": 0.573405347556816,
+          "linear_mean": 0.05947273514838355
+        },
+        {
+          "envelope_bin": "[8,15)",
+          "n_cases": 1229,
+          "mae_mean": 1.1691617063634685,
+          "linear_mean": 0.15469600954908458
+        },
+        {
+          "envelope_bin": "[15,30)",
+          "n_cases": 1499,
+          "mae_mean": 2.7577225444857576,
+          "linear_mean": 0.26861701219060435
+        },
+        {
+          "envelope_bin": "[30,60)",
+          "n_cases": 6091,
+          "mae_mean": 6.680845532917809,
+          "linear_mean": 0.4213265502868751
+        },
+        {
+          "envelope_bin": ">=60",
+          "n_cases": 21810,
+          "mae_mean": 28.684192414493058,
+          "linear_mean": 0.6225230476399543
+        }
+      ],
+      "within_ntu_envelope": {
+        "n_cases": 972,
+        "mae_mean": 0.573405347556816,
+        "linear_mean": 0.05947273514838355
+      },
+      "outside_ntu_envelope": {
+        "n_cases": 30629,
+        "mae_mean": 21.935616328721174,
+        "linear_mean": 0.546420254785801
+      },
+      "summary_lines": [
+        "Frozen backend window W = 120. NTU evaluation sequences have median length 98 frames \u2014 shorter than one window \u2014 so whole-request normalization and per-window normalization coincide there.",
+        "JTA tracks in the sampled sequences have median length 764 frames (max 900), spanning a 1920x1080 image.",
+        "Max |normalized coordinate| on observed anchors: NTU median 3.77 (max 8.02); JTA median 86.16 (max 1251.62).",
+        "MAE error rises monotonically with that envelope: [0,8) \u2192 0.57 (n=972); [8,15) \u2192 1.17 (n=1,229); [15,30) \u2192 2.76 (n=1,499); [30,60) \u2192 6.68 (n=6,091); >=60 \u2192 28.68 (n=21,810).",
+        "Linear interpolation over the same cases is unaffected by the envelope, because it never normalizes: [0,8) \u2192 0.059; [8,15) \u2192 0.155; [15,30) \u2192 0.269; [30,60) \u2192 0.421; >=60 \u2192 0.623."
+      ],
+      "caveat": "The within-envelope subset is SELECTED on a track property (short, weakly translating tracks), not randomly sampled, and covers only 972 of 31,601 sampled cases. Its error is descriptive of that subset alone and is NOT a corrected score. The reported MAE/BiGRU outcomes remain the frozen whole-population numbers in section 5; nothing here restates them.",
+      "diagnostic_is_not_a_protocol_change": true
+    }
+  },
+  "spline_gate_1r_prospective": {
+    "prospective": true,
+    "condition": "every reconstructed target lies strictly inside the observed temporal support of its own valid on-screen segment (frozen record 50 sec 11)",
+    "condition_frozen_before_val_test_access": true,
+    "threshold_created_after_outcomes": false,
+    "evaluated_cases_all_satisfy_condition": true,
+    "targets_total": 48854154,
+    "targets_admitted_by_gate": 20266544,
+    "targets_refused_by_gate": 28587610,
+    "refused_rate_pct": 58.516231802929184,
+    "three_concepts_kept_distinct": {
+      "operator_validity": "the spline stencil is mathematically defined; not the same as being applicable",
+      "aggregation_validity": "a (sequence, g) cell has >=1 case so the frozen sequence-first mean is defined",
+      "method_applicability": "Gate 1R strict interior: the only condition used to admit a target into the spline evaluation"
+    },
+    "outcome_under_restriction": {
+      "spline_sequence_first": 0.45621332519577534,
+      "linear_sequence_first": 0.5835815155210942,
+      "kalman_sequence_first": 0.5079153594896085,
+      "spline_is_best_classical": true,
+      "per_sequence_max": {
+        "linear": 4.442356380776912,
+        "spline": 2.7832941018218817,
+        "kalman": 3.7011144777969673
+      },
+      "spline_has_tightest_upper_tail": true,
+      "per_g_spline_vs_linear": {
+        "1": {
+          "spline": 0.13399201436576902,
+          "linear": 0.14485423361343974,
+          "ratio_spline_over_linear": 0.92501275953965,
+          "spline_better": true
+        },
+        "2": {
+          "spline": 0.16328029864984142,
+          "linear": 0.19845824208647,
+          "ratio_spline_over_linear": 0.8227438524760224,
+          "spline_better": true
+        },
+        "3": {
+          "spline": 0.191215330206021,
+          "linear": 0.25294993058649345,
+          "ratio_spline_over_linear": 0.7559414219354254,
+          "spline_better": true
+        },
+        "5": {
+          "spline": 0.2600286643772862,
+          "linear": 0.36306644859505405,
+          "ratio_spline_over_linear": 0.7162013052528272,
+          "spline_better": true
+        },
+        "8": {
+          "spline": 0.4040923072815538,
+          "linear": 0.5738669946095664,
+          "ratio_spline_over_linear": 0.7041567315724095,
+          "spline_better": true
+        },
+        "10": {
+          "spline": 0.551592320147235,
+          "linear": 0.7917543424398412,
+          "ratio_spline_over_linear": 0.6966710387056019,
+          "spline_better": true
+        },
+        "20": {
+          "spline": 1.3234840200882563,
+          "linear": 1.3131886415578764,
+          "ratio_spline_over_linear": 1.0078399844504946,
+          "spline_better": false
+        }
+      }
+    },
+    "not_a_reinterpretation_of_3dpw_t4": true
+  },
+  "train_vs_val_test_structure": {
+    "note": "descriptive only; computed AFTER outcomes and used to change no evaluation rule. TRAIN contributes no reconstruction outcome.",
+    "target_fraction_pct": {
+      "train": 53.1008,
+      "val_test": 53.32408138224176
+    },
+    "anchor_fraction_pct": {
+      "train": 43.7954,
+      "val_test": 43.630714294633364
+    },
+    "out_of_frame_fraction_pct": {
+      "train": 3.1038,
+      "val_test": 3.045204323124883
+    },
+    "gate_1r_eligible_pct": {
+      "train": 41.7648,
+      "val_test": 41.483768197070816
+    },
+    "gate_1r_no_anchor_pct": {
+      "train": 31.969958116526204,
+      "val_test": 32.21219837314141
+    },
+    "gate_1r_leading_pct": {
+      "train": 14.022618550203862,
+      "val_test": 15.102554022325307
+    },
+    "gate_1r_trailing_pct": {
+      "train": 12.242663570142469,
+      "val_test": 11.201479407462465
+    },
+    "per_sequence_eligibility_pct": {
+      "train": {
+        "n": 256,
+        "min": 2.6407,
+        "max": 95.7864,
+        "median": 47.3839,
+        "q1": 30.2097,
+        "q3": 64.2326,
+        "iqr": 34.0229
+      },
+      "val_test": {
+        "n": 256,
+        "min": 3.17183370008203,
+        "q1": 29.301020358535897,
+        "median": 46.11589317274334,
+        "q3": 64.6168779399828,
+        "max": 95.43875897198426
+      }
+    },
+    "sequences": {
+      "train": 256,
+      "val_test": 256
+    },
+    "tracks": {
+      "train": 16236,
+      "val_test": 16150
+    },
+    "annotation_rows": {
+      "train": 169542032,
+      "val_test": 167965292
+    },
+    "runs_off_grid": {
+      "train": 894453,
+      "val_test": 891114
+    },
+    "g_support_note": "TRAIN record 49 reports ALL maximal target runs by length; VAL+TEST reports Gate-1R-ADMITTED evaluation cases. The two counts are not like-for-like and are not differenced.",
+    "train_g_support_all_runs": {
+      "1": 290398,
+      "2": 237742,
+      "3": 163955,
+      "5": 105622,
+      "8": 63260,
+      "10": 44330,
+      "20": 13800
+    },
+    "val_test_g_support_admitted_cases": {
+      "1": 280020,
+      "2": 227265,
+      "3": 154793,
+      "5": 94667,
+      "8": 56107,
+      "10": 38653,
+      "20": 10762
+    }
+  },
+  "limitations": [
+    "JTA is SYNTHETIC (GTA-V engine); provenance must be disclosed wherever it appears.",
+    "Clustering is by SCENE (sequence), not by person. The frozen aggregation algebra transfers from the NTU subject-first form, but the cluster semantics do not; the project's subject-clustered bootstrap convention is NOT claimed here.",
+    "Learned models face a structural input shift: 5 of 17 slots (nose, eyes, ears) are permanently NATIVE_INVALID on JTA.",
+    "No confidence channel exists on JTA; confidence is 0 with confidence_available false and is never synthesized.",
+    "Only descriptive per-sequence dispersion is reported. No inferential CI convention is claimed for JTA, because none was frozen.",
+    "The frozen g grid {1,2,3,5,8,10,20} is not extended for JTA; maximal target runs off that grid remain in the applicability statistics but create no evaluation case.",
+    "58.52 % of primary targets are refused by Gate 1R (no anchor, or leading/trailing extrapolation). Reconstruction error is defined only on the admitted remainder, and that refusal rate is itself a primary applicability result."
+  ],
+  "confirmations": {
+    "no_retraining": true,
+    "no_checkpoint_reselection": true,
+    "protocol_modified_after_val_test_access": false,
+    "train_reconstruction_outcomes": 0,
+    "train_outcomes_computed": false,
+    "train_outcomes_confirmed_false_in_both_runs": true,
+    "project_final_test_sealed": true,
+    "final_test_seal_evidence": "the JTA evaluation reads only data/jta/annotations/{val,test}. It resolves no NTU split manifest and loads no project partition, so the reserved final_test partition is untouched by this record. The POST-HOC envelope diagnostic in section 6 additionally read the NTU 'xsub_val' split as a control; xsub_val is not final_test, and that diagnostic contributes no reported outcome.",
+    "videos_downloaded": false,
+    "stgcn_run": false,
+    "protocol_frozen_before_val_test_access": true,
+    "record_50_pushed_before_access": true
+  }
+}

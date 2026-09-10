@@ -1,0 +1,15 @@
+{
+ "population": "JTA val + test",
+ "sequences": 256,
+ "status": "OUTCOMES_COMPUTED_UNDER_FROZEN_PROTOCOL",
+ "classical_best": "spline",
+ "classical_best_estimate": 0.45621332519577534,
+ "learned_best": "mae",
+ "learned_best_estimate": 14.859643180621761,
+ "learned_worse_than_best_classical_by_factor": 32.571699159039305,
+ "bigru_seed_range": 0.4611867374868375,
+ "learned_per_g_profile": "flat and NON-monotone in g (error at g=1 exceeds error at g=8), unlike every classical method, whose error rises monotonically with gap length. A method whose error does not grow with gap difficulty is not failing at interpolation; it is mis-conditioned on its input.",
+ "what_this_result_is": "a frozen DEPLOYMENT SENSITIVITY FAILURE: the measured quantity is how the frozen checkpoints behave when driven through an inference path whose normalization domain does not match the one they were trained under. That is a property of the deployment, and it is exactly what a prospective cross-dataset sensitivity test is designed to expose.",
+ "what_this_result_is_NOT": "evidence of intrinsic inferiority of the MAE or BiGRU architectures, or of learned skeleton infilling in general. No claim about model capacity, architecture quality, or learned-vs-classical superiority may be drawn from these numbers. The three BiGRU seeds agreeing to within 0.46 shows the effect is systematic rather than stochastic; it does not show the models are weak. A corrected deployment contract is frozen for the NEXT population in record 53 and these JTA scores are NOT recomputed, replaced or retracted under it.",
+ "note": "Learned-model JTA values are reported in the paper only as a deployment-sensitivity failure, not as a benchmark, and no corrected learned-model JTA result exists. See the supplement's excluded-results section."
+}

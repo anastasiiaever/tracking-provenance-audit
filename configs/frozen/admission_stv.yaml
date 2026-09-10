@@ -1,0 +1,27 @@
+# Frozen protocol constants, transcribed from
+# provenance/frozen_records/02_PROSPECTIVE_PROTOCOL.json (frozen 2026-08-30).
+# These values are READ, never tuned. Editing this file does not make the audit
+# agree with the released results; it makes it disagree.
+
+primary_iou_gate: 0.5
+anchors: the two bracketing R0 observations of a synthesized row
+reference_assignment: per-frame one-to-one assignment against scoreable GT, computed on R0 BEFORE any
+  synthesized row is introduced, and then frozen
+order: gate first, then assignment (gate-before-assignment)
+algorithm: Hungarian one-to-one on IoU with the gate applied as a hard admissibility mask before assignment
+classes_priority:
+- ANCHOR_UNMATCHED
+- ANCHOR_ID_MISMATCH
+- TARGET_REFERENCE_ABSENT
+- SEMANTICALLY_ADMITTED
+exhaustive_and_mutually_exclusive: true
+licensed_phrase_rule: Only ANCHOR_ID_MISMATCH licenses 'anchors resolve, under the frozen matcher, to
+  different ground-truth identities'. ANCHOR_UNMATCHED is non-admission, NOT demonstrated semantic error.
+not_a_metric: STV is a reference-side diagnostic and never a replacement tracking metric
+sensitivity_gates:
+- 0.3
+- 0.4
+- 0.5
+- 0.6
+- 0.7
+sensitivity_status: DESCRIPTIVE; the 0.5 result remains primary regardless of sensitivity outcome

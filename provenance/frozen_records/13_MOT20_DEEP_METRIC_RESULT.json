@@ -1,0 +1,94 @@
+{
+ "descriptive_deltas": {
+  "R1_minus_R0": {
+   "AssA": 1.3341068510506346,
+   "DetA": 2.889717746923999,
+   "HOTA": 2.095884156306994,
+   "IDF1": 1.8051207688526887,
+   "MOTA": 4.19369994001336
+  },
+  "R1_minus_R2": {
+   "AssA": 0.029053038350717486,
+   "DetA": -0.15040654684077026,
+   "HOTA": -0.05588732617544423,
+   "IDF1": 0.10926100155818119,
+   "MOTA": 0.12533793285072647
+  },
+  "R2_minus_R0": {
+   "AssA": 1.3050538126999172,
+   "DetA": 3.0401242937647694,
+   "HOTA": 2.151771482482438,
+   "IDF1": 1.6958597672945075,
+   "MOTA": 4.068362007162634
+  }
+ },
+ "evaluator": {
+  "BENCHMARK": "MOT20",
+  "CLASSES_TO_EVAL": "pedestrian",
+  "DO_PREPROC": true,
+  "SPLIT_TO_EVAL": "val",
+  "USE_PARALLEL": false,
+  "commit": "12c8791b303e0a0b50f753af204249e622d0281a",
+  "distractor_semantics": "MOT20-native; non_mot_vehicle (6) included, per mot_challenge_2d_box.py:325-328",
+  "metrics_reported": [
+   "HOTA",
+   "DetA",
+   "AssA",
+   "IDF1",
+   "MOTA"
+  ],
+  "metrics_requested": [
+   "HOTA",
+   "CLEAR",
+   "Identity"
+  ],
+  "name": "TrackEval"
+ },
+ "evaluator_output_hashes": {
+  "R0": {
+   "pedestrian_detailed.csv": "433b10faf43d563c8768b4e51dbdbf5f016446bb33254bf8da36413818404681",
+   "pedestrian_summary.txt": "4c43d91573cde165dd0b01676b0e9252b7dfaf49cbfd15372026dc956bca5b42"
+  },
+  "R1": {
+   "pedestrian_detailed.csv": "c6171c20344c2e5ca904445dfc78bdab3f5f950bdbdaef8ffac58e9a28325135",
+   "pedestrian_summary.txt": "f9a378e0fb52af2c4eaaa90e81fbc25937d0d1654a9147cea05537f2816bf1e9"
+  },
+  "R2": {
+   "pedestrian_detailed.csv": "811deed00d0dda6b01ed0456bac33df21a4e608e07b182f9b869411b0e0e1188",
+   "pedestrian_summary.txt": "8e6046aa39c96999134ece94eea55d44059749922e4637cc47a19c937d375936"
+  }
+ },
+ "frozen_on": "2026-08-31",
+ "gt_dets_combined": 615137,
+ "interpretation": "NONE; descriptive deltas only. R1 is a GT_INFORMED_DIAGNOSTIC, NON_DEPLOYABLE state.",
+ "manifest": "TPAMI V9 MOT20 Deep-OC-SORT metric result",
+ "metric_result_sha256": "7a30b10c8f6ed0d20364b1c9e03dbeec55ae3e8ae0e16f542baac0aa32d26d1c",
+ "metrics": {
+  "R0": {
+   "AssA": 57.00105326223428,
+   "DetA": 57.93580751849612,
+   "HOTA": 57.38379576900605,
+   "IDF1": 74.75204391327709,
+   "MOTA": 69.94263066601424
+  },
+  "R1": {
+   "AssA": 58.335160113284914,
+   "DetA": 60.82552526542012,
+   "HOTA": 59.47967992531304,
+   "IDF1": 76.55716468212978,
+   "MOTA": 74.1363306060276
+  },
+  "R2": {
+   "AssA": 58.3061070749342,
+   "DetA": 60.97593181226089,
+   "HOTA": 59.53556725148849,
+   "IDF1": 76.4479036805716,
+   "MOTA": 74.01099267317687
+  }
+ },
+ "precision_source": "pedestrian_detailed.csv COMBINED row; HOTA/DetA/AssA are means over the alpha thresholds, IDF1/MOTA direct",
+ "record": "13",
+ "run_id": "V9-MOT20-DEEPOCSORT-001",
+ "values_hand_transcribed": false,
+ "values_machine_read": true
+}

@@ -1,0 +1,63 @@
+{
+ "dataset": "MOT20",
+ "deployment": "Deep-OC-SORT",
+ "descriptive_deltas": {
+  "R1_minus_R0": {
+   "AssA": 1.3341068510506346,
+   "DetA": 2.889717746923999,
+   "HOTA": 2.095884156306994,
+   "IDF1": 1.8051207688526887,
+   "MOTA": 4.19369994001336
+  },
+  "R1_minus_R2": {
+   "AssA": 0.029053038350717486,
+   "DetA": -0.15040654684077026,
+   "HOTA": -0.05588732617544423,
+   "IDF1": 0.10926100155818119,
+   "MOTA": 0.12533793285072647
+  },
+  "R2_minus_R0": {
+   "AssA": 1.3050538126999172,
+   "DetA": 3.0401242937647694,
+   "HOTA": 2.151771482482438,
+   "IDF1": 1.6958597672945075,
+   "MOTA": 4.068362007162634
+  }
+ },
+ "evaluator": {
+  "BENCHMARK": "MOT20",
+  "CLASSES_TO_EVAL": "pedestrian",
+  "DO_PREPROC": true,
+  "SPLIT_TO_EVAL": "val",
+  "USE_PARALLEL": false,
+  "commit": "12c8791b303e0a0b50f753af204249e622d0281a",
+  "distractor_semantics": "MOT20-native; non_mot_vehicle (6) included, per mot_challenge_2d_box.py:325-328",
+  "metrics_reported": [
+   "HOTA",
+   "DetA",
+   "AssA",
+   "IDF1",
+   "MOTA"
+  ],
+  "metrics_requested": [
+   "HOTA",
+   "CLEAR",
+   "Identity"
+  ],
+  "name": "TrackEval"
+ },
+ "fractions_of_synthesized": {
+  "ANCHOR_ID_MISMATCH": 0.06218762566783478,
+  "ANCHOR_UNMATCHED": 0.18917676796690985,
+  "SEMANTICALLY_ADMITTED": 0.7486356063652554,
+  "TARGET_REFERENCE_ABSENT": 0.0
+ },
+ "interpretation": "NONE; counts and fractions only",
+ "materiality": "STV_COMPOSITION_MATERIAL",
+ "materiality_threshold": 0.1,
+ "n_synthesized": 34814,
+ "nonadmitted": 8751,
+ "nonadmitted_over_R2": 0.01549730023606332,
+ "nonadmitted_over_synthesized": 0.25136439363474467,
+ "run_id": "V9-MOT20-DEEPOCSORT-001"
+}

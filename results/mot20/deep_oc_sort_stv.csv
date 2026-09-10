@@ -1,0 +1,6 @@
+sequence,n_synthesized,semantically_admitted,anchor_unmatched,anchor_id_mismatch,target_reference_absent,non_admitted
+ALL,34814,26063,6586,2165,0,8751
+MOT20-01,580,432,82,66,0,148
+MOT20-02,4724,3888,242,594,0,836
+MOT20-03,8947,6771,1844,332,0,2176
+MOT20-05,20563,14972,4418,1173,0,5591

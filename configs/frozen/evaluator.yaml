@@ -1,0 +1,17 @@
+# Frozen protocol constants, transcribed from
+# provenance/frozen_records/02_PROSPECTIVE_PROTOCOL.json (frozen 2026-08-30).
+# These values are READ, never tuned. Editing this file does not make the audit
+# agree with the released results; it makes it disagree.
+
+evaluator: TrackEval
+evaluator_commit: 12c8791b303e0a0b50f753af204249e622d0281a
+evaluator_pin_note: same evaluator family pinned in V8; commit frozen before execution
+metrics:
+- HOTA
+- DetA
+- AssA
+- IDF1
+- MOTA
+unavailable_status: METRIC_NOT_AVAILABLE
+no_substitution: no metric may be substituted after results are seen
+gt_parsing_contract: frozen MOTChallenge parser; identical config for every comparable pipeline

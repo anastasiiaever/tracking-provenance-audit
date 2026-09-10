@@ -1,0 +1,185 @@
+{
+ "estimand": "within-subject OLS slope of the equal-gap-length-weighted mean <method>_sq_error on sigma^2, divided by C=2; point estimate is the equal-weight mean over the 14 subjects",
+ "three_seed_summary": {
+  "convention": "arithmetic descriptive mean across seeds 0/1/2; dispersion = range; model seeds are NOT inferential replicates",
+  "stgcn": {
+   "beta_0": {
+    "values": [
+     -0.06582819908412722,
+     0.10447134944139906,
+     0.08859563232514958
+    ],
+    "mean": 0.04241292756080714,
+    "range": [
+     -0.06582819908412722,
+     0.10447134944139906
+    ],
+    "width": 0.17029954852552628
+   },
+   "beta_0p85": {
+    "values": [
+     0.10202626949175643,
+     0.3614587008810611,
+     0.43808372407680707
+    ],
+    "mean": 0.3005228981498749,
+    "range": [
+     0.10202626949175643,
+     0.43808372407680707
+    ],
+    "width": 0.33605745458505065
+   },
+   "beta_0p85_over_beta_0": {
+    "values": [
+     -1.5498869923718974,
+     3.459883526093568,
+     4.9447553178357815
+    ],
+    "mean": 2.2849172838524843,
+    "range": [
+     -1.5498869923718974,
+     4.9447553178357815
+    ],
+    "width": 6.494642310207679
+   },
+   "d_beta_d_phi": {
+    "values": [
+     0.18296130822498397,
+     0.28073785062649786,
+     0.3766506066812379
+    ],
+    "mean": 0.28011658851090654,
+    "range": [
+     0.18296130822498397,
+     0.3766506066812379
+    ],
+    "width": 0.19368929845625393
+   }
+  },
+  "bigru": {
+   "beta_0": {
+    "values": [
+     0.07855550501878819,
+     0.07495930813788336,
+     0.09015077519060176
+    ],
+    "mean": 0.08122186278242444,
+    "range": [
+     0.07495930813788336,
+     0.09015077519060176
+    ],
+    "width": 0.0151914670527184
+   },
+   "beta_0p85": {
+    "values": [
+     0.24213836794953747,
+     0.23883487661588237,
+     0.24799856683402943
+    ],
+    "mean": 0.2429906037998164,
+    "range": [
+     0.23883487661588237,
+     0.24799856683402943
+    ],
+    "width": 0.009163690218147058
+   },
+   "beta_0p85_over_beta_0": {
+    "values": [
+     3.0823857333948146,
+     3.186193716950526,
+     2.750931052003681
+    ],
+    "mean": 3.006503500783007,
+    "range": [
+     2.750931052003681,
+     3.186193716950526
+    ],
+    "width": 0.43526266494684496
+   },
+   "d_beta_d_phi": {
+    "values": [
+     0.17414834567383927,
+     0.1739082437275529,
+     0.1699445304811116
+    ],
+    "mean": 0.17266703996083457,
+    "range": [
+     0.1699445304811116,
+     0.17414834567383927
+    ],
+    "width": 0.004203815192727667
+   }
+  }
+ },
+ "seed_disagreement": {
+  "seeds_disagree_strongly": true,
+  "seed0_is_qualitatively_apart": true,
+  "seed0_beta_0": -0.06583297849767678,
+  "seed0_beta_0_ci95": [
+   -0.11599786264366366,
+   -0.019609243023413752
+  ],
+  "seed0_beta_0_significantly_negative": true,
+  "seed0_all_phi_gt_0_cis_include_zero": true,
+  "mean_within_subject_r2_by_stgcn_seed": [
+   0.599,
+   0.831,
+   0.788
+  ],
+  "mean_within_subject_r2_reference": {
+   "mae": 0.973,
+   "bigru": [
+    0.891,
+    0.813,
+    0.92
+   ]
+  },
+  "seed_dropped_or_downweighted": false,
+  "ratio_statistic_caveat": "beta_0.85/beta_0 is ill-conditioned when beta_0 is near zero and changes sign when beta_0 < 0; seed 0's ratio of -1.5499 is not commensurable with a positive ratio and inflates the ST-GCN ratio range. Reported as a limitation of the frozen statistic under this outcome; no substitute statistic was introduced and no threshold was redefined."
+ },
+ "frozen_interpretation": {
+  "rules_source": "docs/wacv/plan/41_THIRD_FAMILY_EVALUATION_PROTOCOL.json::interpretation_rules_frozen_before_outcomes",
+  "frozen_before_outcomes": true,
+  "rule1_limited_architecture_sensitivity_satisfied": true,
+  "rule2_materially_differs_satisfied": false,
+  "same_direction_as_both_existing_families": true,
+  "ratio_disjoint_from_bigru": false,
+  "ratio_disjoint_from_mae": false,
+  "rule3_seed_variability_dominates": true,
+  "rule3_per_statistic": [
+   {
+    "statistic": "beta_0",
+    "stgcn_seed_range_width": 0.17029954852552628,
+    "mae_vs_bigru_gap": 0.026689982717438915,
+    "seed_range_ge_gap": true,
+    "stgcn_range_spans_both_families": false
+   },
+   {
+    "statistic": "beta_0.85",
+    "stgcn_seed_range_width": 0.33605745458505065,
+    "mae_vs_bigru_gap": 0.19385826377807203,
+    "seed_range_ge_gap": true,
+    "stgcn_range_spans_both_families": false
+   },
+   {
+    "statistic": "ratio",
+    "stgcn_seed_range_width": 6.494642310207679,
+    "mae_vs_bigru_gap": 0.5955074507179017,
+    "seed_range_ge_gap": true,
+    "stgcn_range_spans_both_families": true
+   },
+   {
+    "statistic": "d_beta_d_phi",
+    "stgcn_seed_range_width": 0.19368929845625393,
+    "mae_vs_bigru_gap": 0.1757721232595679,
+    "seed_range_ge_gap": true,
+    "stgcn_range_spans_both_families": false
+   }
+  ],
+  "rule4_no_new_threshold_introduced": true,
+  "verdict": "No material difference is established under the frozen rule. The DIRECTION of the learned-family effect (beta rising monotonically with phi) replicates across a third, structurally distinct architecture in all three seeds. The MAGNITUDE comparison is inconclusive at the architecture level: rule 3 fires on every reported statistic, with ST-GCN within-family seed variability exceeding the between-family MAE-vs-BiGRU gap by factors of 1.1x to 10.9x and fully spanning both families on the ratio. Attributing any magnitude difference to architecture rather than training seed is not supportable from this evidence, in either direction.",
+  "short_answer": "direction replicates; magnitude is dominated by seed variability, not architecture",
+  "stgcn_role": "controlled architectural probe, NOT a proposed method (frozen in record 41)"
+ },
+ "note": "Direction replicates across all three trained checkpoints of the third family; architecture-level MAGNITUDE remains unresolved because across-training-realization variability exceeds the between-family gap. The third family is a controlled architectural probe, not a proposed method."
+}

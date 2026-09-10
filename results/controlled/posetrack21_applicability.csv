@@ -1,0 +1,4 @@
+rule,label,scoreable_occluded_targets,anchors,native_missing,eligible,leading,trailing,no_anchor,partition_sum,exact_partition,eligible_pct,ineligible_pct,off_grid_eligible_runs
+B,B — strict contiguous + native-missing breaks (FROZEN PRIMARY),78194,482945,200050,6942,8173,8729,54350,78194,True,8.87791902191984,91.12208097808016,459
+Bp,B' — contiguous,78194,482945,200050,8214,8199,8511,53270,78194,True,10.50464229992071,89.4953577000793,527
+A,A — bridged,78194,482945,200050,28487,12424,14616,22667,78194,True,36.43118397831036,63.56881602168964,1482

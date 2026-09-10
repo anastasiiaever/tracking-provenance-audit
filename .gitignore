@@ -1,0 +1,42 @@
+# Byte-compiled
+__pycache__/
+*.py[cod]
+*.egg-info/
+.eggs/
+build/
+dist/
+
+# Test and tooling caches
+.pytest_cache/
+.coverage
+htmlcov/
+.mypy_cache/
+.ruff_cache/
+.tox/
+
+# Environments
+.venv/
+venv/
+env/
+.python-version
+
+# Editors and OS
+.vscode/
+.idea/
+.DS_Store
+*.swp
+
+# Corpora, checkpoints and run outputs are never committed.
+# See docs/DATASETS.md: this repository redistributes no dataset and no checkpoint.
+data/
+datasets/
+workspace/
+checkpoints/
+*.pth
+*.pth.tar
+*.pkl
+*.parquet
+*.zip
+*.tar
+*.mp4
+*.avi

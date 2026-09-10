@@ -1,0 +1,21 @@
+{
+ "aflink": {
+  "distinct_id_remappings": 29,
+  "pre_ids": 435,
+  "pre_rows": 46914,
+  "rows_unmatched_by_geometry": 0,
+  "rows_whose_id_changed": 1316,
+  "s0_ids": 406,
+  "s0_rows": 46913
+ },
+ "gsi": {
+  "proportion_of_existing_rows_modified": 0.9989981455033786,
+  "rows_added_by_linear_interpolation": 3184,
+  "rows_dropped": 0,
+  "s0_rows": 46913,
+  "s2_rows": 50097,
+  "shared_rows": 46913,
+  "shared_rows_with_modified_coordinates": 46866
+ },
+ "why_no_R1": "AFLink re-associates tracklets and GSI refits every row of every track, so removing a subset of generated rows would alter the fit itself; a row-subset decomposition is STRUCTURALLY_UNDEFINED and none was synthesised."
+}

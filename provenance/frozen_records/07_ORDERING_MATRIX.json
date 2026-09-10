@@ -1,0 +1,604 @@
+{
+ "generated": "2026-08-31",
+ "metrics": [
+  "HOTA",
+  "DetA",
+  "AssA",
+  "IDF1",
+  "MOTA"
+ ],
+ "deployments": {
+  "ByteTrack": {
+   "knowledge": "HISTORICAL_OUTCOME_KNOWN_PRE_V9",
+   "metric_provenance": "V8 evaluation record (eval_ALL.json); same TrackEval pin, config and GT hashes"
+  },
+  "BoT-SORT": {
+   "knowledge": "HISTORICAL_OUTCOME_KNOWN_PRE_V9",
+   "metric_provenance": "V8 evaluation record (eval_ALL.json); same TrackEval pin, config and GT hashes"
+  },
+  "OC-SORT": {
+   "knowledge": "HISTORICAL_OUTCOME_KNOWN_PRE_V9",
+   "metric_provenance": "V8 evaluation record (eval_ALL.json); same TrackEval pin, config and GT hashes"
+  },
+  "Deep-OC-SORT": {
+   "knowledge": "PROSPECTIVE_OUTCOME_UNSEEN_AT_V9_FREEZE",
+   "metric_provenance": "V9 evaluator run (V9-MOT17-DEEPOCSORT-001)"
+  },
+  "Hybrid-SORT": {
+   "knowledge": "PROSPECTIVE_OUTCOME_UNSEEN_AT_V9_FREEZE",
+   "metric_provenance": "V9 evaluator run (V9-MOT17-HYBRIDSORT-002)"
+  }
+ },
+ "excluded_deployments": [
+  {
+   "name": "OC-SORT-GPR",
+   "run": "V9-MOT17-OCSORTGPR-002",
+   "reason": "only S0/S2 semantics are defined for GPR_REWRITE; the frozen non-row-additive protocol forbids manufacturing R0/R2 semantics, so this deployment is excluded from the R0/R2 ordering matrix"
+  }
+ ],
+ "eligible_pairs": 10,
+ "cells": 50,
+ "summary": {
+  "n_pairs": 10,
+  "n_cells": 50,
+  "unchanged": 45,
+  "flips": 5,
+  "ties_created": 0,
+  "ties_broken": 0,
+  "metric_not_available": 0
+ },
+ "matrix": [
+  {
+   "a": "BoT-SORT",
+   "b": "ByteTrack",
+   "metric": "HOTA",
+   "r0": "A_GREATER",
+   "r2": "A_GREATER",
+   "transition": "UNCHANGED",
+   "a_knowledge": "HISTORICAL_OUTCOME_KNOWN_PRE_V9",
+   "b_knowledge": "HISTORICAL_OUTCOME_KNOWN_PRE_V9",
+   "pair_class": "HISTORICAL_VS_HISTORICAL"
+  },
+  {
+   "a": "BoT-SORT",
+   "b": "ByteTrack",
+   "metric": "DetA",
+   "r0": "A_GREATER",
+   "r2": "A_GREATER",
+   "transition": "UNCHANGED",
+   "a_knowledge": "HISTORICAL_OUTCOME_KNOWN_PRE_V9",
+   "b_knowledge": "HISTORICAL_OUTCOME_KNOWN_PRE_V9",
+   "pair_class": "HISTORICAL_VS_HISTORICAL"
+  },
+  {
+   "a": "BoT-SORT",
+   "b": "ByteTrack",
+   "metric": "AssA",
+   "r0": "A_GREATER",
+   "r2": "A_GREATER",
+   "transition": "UNCHANGED",
+   "a_knowledge": "HISTORICAL_OUTCOME_KNOWN_PRE_V9",
+   "b_knowledge": "HISTORICAL_OUTCOME_KNOWN_PRE_V9",
+   "pair_class": "HISTORICAL_VS_HISTORICAL"
+  },
+  {
+   "a": "BoT-SORT",
+   "b": "ByteTrack",
+   "metric": "IDF1",
+   "r0": "A_GREATER",
+   "r2": "A_GREATER",
+   "transition": "UNCHANGED",
+   "a_knowledge": "HISTORICAL_OUTCOME_KNOWN_PRE_V9",
+   "b_knowledge": "HISTORICAL_OUTCOME_KNOWN_PRE_V9",
+   "pair_class": "HISTORICAL_VS_HISTORICAL"
+  },
+  {
+   "a": "BoT-SORT",
+   "b": "ByteTrack",
+   "metric": "MOTA",
+   "r0": "A_GREATER",
+   "r2": "A_GREATER",
+   "transition": "UNCHANGED",
+   "a_knowledge": "HISTORICAL_OUTCOME_KNOWN_PRE_V9",
+   "b_knowledge": "HISTORICAL_OUTCOME_KNOWN_PRE_V9",
+   "pair_class": "HISTORICAL_VS_HISTORICAL"
+  },
+  {
+   "a": "BoT-SORT",
+   "b": "Deep-OC-SORT",
+   "metric": "HOTA",
+   "r0": "A_GREATER",
+   "r2": "A_GREATER",
+   "transition": "UNCHANGED",
+   "a_knowledge": "HISTORICAL_OUTCOME_KNOWN_PRE_V9",
+   "b_knowledge": "PROSPECTIVE_OUTCOME_UNSEEN_AT_V9_FREEZE",
+   "pair_class": "MIXED_HISTORICAL_PROSPECTIVE"
+  },
+  {
+   "a": "BoT-SORT",
+   "b": "Deep-OC-SORT",
+   "metric": "DetA",
+   "r0": "A_GREATER",
+   "r2": "A_GREATER",
+   "transition": "UNCHANGED",
+   "a_knowledge": "HISTORICAL_OUTCOME_KNOWN_PRE_V9",
+   "b_knowledge": "PROSPECTIVE_OUTCOME_UNSEEN_AT_V9_FREEZE",
+   "pair_class": "MIXED_HISTORICAL_PROSPECTIVE"
+  },
+  {
+   "a": "BoT-SORT",
+   "b": "Deep-OC-SORT",
+   "metric": "AssA",
+   "r0": "A_LESS",
+   "r2": "A_LESS",
+   "transition": "UNCHANGED",
+   "a_knowledge": "HISTORICAL_OUTCOME_KNOWN_PRE_V9",
+   "b_knowledge": "PROSPECTIVE_OUTCOME_UNSEEN_AT_V9_FREEZE",
+   "pair_class": "MIXED_HISTORICAL_PROSPECTIVE"
+  },
+  {
+   "a": "BoT-SORT",
+   "b": "Deep-OC-SORT",
+   "metric": "IDF1",
+   "r0": "A_GREATER",
+   "r2": "A_LESS",
+   "transition": "FLIP",
+   "a_knowledge": "HISTORICAL_OUTCOME_KNOWN_PRE_V9",
+   "b_knowledge": "PROSPECTIVE_OUTCOME_UNSEEN_AT_V9_FREEZE",
+   "pair_class": "MIXED_HISTORICAL_PROSPECTIVE"
+  },
+  {
+   "a": "BoT-SORT",
+   "b": "Deep-OC-SORT",
+   "metric": "MOTA",
+   "r0": "A_GREATER",
+   "r2": "A_GREATER",
+   "transition": "UNCHANGED",
+   "a_knowledge": "HISTORICAL_OUTCOME_KNOWN_PRE_V9",
+   "b_knowledge": "PROSPECTIVE_OUTCOME_UNSEEN_AT_V9_FREEZE",
+   "pair_class": "MIXED_HISTORICAL_PROSPECTIVE"
+  },
+  {
+   "a": "BoT-SORT",
+   "b": "Hybrid-SORT",
+   "metric": "HOTA",
+   "r0": "A_GREATER",
+   "r2": "A_GREATER",
+   "transition": "UNCHANGED",
+   "a_knowledge": "HISTORICAL_OUTCOME_KNOWN_PRE_V9",
+   "b_knowledge": "PROSPECTIVE_OUTCOME_UNSEEN_AT_V9_FREEZE",
+   "pair_class": "MIXED_HISTORICAL_PROSPECTIVE"
+  },
+  {
+   "a": "BoT-SORT",
+   "b": "Hybrid-SORT",
+   "metric": "DetA",
+   "r0": "A_GREATER",
+   "r2": "A_GREATER",
+   "transition": "UNCHANGED",
+   "a_knowledge": "HISTORICAL_OUTCOME_KNOWN_PRE_V9",
+   "b_knowledge": "PROSPECTIVE_OUTCOME_UNSEEN_AT_V9_FREEZE",
+   "pair_class": "MIXED_HISTORICAL_PROSPECTIVE"
+  },
+  {
+   "a": "BoT-SORT",
+   "b": "Hybrid-SORT",
+   "metric": "AssA",
+   "r0": "A_GREATER",
+   "r2": "A_GREATER",
+   "transition": "UNCHANGED",
+   "a_knowledge": "HISTORICAL_OUTCOME_KNOWN_PRE_V9",
+   "b_knowledge": "PROSPECTIVE_OUTCOME_UNSEEN_AT_V9_FREEZE",
+   "pair_class": "MIXED_HISTORICAL_PROSPECTIVE"
+  },
+  {
+   "a": "BoT-SORT",
+   "b": "Hybrid-SORT",
+   "metric": "IDF1",
+   "r0": "A_GREATER",
+   "r2": "A_GREATER",
+   "transition": "UNCHANGED",
+   "a_knowledge": "HISTORICAL_OUTCOME_KNOWN_PRE_V9",
+   "b_knowledge": "PROSPECTIVE_OUTCOME_UNSEEN_AT_V9_FREEZE",
+   "pair_class": "MIXED_HISTORICAL_PROSPECTIVE"
+  },
+  {
+   "a": "BoT-SORT",
+   "b": "Hybrid-SORT",
+   "metric": "MOTA",
+   "r0": "A_GREATER",
+   "r2": "A_GREATER",
+   "transition": "UNCHANGED",
+   "a_knowledge": "HISTORICAL_OUTCOME_KNOWN_PRE_V9",
+   "b_knowledge": "PROSPECTIVE_OUTCOME_UNSEEN_AT_V9_FREEZE",
+   "pair_class": "MIXED_HISTORICAL_PROSPECTIVE"
+  },
+  {
+   "a": "BoT-SORT",
+   "b": "OC-SORT",
+   "metric": "HOTA",
+   "r0": "A_GREATER",
+   "r2": "A_GREATER",
+   "transition": "UNCHANGED",
+   "a_knowledge": "HISTORICAL_OUTCOME_KNOWN_PRE_V9",
+   "b_knowledge": "HISTORICAL_OUTCOME_KNOWN_PRE_V9",
+   "pair_class": "HISTORICAL_VS_HISTORICAL"
+  },
+  {
+   "a": "BoT-SORT",
+   "b": "OC-SORT",
+   "metric": "DetA",
+   "r0": "A_GREATER",
+   "r2": "A_GREATER",
+   "transition": "UNCHANGED",
+   "a_knowledge": "HISTORICAL_OUTCOME_KNOWN_PRE_V9",
+   "b_knowledge": "HISTORICAL_OUTCOME_KNOWN_PRE_V9",
+   "pair_class": "HISTORICAL_VS_HISTORICAL"
+  },
+  {
+   "a": "BoT-SORT",
+   "b": "OC-SORT",
+   "metric": "AssA",
+   "r0": "A_GREATER",
+   "r2": "A_GREATER",
+   "transition": "UNCHANGED",
+   "a_knowledge": "HISTORICAL_OUTCOME_KNOWN_PRE_V9",
+   "b_knowledge": "HISTORICAL_OUTCOME_KNOWN_PRE_V9",
+   "pair_class": "HISTORICAL_VS_HISTORICAL"
+  },
+  {
+   "a": "BoT-SORT",
+   "b": "OC-SORT",
+   "metric": "IDF1",
+   "r0": "A_GREATER",
+   "r2": "A_GREATER",
+   "transition": "UNCHANGED",
+   "a_knowledge": "HISTORICAL_OUTCOME_KNOWN_PRE_V9",
+   "b_knowledge": "HISTORICAL_OUTCOME_KNOWN_PRE_V9",
+   "pair_class": "HISTORICAL_VS_HISTORICAL"
+  },
+  {
+   "a": "BoT-SORT",
+   "b": "OC-SORT",
+   "metric": "MOTA",
+   "r0": "A_GREATER",
+   "r2": "A_GREATER",
+   "transition": "UNCHANGED",
+   "a_knowledge": "HISTORICAL_OUTCOME_KNOWN_PRE_V9",
+   "b_knowledge": "HISTORICAL_OUTCOME_KNOWN_PRE_V9",
+   "pair_class": "HISTORICAL_VS_HISTORICAL"
+  },
+  {
+   "a": "ByteTrack",
+   "b": "Deep-OC-SORT",
+   "metric": "HOTA",
+   "r0": "A_LESS",
+   "r2": "A_LESS",
+   "transition": "UNCHANGED",
+   "a_knowledge": "HISTORICAL_OUTCOME_KNOWN_PRE_V9",
+   "b_knowledge": "PROSPECTIVE_OUTCOME_UNSEEN_AT_V9_FREEZE",
+   "pair_class": "MIXED_HISTORICAL_PROSPECTIVE"
+  },
+  {
+   "a": "ByteTrack",
+   "b": "Deep-OC-SORT",
+   "metric": "DetA",
+   "r0": "A_GREATER",
+   "r2": "A_GREATER",
+   "transition": "UNCHANGED",
+   "a_knowledge": "HISTORICAL_OUTCOME_KNOWN_PRE_V9",
+   "b_knowledge": "PROSPECTIVE_OUTCOME_UNSEEN_AT_V9_FREEZE",
+   "pair_class": "MIXED_HISTORICAL_PROSPECTIVE"
+  },
+  {
+   "a": "ByteTrack",
+   "b": "Deep-OC-SORT",
+   "metric": "AssA",
+   "r0": "A_LESS",
+   "r2": "A_LESS",
+   "transition": "UNCHANGED",
+   "a_knowledge": "HISTORICAL_OUTCOME_KNOWN_PRE_V9",
+   "b_knowledge": "PROSPECTIVE_OUTCOME_UNSEEN_AT_V9_FREEZE",
+   "pair_class": "MIXED_HISTORICAL_PROSPECTIVE"
+  },
+  {
+   "a": "ByteTrack",
+   "b": "Deep-OC-SORT",
+   "metric": "IDF1",
+   "r0": "A_LESS",
+   "r2": "A_LESS",
+   "transition": "UNCHANGED",
+   "a_knowledge": "HISTORICAL_OUTCOME_KNOWN_PRE_V9",
+   "b_knowledge": "PROSPECTIVE_OUTCOME_UNSEEN_AT_V9_FREEZE",
+   "pair_class": "MIXED_HISTORICAL_PROSPECTIVE"
+  },
+  {
+   "a": "ByteTrack",
+   "b": "Deep-OC-SORT",
+   "metric": "MOTA",
+   "r0": "A_GREATER",
+   "r2": "A_GREATER",
+   "transition": "UNCHANGED",
+   "a_knowledge": "HISTORICAL_OUTCOME_KNOWN_PRE_V9",
+   "b_knowledge": "PROSPECTIVE_OUTCOME_UNSEEN_AT_V9_FREEZE",
+   "pair_class": "MIXED_HISTORICAL_PROSPECTIVE"
+  },
+  {
+   "a": "ByteTrack",
+   "b": "Hybrid-SORT",
+   "metric": "HOTA",
+   "r0": "A_GREATER",
+   "r2": "A_GREATER",
+   "transition": "UNCHANGED",
+   "a_knowledge": "HISTORICAL_OUTCOME_KNOWN_PRE_V9",
+   "b_knowledge": "PROSPECTIVE_OUTCOME_UNSEEN_AT_V9_FREEZE",
+   "pair_class": "MIXED_HISTORICAL_PROSPECTIVE"
+  },
+  {
+   "a": "ByteTrack",
+   "b": "Hybrid-SORT",
+   "metric": "DetA",
+   "r0": "A_GREATER",
+   "r2": "A_GREATER",
+   "transition": "UNCHANGED",
+   "a_knowledge": "HISTORICAL_OUTCOME_KNOWN_PRE_V9",
+   "b_knowledge": "PROSPECTIVE_OUTCOME_UNSEEN_AT_V9_FREEZE",
+   "pair_class": "MIXED_HISTORICAL_PROSPECTIVE"
+  },
+  {
+   "a": "ByteTrack",
+   "b": "Hybrid-SORT",
+   "metric": "AssA",
+   "r0": "A_GREATER",
+   "r2": "A_GREATER",
+   "transition": "UNCHANGED",
+   "a_knowledge": "HISTORICAL_OUTCOME_KNOWN_PRE_V9",
+   "b_knowledge": "PROSPECTIVE_OUTCOME_UNSEEN_AT_V9_FREEZE",
+   "pair_class": "MIXED_HISTORICAL_PROSPECTIVE"
+  },
+  {
+   "a": "ByteTrack",
+   "b": "Hybrid-SORT",
+   "metric": "IDF1",
+   "r0": "A_GREATER",
+   "r2": "A_GREATER",
+   "transition": "UNCHANGED",
+   "a_knowledge": "HISTORICAL_OUTCOME_KNOWN_PRE_V9",
+   "b_knowledge": "PROSPECTIVE_OUTCOME_UNSEEN_AT_V9_FREEZE",
+   "pair_class": "MIXED_HISTORICAL_PROSPECTIVE"
+  },
+  {
+   "a": "ByteTrack",
+   "b": "Hybrid-SORT",
+   "metric": "MOTA",
+   "r0": "A_GREATER",
+   "r2": "A_GREATER",
+   "transition": "UNCHANGED",
+   "a_knowledge": "HISTORICAL_OUTCOME_KNOWN_PRE_V9",
+   "b_knowledge": "PROSPECTIVE_OUTCOME_UNSEEN_AT_V9_FREEZE",
+   "pair_class": "MIXED_HISTORICAL_PROSPECTIVE"
+  },
+  {
+   "a": "ByteTrack",
+   "b": "OC-SORT",
+   "metric": "HOTA",
+   "r0": "A_GREATER",
+   "r2": "A_GREATER",
+   "transition": "UNCHANGED",
+   "a_knowledge": "HISTORICAL_OUTCOME_KNOWN_PRE_V9",
+   "b_knowledge": "HISTORICAL_OUTCOME_KNOWN_PRE_V9",
+   "pair_class": "HISTORICAL_VS_HISTORICAL"
+  },
+  {
+   "a": "ByteTrack",
+   "b": "OC-SORT",
+   "metric": "DetA",
+   "r0": "A_GREATER",
+   "r2": "A_GREATER",
+   "transition": "UNCHANGED",
+   "a_knowledge": "HISTORICAL_OUTCOME_KNOWN_PRE_V9",
+   "b_knowledge": "HISTORICAL_OUTCOME_KNOWN_PRE_V9",
+   "pair_class": "HISTORICAL_VS_HISTORICAL"
+  },
+  {
+   "a": "ByteTrack",
+   "b": "OC-SORT",
+   "metric": "AssA",
+   "r0": "A_GREATER",
+   "r2": "A_GREATER",
+   "transition": "UNCHANGED",
+   "a_knowledge": "HISTORICAL_OUTCOME_KNOWN_PRE_V9",
+   "b_knowledge": "HISTORICAL_OUTCOME_KNOWN_PRE_V9",
+   "pair_class": "HISTORICAL_VS_HISTORICAL"
+  },
+  {
+   "a": "ByteTrack",
+   "b": "OC-SORT",
+   "metric": "IDF1",
+   "r0": "A_GREATER",
+   "r2": "A_GREATER",
+   "transition": "UNCHANGED",
+   "a_knowledge": "HISTORICAL_OUTCOME_KNOWN_PRE_V9",
+   "b_knowledge": "HISTORICAL_OUTCOME_KNOWN_PRE_V9",
+   "pair_class": "HISTORICAL_VS_HISTORICAL"
+  },
+  {
+   "a": "ByteTrack",
+   "b": "OC-SORT",
+   "metric": "MOTA",
+   "r0": "A_GREATER",
+   "r2": "A_GREATER",
+   "transition": "UNCHANGED",
+   "a_knowledge": "HISTORICAL_OUTCOME_KNOWN_PRE_V9",
+   "b_knowledge": "HISTORICAL_OUTCOME_KNOWN_PRE_V9",
+   "pair_class": "HISTORICAL_VS_HISTORICAL"
+  },
+  {
+   "a": "Deep-OC-SORT",
+   "b": "Hybrid-SORT",
+   "metric": "HOTA",
+   "r0": "A_GREATER",
+   "r2": "A_GREATER",
+   "transition": "UNCHANGED",
+   "a_knowledge": "PROSPECTIVE_OUTCOME_UNSEEN_AT_V9_FREEZE",
+   "b_knowledge": "PROSPECTIVE_OUTCOME_UNSEEN_AT_V9_FREEZE",
+   "pair_class": "PROSPECTIVE_VS_PROSPECTIVE"
+  },
+  {
+   "a": "Deep-OC-SORT",
+   "b": "Hybrid-SORT",
+   "metric": "DetA",
+   "r0": "A_LESS",
+   "r2": "A_GREATER",
+   "transition": "FLIP",
+   "a_knowledge": "PROSPECTIVE_OUTCOME_UNSEEN_AT_V9_FREEZE",
+   "b_knowledge": "PROSPECTIVE_OUTCOME_UNSEEN_AT_V9_FREEZE",
+   "pair_class": "PROSPECTIVE_VS_PROSPECTIVE"
+  },
+  {
+   "a": "Deep-OC-SORT",
+   "b": "Hybrid-SORT",
+   "metric": "AssA",
+   "r0": "A_GREATER",
+   "r2": "A_GREATER",
+   "transition": "UNCHANGED",
+   "a_knowledge": "PROSPECTIVE_OUTCOME_UNSEEN_AT_V9_FREEZE",
+   "b_knowledge": "PROSPECTIVE_OUTCOME_UNSEEN_AT_V9_FREEZE",
+   "pair_class": "PROSPECTIVE_VS_PROSPECTIVE"
+  },
+  {
+   "a": "Deep-OC-SORT",
+   "b": "Hybrid-SORT",
+   "metric": "IDF1",
+   "r0": "A_GREATER",
+   "r2": "A_GREATER",
+   "transition": "UNCHANGED",
+   "a_knowledge": "PROSPECTIVE_OUTCOME_UNSEEN_AT_V9_FREEZE",
+   "b_knowledge": "PROSPECTIVE_OUTCOME_UNSEEN_AT_V9_FREEZE",
+   "pair_class": "PROSPECTIVE_VS_PROSPECTIVE"
+  },
+  {
+   "a": "Deep-OC-SORT",
+   "b": "Hybrid-SORT",
+   "metric": "MOTA",
+   "r0": "A_LESS",
+   "r2": "A_GREATER",
+   "transition": "FLIP",
+   "a_knowledge": "PROSPECTIVE_OUTCOME_UNSEEN_AT_V9_FREEZE",
+   "b_knowledge": "PROSPECTIVE_OUTCOME_UNSEEN_AT_V9_FREEZE",
+   "pair_class": "PROSPECTIVE_VS_PROSPECTIVE"
+  },
+  {
+   "a": "Deep-OC-SORT",
+   "b": "OC-SORT",
+   "metric": "HOTA",
+   "r0": "A_GREATER",
+   "r2": "A_GREATER",
+   "transition": "UNCHANGED",
+   "a_knowledge": "PROSPECTIVE_OUTCOME_UNSEEN_AT_V9_FREEZE",
+   "b_knowledge": "HISTORICAL_OUTCOME_KNOWN_PRE_V9",
+   "pair_class": "MIXED_HISTORICAL_PROSPECTIVE"
+  },
+  {
+   "a": "Deep-OC-SORT",
+   "b": "OC-SORT",
+   "metric": "DetA",
+   "r0": "A_GREATER",
+   "r2": "A_GREATER",
+   "transition": "UNCHANGED",
+   "a_knowledge": "PROSPECTIVE_OUTCOME_UNSEEN_AT_V9_FREEZE",
+   "b_knowledge": "HISTORICAL_OUTCOME_KNOWN_PRE_V9",
+   "pair_class": "MIXED_HISTORICAL_PROSPECTIVE"
+  },
+  {
+   "a": "Deep-OC-SORT",
+   "b": "OC-SORT",
+   "metric": "AssA",
+   "r0": "A_GREATER",
+   "r2": "A_GREATER",
+   "transition": "UNCHANGED",
+   "a_knowledge": "PROSPECTIVE_OUTCOME_UNSEEN_AT_V9_FREEZE",
+   "b_knowledge": "HISTORICAL_OUTCOME_KNOWN_PRE_V9",
+   "pair_class": "MIXED_HISTORICAL_PROSPECTIVE"
+  },
+  {
+   "a": "Deep-OC-SORT",
+   "b": "OC-SORT",
+   "metric": "IDF1",
+   "r0": "A_GREATER",
+   "r2": "A_GREATER",
+   "transition": "UNCHANGED",
+   "a_knowledge": "PROSPECTIVE_OUTCOME_UNSEEN_AT_V9_FREEZE",
+   "b_knowledge": "HISTORICAL_OUTCOME_KNOWN_PRE_V9",
+   "pair_class": "MIXED_HISTORICAL_PROSPECTIVE"
+  },
+  {
+   "a": "Deep-OC-SORT",
+   "b": "OC-SORT",
+   "metric": "MOTA",
+   "r0": "A_GREATER",
+   "r2": "A_GREATER",
+   "transition": "UNCHANGED",
+   "a_knowledge": "PROSPECTIVE_OUTCOME_UNSEEN_AT_V9_FREEZE",
+   "b_knowledge": "HISTORICAL_OUTCOME_KNOWN_PRE_V9",
+   "pair_class": "MIXED_HISTORICAL_PROSPECTIVE"
+  },
+  {
+   "a": "Hybrid-SORT",
+   "b": "OC-SORT",
+   "metric": "HOTA",
+   "r0": "A_GREATER",
+   "r2": "A_LESS",
+   "transition": "FLIP",
+   "a_knowledge": "PROSPECTIVE_OUTCOME_UNSEEN_AT_V9_FREEZE",
+   "b_knowledge": "HISTORICAL_OUTCOME_KNOWN_PRE_V9",
+   "pair_class": "MIXED_HISTORICAL_PROSPECTIVE"
+  },
+  {
+   "a": "Hybrid-SORT",
+   "b": "OC-SORT",
+   "metric": "DetA",
+   "r0": "A_GREATER",
+   "r2": "A_GREATER",
+   "transition": "UNCHANGED",
+   "a_knowledge": "PROSPECTIVE_OUTCOME_UNSEEN_AT_V9_FREEZE",
+   "b_knowledge": "HISTORICAL_OUTCOME_KNOWN_PRE_V9",
+   "pair_class": "MIXED_HISTORICAL_PROSPECTIVE"
+  },
+  {
+   "a": "Hybrid-SORT",
+   "b": "OC-SORT",
+   "metric": "AssA",
+   "r0": "A_LESS",
+   "r2": "A_LESS",
+   "transition": "UNCHANGED",
+   "a_knowledge": "PROSPECTIVE_OUTCOME_UNSEEN_AT_V9_FREEZE",
+   "b_knowledge": "HISTORICAL_OUTCOME_KNOWN_PRE_V9",
+   "pair_class": "MIXED_HISTORICAL_PROSPECTIVE"
+  },
+  {
+   "a": "Hybrid-SORT",
+   "b": "OC-SORT",
+   "metric": "IDF1",
+   "r0": "A_LESS",
+   "r2": "A_LESS",
+   "transition": "UNCHANGED",
+   "a_knowledge": "PROSPECTIVE_OUTCOME_UNSEEN_AT_V9_FREEZE",
+   "b_knowledge": "HISTORICAL_OUTCOME_KNOWN_PRE_V9",
+   "pair_class": "MIXED_HISTORICAL_PROSPECTIVE"
+  },
+  {
+   "a": "Hybrid-SORT",
+   "b": "OC-SORT",
+   "metric": "MOTA",
+   "r0": "A_GREATER",
+   "r2": "A_LESS",
+   "transition": "FLIP",
+   "a_knowledge": "PROSPECTIVE_OUTCOME_UNSEEN_AT_V9_FREEZE",
+   "b_knowledge": "HISTORICAL_OUTCOME_KNOWN_PRE_V9",
+   "pair_class": "MIXED_HISTORICAL_PROSPECTIVE"
+  }
+ ],
+ "eligibility": "same MOT17 val-half population (identical GT hashes), same TrackEval pin 12c8791b, same metric set, corresponding R0/R2 semantics",
+ "caveat": "historical deployments' metrics come from the frozen V8 evaluation record rather than a new V9 evaluator invocation; pin, config and GT hashes are identical, and no historical outcome is relabelled as prospective"
+}

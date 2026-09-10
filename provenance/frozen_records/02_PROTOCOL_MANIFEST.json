@@ -1,0 +1,313 @@
+{
+ "manifest": "TPAMI V9 prospective protocol manifest",
+ "frozen_on": "2026-08-30",
+ "contains_scientific_outcome": false,
+ "census_commit": "ad688f554e47bb1ebd859dc83967b4845f12f446",
+ "census_files": {
+  "01_UNIVERSE_CENSUS.md": "dcc781a8f65f3232c36407ba85b242e06cacfde428c9ac929eb011fe91b54e75",
+  "01_UNIVERSE_CENSUS.json": "16caa3900f98c4e863e6258b00bb93e0243a3966d9e136df921e1378648d8542",
+  "01_SOURCE_MANIFEST.json": "dbded1352d759e11e03513a212f60270a4d233d1496ec321ccbe1860ce340604",
+  "01_CODE_LINEAGE.md": "9d5b2097012b340a334597628d3db9ac5a905fcaf60deb4c213a96918e0de0f1"
+ },
+ "protocol_files": {
+  "02_PROSPECTIVE_PROTOCOL.md": "ea13ba2eac074b542d745f8dc79959676cc44967333a40d87da673b66cf9fa34",
+  "02_PROSPECTIVE_PROTOCOL.json": "81066eaa6afcab5ad9a974c560ab62660d43a83bb7cdd638eb86c7ed1e594ed0",
+  "02_LITERATURE_AUDIT_SPEC.md": "e2327d2512d714385db0f242e80774366a2dc417130f73050220a98ce3773e22",
+  "02_CLI_CONTRACT.md": "73e3e882898dc23a2da2138723d2ca151a11b95f474ca1e6e868a468f4e65e05",
+  "02A_PROTOCOL_AMENDMENT_ROLE_AUDITMODE.md": "6053e81165acdf54a12ddc8f8fe3c0d097fb7701d3c35c4cde323419d9547352",
+  "02B_PROTOCOL_AMENDMENT_OUTCOME_KNOWLEDGE.md": "e6b43fde8ee30e5bc51aacfc9d74c066b92f8092063d50c9d00025e2e455baf3"
+ },
+ "upstream_source_manifest": {
+  "file": "01_SOURCE_MANIFEST.json",
+  "sha256": "dbded1352d759e11e03513a212f60270a4d233d1496ec321ccbe1860ce340604"
+ },
+ "evaluator": {
+  "name": "TrackEval",
+  "commit": "12c8791b303e0a0b50f753af204249e622d0281a",
+  "config": "MOT17 val_half; identical for every comparable pipeline",
+  "gt_parsing_contract": "MOTChallenge gt column 7 (flag) must equal 1; class column 8 must equal 1 (pedestrian). Classes {3,4,5,6,9,10,11} are non-person and dropped; classes {2,7,8,12} are ignore-person regions and are neither scored nor counted as reference identities. Visibility (column 9) is NOT thresholded."
+ },
+ "dataset_population_specs": {
+  "MOT17": {
+   "status": "FROZEN_AND_MATERIALISED",
+   "population_manifest_sha256": "9dd181ee08ead5fd8818735b8a0e1edeb11c88d7bdc0c79b7e0f45a821577254",
+   "total_val_half_frames": 2652,
+   "n_sequences": 7
+  },
+  "MOT20": {
+   "status": "STOPPED_DATASET_NOT_ACQUIRED",
+   "population_manifest_sha256": null
+  },
+  "DanceTrack": {
+   "status": "STOPPED_DATASET_NOT_ACQUIRED",
+   "population_manifest_sha256": null
+  }
+ },
+ "family_lineage_mapping": {
+  "LINEAR_DTI_ROW_ADDITIVE": [
+   "ByteTrack",
+   "BoT-SORT",
+   "OC-SORT",
+   "Deep-OC-SORT",
+   "Hybrid-SORT",
+   "SparseTrack"
+  ],
+  "GPR_REWRITE": [
+   "OC-SORT-GPR"
+  ],
+  "LINK_PLUS_SMOOTHING": [
+   "StrongSORT++"
+  ]
+ },
+ "lineage_groups": {
+  "L": "ByteTrack-derived dti; six deployments; 100% identical normalized token stream for ByteTrack/OC-SORT/Hybrid-SORT/SparseTrack, BoT-SORT +1 print, Deep-OC-SORT n_min default 25->30",
+  "G": "OC-SORT gp_interpolation.py, independent",
+  "S": "StrongSORT GSI.py + AFLink, independent"
+ },
+ "deployment_count": 8,
+ "independent_family_count": 3,
+ "decision_rules": {
+  "stv": {
+   "primary_iou_gate": 0.5,
+   "anchors": "the two bracketing R0 observations of a synthesized row",
+   "reference_assignment": "per-frame one-to-one assignment against scoreable GT, computed on R0 BEFORE any synthesized row is introduced, and then frozen",
+   "order": "gate first, then assignment (gate-before-assignment)",
+   "algorithm": "Hungarian one-to-one on IoU with the gate applied as a hard admissibility mask before assignment",
+   "classes_priority": [
+    "ANCHOR_UNMATCHED",
+    "ANCHOR_ID_MISMATCH",
+    "TARGET_REFERENCE_ABSENT",
+    "SEMANTICALLY_ADMITTED"
+   ],
+   "exhaustive_and_mutually_exclusive": true,
+   "licensed_phrase_rule": "Only ANCHOR_ID_MISMATCH licenses 'anchors resolve, under the frozen matcher, to different ground-truth identities'. ANCHOR_UNMATCHED is non-admission, NOT demonstrated semantic error.",
+   "not_a_metric": "STV is a reference-side diagnostic and never a replacement tracking metric",
+   "sensitivity_gates": [
+    0.3,
+    0.4,
+    0.5,
+    0.6,
+    0.7
+   ],
+   "sensitivity_status": "DESCRIPTIVE; the 0.5 result remains primary regardless of sensitivity outcome"
+  },
+  "materiality": {
+   "status": "SECONDARY_DESCRIPTIVE_ONLY",
+   "not_the_headline_hypothesis": true,
+   "criterion": "STV_COMPOSITION_MATERIAL = total_non_admitted_synthesized_rows / synthesized_rows >= 0.10",
+   "denominator_justification": "The denominator is synthesized rows because the criterion concerns the composition of what the post-processor produced, not of the whole submission.",
+   "mandatory_companion": "the corresponding fraction of total submitted R2 rows must ALWAYS be reported alongside, so a large conditional fraction cannot be read as a submission-wide effect",
+   "carries_no_significance_or_generalization_claim": true,
+   "threshold_frozen_at": 0.1,
+   "no_post_hoc_adjustment": true
+  },
+  "ordering": {
+   "comparable_only_within": [
+    "same dataset",
+    "same frozen population",
+    "same evaluator configuration",
+    "same metric"
+   ],
+   "compare": "every quantitatively eligible deployment pair",
+   "relations": [
+    "A>B",
+    "A=B",
+    "A<B"
+   ],
+   "classify": [
+    "UNCHANGED",
+    "FLIP",
+    "TIE_CREATED",
+    "TIE_BROKEN"
+   ],
+   "states": [
+    "R0",
+    "R2"
+   ],
+   "no_selective_inspection": "all pairs reported, not only those that flip",
+   "report": [
+    "eligible pair count",
+    "pairs per dataset",
+    "pairs per metric",
+    "full matrix",
+    "total flips",
+    "ties created/broken"
+   ],
+   "estimand_warning": "These are SYSTEM-LEVEL deployment orderings. A cross-pipeline ordering difference must NOT be attributed solely to the post-processing family, because tracker and detector systems differ. Within-pipeline R0->R2 deltas and between-pipeline ordering are separate estimands."
+  },
+  "row_additive": {
+   "R0": "raw tracker output immediately before the audited interpolation stage",
+   "R2": "output immediately after the frozen documented interpolation call",
+   "invariant": "R0 subseteq R2 by row identity; pre-existing R0 rows field-identical up to normalised serialisation",
+   "row_identity": "(sequence, frame, track_id) after the frozen parser normalisation",
+   "normalisation_allowed": "numeric formatting/precision of the writer only; no coordinate or id change",
+   "on_failure": "do NOT construct R1; classify the cell STRUCTURAL_DECOMPOSITION_UNAVAILABLE",
+   "R1": "R0 plus only those synthesized R2 rows admitted by the frozen STV criterion; GT-informed diagnostic only; never deployable"
+  },
+  "non_row_additive": {
+   "applies_to": [
+    "GPR_REWRITE",
+    "LINK_PLUS_SMOOTHING"
+   ],
+   "forbidden": "no R1 analogue may be forced",
+   "S0": "state immediately before the audited transformation",
+   "S2": "state immediately after it",
+   "structural_measurements": [
+    "rows_inserted",
+    "rows_deleted",
+    "preexisting_rows_with_changed_coordinates",
+    "preexisting_rows_with_changed_ids",
+    "row_identity_survives",
+    "S0_subseteq_S2"
+   ],
+   "undefined_rule": "If the transformation rewrites values that its own regression/smoothing fit consumes, a row-subset causal decomposition is declared STRUCTURALLY_UNDEFINED. This is an allowed outcome, not a failure of the study."
+  },
+  "status_vocabulary": [
+   "SUPPORTED",
+   "FAILS_TO_SUPPORT",
+   "UNRESOLVED",
+   "DESCRIPTIVE",
+   "POST_HOC",
+   "STRUCTURALLY_UNDEFINED",
+   "METRIC_NOT_AVAILABLE",
+   "REPRODUCIBILITY_FAILURE",
+   "NO_DOCUMENTED_RULE"
+  ],
+  "stop_conditions": [
+   "unresolved census AMBIGUOUS cell (currently: none)",
+   "population not reproducible from a frozen manifest (currently: MOT20, DanceTrack)",
+   "raw/post state boundary unidentifiable",
+   "documented rule needs an undocumented parameter choice",
+   "evaluator configuration differs across comparable pipelines",
+   "a supposedly row-additive implementation rewrites existing rows",
+   "GPR RNG not externally fixable/replayable without changing scientific source semantics",
+   "CLI is not the actual execution path",
+   "any real V9 metric/STV outcome inspected during protocol or CLI development"
+  ],
+  "wording_contract": {
+   "applies_to": "every SECONDARY_SPLIT_ADAPTED cell",
+   "required": "State that the repository's documented TEST-set post-processing rule was applied unchanged to a pre-specified validation population.",
+   "forbidden": "Do not state or imply that the repository documents post-processing use on the validation split for these cells.",
+   "correction_note": "This corrects over-broad wording that appeared in frozen V8 ('under their documented post-processing rules' applied to a validation population). V8 is NOT edited; the correction binds V9 language only.",
+   "exempt": "PRIMARY_DOCUMENTED_VALIDATION cells (Deep-OC-SORT; StrongSORT++ MOT17) may state that validation use is documented, because it is."
+  }
+ },
+ "rng_seed_contract": {
+  "GPR_AUDIT_SEED": 20260830,
+  "upstream_unmodified": true,
+  "upstream_source_sha256": "c2a5c3d044265c79de939cbd16cd02d1...(full hash in 01_SOURCE_MANIFEST.json)",
+  "stochastic_apis_found_in_source": [
+   "numpy.random.choice (median_trick)",
+   "sklearn GaussianProcessRegressor(n_restarts_optimizer=2) optimizer restarts"
+  ],
+  "harness_rule": "the harness seeds NumPy/random global state immediately before calling the unmodified upstream entry point",
+  "replay": "exactly one same-seed replay is required as reproducibility verification",
+  "replay_is_not_a_trial": "replay values must never be averaged or pooled with the first execution",
+  "on_failure": "status = REPRODUCIBILITY_FAILURE; no quantitative GPR ranking claim is licensed",
+  "forbidden": [
+   "seed search",
+   "choosing a seed because of an observed output"
+  ],
+  "record": [
+   "upstream source hash",
+   "seed",
+   "exact invocation",
+   "python/numpy/sklearn versions",
+   "stochastic APIs reached"
+  ]
+ },
+ "literature_coding_spec": {
+  "file": "02_LITERATURE_AUDIT_SPEC.md",
+  "sha256": "e2327d2512d714385db0f242e80774366a2dc417130f73050220a98ce3773e22",
+  "statuses": [
+   "DISCLOSED_IN_RESULT_TABLE_OR_CAPTION",
+   "DISCLOSED_IN_MAIN_METHOD_TEXT",
+   "DISCLOSED_IN_SUPPLEMENT",
+   "DISCLOSED_IN_OFFICIAL_REPOSITORY_ONLY",
+   "NOT_DISCLOSED_IN_FROZEN_SOURCES",
+   "NO_DOCUMENTED_RULE"
+  ]
+ },
+ "cli_output_schema": {
+  "file": "02_CLI_CONTRACT.md",
+  "sha256": "73e3e882898dc23a2da2138723d2ca151a11b95f474ca1e6e868a468f4e65e05",
+  "required_fields": [
+   "input_hashes",
+   "population_manifest_hash",
+   "pipeline_family_identifier",
+   "row_transition_inventory",
+   "stv_classification_or_reason_code",
+   "evaluator_input_manifests",
+   "metric_table",
+   "r0_r2_delta",
+   "replay_identifiers",
+   "deterministic_certificate",
+   "reason_codes"
+  ]
+ },
+ "schema_version": "A2",
+ "amendment": {
+  "id": "A1",
+  "date": "2026-08-30",
+  "title": "separate documentation role from structural audit mode",
+  "record": "02A_PROTOCOL_AMENDMENT_ROLE_AUDITMODE.md",
+  "record_sha256": "6053e81165acdf54a12ddc8f8fe3c0d097fb7701d3c35c4cde323419d9547352",
+  "original_protocol_commit": "343214bbbbea37aac9f279bf255b3b85343206a3",
+  "original_protocol_tag": "tpami-v9-tracking-provenance-protocol-20260830",
+  "pre_outcome": true,
+  "scientific_rules_changed": "none (21 non-cell protocol keys byte-identical)"
+ },
+ "schema_axes": {
+  "documentation_role": [
+   "PRIMARY_DOCUMENTED_VALIDATION",
+   "SECONDARY_SPLIT_ADAPTED",
+   "OPTIONAL_DOCUMENTED_FAMILY",
+   "DOCUMENTATION_ONLY_IMPLEMENTED",
+   "NO_DOCUMENTED_RULE"
+  ],
+  "audit_mode": [
+   "ROW_ADDITIVE_R0_R1_R2",
+   "NON_ROW_ADDITIVE_S0_S2",
+   "DOCUMENTATION_ONLY",
+   "STOPPED_BEFORE_EXECUTION"
+  ],
+  "structural_family": [
+   "LINEAR_DTI_ROW_ADDITIVE",
+   "GPR_REWRITE",
+   "LINK_PLUS_SMOOTHING"
+  ],
+  "execution_state": [
+   "EXECUTABLE",
+   "STOPPED_DATASET_NOT_ACQUIRED",
+   "NOT_EXECUTABLE_DOCUMENTATION_ONLY"
+  ],
+  "split_status": [
+   "DOCUMENTED_ON_VALIDATION",
+   "SPLIT_ADAPTED_FROM_TEST",
+   "NOT_APPLICABLE"
+  ],
+  "outcome_knowledge_status": [
+   "HISTORICAL_OUTCOME_KNOWN_PRE_V9",
+   "PROSPECTIVE_OUTCOME_UNSEEN_AT_V9_FREEZE",
+   "NO_QUANTITATIVE_OUTCOME_PLANNED",
+   "STOPPED_UNSEEN"
+  ]
+ },
+ "amendment_a2": {
+  "id": "A2",
+  "date": "2026-08-30",
+  "title": "freeze pre-V9 outcome knowledge status; correct score and ID-rewrite implementation semantics",
+  "record": "02B_PROTOCOL_AMENDMENT_OUTCOME_KNOWLEDGE.md",
+  "record_sha256": "e6b43fde8ee30e5bc51aacfc9d74c066b92f8092063d50c9d00025e2e455baf3",
+  "base_commit": "3a13cc828f4080b9326c4060cd20f598e60a4699",
+  "pre_outcome": true,
+  "scientific_rules_changed": "none"
+ },
+ "interpretation_contract": {
+  "HISTORICAL_OUTCOME_KNOWN_PRE_V9": "may be replayed through the V9 CLI as implementation validation and as part of the systematic universe, but MUST NOT be described as a prospective V9 result",
+  "PROSPECTIVE_OUTCOME_UNSEEN_AT_V9_FREEZE": "may receive prospective interpretation only if all protocol and executable conditions were frozen before execution",
+  "NO_QUANTITATIVE_OUTCOME_PLANNED": "documentation / no-rule cells only",
+  "STOPPED_UNSEEN": "outcome remains unseen because execution is stopped (e.g. corpus not acquired)",
+  "reporting_requirement": "The paper must report how many EXECUTED cells were historical versus genuinely prospective. A blanket statement that all outcomes were prospectively frozen is FORBIDDEN."
+ }
+}

@@ -1,0 +1,110 @@
+{
+ "all_pass": true,
+ "arithmetic_check_sha256": "6b55799a9cf70c8922b2d2c014acddf4eb79ad4759c17f6ed57d411fe5676136",
+ "checks": [
+  {
+   "check": "n_R2 - n_R0 == n_synthesized",
+   "lhs": 34814,
+   "pass_": true,
+   "rhs": 34814
+  },
+  {
+   "check": "sum(STV four classes) == n_synthesized",
+   "lhs": 34814,
+   "pass_": true,
+   "rhs": 34814
+  },
+  {
+   "check": "n_R1 == n_R0 + n_SEMANTICALLY_ADMITTED",
+   "lhs": 555928,
+   "pass_": true,
+   "rhs": 555928
+  },
+  {
+   "check": "nonadmitted == UNMATCHED + ID_MISMATCH + REF_ABSENT",
+   "lhs": 8751,
+   "pass_": true,
+   "rhs": 8751
+  },
+  {
+   "check": "STV fractions sum to 1",
+   "lhs": 1.0,
+   "pass_": true,
+   "rhs": 1.0
+  },
+  {
+   "check": "per-sequence n_R1 sums to aggregate n_R1",
+   "lhs": 555928,
+   "pass_": true,
+   "rhs": 555928
+  },
+  {
+   "check": "per-sequence n_R0 sums to frozen state hash totals",
+   "lhs": 529865,
+   "pass_": true,
+   "rhs": 529865
+  },
+  {
+   "check": "per-sequence n_R2 sums to frozen state hash totals",
+   "lhs": 564679,
+   "pass_": true,
+   "rhs": 564679
+  },
+  {
+   "check": "row-additive: deletions == 0",
+   "lhs": 0,
+   "pass_": true,
+   "rhs": 0
+  },
+  {
+   "check": "row-additive: coordinate rewrites == 0",
+   "lhs": 0,
+   "pass_": true,
+   "rhs": 0
+  },
+  {
+   "check": "row-additive: unique ID rewrites == 0",
+   "lhs": 0,
+   "pass_": true,
+   "rhs": 0
+  },
+  {
+   "check": "row-additive: ambiguous identity changes == 0",
+   "lhs": 0,
+   "pass_": true,
+   "rhs": 0
+  },
+  {
+   "check": "row-additive: unchanged existing rows == n_R0",
+   "lhs": 529865,
+   "pass_": true,
+   "rhs": 529865
+  },
+  {
+   "check": "row-additive: inserted rows == n_synthesized",
+   "lhs": 34814,
+   "pass_": true,
+   "rhs": 34814
+  },
+  {
+   "check": "R0 subset R2 in every sequence",
+   "lhs": true,
+   "pass_": true,
+   "rhs": true
+  },
+  {
+   "check": "materiality classification from integer counts",
+   "lhs": "STV_COMPOSITION_MATERIAL",
+   "pass_": true,
+   "rhs": "STV_COMPOSITION_MATERIAL"
+  }
+ ],
+ "fractions_recomputed_from_integer_counts": true,
+ "frozen_on": "2026-08-31",
+ "manifest": "TPAMI V9 MOT20 Deep-OC-SORT arithmetic self-check",
+ "metric_values_read_from_evaluator_outputs": true,
+ "n_checks": 16,
+ "record": "13",
+ "result_verification_failure": false,
+ "run_id": "V9-MOT20-DEEPOCSORT-001"
+}

@@ -1,0 +1,751 @@
+{
+  "record": 54,
+  "title": "PoseTrack21 prospective evaluation result (VAL, frozen protocol 53)",
+  "date": "2026-08-22",
+  "branch": "tpami-q1-20260821",
+  "status": "OUTCOMES_COMPUTED_UNDER_FROZEN_PROTOCOL",
+  "record_51_commit": "b2cc61d053190dde7aa1df62afbbe41480209a5b",
+  "record_52_commit": "3fe153786f2a6bd9f4466b7bf9c29b7619beffea",
+  "record_53_commit": "588b4a252313dfc479bac0bdc96938df5c3e3a0b",
+  "outcome_population": {
+    "population": "PoseTrack21 VAL",
+    "sequences": 170,
+    "tracks": 1794,
+    "frames": 20161,
+    "train_contributed_outcomes": false,
+    "train_sequences_used": 0,
+    "test_split_exists": false
+  },
+  "integrity_checks": {
+    "population_is_val_only": true,
+    "exactly_170_sequences": true,
+    "train_sequences_in_outcome_population": 0,
+    "train_outcomes_computed": false,
+    "gate_1r_exact_partition": true,
+    "identical_support_all_methods": true,
+    "primary_aggregate_refused_sparse_g": {
+      "linear": [
+        8,
+        10,
+        20
+      ],
+      "spline": [
+        8,
+        10,
+        20
+      ],
+      "kalman": [
+        8,
+        10,
+        20
+      ],
+      "mae": [
+        8,
+        10,
+        20
+      ],
+      "bigru_seed0": [
+        8,
+        10,
+        20
+      ],
+      "bigru_seed1": [
+        8,
+        10,
+        20
+      ],
+      "bigru_seed2": [
+        8,
+        10,
+        20
+      ]
+    },
+    "primary_aggregate_used_only_primary_g": true,
+    "protocol53_checks": "51/51",
+    "deployment_contract_checks": "23/23",
+    "learned_inference_contract": "corrected window-local (training-consistent)",
+    "confidence_synthesized": false,
+    "unavailable_slots_state": "NATIVE_INVALID",
+    "case_enumeration_vs_frozen_audit": {
+      "audit_cases_at_frozen_g": {
+        "1": 773,
+        "2": 365,
+        "3": 229,
+        "5": 85,
+        "8": 44,
+        "10": 23,
+        "20": 4
+      },
+      "evaluated_cases": {
+        "1": 634,
+        "2": 313,
+        "3": 190,
+        "5": 70,
+        "8": 41,
+        "10": 18,
+        "20": 4
+      },
+      "excluded": {
+        "1": 139,
+        "2": 52,
+        "3": 39,
+        "5": 15,
+        "8": 3,
+        "10": 5,
+        "20": 0
+      },
+      "excluded_total": 253,
+      "exclusion_reason": "the frozen normalization rule: a case is dropped when L_torso is undefined at any of its target frames (either hip native missing, or a degenerate zero scale), or when its sub-segment carries fewer than two anchors. Excluded, never repaired."
+    }
+  },
+  "applicability": {
+    "scoreable_occluded_targets": 78194,
+    "anchors": 482945,
+    "native_missing_excluded": 200050,
+    "gate_1r": {
+      "eligible": 6942,
+      "leading": 8173,
+      "trailing": 8729,
+      "no_anchor": 54350,
+      "sum": 78194,
+      "exact_partition": true,
+      "eligible_rate": 8.87791902191984,
+      "ineligible_total": 71252,
+      "ineligible_rate": 91.12208097808016
+    },
+    "per_sequence_eligibility_pct": {
+      "n": 169,
+      "min": 0.0,
+      "q1": 1.837270341207349,
+      "median": 7.152682255845942,
+      "q3": 15.476190476190476,
+      "max": 48.484848484848484
+    },
+    "runs_off_grid": 459,
+    "normalization_coverage": {
+      "person_frame_joint_scale_defined": 43305,
+      "undefined_excluded": 15248,
+      "defined_pct": 73.95863576588732
+    }
+  },
+  "normalization_coverage": {
+    "person_frame_joint_scale_defined": 43305,
+    "undefined_excluded": 15248,
+    "defined_pct": 73.95863576588732
+  },
+  "support": {
+    "frozen_grid": [
+      1,
+      2,
+      3,
+      5,
+      8,
+      10,
+      20
+    ],
+    "primary_g": [
+      1,
+      2,
+      3,
+      5
+    ],
+    "sparse_g": [
+      8,
+      10,
+      20
+    ],
+    "evaluated_cases_total": 1270,
+    "per_g": {
+      "1": {
+        "cases": 634,
+        "cells": 113,
+        "independent_sequences": 113,
+        "in_primary_aggregate": true,
+        "status": "evaluated"
+      },
+      "2": {
+        "cases": 313,
+        "cells": 79,
+        "independent_sequences": 79,
+        "in_primary_aggregate": true,
+        "status": "evaluated"
+      },
+      "3": {
+        "cases": 190,
+        "cells": 70,
+        "independent_sequences": 70,
+        "in_primary_aggregate": true,
+        "status": "evaluated"
+      },
+      "5": {
+        "cases": 70,
+        "cells": 46,
+        "independent_sequences": 46,
+        "in_primary_aggregate": true,
+        "status": "evaluated"
+      },
+      "8": {
+        "cases": 41,
+        "cells": 27,
+        "independent_sequences": 27,
+        "in_primary_aggregate": false,
+        "status": "insufficient_support"
+      },
+      "10": {
+        "cases": 18,
+        "cells": 11,
+        "independent_sequences": 11,
+        "in_primary_aggregate": false,
+        "status": "insufficient_support"
+      },
+      "20": {
+        "cases": 4,
+        "cells": 4,
+        "independent_sequences": 4,
+        "in_primary_aggregate": false,
+        "status": "insufficient_support"
+      }
+    }
+  },
+  "methods": {
+    "linear": {
+      "primary_aggregate": {
+        "estimate": 0.28373618281875884,
+        "n_sequences": 125,
+        "n_cells": 308,
+        "g_used": [
+          1,
+          2,
+          3,
+          5
+        ],
+        "g_refused_as_sparse": [
+          8,
+          10,
+          20
+        ],
+        "per_sequence_dispersion": {
+          "min": 0.003468126978499269,
+          "q1": 0.08277263756516909,
+          "median": 0.1408601444171328,
+          "q3": 0.25803148524321134,
+          "max": 4.752260813144616
+        }
+      },
+      "per_g_mean": {
+        "1": 0.20485048111412302,
+        "2": 0.4677040869474326,
+        "3": 0.2895964515551751,
+        "5": 0.5755189247713508,
+        "8": 0.3819128572860882,
+        "10": 0.4741721040232981,
+        "20": 0.615582188163928
+      },
+      "n_cases": 1270
+    },
+    "spline": {
+      "primary_aggregate": {
+        "estimate": 0.32038581125266863,
+        "n_sequences": 125,
+        "n_cells": 308,
+        "g_used": [
+          1,
+          2,
+          3,
+          5
+        ],
+        "g_refused_as_sparse": [
+          8,
+          10,
+          20
+        ],
+        "per_sequence_dispersion": {
+          "min": 0.004436139260334571,
+          "q1": 0.085424327219577,
+          "median": 0.14485225729643242,
+          "q3": 0.2973328338361639,
+          "max": 5.04902099853824
+        }
+      },
+      "per_g_mean": {
+        "1": 0.24374394392429535,
+        "2": 0.47816529694687326,
+        "3": 0.3304741675482016,
+        "5": 0.6912401925367896,
+        "8": 0.35159464463240625,
+        "10": 0.39731860795998136,
+        "20": 0.6255041129981569
+      },
+      "n_cases": 1270
+    },
+    "kalman": {
+      "primary_aggregate": {
+        "estimate": 0.28569476746423905,
+        "n_sequences": 125,
+        "n_cells": 308,
+        "g_used": [
+          1,
+          2,
+          3,
+          5
+        ],
+        "g_refused_as_sparse": [
+          8,
+          10,
+          20
+        ],
+        "per_sequence_dispersion": {
+          "min": 0.005504551608582505,
+          "q1": 0.08123983230161076,
+          "median": 0.1343289141271789,
+          "q3": 0.242368650753767,
+          "max": 4.939954399185997
+        }
+      },
+      "per_g_mean": {
+        "1": 0.21121695558680112,
+        "2": 0.471462160408618,
+        "3": 0.3023061546706144,
+        "5": 0.568033081668078,
+        "8": 0.34128220889796074,
+        "10": 0.4307411510017424,
+        "20": 0.5291217859063333
+      },
+      "n_cases": 1270
+    },
+    "mae": {
+      "primary_aggregate": {
+        "estimate": 2.4061696522525082,
+        "n_sequences": 125,
+        "n_cells": 308,
+        "g_used": [
+          1,
+          2,
+          3,
+          5
+        ],
+        "g_refused_as_sparse": [
+          8,
+          10,
+          20
+        ],
+        "per_sequence_dispersion": {
+          "min": 0.017726647074159753,
+          "q1": 0.33039711305162367,
+          "median": 0.5329758950735207,
+          "q3": 1.6796057139576568,
+          "max": 41.515928002693116
+        }
+      },
+      "per_g_mean": {
+        "1": 2.224503954918459,
+        "2": 3.315234827890578,
+        "3": 2.792290168758356,
+        "5": 2.6852332195300352,
+        "8": 3.523816502853012,
+        "10": 2.2016322631059997,
+        "20": 0.8967952754120121
+      },
+      "n_cases": 1270
+    },
+    "bigru_seed0": {
+      "primary_aggregate": {
+        "estimate": 4.055232356827414,
+        "n_sequences": 125,
+        "n_cells": 308,
+        "g_used": [
+          1,
+          2,
+          3,
+          5
+        ],
+        "g_refused_as_sparse": [
+          8,
+          10,
+          20
+        ],
+        "per_sequence_dispersion": {
+          "min": 0.19854274029507357,
+          "q1": 1.0724153857018834,
+          "median": 1.5683839958331882,
+          "q3": 3.617520966518667,
+          "max": 62.23679911285783
+        }
+      },
+      "per_g_mean": {
+        "1": 3.778002223540364,
+        "2": 5.480589903903381,
+        "3": 4.6100593873688975,
+        "5": 4.748823074964149,
+        "8": 4.478230720774511,
+        "10": 2.957002751057131,
+        "20": 1.6116550715011904
+      },
+      "n_cases": 1270
+    },
+    "bigru_seed1": {
+      "primary_aggregate": {
+        "estimate": 3.8698706282568267,
+        "n_sequences": 125,
+        "n_cells": 308,
+        "g_used": [
+          1,
+          2,
+          3,
+          5
+        ],
+        "g_refused_as_sparse": [
+          8,
+          10,
+          20
+        ],
+        "per_sequence_dispersion": {
+          "min": 0.23013172353582498,
+          "q1": 0.9931965518025478,
+          "median": 1.5369060106403802,
+          "q3": 3.5593701481393665,
+          "max": 62.02575448094952
+        }
+      },
+      "per_g_mean": {
+        "1": 3.690748059489641,
+        "2": 4.954907717464087,
+        "3": 4.3497555884200905,
+        "5": 4.577805117459954,
+        "8": 4.617828970208116,
+        "10": 2.8205872545303987,
+        "20": 1.713176468431637
+      },
+      "n_cases": 1270
+    },
+    "bigru_seed2": {
+      "primary_aggregate": {
+        "estimate": 3.8651997286194546,
+        "n_sequences": 125,
+        "n_cells": 308,
+        "g_used": [
+          1,
+          2,
+          3,
+          5
+        ],
+        "g_refused_as_sparse": [
+          8,
+          10,
+          20
+        ],
+        "per_sequence_dispersion": {
+          "min": 0.14901913704609965,
+          "q1": 0.9555771625510328,
+          "median": 1.4297576829632124,
+          "q3": 3.4594819848491642,
+          "max": 61.88881215537483
+        }
+      },
+      "per_g_mean": {
+        "1": 3.6432743705779025,
+        "2": 5.037110015801158,
+        "3": 4.433101933420184,
+        "5": 4.593783019826801,
+        "8": 4.392485063204952,
+        "10": 2.833353283154516,
+        "20": 1.7723230185109133
+      },
+      "n_cases": 1270
+    }
+  },
+  "primary_aggregate_summary": {
+    "linear": 0.28373618281875884,
+    "spline": 0.32038581125266863,
+    "kalman": 0.28569476746423905,
+    "mae": 2.4061696522525082,
+    "bigru_seed0": 4.055232356827414,
+    "bigru_seed1": 3.8698706282568267,
+    "bigru_seed2": 3.8651997286194546
+  },
+  "best_classical": "linear",
+  "best_learned": "mae",
+  "learned_over_best_classical_factor": {
+    "mae": 8.480305995338947,
+    "bigru_seed0": 14.292263737888376,
+    "bigru_seed1": 13.638974732837546,
+    "bigru_seed2": 13.622512610908052
+  },
+  "sparse_descriptive_cells": {
+    "8": {
+      "linear": 0.3819128572860882,
+      "spline": 0.35159464463240625,
+      "kalman": 0.34128220889796074,
+      "mae": 3.523816502853012,
+      "bigru_seed0": 4.478230720774511,
+      "bigru_seed1": 4.617828970208116,
+      "bigru_seed2": 4.392485063204952
+    },
+    "10": {
+      "linear": 0.4741721040232981,
+      "spline": 0.39731860795998136,
+      "kalman": 0.4307411510017424,
+      "mae": 2.2016322631059997,
+      "bigru_seed0": 2.957002751057131,
+      "bigru_seed1": 2.8205872545303987,
+      "bigru_seed2": 2.833353283154516
+    },
+    "20": {
+      "linear": 0.615582188163928,
+      "spline": 0.6255041129981569,
+      "kalman": 0.5291217859063333,
+      "mae": 0.8967952754120121,
+      "bigru_seed0": 1.6116550715011904,
+      "bigru_seed1": 1.713176468431637,
+      "bigru_seed2": 1.7723230185109133
+    }
+  },
+  "spline_prospective": {
+    "prospective": true,
+    "condition": "every reconstructed target lies strictly inside the observed temporal support of its own valid non-bridged segment (record 53)",
+    "condition_frozen_before_outcomes": true,
+    "new_threshold_introduced": false,
+    "all_evaluated_cases_satisfy_condition": true,
+    "three_concepts_kept_distinct": {
+      "operator_validity": "the cubic-spline stencil is mathematically defined",
+      "aggregation_validity": "a (sequence, g) cell exists so the frozen sequence-first mean is defined",
+      "method_applicability": "Gate 1R strict interior \u2014 the only condition admitting a target into the spline evaluation"
+    },
+    "outcome": {
+      "spline_primary": 0.32038581125266863,
+      "linear_primary": 0.28373618281875884,
+      "kalman_primary": 0.28569476746423905,
+      "spline_is_best_classical": false,
+      "spline_rank_among_classical": 3,
+      "per_sequence_max": {
+        "linear": 4.752260813144616,
+        "spline": 5.04902099853824,
+        "kalman": 4.939954399185997
+      },
+      "spline_vs_linear_by_g": {
+        "1": {
+          "spline": 0.24374394392429535,
+          "linear": 0.20485048111412302,
+          "ratio": 1.1898626871591511,
+          "spline_better": false,
+          "in_primary_aggregate": true
+        },
+        "2": {
+          "spline": 0.47816529694687326,
+          "linear": 0.4677040869474326,
+          "ratio": 1.0223671554117004,
+          "spline_better": false,
+          "in_primary_aggregate": true
+        },
+        "3": {
+          "spline": 0.3304741675482016,
+          "linear": 0.2895964515551751,
+          "ratio": 1.1411540637791215,
+          "spline_better": false,
+          "in_primary_aggregate": true
+        },
+        "5": {
+          "spline": 0.6912401925367896,
+          "linear": 0.5755189247713508,
+          "ratio": 1.201072914867941,
+          "spline_better": false,
+          "in_primary_aggregate": true
+        },
+        "8": {
+          "spline": 0.35159464463240625,
+          "linear": 0.3819128572860882,
+          "ratio": 0.9206148416444362,
+          "spline_better": true,
+          "in_primary_aggregate": false
+        },
+        "10": {
+          "spline": 0.39731860795998136,
+          "linear": 0.4741721040232981,
+          "ratio": 0.837920671816787,
+          "spline_better": true,
+          "in_primary_aggregate": false
+        },
+        "20": {
+          "spline": 0.6255041129981569,
+          "linear": 0.615582188163928,
+          "ratio": 1.016117953093839,
+          "spline_better": false,
+          "in_primary_aggregate": false
+        }
+      }
+    },
+    "verdict": "FAILS_TO_SUPPORT",
+    "verdict_statement": "The real-world PoseTrack21 VAL result FAILS TO SUPPORT the applicability-restricted spline claim. Every evaluated case satisfies the pre-frozen strict-interior condition, yet under that restriction spline is the WORST of the three classical operators (0.3204 against linear 0.2837 and Kalman 0.2857) and also carries the largest per-sequence maximum. It is beaten by linear at every gap length inside the primary grid.",
+    "not_explained_by_anchor_scarcity": "anchor support is ample: 96.5 %, 96.8 %, 95.8 % and 95.7 % of cases at g=1,2,3,5 carry at least the four anchors the spline implementation requires, and 78.5 % of all cases carry twelve or more. Only 3.8 % of cases fall below four anchors, so the result is NOT a thin-anchor artefact. No mechanism is asserted beyond that.",
+    "relation_to_earlier_results": {
+      "3dpw_t4_conclusion_rewritten": false,
+      "jta_record_51_recomputed": false,
+      "statement": "On JTA (record 51) spline was the BEST classical operator under the same kind of pre-frozen interior restriction; on NTU (record 45) it was by far the worst family in the noise-amplification estimand. PoseTrack21 lands with NTU in ordering, not with JTA. These are three populations under two different estimands and no unified claim is made here; the earlier 3DPW T4 conclusion and JTA record 51 are quoted, not rewritten."
+    }
+  },
+  "learned_cross_population": {
+    "first_prospective_external_evaluation_under_corrected_contract": true,
+    "contract": "corrected window-local (training-consistent)",
+    "input_contract": {
+      "slots": 17,
+      "available": 13,
+      "unavailable_ntu_slots": [
+        1,
+        2,
+        3,
+        4
+      ],
+      "unavailable_state": "NATIVE_INVALID",
+      "never_padding": true,
+      "confidence_available": false,
+      "confidence_synthesized": false
+    },
+    "no_retraining": true,
+    "no_checkpoint_reselection": true,
+    "no_architecture_change": true,
+    "results": {
+      "mae": {
+        "primary": 2.4061696522525082,
+        "per_sequence": {
+          "min": 0.017726647074159753,
+          "q1": 0.33039711305162367,
+          "median": 0.5329758950735207,
+          "q3": 1.6796057139576568,
+          "max": 41.515928002693116
+        }
+      },
+      "bigru_seed0": {
+        "primary": 4.055232356827414,
+        "per_sequence": {
+          "min": 0.19854274029507357,
+          "q1": 1.0724153857018834,
+          "median": 1.5683839958331882,
+          "q3": 3.617520966518667,
+          "max": 62.23679911285783
+        }
+      },
+      "bigru_seed1": {
+        "primary": 3.8698706282568267,
+        "per_sequence": {
+          "min": 0.23013172353582498,
+          "q1": 0.9931965518025478,
+          "median": 1.5369060106403802,
+          "q3": 3.5593701481393665,
+          "max": 62.02575448094952
+        }
+      },
+      "bigru_seed2": {
+        "primary": 3.8651997286194546,
+        "per_sequence": {
+          "min": 0.14901913704609965,
+          "q1": 0.9555771625510328,
+          "median": 1.4297576829632124,
+          "q3": 3.4594819848491642,
+          "max": 61.88881215537483
+        }
+      }
+    },
+    "bigru_seed_spread": {
+      "min": 3.8651997286194546,
+      "max": 4.055232356827414,
+      "range": 0.1900326282079594
+    },
+    "q1_does_correction_remove_the_jta_style_failure": {
+      "answer": "PARTIALLY, AND NOT ATTRIBUTABLY",
+      "detail": "the magnitude collapses: on JTA the same frozen checkpoints scored MAE 14.86 and BiGRU 27.30-27.76 torso lengths; on PoseTrack21 VAL under the corrected contract they score MAE 2.41 and BiGRU 3.87-4.06. The catastrophic regime is gone. But this is NOT a controlled comparison: the population changed AND the inference contract changed at the same time, so the improvement cannot be attributed to the correction alone. The only controlled evidence for the correction is the verification suite, which shows it is exactly a no-op where training and old inference already agreed and exactly window-local where they did not.",
+      "causality_claimed": false
+    },
+    "q2_finite_and_scale_plausible": {
+      "answer": "YES",
+      "detail": "every learned case error is finite. The per-sequence MEDIAN is 0.5330 for MAE and about 1.5684 for BiGRU \u2014 around half a torso length and one and a half torso lengths respectively, which is physically plausible. The MEAN is far higher (2.41 and 3.87-4.06) because the per-sequence distribution is heavily right-skewed, with maxima of 41.5 and 62.2. Both the mean and the dispersion are reported; neither is suppressed."
+    },
+    "q3_does_the_ntu_learned_direction_remain": {
+      "answer": "NO \u2014 IT INVERTS",
+      "ntu_reference_record_45_beta_phi0": {
+        "linear": 0.6049,
+        "spline": 10.54643,
+        "kalman": 1.43686,
+        "mae": 0.11684,
+        "bigru_seed0": 0.07856,
+        "bigru_seed1": 0.07496,
+        "bigru_seed2": 0.09015
+      },
+      "estimand_caveat": "record 45 reports beta, the noise-amplification slope from the E5 sigma sweep, NOT a torso-normalized reconstruction error. No sigma sweep is applicable to PoseTrack21 (no jitter rule is frozen for it, exactly as for JTA), so this is an ORDERING comparison across two different estimands and not a like-for-like magnitude comparison.",
+      "detail": "on NTU the learned family sat BELOW every classical operator (BiGRU 0.075-0.090 < MAE 0.117 < linear 0.605 < Kalman 1.437 < spline 10.546). On PoseTrack21 VAL the ordering is linear 0.2837 < Kalman 0.2857 < spline 0.3204 << MAE 2.4062 < BiGRU 3.8652-4.0552. The learned family moves from best to worst, and within it BiGRU and MAE swap places: BiGRU led on NTU, MAE leads here."
+    },
+    "q4_population_shift_vs_preprocessing": {
+      "answer": "THE PREPROCESSING MISMATCH IS EXCLUDED; THE RESIDUAL IS NOT ATTRIBUTED",
+      "detail": "the preprocessing mismatch diagnosed on JTA is verified fixed: 23/23 checks, including exact agreement with the old path where the normalization domains coincide and exact window-locality where they do not. So the residual gap is NOT that defect. It is NOT thereby shown to be population shift. Untested alternatives remain open and are listed rather than dismissed.",
+      "open_alternatives": [
+        "structural input shift: 4 of 17 slots (both eyes, both ears) are permanently NATIVE_INVALID on PoseTrack21",
+        "no confidence channel exists and none is synthesized",
+        "PoseTrack21 segments are short \u2014 strict non-bridging leaves far less temporal context per window than the 120-frame training window assumes",
+        "genuine domain gap between NTU indoor single-subject capture and PoseTrack21 in-the-wild multi-person video",
+        "the target construct differs: NTU targets are synthetically masked, PoseTrack21 targets are natural annotated occlusions"
+      ],
+      "causality_claimed": false
+    }
+  },
+  "cross_population_comparison": {
+    "recomputation": {
+      "ntu_recomputed": false,
+      "jta_recomputed": false,
+      "record_51_unchanged": true
+    },
+    "ntu_record_45_beta_phi0": {
+      "linear": 0.6049,
+      "spline": 10.54643,
+      "kalman": 1.43686,
+      "mae": 0.11684,
+      "bigru_seed0": 0.07856,
+      "bigru_seed1": 0.07496,
+      "bigru_seed2": 0.09015
+    },
+    "jta_record_51_sequence_first": {
+      "linear": 0.5836,
+      "spline": 0.4562,
+      "kalman": 0.5079,
+      "mae": 14.8596,
+      "bigru_seed0": 27.758,
+      "bigru_seed1": 27.5859,
+      "bigru_seed2": 27.2968
+    },
+    "posetrack21_val_primary_aggregate": {
+      "linear": 0.28373618281875884,
+      "spline": 0.32038581125266863,
+      "kalman": 0.28569476746423905,
+      "mae": 2.4061696522525082,
+      "bigru_seed0": 4.055232356827414,
+      "bigru_seed1": 3.8698706282568267,
+      "bigru_seed2": 3.8651997286194546
+    },
+    "estimand_warning": "the three columns are NOT the same estimand. NTU record 45 reports a noise amplification slope beta; JTA record 51 and PoseTrack21 record 54 report torso-normalized reconstruction error under their own frozen protocols, on different populations, different joint sets and different segmentation rules. Only ORDERING within a column may be compared across columns, and even that carries the estimand caveat.",
+    "orderings": {
+      "ntu_record_45": "BiGRU < MAE < linear < Kalman << spline",
+      "jta_record_51": "spline < Kalman < linear << MAE < BiGRU",
+      "posetrack21_val": "linear < Kalman < spline << MAE < BiGRU"
+    },
+    "per_g_identification_caveat": "per-g means on PoseTrack21 VAL are computed over SMALL and largely NON-OVERLAPPING sets of sequences (113, 79, 70, 46, 27, 11 and 4 independent sequences at g=1,2,3,5,8,10,20). Cross-g comparison within a method is therefore weakly identified here, unlike JTA where every gap length drew on the same 256 sequences. The non-monotone per-g profiles seen on this population \u2014 present for the CLASSICAL operators too \u2014 must not be read as the flat-profile signature reported for the learned models on JTA."
+  },
+  "confirmations": {
+    "training_performed": false,
+    "checkpoint_reselection": false,
+    "architecture_modified": false,
+    "hyperparameters_tuned": false,
+    "protocol_modified_after_first_posetrack_outcome": false,
+    "train_reconstruction_outcomes": 0,
+    "jta_record_51_unchanged": true,
+    "jta_record_51_recomputed": false,
+    "ntu_results_recomputed": false,
+    "3dpw_t4_interpretation_modified": false,
+    "stgcn_run": false,
+    "project_final_test_sealed": true,
+    "record_54_committed": false
+  },
+  "provenance": {
+    "evaluation_script": "scripts/posetrack21/evaluate_val.py",
+    "result_artifact": "data/posetrack21/audit/val_eval_primary.json",
+    "result_sha256": "d73ba1bc9bde6925d15959b8b0a19fc8707c0f6958924ec2e991dcf8b9bdc668",
+    "frozen_rules_module": "scripts/posetrack21/protocol53.py"
+  }
+}

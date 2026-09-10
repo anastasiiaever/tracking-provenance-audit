@@ -1,0 +1,91 @@
+{
+ "canonical_serialization": {
+  "encoding": "UTF-8",
+  "format": "JSON",
+  "hash": "sha256 over the canonically serialized scientific object",
+  "sequence_order": [
+   "MOT20-01",
+   "MOT20-02",
+   "MOT20-03",
+   "MOT20-05"
+  ],
+  "sorted_object_keys": true,
+  "wall_clock_in_hashed_object": false
+ },
+ "prefilled": {
+  "BENCHMARK": "MOT20",
+  "SPLIT_TO_EVAL": "val",
+  "dataset": "MOT20",
+  "frame_index_convention": "1-indexed native frames; converter image_range is zero-indexed",
+  "included_frame_counts": {
+   "MOT20-01": 214,
+   "MOT20-02": 1390,
+   "MOT20-03": 1202,
+   "MOT20-05": 1657
+  },
+  "included_native_frame_ranges": {
+   "MOT20-01": [
+    216,
+    429
+   ],
+   "MOT20-02": [
+    1393,
+    2782
+   ],
+   "MOT20-03": [
+    1204,
+    2405
+   ],
+   "MOT20-05": [
+    1659,
+    3315
+   ]
+  },
+  "native_sequence_lengths": {
+   "MOT20-01": 429,
+   "MOT20-02": 2782,
+   "MOT20-03": 2405,
+   "MOT20-05": 3315
+  },
+  "protocol_amendment_identity": "09A_MOT20_SEMANTIC_COMPLETION",
+  "sequence_list": [
+   "MOT20-01",
+   "MOT20-02",
+   "MOT20-03",
+   "MOT20-05"
+  ],
+  "source": "official MOT20",
+  "source_split": "train",
+  "total_frames": 4463,
+  "trackeval_commit": "12c8791b303e0a0b50f753af204249e622d0281a"
+ },
+ "required_fields": [
+  "dataset",
+  "source",
+  "source_split",
+  "sequence_list",
+  "native_sequence_lengths",
+  "included_native_frame_ranges",
+  "included_frame_counts",
+  "total_frames",
+  "gt_file_paths",
+  "gt_sha256",
+  "seqinfo_ini_sha256",
+  "frame_index_convention",
+  "scoreable_gt_predicate",
+  "trackeval_distractor_semantics",
+  "stv_reference_semantics",
+  "BENCHMARK",
+  "SPLIT_TO_EVAL",
+  "trackeval_commit",
+  "protocol_amendment_identity"
+ ],
+ "rule": "do not invent GT hashes before acquisition",
+ "spec": "MOT20 population manifest specification (defines the FUTURE materialized manifest)",
+ "status": "SPECIFICATION ONLY; no GT hash is invented before acquisition",
+ "to_be_filled_at_materialization": [
+  "gt_file_paths",
+  "gt_sha256",
+  "seqinfo_ini_sha256"
+ ]
+}

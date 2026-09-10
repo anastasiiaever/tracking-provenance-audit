@@ -1,0 +1,946 @@
+{
+ "protocol": "TPAMI V9 prospective tracking-provenance audit protocol",
+ "frozen_on": "2026-08-30",
+ "census_commit": "ad688f554e47bb1ebd859dc83967b4845f12f446",
+ "outcome_independence": {
+  "tracker_executed": false,
+  "postprocessing_executed_on_real_outputs": false,
+  "trackeval_executed": false,
+  "stv_computed": false,
+  "ranking_computed": false,
+  "any_v9_metric_inspected": false,
+  "statement": "Every rule below was fixed before any V9 tracker, post-processing, metric, STV or ranking outcome existed."
+ },
+ "role_vocabulary_note": "SCHEMA A1: documentation role and structural audit mode are INDEPENDENT axes. `documentation_role` is derived only from census documentation status and documented split; it never encodes structural behaviour. `audit_mode` is derived only from structural family, corpus availability and documentation-executability; it never encodes documentation status. NON_ROW_ADDITIVE_STRUCTURAL is REMOVED as a documentation role; the non-row-additive property is now carried by audit_mode = NON_ROW_ADDITIVE_S0_S2 together with structural_family. Documentation status is never inferred from structural behaviour, and vice versa.",
+ "cells": [
+  {
+   "pipeline": "ByteTrack",
+   "dataset": "MOT17",
+   "census_documentation_status": "DOCUMENTED_DEFAULT",
+   "census_documented_split": "test",
+   "documentation_role": "SECONDARY_SPLIT_ADAPTED",
+   "structural_family": "LINEAR_DTI_ROW_ADDITIVE",
+   "audit_mode": "ROW_ADDITIVE_R0_R1_R2",
+   "execution_state": "EXECUTABLE",
+   "split_status": "SPLIT_ADAPTED_FROM_TEST",
+   "row_additive": true,
+   "stop_reason": null,
+   "upstream_commit": "d1bf0191adff59bc8fcfeaa0b33d3d1642552a99",
+   "implementation_path": "tools/interpolation.py::dti",
+   "callsite_parameters": "n_min=5, n_dti=20",
+   "outcome_knowledge_status": "HISTORICAL_OUTCOME_KNOWN_PRE_V9",
+   "pre_v9_known_quantities": [
+    "raw/post states (R0,R0w,R1,R2)",
+    "synthesized-row composition",
+    "STV four-class counts",
+    "metrics (HOTA,DetA,AssA,IDF1,MOTA at R0/R1/R2)",
+    "pairwise ordering"
+   ],
+   "pre_v9_evidence_commit": "a86f2db",
+   "pre_v9_evidence_artifact": "results/mot_audit/ByteTrack_states.json, eval_ByteTrack.json, eval_ALL.json, RESULTS.json"
+  },
+  {
+   "pipeline": "ByteTrack",
+   "dataset": "MOT20",
+   "census_documentation_status": "DOCUMENTED_DEFAULT",
+   "census_documented_split": "test",
+   "documentation_role": "SECONDARY_SPLIT_ADAPTED",
+   "structural_family": "LINEAR_DTI_ROW_ADDITIVE",
+   "audit_mode": "STOPPED_BEFORE_EXECUTION",
+   "execution_state": "DATASET_MATERIALIZED_FROM_VERIFIED_MIRROR",
+   "split_status": "SPLIT_ADAPTED_FROM_TEST",
+   "row_additive": true,
+   "stop_reason": "DATASET_NOT_ACQUIRED: no MOT20/DanceTrack corpus is present; the already-frozen population rule cannot yet be materialised (Sec. 16 stop condition 2). Acquiring the corpus later materialises the frozen population; it must not redefine it.",
+   "upstream_commit": "d1bf0191adff59bc8fcfeaa0b33d3d1642552a99",
+   "implementation_path": "tools/interpolation.py::dti",
+   "callsite_parameters": "n_min=5, n_dti=20",
+   "outcome_knowledge_status": "STOPPED_UNSEEN",
+   "pre_v9_known_quantities": [],
+   "pre_v9_evidence_commit": null,
+   "pre_v9_evidence_artifact": "outcome remains unseen because execution is stopped (corpus not acquired)",
+   "dataset_materialization": {
+    "record": "09B",
+    "population_manifest_sha256": "aabe4907077934fb834a7639b9722b9120de0a007553bbc98a6132b768d3e232",
+    "note": "dataset state only; execution NOT authorized and no outcome exists"
+   }
+  },
+  {
+   "pipeline": "ByteTrack",
+   "dataset": "DanceTrack",
+   "census_documentation_status": "NO_DOCUMENTED_RULE",
+   "census_documented_split": null,
+   "documentation_role": "NO_DOCUMENTED_RULE",
+   "structural_family": "LINEAR_DTI_ROW_ADDITIVE",
+   "audit_mode": "DOCUMENTATION_ONLY",
+   "execution_state": "NOT_EXECUTABLE_DOCUMENTATION_ONLY",
+   "split_status": "NOT_APPLICABLE",
+   "row_additive": true,
+   "stop_reason": null,
+   "upstream_commit": "d1bf0191adff59bc8fcfeaa0b33d3d1642552a99",
+   "implementation_path": "tools/interpolation.py::dti",
+   "callsite_parameters": "n_min=5, n_dti=20",
+   "outcome_knowledge_status": "NO_QUANTITATIVE_OUTCOME_PLANNED",
+   "pre_v9_known_quantities": [],
+   "pre_v9_evidence_commit": null,
+   "pre_v9_evidence_artifact": "documentation/no-rule cell; no quantitative outcome planned"
+  },
+  {
+   "pipeline": "BoT-SORT",
+   "dataset": "MOT17",
+   "census_documentation_status": "DOCUMENTED_DEFAULT",
+   "census_documented_split": "test",
+   "documentation_role": "SECONDARY_SPLIT_ADAPTED",
+   "structural_family": "LINEAR_DTI_ROW_ADDITIVE",
+   "audit_mode": "ROW_ADDITIVE_R0_R1_R2",
+   "execution_state": "EXECUTABLE",
+   "split_status": "SPLIT_ADAPTED_FROM_TEST",
+   "row_additive": true,
+   "stop_reason": null,
+   "upstream_commit": "251985436d6712aaf682aaaf5f71edb4987224bd",
+   "implementation_path": "tools/interpolation.py::dti",
+   "callsite_parameters": "n_min=5, n_dti=20 (argparse defaults)",
+   "outcome_knowledge_status": "HISTORICAL_OUTCOME_KNOWN_PRE_V9",
+   "pre_v9_known_quantities": [
+    "raw/post states",
+    "synthesized-row composition",
+    "STV four-class counts",
+    "metrics at R0/R1/R2",
+    "pairwise ordering"
+   ],
+   "pre_v9_evidence_commit": "a86f2db",
+   "pre_v9_evidence_artifact": "results/mot_audit/BoTSORT_states.json, eval_ALL.json, RESULTS.json"
+  },
+  {
+   "pipeline": "BoT-SORT",
+   "dataset": "MOT20",
+   "census_documentation_status": "DOCUMENTED_DEFAULT",
+   "census_documented_split": "test",
+   "documentation_role": "SECONDARY_SPLIT_ADAPTED",
+   "structural_family": "LINEAR_DTI_ROW_ADDITIVE",
+   "audit_mode": "STOPPED_BEFORE_EXECUTION",
+   "execution_state": "DATASET_MATERIALIZED_FROM_VERIFIED_MIRROR",
+   "split_status": "SPLIT_ADAPTED_FROM_TEST",
+   "row_additive": true,
+   "stop_reason": "DATASET_NOT_ACQUIRED: no MOT20/DanceTrack corpus is present; the already-frozen population rule cannot yet be materialised (Sec. 16 stop condition 2). Acquiring the corpus later materialises the frozen population; it must not redefine it.",
+   "upstream_commit": "251985436d6712aaf682aaaf5f71edb4987224bd",
+   "implementation_path": "tools/interpolation.py::dti",
+   "callsite_parameters": "n_min=5, n_dti=20 (argparse defaults)",
+   "outcome_knowledge_status": "STOPPED_UNSEEN",
+   "pre_v9_known_quantities": [],
+   "pre_v9_evidence_commit": null,
+   "pre_v9_evidence_artifact": "outcome remains unseen because execution is stopped (corpus not acquired)",
+   "dataset_materialization": {
+    "record": "09B",
+    "population_manifest_sha256": "aabe4907077934fb834a7639b9722b9120de0a007553bbc98a6132b768d3e232",
+    "note": "dataset state only; execution NOT authorized and no outcome exists"
+   }
+  },
+  {
+   "pipeline": "BoT-SORT",
+   "dataset": "DanceTrack",
+   "census_documentation_status": "NO_DOCUMENTED_RULE",
+   "census_documented_split": null,
+   "documentation_role": "NO_DOCUMENTED_RULE",
+   "structural_family": "LINEAR_DTI_ROW_ADDITIVE",
+   "audit_mode": "DOCUMENTATION_ONLY",
+   "execution_state": "NOT_EXECUTABLE_DOCUMENTATION_ONLY",
+   "split_status": "NOT_APPLICABLE",
+   "row_additive": true,
+   "stop_reason": null,
+   "upstream_commit": "251985436d6712aaf682aaaf5f71edb4987224bd",
+   "implementation_path": "tools/interpolation.py::dti",
+   "callsite_parameters": "n_min=5, n_dti=20 (argparse defaults)",
+   "outcome_knowledge_status": "NO_QUANTITATIVE_OUTCOME_PLANNED",
+   "pre_v9_known_quantities": [],
+   "pre_v9_evidence_commit": null,
+   "pre_v9_evidence_artifact": "documentation/no-rule cell; no quantitative outcome planned"
+  },
+  {
+   "pipeline": "OC-SORT",
+   "dataset": "MOT17",
+   "census_documentation_status": "DOCUMENTED_DEFAULT",
+   "census_documented_split": "test / private setting",
+   "documentation_role": "SECONDARY_SPLIT_ADAPTED",
+   "structural_family": "LINEAR_DTI_ROW_ADDITIVE",
+   "audit_mode": "ROW_ADDITIVE_R0_R1_R2",
+   "execution_state": "EXECUTABLE",
+   "split_status": "SPLIT_ADAPTED_FROM_TEST",
+   "row_additive": true,
+   "stop_reason": null,
+   "upstream_commit": "8462e7e729a93ccd3bd995c0a79a890336cb3a0b",
+   "implementation_path": "tools/interpolation.py::dti",
+   "callsite_parameters": "n_min=30, n_dti=20",
+   "outcome_knowledge_status": "HISTORICAL_OUTCOME_KNOWN_PRE_V9",
+   "pre_v9_known_quantities": [
+    "raw/post states",
+    "synthesized-row composition",
+    "STV four-class counts",
+    "metrics at R0/R1/R2",
+    "pairwise ordering"
+   ],
+   "pre_v9_evidence_commit": "a86f2db",
+   "pre_v9_evidence_artifact": "results/mot_audit/OCSORT_states.json, eval_OCSORT.json, eval_ALL.json, RESULTS.json"
+  },
+  {
+   "pipeline": "OC-SORT",
+   "dataset": "MOT20",
+   "census_documentation_status": "DOCUMENTED_DEFAULT",
+   "census_documented_split": "test / private setting",
+   "documentation_role": "SECONDARY_SPLIT_ADAPTED",
+   "structural_family": "LINEAR_DTI_ROW_ADDITIVE",
+   "audit_mode": "STOPPED_BEFORE_EXECUTION",
+   "execution_state": "DATASET_MATERIALIZED_FROM_VERIFIED_MIRROR",
+   "split_status": "SPLIT_ADAPTED_FROM_TEST",
+   "row_additive": true,
+   "stop_reason": "DATASET_NOT_ACQUIRED: no MOT20/DanceTrack corpus is present; the already-frozen population rule cannot yet be materialised (Sec. 16 stop condition 2). Acquiring the corpus later materialises the frozen population; it must not redefine it.",
+   "upstream_commit": "8462e7e729a93ccd3bd995c0a79a890336cb3a0b",
+   "implementation_path": "tools/interpolation.py::dti",
+   "callsite_parameters": "n_min=30, n_dti=20",
+   "outcome_knowledge_status": "STOPPED_UNSEEN",
+   "pre_v9_known_quantities": [],
+   "pre_v9_evidence_commit": null,
+   "pre_v9_evidence_artifact": "outcome remains unseen because execution is stopped (corpus not acquired)",
+   "dataset_materialization": {
+    "record": "09B",
+    "population_manifest_sha256": "aabe4907077934fb834a7639b9722b9120de0a007553bbc98a6132b768d3e232",
+    "note": "dataset state only; execution NOT authorized and no outcome exists"
+   }
+  },
+  {
+   "pipeline": "OC-SORT",
+   "dataset": "DanceTrack",
+   "census_documentation_status": "IMPLEMENTED_NOT_DATASET_DOCUMENTED",
+   "census_documented_split": null,
+   "documentation_role": "DOCUMENTATION_ONLY_IMPLEMENTED",
+   "structural_family": "LINEAR_DTI_ROW_ADDITIVE",
+   "audit_mode": "DOCUMENTATION_ONLY",
+   "execution_state": "NOT_EXECUTABLE_DOCUMENTATION_ONLY",
+   "split_status": "NOT_APPLICABLE",
+   "row_additive": true,
+   "stop_reason": null,
+   "upstream_commit": "8462e7e729a93ccd3bd995c0a79a890336cb3a0b",
+   "implementation_path": "tools/interpolation.py::dti",
+   "callsite_parameters": "n_min=30, n_dti=20",
+   "outcome_knowledge_status": "NO_QUANTITATIVE_OUTCOME_PLANNED",
+   "pre_v9_known_quantities": [],
+   "pre_v9_evidence_commit": null,
+   "pre_v9_evidence_artifact": "documentation/no-rule cell; no quantitative outcome planned"
+  },
+  {
+   "pipeline": "OC-SORT-GPR",
+   "dataset": "MOT17",
+   "census_documentation_status": "DOCUMENTED_OPTIONAL",
+   "census_documented_split": "test / private setting",
+   "documentation_role": "OPTIONAL_DOCUMENTED_FAMILY",
+   "structural_family": "GPR_REWRITE",
+   "audit_mode": "NON_ROW_ADDITIVE_S0_S2",
+   "execution_state": "EXECUTABLE",
+   "split_status": "SPLIT_ADAPTED_FROM_TEST",
+   "row_additive": false,
+   "stop_reason": null,
+   "upstream_commit": "8462e7e729a93ccd3bd995c0a79a890336cb3a0b",
+   "implementation_path": "tools/gp_interpolation.py::gp_interpolation",
+   "callsite_parameters": "n_min=30, n_dti=20 (n_dti accepted but unused in body)",
+   "outcome_knowledge_status": "PROSPECTIVE_OUTCOME_UNSEEN_AT_V9_FREEZE",
+   "pre_v9_known_quantities": [],
+   "pre_v9_evidence_commit": null,
+   "pre_v9_evidence_artifact": "verified unseen: no pre-V9 artifact, file or commit references this pipeline's post-processing outcome. Searched results/, docs/wacv/ and reachable git history at and before the V8 freeze 9fc3c38; 'gp_interpolation' appears nowhere pre-V9, and the only pre-V9 'GPR' mentions are StrongSORT's own GSI Gaussian-process fit."
+  },
+  {
+   "pipeline": "OC-SORT-GPR",
+   "dataset": "MOT20",
+   "census_documentation_status": "DOCUMENTED_OPTIONAL",
+   "census_documented_split": "test / private setting",
+   "documentation_role": "OPTIONAL_DOCUMENTED_FAMILY",
+   "structural_family": "GPR_REWRITE",
+   "audit_mode": "STOPPED_BEFORE_EXECUTION",
+   "execution_state": "DATASET_MATERIALIZED_FROM_VERIFIED_MIRROR",
+   "split_status": "SPLIT_ADAPTED_FROM_TEST",
+   "row_additive": false,
+   "stop_reason": "DATASET_NOT_ACQUIRED: no MOT20/DanceTrack corpus is present; the already-frozen population rule cannot yet be materialised (Sec. 16 stop condition 2). Acquiring the corpus later materialises the frozen population; it must not redefine it.",
+   "upstream_commit": "8462e7e729a93ccd3bd995c0a79a890336cb3a0b",
+   "implementation_path": "tools/gp_interpolation.py::gp_interpolation",
+   "callsite_parameters": "n_min=30, n_dti=20 (n_dti accepted but unused in body)",
+   "outcome_knowledge_status": "STOPPED_UNSEEN",
+   "pre_v9_known_quantities": [],
+   "pre_v9_evidence_commit": null,
+   "pre_v9_evidence_artifact": "outcome remains unseen because execution is stopped (corpus not acquired)",
+   "dataset_materialization": {
+    "record": "09B",
+    "population_manifest_sha256": "aabe4907077934fb834a7639b9722b9120de0a007553bbc98a6132b768d3e232",
+    "note": "dataset state only; execution NOT authorized and no outcome exists"
+   }
+  },
+  {
+   "pipeline": "OC-SORT-GPR",
+   "dataset": "DanceTrack",
+   "census_documentation_status": "IMPLEMENTED_NOT_DATASET_DOCUMENTED",
+   "census_documented_split": null,
+   "documentation_role": "DOCUMENTATION_ONLY_IMPLEMENTED",
+   "structural_family": "GPR_REWRITE",
+   "audit_mode": "DOCUMENTATION_ONLY",
+   "execution_state": "NOT_EXECUTABLE_DOCUMENTATION_ONLY",
+   "split_status": "NOT_APPLICABLE",
+   "row_additive": false,
+   "stop_reason": null,
+   "upstream_commit": "8462e7e729a93ccd3bd995c0a79a890336cb3a0b",
+   "implementation_path": "tools/gp_interpolation.py::gp_interpolation",
+   "callsite_parameters": "n_min=30, n_dti=20 (n_dti accepted but unused in body)",
+   "outcome_knowledge_status": "NO_QUANTITATIVE_OUTCOME_PLANNED",
+   "pre_v9_known_quantities": [],
+   "pre_v9_evidence_commit": null,
+   "pre_v9_evidence_artifact": "documentation/no-rule cell; no quantitative outcome planned"
+  },
+  {
+   "pipeline": "Deep-OC-SORT",
+   "dataset": "MOT17",
+   "census_documentation_status": "DOCUMENTED_DEFAULT",
+   "census_documented_split": "val",
+   "documentation_role": "PRIMARY_DOCUMENTED_VALIDATION",
+   "structural_family": "LINEAR_DTI_ROW_ADDITIVE",
+   "audit_mode": "ROW_ADDITIVE_R0_R1_R2",
+   "execution_state": "EXECUTABLE",
+   "split_status": "DOCUMENTED_ON_VALIDATION",
+   "row_additive": true,
+   "stop_reason": null,
+   "upstream_commit": "6bb51d027b137233f5c520b6fcc4f2ae387a6ba9",
+   "implementation_path": "utils.py::dti",
+   "callsite_parameters": "n_min=30, n_dti=20 (signature defaults; --post passes none)",
+   "outcome_knowledge_status": "PROSPECTIVE_OUTCOME_UNSEEN_AT_V9_FREEZE",
+   "pre_v9_known_quantities": [],
+   "pre_v9_evidence_commit": null,
+   "pre_v9_evidence_artifact": "verified unseen: no pre-V9 artifact, file or commit references this pipeline's post-processing outcome. Searched results/, docs/wacv/ and reachable git history at and before the V8 freeze 9fc3c38; 'gp_interpolation' appears nowhere pre-V9, and the only pre-V9 'GPR' mentions are StrongSORT's own GSI Gaussian-process fit."
+  },
+  {
+   "pipeline": "Deep-OC-SORT",
+   "dataset": "MOT20",
+   "census_documentation_status": "DOCUMENTED_DEFAULT",
+   "census_documented_split": "val",
+   "documentation_role": "PRIMARY_DOCUMENTED_VALIDATION",
+   "structural_family": "LINEAR_DTI_ROW_ADDITIVE",
+   "audit_mode": "STOPPED_BEFORE_EXECUTION",
+   "execution_state": "DATASET_MATERIALIZED_FROM_VERIFIED_MIRROR",
+   "split_status": "DOCUMENTED_ON_VALIDATION",
+   "row_additive": true,
+   "stop_reason": "DATASET_NOT_ACQUIRED: no MOT20/DanceTrack corpus is present; the already-frozen population rule cannot yet be materialised (Sec. 16 stop condition 2). Acquiring the corpus later materialises the frozen population; it must not redefine it.",
+   "upstream_commit": "6bb51d027b137233f5c520b6fcc4f2ae387a6ba9",
+   "implementation_path": "utils.py::dti",
+   "callsite_parameters": "n_min=30, n_dti=20 (signature defaults; --post passes none)",
+   "outcome_knowledge_status": "STOPPED_UNSEEN",
+   "pre_v9_known_quantities": [],
+   "pre_v9_evidence_commit": null,
+   "pre_v9_evidence_artifact": "outcome remains unseen because execution is stopped (corpus not acquired)",
+   "dataset_materialization": {
+    "record": "09B",
+    "population_manifest_sha256": "aabe4907077934fb834a7639b9722b9120de0a007553bbc98a6132b768d3e232",
+    "note": "dataset state only; execution NOT authorized and no outcome exists"
+   }
+  },
+  {
+   "pipeline": "Deep-OC-SORT",
+   "dataset": "DanceTrack",
+   "census_documentation_status": "DOCUMENTED_DEFAULT",
+   "census_documented_split": "val",
+   "documentation_role": "PRIMARY_DOCUMENTED_VALIDATION",
+   "structural_family": "LINEAR_DTI_ROW_ADDITIVE",
+   "audit_mode": "STOPPED_BEFORE_EXECUTION",
+   "execution_state": "STOPPED_DATASET_NOT_ACQUIRED",
+   "split_status": "DOCUMENTED_ON_VALIDATION",
+   "row_additive": true,
+   "stop_reason": "DATASET_NOT_ACQUIRED: no MOT20/DanceTrack corpus is present; the already-frozen population rule cannot yet be materialised (Sec. 16 stop condition 2). Acquiring the corpus later materialises the frozen population; it must not redefine it.",
+   "upstream_commit": "6bb51d027b137233f5c520b6fcc4f2ae387a6ba9",
+   "implementation_path": "utils.py::dti",
+   "callsite_parameters": "n_min=30, n_dti=20 (signature defaults; --post passes none)",
+   "outcome_knowledge_status": "STOPPED_UNSEEN",
+   "pre_v9_known_quantities": [],
+   "pre_v9_evidence_commit": null,
+   "pre_v9_evidence_artifact": "outcome remains unseen because execution is stopped (corpus not acquired)"
+  },
+  {
+   "pipeline": "Hybrid-SORT",
+   "dataset": "MOT17",
+   "census_documentation_status": "DOCUMENTED_DEFAULT",
+   "census_documented_split": "test",
+   "documentation_role": "SECONDARY_SPLIT_ADAPTED",
+   "structural_family": "LINEAR_DTI_ROW_ADDITIVE",
+   "audit_mode": "ROW_ADDITIVE_R0_R1_R2",
+   "execution_state": "EXECUTABLE",
+   "split_status": "SPLIT_ADAPTED_FROM_TEST",
+   "row_additive": true,
+   "stop_reason": null,
+   "upstream_commit": "396f8d30db13304c0cbaf1dcf2e16ded93ce1701",
+   "implementation_path": "tools/interpolation.py::dti",
+   "callsite_parameters": "n_min=30, n_dti=20",
+   "outcome_knowledge_status": "PROSPECTIVE_OUTCOME_UNSEEN_AT_V9_FREEZE",
+   "pre_v9_known_quantities": [],
+   "pre_v9_evidence_commit": null,
+   "pre_v9_evidence_artifact": "verified unseen: no pre-V9 artifact, file or commit references this pipeline's post-processing outcome. Searched results/, docs/wacv/ and reachable git history at and before the V8 freeze 9fc3c38; 'gp_interpolation' appears nowhere pre-V9, and the only pre-V9 'GPR' mentions are StrongSORT's own GSI Gaussian-process fit."
+  },
+  {
+   "pipeline": "Hybrid-SORT",
+   "dataset": "MOT20",
+   "census_documentation_status": "DOCUMENTED_DEFAULT",
+   "census_documented_split": "test",
+   "documentation_role": "SECONDARY_SPLIT_ADAPTED",
+   "structural_family": "LINEAR_DTI_ROW_ADDITIVE",
+   "audit_mode": "STOPPED_BEFORE_EXECUTION",
+   "execution_state": "DATASET_MATERIALIZED_FROM_VERIFIED_MIRROR",
+   "split_status": "SPLIT_ADAPTED_FROM_TEST",
+   "row_additive": true,
+   "stop_reason": "DATASET_NOT_ACQUIRED: no MOT20/DanceTrack corpus is present; the already-frozen population rule cannot yet be materialised (Sec. 16 stop condition 2). Acquiring the corpus later materialises the frozen population; it must not redefine it.",
+   "upstream_commit": "396f8d30db13304c0cbaf1dcf2e16ded93ce1701",
+   "implementation_path": "tools/interpolation.py::dti",
+   "callsite_parameters": "n_min=30, n_dti=20",
+   "outcome_knowledge_status": "STOPPED_UNSEEN",
+   "pre_v9_known_quantities": [],
+   "pre_v9_evidence_commit": null,
+   "pre_v9_evidence_artifact": "outcome remains unseen because execution is stopped (corpus not acquired)",
+   "dataset_materialization": {
+    "record": "09B",
+    "population_manifest_sha256": "aabe4907077934fb834a7639b9722b9120de0a007553bbc98a6132b768d3e232",
+    "note": "dataset state only; execution NOT authorized and no outcome exists"
+   }
+  },
+  {
+   "pipeline": "Hybrid-SORT",
+   "dataset": "DanceTrack",
+   "census_documentation_status": "IMPLEMENTED_NOT_DATASET_DOCUMENTED",
+   "census_documented_split": null,
+   "documentation_role": "DOCUMENTATION_ONLY_IMPLEMENTED",
+   "structural_family": "LINEAR_DTI_ROW_ADDITIVE",
+   "audit_mode": "DOCUMENTATION_ONLY",
+   "execution_state": "NOT_EXECUTABLE_DOCUMENTATION_ONLY",
+   "split_status": "NOT_APPLICABLE",
+   "row_additive": true,
+   "stop_reason": null,
+   "upstream_commit": "396f8d30db13304c0cbaf1dcf2e16ded93ce1701",
+   "implementation_path": "tools/interpolation.py::dti",
+   "callsite_parameters": "n_min=30, n_dti=20",
+   "outcome_knowledge_status": "NO_QUANTITATIVE_OUTCOME_PLANNED",
+   "pre_v9_known_quantities": [],
+   "pre_v9_evidence_commit": null,
+   "pre_v9_evidence_artifact": "documentation/no-rule cell; no quantitative outcome planned"
+  },
+  {
+   "pipeline": "StrongSORT++",
+   "dataset": "MOT17",
+   "census_documentation_status": "DOCUMENTED_DEFAULT",
+   "census_documented_split": "val and test",
+   "documentation_role": "PRIMARY_DOCUMENTED_VALIDATION",
+   "structural_family": "LINK_PLUS_SMOOTHING",
+   "audit_mode": "NON_ROW_ADDITIVE_S0_S2",
+   "execution_state": "EXECUTABLE",
+   "split_status": "DOCUMENTED_ON_VALIDATION",
+   "row_additive": false,
+   "stop_reason": null,
+   "upstream_commit": "ee995076da5083e28d0da1f885297df62705ebd7",
+   "implementation_path": "GSI.py::GSInterpolation (+ AFLink/AppFreeLink.py)",
+   "callsite_parameters": "interval=20, tau=10; AFLink thrT=(0,30) thrS=75 thrP=0.05",
+   "outcome_knowledge_status": "HISTORICAL_OUTCOME_KNOWN_PRE_V9",
+   "pre_v9_known_quantities": [
+    "S0/S1/S2 states and nesting",
+    "AFLink+GSI structural rewrite inventory",
+    "metrics S0, S2 and S2-S0",
+    "explicit STV-state verdict: NOT DEFINED for GSI"
+   ],
+   "pre_v9_evidence_commit": "7bcbcfb",
+   "pre_v9_evidence_artifact": "results/mot_audit/STRONGSORT_DECOMPOSITION.json, STRONGSORT_SECONDARY.json, STRONGSORT_STATE_HASHES.json"
+  },
+  {
+   "pipeline": "StrongSORT++",
+   "dataset": "MOT20",
+   "census_documentation_status": "DOCUMENTED_DEFAULT",
+   "census_documented_split": "test",
+   "documentation_role": "SECONDARY_SPLIT_ADAPTED",
+   "structural_family": "LINK_PLUS_SMOOTHING",
+   "audit_mode": "STOPPED_BEFORE_EXECUTION",
+   "execution_state": "DATASET_MATERIALIZED_FROM_VERIFIED_MIRROR",
+   "split_status": "SPLIT_ADAPTED_FROM_TEST",
+   "row_additive": false,
+   "stop_reason": "DATASET_NOT_ACQUIRED: no MOT20/DanceTrack corpus is present; the already-frozen population rule cannot yet be materialised (Sec. 16 stop condition 2). Acquiring the corpus later materialises the frozen population; it must not redefine it.",
+   "upstream_commit": "ee995076da5083e28d0da1f885297df62705ebd7",
+   "implementation_path": "GSI.py::GSInterpolation (+ AFLink/AppFreeLink.py)",
+   "callsite_parameters": "interval=20, tau=10; AFLink thrT=(0,30) thrS=75 thrP=0.05",
+   "outcome_knowledge_status": "STOPPED_UNSEEN",
+   "pre_v9_known_quantities": [],
+   "pre_v9_evidence_commit": null,
+   "pre_v9_evidence_artifact": "outcome remains unseen because execution is stopped (corpus not acquired)",
+   "dataset_materialization": {
+    "record": "09B",
+    "population_manifest_sha256": "aabe4907077934fb834a7639b9722b9120de0a007553bbc98a6132b768d3e232",
+    "note": "dataset state only; execution NOT authorized and no outcome exists"
+   }
+  },
+  {
+   "pipeline": "StrongSORT++",
+   "dataset": "DanceTrack",
+   "census_documentation_status": "NO_DOCUMENTED_RULE",
+   "census_documented_split": null,
+   "documentation_role": "NO_DOCUMENTED_RULE",
+   "structural_family": "LINK_PLUS_SMOOTHING",
+   "audit_mode": "DOCUMENTATION_ONLY",
+   "execution_state": "NOT_EXECUTABLE_DOCUMENTATION_ONLY",
+   "split_status": "NOT_APPLICABLE",
+   "row_additive": false,
+   "stop_reason": null,
+   "upstream_commit": "ee995076da5083e28d0da1f885297df62705ebd7",
+   "implementation_path": "GSI.py::GSInterpolation (+ AFLink/AppFreeLink.py)",
+   "callsite_parameters": "interval=20, tau=10; AFLink thrT=(0,30) thrS=75 thrP=0.05",
+   "outcome_knowledge_status": "NO_QUANTITATIVE_OUTCOME_PLANNED",
+   "pre_v9_known_quantities": [],
+   "pre_v9_evidence_commit": null,
+   "pre_v9_evidence_artifact": "documentation/no-rule cell; no quantitative outcome planned"
+  },
+  {
+   "pipeline": "SparseTrack",
+   "dataset": "MOT17",
+   "census_documentation_status": "IMPLEMENTED_NOT_DATASET_DOCUMENTED",
+   "census_documented_split": null,
+   "documentation_role": "DOCUMENTATION_ONLY_IMPLEMENTED",
+   "structural_family": "LINEAR_DTI_ROW_ADDITIVE",
+   "audit_mode": "DOCUMENTATION_ONLY",
+   "execution_state": "NOT_EXECUTABLE_DOCUMENTATION_ONLY",
+   "split_status": "NOT_APPLICABLE",
+   "row_additive": true,
+   "stop_reason": null,
+   "upstream_commit": "499844f32c5bb2332f9811f26cd70cf4e517d4e7",
+   "implementation_path": "interpolation.py::dti",
+   "callsite_parameters": "n_min=5, n_dti=20",
+   "outcome_knowledge_status": "NO_QUANTITATIVE_OUTCOME_PLANNED",
+   "pre_v9_known_quantities": [],
+   "pre_v9_evidence_commit": null,
+   "pre_v9_evidence_artifact": "documentation/no-rule cell; no quantitative outcome planned"
+  },
+  {
+   "pipeline": "SparseTrack",
+   "dataset": "MOT20",
+   "census_documentation_status": "IMPLEMENTED_NOT_DATASET_DOCUMENTED",
+   "census_documented_split": null,
+   "documentation_role": "DOCUMENTATION_ONLY_IMPLEMENTED",
+   "structural_family": "LINEAR_DTI_ROW_ADDITIVE",
+   "audit_mode": "DOCUMENTATION_ONLY",
+   "execution_state": "NOT_EXECUTABLE_DOCUMENTATION_ONLY",
+   "split_status": "NOT_APPLICABLE",
+   "row_additive": true,
+   "stop_reason": null,
+   "upstream_commit": "499844f32c5bb2332f9811f26cd70cf4e517d4e7",
+   "implementation_path": "interpolation.py::dti",
+   "callsite_parameters": "n_min=5, n_dti=20",
+   "outcome_knowledge_status": "NO_QUANTITATIVE_OUTCOME_PLANNED",
+   "pre_v9_known_quantities": [],
+   "pre_v9_evidence_commit": null,
+   "pre_v9_evidence_artifact": "documentation/no-rule cell; no quantitative outcome planned"
+  },
+  {
+   "pipeline": "SparseTrack",
+   "dataset": "DanceTrack",
+   "census_documentation_status": "IMPLEMENTED_NOT_DATASET_DOCUMENTED",
+   "census_documented_split": null,
+   "documentation_role": "DOCUMENTATION_ONLY_IMPLEMENTED",
+   "structural_family": "LINEAR_DTI_ROW_ADDITIVE",
+   "audit_mode": "DOCUMENTATION_ONLY",
+   "execution_state": "NOT_EXECUTABLE_DOCUMENTATION_ONLY",
+   "split_status": "NOT_APPLICABLE",
+   "row_additive": true,
+   "stop_reason": null,
+   "upstream_commit": "499844f32c5bb2332f9811f26cd70cf4e517d4e7",
+   "implementation_path": "interpolation.py::dti",
+   "callsite_parameters": "n_min=5, n_dti=20",
+   "outcome_knowledge_status": "NO_QUANTITATIVE_OUTCOME_PLANNED",
+   "pre_v9_known_quantities": [],
+   "pre_v9_evidence_commit": null,
+   "pre_v9_evidence_artifact": "documentation/no-rule cell; no quantitative outcome planned"
+  }
+ ],
+ "populations": {
+  "MOT17": {
+   "status": "FROZEN_AND_MATERIALISED",
+   "source_split": "MOT17 train (labelled), FRCNN detector copy only",
+   "detector_copy_rule": "MOT17 ships DPM/FRCNN/SDP copies of each base sequence with byte-identical ground truth; exactly one copy (FRCNN) is used so the seven base sequences are counted once.",
+   "sequences": [
+    {
+     "sequence": "MOT17-02-FRCNN",
+     "native_length": 600,
+     "rebase_offset": 301,
+     "native_frames_retained": [
+      302,
+      600
+     ],
+     "val_half_length": 299,
+     "gt_sha256": "51390514c58bcd580a1a614a93d84ed1241bd3708cd4f3e7a4a35f508f8d2ff8"
+    },
+    {
+     "sequence": "MOT17-04-FRCNN",
+     "native_length": 1050,
+     "rebase_offset": 526,
+     "native_frames_retained": [
+      527,
+      1050
+     ],
+     "val_half_length": 524,
+     "gt_sha256": "7c849ece19e0b28e73b71c3ea38a0ecc516fbd903f8108c88d3a921299107f9d"
+    },
+    {
+     "sequence": "MOT17-05-FRCNN",
+     "native_length": 837,
+     "rebase_offset": 419,
+     "native_frames_retained": [
+      420,
+      837
+     ],
+     "val_half_length": 418,
+     "gt_sha256": "bbc278f8ca51f7ea75d47e7ed2e5f40a1c8734f3f6e777bcaf86b1a0d24137f1"
+    },
+    {
+     "sequence": "MOT17-09-FRCNN",
+     "native_length": 525,
+     "rebase_offset": 263,
+     "native_frames_retained": [
+      264,
+      525
+     ],
+     "val_half_length": 262,
+     "gt_sha256": "5d6999a90f484ccc0bc2209b3b90877bee094dabee49c188443576fda67e3b14"
+    },
+    {
+     "sequence": "MOT17-10-FRCNN",
+     "native_length": 654,
+     "rebase_offset": 328,
+     "native_frames_retained": [
+      329,
+      654
+     ],
+     "val_half_length": 326,
+     "gt_sha256": "b5e5afb90a4974bbf8107743886b953bcddfec1d5a405ba0fe1314411e583090"
+    },
+    {
+     "sequence": "MOT17-11-FRCNN",
+     "native_length": 900,
+     "rebase_offset": 451,
+     "native_frames_retained": [
+      452,
+      900
+     ],
+     "val_half_length": 449,
+     "gt_sha256": "8b95ce717406def67f9437c461e5b56a42d696fc25fb0dc72219d6d7337c6507"
+    },
+    {
+     "sequence": "MOT17-13-FRCNN",
+     "native_length": 750,
+     "rebase_offset": 376,
+     "native_frames_retained": [
+      377,
+      750
+     ],
+     "val_half_length": 374,
+     "gt_sha256": "1f314df9b7ac28969f11aafd072db091d3e3ad7fbc272373232a7cd68de44ea2"
+    }
+   ],
+   "frame_range_rule": "Verbatim from ByteTrack tools/convert_mot17_to_coco.py:57-58 and reproduced identically in Deep-OC-SORT data/tools/convert_mot17_to_coco.py:57-58: image_range = [num_images//2 + 1, num_images - 1] over 0-indexed images; image i maps to 1-indexed frame i+1, so the retained native frame range is [num//2 + 2, num].",
+   "frame_index_convention": "1-indexed; rebased to 1..val_half_length by subtracting rebase_offset = num//2 + 1",
+   "total_val_half_frames": 2652,
+   "gt_source": "MOT17 train gt/gt_val_half.txt emitted by the frozen converter; per-sequence sha256 above",
+   "ignore_crowd_semantics": "MOTChallenge gt column 7 (flag) must equal 1; class column 8 must equal 1 (pedestrian). Classes {3,4,5,6,9,10,11} are non-person and dropped; classes {2,7,8,12} are ignore-person regions and are neither scored nor counted as reference identities. Visibility (column 9) is NOT thresholded.",
+   "evaluator_configuration": "TrackEval MOT17 val_half; identical config for every comparable pipeline",
+   "population_manifest_hash_spec": "sha256 over the sorted concatenation of per-sequence (sequence, native_frames_retained, rebase_offset, val_half_length, gt_sha256) records",
+   "shared_by": "All quantitatively comparable MOT17 deployments use THIS population. Deep-OC-SORT's documented MOT17-val is the same second-half split (identical converter rule), so no pipeline selects its own population."
+  },
+  "MOT20": {
+   "status": "STOPPED_DATASET_NOT_ACQUIRED",
+   "intended_rule": "Analogous frozen split: labelled MOT20 train sequences MOT20-01/02/03/05, one common second-half population under the identical image_range rule as MOT17 (Deep-OC-SORT ships data/tools/convert_mot20_to_coco.py with the same rule).",
+   "blocking": "No MOT20 corpus is present; the population manifest cannot be materialised or hashed.",
+   "note": "Rule is frozen now; only materialisation is deferred. Cells remain in the universe."
+  },
+  "DanceTrack": {
+   "status": "STOPPED_DATASET_NOT_ACQUIRED",
+   "intended_rule": "Official DanceTrack val split as distributed. The census found no documented validation path defining another population, so the official val split governs.",
+   "blocking": "No DanceTrack corpus is present.",
+   "note": "Rule is frozen now; only materialisation is deferred."
+  }
+ },
+ "wording_contract": {
+  "applies_to": "every SECONDARY_SPLIT_ADAPTED cell",
+  "required": "State that the repository's documented TEST-set post-processing rule was applied unchanged to a pre-specified validation population.",
+  "forbidden": "Do not state or imply that the repository documents post-processing use on the validation split for these cells.",
+  "correction_note": "This corrects over-broad wording that appeared in frozen V8 ('under their documented post-processing rules' applied to a validation population). V8 is NOT edited; the correction binds V9 language only.",
+  "exempt": "PRIMARY_DOCUMENTED_VALIDATION cells (Deep-OC-SORT; StrongSORT++ MOT17) may state that validation use is documented, because it is."
+ },
+ "counting_units": {
+  "deployment_definition": "one released tracker/pipeline configuration and its audited post-processing call",
+  "family_definition": "implementation lineage / structural operator family",
+  "deployments_in_universe": 8,
+  "independent_families": 3,
+  "families": {
+   "LINEAR_DTI_ROW_ADDITIVE": [
+    "ByteTrack",
+    "BoT-SORT",
+    "OC-SORT",
+    "Deep-OC-SORT",
+    "Hybrid-SORT",
+    "SparseTrack"
+   ],
+   "GPR_REWRITE": [
+    "OC-SORT-GPR"
+   ],
+   "LINK_PLUS_SMOOTHING": [
+    "StrongSORT++"
+   ]
+  },
+  "lineage_groups": {
+   "L": "ByteTrack-derived dti; six deployments; 100% identical normalized token stream for ByteTrack/OC-SORT/Hybrid-SORT/SparseTrack, BoT-SORT +1 print, Deep-OC-SORT n_min default 25->30",
+   "G": "OC-SORT gp_interpolation.py, independent",
+   "S": "StrongSORT GSI.py + AFLink, independent"
+  },
+  "reporting_rule": "Every future table must state BOTH deployment count and independent family count. Repository count is never family count."
+ },
+ "row_additive_contract": {
+  "R0": "raw tracker output immediately before the audited interpolation stage",
+  "R2": "output immediately after the frozen documented interpolation call",
+  "invariant": "R0 subseteq R2 by row identity; pre-existing R0 rows field-identical up to normalised serialisation",
+  "row_identity": "(sequence, frame, track_id) after the frozen parser normalisation",
+  "normalisation_allowed": "numeric formatting/precision of the writer only; no coordinate or id change",
+  "on_failure": "do NOT construct R1; classify the cell STRUCTURAL_DECOMPOSITION_UNAVAILABLE",
+  "R1": "R0 plus only those synthesized R2 rows admitted by the frozen STV criterion; GT-informed diagnostic only; never deployable"
+ },
+ "non_row_additive_contract": {
+  "applies_to": [
+   "GPR_REWRITE",
+   "LINK_PLUS_SMOOTHING"
+  ],
+  "forbidden": "no R1 analogue may be forced",
+  "S0": "state immediately before the audited transformation",
+  "S2": "state immediately after it",
+  "structural_measurements": [
+   "rows_inserted",
+   "rows_deleted",
+   "preexisting_rows_with_changed_coordinates",
+   "preexisting_rows_with_changed_ids",
+   "row_identity_survives",
+   "S0_subseteq_S2"
+  ],
+  "undefined_rule": "If the transformation rewrites values that its own regression/smoothing fit consumes, a row-subset causal decomposition is declared STRUCTURALLY_UNDEFINED. This is an allowed outcome, not a failure of the study."
+ },
+ "gpr_reproducibility_contract": {
+  "GPR_AUDIT_SEED": 20260830,
+  "upstream_unmodified": true,
+  "upstream_source_sha256": "c2a5c3d044265c79de939cbd16cd02d1...(full hash in 01_SOURCE_MANIFEST.json)",
+  "stochastic_apis_found_in_source": [
+   "numpy.random.choice (median_trick)",
+   "sklearn GaussianProcessRegressor(n_restarts_optimizer=2) optimizer restarts"
+  ],
+  "harness_rule": "the harness seeds NumPy/random global state immediately before calling the unmodified upstream entry point",
+  "replay": "exactly one same-seed replay is required as reproducibility verification",
+  "replay_is_not_a_trial": "replay values must never be averaged or pooled with the first execution",
+  "on_failure": "status = REPRODUCIBILITY_FAILURE; no quantitative GPR ranking claim is licensed",
+  "forbidden": [
+   "seed search",
+   "choosing a seed because of an observed output"
+  ],
+  "record": [
+   "upstream source hash",
+   "seed",
+   "exact invocation",
+   "python/numpy/sklearn versions",
+   "stochastic APIs reached"
+  ]
+ },
+ "stv": {
+  "primary_iou_gate": 0.5,
+  "anchors": "the two bracketing R0 observations of a synthesized row",
+  "reference_assignment": "per-frame one-to-one assignment against scoreable GT, computed on R0 BEFORE any synthesized row is introduced, and then frozen",
+  "order": "gate first, then assignment (gate-before-assignment)",
+  "algorithm": "Hungarian one-to-one on IoU with the gate applied as a hard admissibility mask before assignment",
+  "classes_priority": [
+   "ANCHOR_UNMATCHED",
+   "ANCHOR_ID_MISMATCH",
+   "TARGET_REFERENCE_ABSENT",
+   "SEMANTICALLY_ADMITTED"
+  ],
+  "exhaustive_and_mutually_exclusive": true,
+  "licensed_phrase_rule": "Only ANCHOR_ID_MISMATCH licenses 'anchors resolve, under the frozen matcher, to different ground-truth identities'. ANCHOR_UNMATCHED is non-admission, NOT demonstrated semantic error.",
+  "not_a_metric": "STV is a reference-side diagnostic and never a replacement tracking metric",
+  "sensitivity_gates": [
+   0.3,
+   0.4,
+   0.5,
+   0.6,
+   0.7
+  ],
+  "sensitivity_status": "DESCRIPTIVE; the 0.5 result remains primary regardless of sensitivity outcome"
+ },
+ "primary_outcomes_row_additive": [
+  "A n_R0_rows",
+  "B n_R2_rows",
+  "C n_synthesized_rows",
+  "D synthesized_fraction_of_R2",
+  "E stv_four_class_counts",
+  "F stv_four_class_pct_of_synthesized",
+  "G nonadmission_fraction_of_synthesized",
+  "H nonadmission_fraction_of_R2",
+  "I anchor_id_mismatch_fraction_of_synthesized",
+  "J anchor_id_mismatch_fraction_of_R2",
+  "K per_metric_R0_and_R2",
+  "L per_metric_delta_R2_minus_R0"
+ ],
+ "primary_outcomes_non_row_additive": "C-J replaced by the structural transition inventory; A, B, K, L retained",
+ "headline_rule": "the reported quantities are fixed here; no post-hoc selection of which to headline",
+ "metrics": {
+  "evaluator": "TrackEval",
+  "evaluator_commit": "12c8791b303e0a0b50f753af204249e622d0281a",
+  "evaluator_pin_note": "same evaluator family pinned in V8; commit frozen before execution",
+  "metrics": [
+   "HOTA",
+   "DetA",
+   "AssA",
+   "IDF1",
+   "MOTA"
+  ],
+  "unavailable_status": "METRIC_NOT_AVAILABLE",
+  "no_substitution": "no metric may be substituted after results are seen",
+  "gt_parsing_contract": "frozen MOTChallenge parser; identical config for every comparable pipeline"
+ },
+ "ordering": {
+  "comparable_only_within": [
+   "same dataset",
+   "same frozen population",
+   "same evaluator configuration",
+   "same metric"
+  ],
+  "compare": "every quantitatively eligible deployment pair",
+  "relations": [
+   "A>B",
+   "A=B",
+   "A<B"
+  ],
+  "classify": [
+   "UNCHANGED",
+   "FLIP",
+   "TIE_CREATED",
+   "TIE_BROKEN"
+  ],
+  "states": [
+   "R0",
+   "R2"
+  ],
+  "no_selective_inspection": "all pairs reported, not only those that flip",
+  "report": [
+   "eligible pair count",
+   "pairs per dataset",
+   "pairs per metric",
+   "full matrix",
+   "total flips",
+   "ties created/broken"
+  ],
+  "estimand_warning": "These are SYSTEM-LEVEL deployment orderings. A cross-pipeline ordering difference must NOT be attributed solely to the post-processing family, because tracker and detector systems differ. Within-pipeline R0->R2 deltas and between-pipeline ordering are separate estimands."
+ },
+ "materiality": {
+  "status": "SECONDARY_DESCRIPTIVE_ONLY",
+  "not_the_headline_hypothesis": true,
+  "criterion": "STV_COMPOSITION_MATERIAL = total_non_admitted_synthesized_rows / synthesized_rows >= 0.10",
+  "denominator_justification": "The denominator is synthesized rows because the criterion concerns the composition of what the post-processor produced, not of the whole submission.",
+  "mandatory_companion": "the corresponding fraction of total submitted R2 rows must ALWAYS be reported alongside, so a large conditional fraction cannot be read as a submission-wide effect",
+  "carries_no_significance_or_generalization_claim": true,
+  "threshold_frozen_at": 0.1,
+  "no_post_hoc_adjustment": true
+ },
+ "status_vocabulary": [
+  "SUPPORTED",
+  "FAILS_TO_SUPPORT",
+  "UNRESOLVED",
+  "DESCRIPTIVE",
+  "POST_HOC",
+  "STRUCTURALLY_UNDEFINED",
+  "METRIC_NOT_AVAILABLE",
+  "REPRODUCIBILITY_FAILURE",
+  "NO_DOCUMENTED_RULE"
+ ],
+ "status_rules": [
+  "SUPPORTED/FAILS_TO_SUPPORT only for a criterion frozen before its outcome",
+  "simple measured quantities need no hypothesis label",
+  "no confirmatory claim may be invented because a result is large"
+ ],
+ "stop_conditions": [
+  "unresolved census AMBIGUOUS cell (currently: none)",
+  "population not reproducible from a frozen manifest (currently: MOT20, DanceTrack)",
+  "raw/post state boundary unidentifiable",
+  "documented rule needs an undocumented parameter choice",
+  "evaluator configuration differs across comparable pipelines",
+  "a supposedly row-additive implementation rewrites existing rows",
+  "GPR RNG not externally fixable/replayable without changing scientific source semantics",
+  "CLI is not the actual execution path",
+  "any real V9 metric/STV outcome inspected during protocol or CLI development"
+ ],
+ "stopped_cell_rule": "a stopped cell remains in the universe carrying its stop reason; it is never silently removed",
+ "schema_version": "A2",
+ "schema_axes": {
+  "documentation_role": [
+   "PRIMARY_DOCUMENTED_VALIDATION",
+   "SECONDARY_SPLIT_ADAPTED",
+   "OPTIONAL_DOCUMENTED_FAMILY",
+   "DOCUMENTATION_ONLY_IMPLEMENTED",
+   "NO_DOCUMENTED_RULE"
+  ],
+  "audit_mode": [
+   "ROW_ADDITIVE_R0_R1_R2",
+   "NON_ROW_ADDITIVE_S0_S2",
+   "DOCUMENTATION_ONLY",
+   "STOPPED_BEFORE_EXECUTION"
+  ],
+  "structural_family": [
+   "LINEAR_DTI_ROW_ADDITIVE",
+   "GPR_REWRITE",
+   "LINK_PLUS_SMOOTHING"
+  ],
+  "execution_state": [
+   "EXECUTABLE",
+   "STOPPED_DATASET_NOT_ACQUIRED",
+   "NOT_EXECUTABLE_DOCUMENTATION_ONLY"
+  ],
+  "split_status": [
+   "DOCUMENTED_ON_VALIDATION",
+   "SPLIT_ADAPTED_FROM_TEST",
+   "NOT_APPLICABLE"
+  ],
+  "outcome_knowledge_status": [
+   "HISTORICAL_OUTCOME_KNOWN_PRE_V9",
+   "PROSPECTIVE_OUTCOME_UNSEEN_AT_V9_FREEZE",
+   "NO_QUANTITATIVE_OUTCOME_PLANNED",
+   "STOPPED_UNSEEN"
+  ]
+ },
+ "amendments": [
+  {
+   "id": "A1",
+   "date": "2026-08-30",
+   "title": "separate documentation role from structural audit mode",
+   "original_protocol_commit": "343214bbbbea37aac9f279bf255b3b85343206a3",
+   "pre_outcome": true,
+   "scientific_rules_changed": "none",
+   "record": "02A_PROTOCOL_AMENDMENT_ROLE_AUDITMODE.md"
+  },
+  {
+   "id": "A2",
+   "date": "2026-08-30",
+   "title": "freeze pre-V9 outcome knowledge status; correct score and ID-rewrite implementation semantics",
+   "base_commit": "3a13cc828f4080b9326c4060cd20f598e60a4699",
+   "pre_outcome": true,
+   "scientific_rules_changed": "none",
+   "record": "02B_PROTOCOL_AMENDMENT_OUTCOME_KNOWLEDGE.md"
+  },
+  {
+   "id": "09B",
+   "date": "2026-08-31",
+   "title": "MOT20 mirror identity verified and frozen population materialized",
+   "scientific_rules_changed": "none",
+   "dataset_state_only": true,
+   "population_manifest_sha256": "aabe4907077934fb834a7639b9722b9120de0a007553bbc98a6132b768d3e232"
+  }
+ ],
+ "interpretation_contract": {
+  "HISTORICAL_OUTCOME_KNOWN_PRE_V9": "may be replayed through the V9 CLI as implementation validation and as part of the systematic universe, but MUST NOT be described as a prospective V9 result",
+  "PROSPECTIVE_OUTCOME_UNSEEN_AT_V9_FREEZE": "may receive prospective interpretation only if all protocol and executable conditions were frozen before execution",
+  "NO_QUANTITATIVE_OUTCOME_PLANNED": "documentation / no-rule cells only",
+  "STOPPED_UNSEEN": "outcome remains unseen because execution is stopped (e.g. corpus not acquired)",
+  "reporting_requirement": "The paper must report how many EXECUTED cells were historical versus genuinely prospective. A blanket statement that all outcomes were prospectively frozen is FORBIDDEN."
+ }
+}

@@ -1,0 +1,10 @@
+{
+  "hypothesis": "At least 10% of scoreable naturally occluded KITTI Car/Pedestrian targets are not interpolation-eligible under the transferred strict-interior support gate.",
+  "criterion": "ineligible_fraction >= 0.10",
+  "threshold": 0.1,
+  "total_scoreable_targets": 16096,
+  "ineligible": 12554,
+  "ineligible_fraction": 0.7799453280318092,
+  "status": "SUPPORTED",
+  "scope": "finite 21-sequence labelled KITTI tracking benchmark only; no superpopulation claim, no confidence interval, no p-value"
+}

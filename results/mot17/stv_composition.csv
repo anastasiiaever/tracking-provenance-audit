@@ -1,0 +1,7 @@
+deployment,dataset,n_synthesized,semantically_admitted,anchor_unmatched,anchor_id_mismatch,target_reference_absent,non_admitted,non_admitted_fraction
+BoT-SORT,MOT17,2090,1287,576,227,0,803,0.3842105263
+ByteTrack,MOT17,2072,1224,604,244,0,848,0.4092664093
+Deep-OC-SORT,MOT17,2960,2104,570,286,0,856,0.2891891892
+Hybrid-SORT,MOT17,3023,1541,1266,216,0,1482,0.490241482
+OC-SORT,MOT17,2622,1839,408,375,0,783,0.2986270023
+OC-SORT-GPR,MOT17,STRUCTURALLY_UNDEFINED,,,,,,

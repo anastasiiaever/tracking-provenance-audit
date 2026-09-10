@@ -1,0 +1,34 @@
+# Frozen protocol constants, transcribed from
+# provenance/frozen_records/02_PROSPECTIVE_PROTOCOL.json (frozen 2026-08-30).
+# These values are READ, never tuned. Editing this file does not make the audit
+# agree with the released results; it makes it disagree.
+
+comparable_only_within:
+- same dataset
+- same frozen population
+- same evaluator configuration
+- same metric
+compare: every quantitatively eligible deployment pair
+relations:
+- A>B
+- A=B
+- A<B
+classify:
+- UNCHANGED
+- FLIP
+- TIE_CREATED
+- TIE_BROKEN
+states:
+- R0
+- R2
+no_selective_inspection: all pairs reported, not only those that flip
+report:
+- eligible pair count
+- pairs per dataset
+- pairs per metric
+- full matrix
+- total flips
+- ties created/broken
+estimand_warning: These are SYSTEM-LEVEL deployment orderings. A cross-pipeline ordering difference must
+  NOT be attributed solely to the post-processing family, because tracker and detector systems differ.
+  Within-pipeline R0->R2 deltas and between-pipeline ordering are separate estimands.

@@ -1,0 +1,297 @@
+{
+  "record": 56,
+  "title": "PoseTrack21 VAL segmentation sensitivity (SUPPLEMENTARY, annotation-only)",
+  "date": "2026-08-22",
+  "branch": "tpami-q1-20260821",
+  "status": "SUPPLEMENTARY \u2014 DOWNSTREAM OF THE FROZEN PROSPECTIVE RESULT",
+  "supplementary": true,
+  "downstream_of": {
+    "record": 54,
+    "commit": "60ded1973568045735394263073c47119552cae1"
+  },
+  "executing_authority": {
+    "plan": "Plan_Q1_TPAMI_v3_2_canonical_20260822.md",
+    "commit": "26f66ee11113963d02863f2bf3b04cf07846538e",
+    "section": "6.B"
+  },
+  "annotation_only": true,
+  "reconstruction_performed": false,
+  "model_prediction_performed": false,
+  "replaces_frozen_values": false,
+  "frozen_primary_variant": "B",
+  "population": "PoseTrack21 VAL",
+  "sequences": 170,
+  "rules_compared": {
+    "A": "A \u2014 bridged",
+    "Bp": "B' \u2014 contiguous",
+    "B": "B \u2014 strict contiguous + native-missing breaks (FROZEN PRIMARY)"
+  },
+  "fourth_rule_invented": false,
+  "internal_validation": {
+    "target_count_invariant_across_rules": true,
+    "target_count": 78194,
+    "why_it_must_be_invariant": "visibility semantics are S3 in all three rules, so the set of scoreable occluded targets cannot change; only the Gate 1R partition may move. The invariance is asserted in code, not assumed.",
+    "exact_partition_all_rules": true,
+    "variant_B_matches_record_54": {
+      "variant_B_reproduces_record_54_eligible_count": true,
+      "variant_B_reproduces_record_54_eligible_pct": true,
+      "variant_B_reproduces_record_54_partition": true,
+      "variant_B_reproduces_record_54_target_count": true,
+      "variant_B_g_support_matches_record_52_prenormalization_audit": true,
+      "variant_B_g_support_intentionally_exceeds_record_54_evaluated_counts": true
+    }
+  },
+  "variants": {
+    "A": {
+      "label": "A \u2014 bridged",
+      "scoreable_occluded_targets": 78194,
+      "anchors": 482945,
+      "native_missing": 200050,
+      "gate_1r": {
+        "eligible": 28487,
+        "leading": 12424,
+        "trailing": 14616,
+        "no_anchor": 22667,
+        "sum": 78194,
+        "exact_partition": true,
+        "eligible_pct": 36.43118397831036,
+        "ineligible_pct": 63.56881602168964
+      },
+      "off_grid_eligible_runs": 1482,
+      "support_by_g": {
+        "1": {
+          "cases": 4147,
+          "independent_sequences": 155,
+          "meets_threshold_30": true
+        },
+        "2": {
+          "cases": 1514,
+          "independent_sequences": 138,
+          "meets_threshold_30": true
+        },
+        "3": {
+          "cases": 778,
+          "independent_sequences": 120,
+          "meets_threshold_30": true
+        },
+        "5": {
+          "cases": 299,
+          "independent_sequences": 98,
+          "meets_threshold_30": true
+        },
+        "8": {
+          "cases": 127,
+          "independent_sequences": 62,
+          "meets_threshold_30": true
+        },
+        "10": {
+          "cases": 71,
+          "independent_sequences": 43,
+          "meets_threshold_30": true
+        },
+        "20": {
+          "cases": 17,
+          "independent_sequences": 16,
+          "meets_threshold_30": false
+        }
+      },
+      "g_meeting_threshold": [
+        1,
+        2,
+        3,
+        5,
+        8,
+        10
+      ],
+      "n_g_meeting_threshold": 6,
+      "fraction_of_grid_meeting_threshold": 0.8571428571428571
+    },
+    "Bp": {
+      "label": "B' \u2014 contiguous",
+      "scoreable_occluded_targets": 78194,
+      "anchors": 482945,
+      "native_missing": 200050,
+      "gate_1r": {
+        "eligible": 8214,
+        "leading": 8199,
+        "trailing": 8511,
+        "no_anchor": 53270,
+        "sum": 78194,
+        "exact_partition": true,
+        "eligible_pct": 10.50464229992071,
+        "ineligible_pct": 89.4953577000793
+      },
+      "off_grid_eligible_runs": 527,
+      "support_by_g": {
+        "1": {
+          "cases": 1119,
+          "independent_sequences": 121,
+          "meets_threshold_30": true
+        },
+        "2": {
+          "cases": 474,
+          "independent_sequences": 96,
+          "meets_threshold_30": true
+        },
+        "3": {
+          "cases": 273,
+          "independent_sequences": 85,
+          "meets_threshold_30": true
+        },
+        "5": {
+          "cases": 103,
+          "independent_sequences": 58,
+          "meets_threshold_30": true
+        },
+        "8": {
+          "cases": 49,
+          "independent_sequences": 32,
+          "meets_threshold_30": true
+        },
+        "10": {
+          "cases": 23,
+          "independent_sequences": 16,
+          "meets_threshold_30": false
+        },
+        "20": {
+          "cases": 4,
+          "independent_sequences": 4,
+          "meets_threshold_30": false
+        }
+      },
+      "g_meeting_threshold": [
+        1,
+        2,
+        3,
+        5,
+        8
+      ],
+      "n_g_meeting_threshold": 5,
+      "fraction_of_grid_meeting_threshold": 0.7142857142857143
+    },
+    "B": {
+      "label": "B \u2014 strict contiguous + native-missing breaks (FROZEN PRIMARY)",
+      "scoreable_occluded_targets": 78194,
+      "anchors": 482945,
+      "native_missing": 200050,
+      "gate_1r": {
+        "eligible": 6942,
+        "leading": 8173,
+        "trailing": 8729,
+        "no_anchor": 54350,
+        "sum": 78194,
+        "exact_partition": true,
+        "eligible_pct": 8.87791902191984,
+        "ineligible_pct": 91.12208097808016
+      },
+      "off_grid_eligible_runs": 459,
+      "support_by_g": {
+        "1": {
+          "cases": 773,
+          "independent_sequences": 117,
+          "meets_threshold_30": true
+        },
+        "2": {
+          "cases": 365,
+          "independent_sequences": 86,
+          "meets_threshold_30": true
+        },
+        "3": {
+          "cases": 229,
+          "independent_sequences": 77,
+          "meets_threshold_30": true
+        },
+        "5": {
+          "cases": 85,
+          "independent_sequences": 52,
+          "meets_threshold_30": true
+        },
+        "8": {
+          "cases": 44,
+          "independent_sequences": 29,
+          "meets_threshold_30": false
+        },
+        "10": {
+          "cases": 23,
+          "independent_sequences": 16,
+          "meets_threshold_30": false
+        },
+        "20": {
+          "cases": 4,
+          "independent_sequences": 4,
+          "meets_threshold_30": false
+        }
+      },
+      "g_meeting_threshold": [
+        1,
+        2,
+        3,
+        5
+      ],
+      "n_g_meeting_threshold": 4,
+      "fraction_of_grid_meeting_threshold": 0.5714285714285714
+    }
+  },
+  "eligibility_movement": {
+    "A_bridged_pct": 36.43118397831036,
+    "Bprime_contiguous_pct": 10.50464229992071,
+    "B_frozen_primary_pct": 8.87791902191984,
+    "spread_pp": 27.553264956390517,
+    "max_over_min_ratio": 4.103572457505042,
+    "moves_materially": true
+  },
+  "primary_grid_under_each_rule": {
+    "A": [
+      1,
+      2,
+      3,
+      5,
+      8,
+      10
+    ],
+    "Bp": [
+      1,
+      2,
+      3,
+      5,
+      8
+    ],
+    "B": [
+      1,
+      2,
+      3,
+      5
+    ]
+  },
+  "conclusions": {
+    "qualitative_conclusion_survives_all_three": true,
+    "qualitative_statement": "The qualitative conclusion is ROBUST. Under every one of the three segmentation rules, a clear majority of scoreable occluded targets do not define a valid interpolation problem: 63.57 % ineligible under the most permissive rule (A, bridged), 89.50 % under B', and 91.12 % under the frozen primary rule B. The claim that nominal occlusion does not imply a well-posed reconstruction problem does not depend on the choice of rule.",
+    "absolute_prevalence_statement": "The ABSOLUTE prevalence is SENSITIVE and moves materially. The eligible fraction ranges from 8.88 % to 36.43 % on the SAME 170 VAL sequences \u2014 a spread of 27.55 percentage points and a factor of 4.10 \u2014 driven solely by the segmentation definition, with no change to the data, the visibility semantics or the joint set. The headline 8.88 % is therefore a property of the population MEASURED UNDER THE FROZEN STRICT RULE, not a transferable constant. This is exactly the population- and protocol-dependence that v3.2 \u00a72.3 requires to be stated wherever an eligible rate is reported.",
+    "mechanism_observed_not_asserted": "Descriptively, the movement is concentrated in the no-anchor category: 22,667 under A against 54,350 under B. Bridging annotation holes lets distant observations act as anchors for targets that the strict rule leaves anchorless. That is a description of what the counts do, not a claim about which rule is correct.",
+    "sparse_cell_threshold_is_also_rule_dependent": "The frozen 30-independent-sequence threshold selects a different primary grid under each rule: [1, 2, 3, 5, 8, 10] under A, [1, 2, 3, 5, 8] under B', and [1, 2, 3, 5] under the frozen rule B. The frozen primary grid {1,2,3,5} is the strictest of the three. No threshold is changed here."
+  },
+  "primary_result_unchanged": "The primary scientific result remains variant B. The frozen 8.88 % is NOT replaced; this record quantifies how much it would move under the other two audited definitions.",
+  "caveats": [
+    "annotation-only: no reconstruction method and no model was run for this analysis",
+    "the three rules are the ones already audited in record 52; no fourth rule was invented",
+    "variant A bridges annotation holes, which the project's frozen segmentation convention rejects; it is included as a bound, not as a candidate protocol",
+    "support counts here are PRE-NORMALIZATION and are therefore deliberately larger than record 54's evaluated counts. They match the record-52 VAL audit exactly (773/365/229/85/44/23/4 at g=1,2,3,5,8,10,20, total 1,523) because neither applies the L_torso admissibility rule; record 54 applies it and evaluates 1,270 cases. The counts are comparable ACROSS RULES, which is this record's purpose, and are not a restatement of record 54's support"
+  ],
+  "confirmations": {
+    "reconstruction_performed": false,
+    "model_prediction_performed": false,
+    "record_53_modified": false,
+    "record_54_modified": false,
+    "frozen_8_88_percent_replaced": false,
+    "fourth_rule_invented": false,
+    "threshold_changed": false,
+    "training_performed": false,
+    "project_final_test_opened": false,
+    "record_56_committed": false
+  },
+  "provenance": {
+    "result": "data/posetrack21/audit/val_segmentation_sensitivity.json",
+    "result_sha256": "54ea720cc4cf02876110f484c9ab0eba910c7c4942520131be5db19bd69b946a",
+    "script": "scripts/posetrack21/segmentation_sensitivity.py"
+  }
+}

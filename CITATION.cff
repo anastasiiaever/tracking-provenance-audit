@@ -1,0 +1,35 @@
+cff-version: 1.2.0
+message: "If you use this software or the released audit tables, please cite the paper below."
+title: "tracking-provenance-audit: post-processing provenance and estimand eligibility in multi-object tracking evaluation"
+abstract: >-
+  Reference implementation and released audit artifacts for an evaluation audit of
+  multi-object tracking submissions. The audit separates what a tracker observed
+  from what post-processing synthesized before submission, classifies each
+  synthesized row against a frozen reference-semantic admission rule, reports the
+  full pairwise ordering of deployments at both states, and records which
+  benchmark cells have an available estimand at all.
+type: software
+authors:
+  - family-names: Everstova
+    given-names: Anastasiia
+    affiliation: "Department of Information Convergence System Engineering, Graduate School of Smart Convergence, Kwangwoon University, Seoul, Republic of Korea"
+  - family-names: Kwon
+    given-names: Soonchul
+    affiliation: "Department of Plasma Bio Display, Kwangwoon University, Seoul, Republic of Korea"
+license: MIT
+keywords:
+  - multi-object tracking
+  - evaluation
+  - benchmark audit
+  - reproducibility
+  - provenance
+  - estimand eligibility
+preferred-citation:
+  type: article
+  title: "Post-Processing Provenance and Estimand Eligibility in Multi-Object Tracking Evaluation"
+  authors:
+    - family-names: Everstova
+      given-names: Anastasiia
+    - family-names: Kwon
+      given-names: Soonchul
+  notes: "Manuscript in preparation. Update this block with the venue and DOI if and when they exist."

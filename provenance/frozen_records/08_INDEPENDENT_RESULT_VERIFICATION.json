@@ -1,0 +1,378 @@
+{
+ "generated": "2026-08-31",
+ "all_pass": true,
+ "checks": [
+  {
+   "area": "input_identity",
+   "check": "MOT17 7 sequences / 2652 frames",
+   "verdict": "PASS",
+   "detail": ""
+  },
+  {
+   "area": "input_identity",
+   "check": "GT hashes match frozen population in dataset and both evaluator benchmark folders",
+   "verdict": "PASS",
+   "detail": ""
+  },
+  {
+   "area": "evaluator_comparability",
+   "check": "TrackEval pin 12c8791b for historical and prospective",
+   "verdict": "PASS",
+   "detail": "historical metrics recomputed from the SAME evaluator's detailed CSVs under MOT17-val_half, whose GT files are byte-identical to MOT17-val"
+  },
+  {
+   "area": "row_accounting",
+   "check": "Deep-OC-SORT: n_R2-n_R0 == n_synthesized",
+   "verdict": "PASS",
+   "detail": ""
+  },
+  {
+   "area": "stv_partition",
+   "check": "Deep-OC-SORT: STV four classes sum to n_synthesized",
+   "verdict": "PASS",
+   "detail": ""
+  },
+  {
+   "area": "R1",
+   "check": "Deep-OC-SORT: R1 identity set and row count == R0 + ADMITTED",
+   "verdict": "PASS",
+   "detail": ""
+  },
+  {
+   "area": "row_additive",
+   "check": "Deep-OC-SORT: 0 deletions / 0 coordinate rewrites / 0 ID rewrites",
+   "verdict": "PASS",
+   "detail": ""
+  },
+  {
+   "area": "agreement_with_07",
+   "check": "Deep-OC-SORT: counts and STV match the 07 record",
+   "verdict": "PASS",
+   "detail": ""
+  },
+  {
+   "area": "materiality",
+   "check": "Deep-OC-SORT: criterion nonadm/synth >= 0.10 reproduced",
+   "verdict": "PASS",
+   "detail": "STV_COMPOSITION_MATERIAL; ratio=0.289189; R2 companion=0.018392"
+  },
+  {
+   "area": "row_accounting",
+   "check": "Hybrid-SORT: n_R2-n_R0 == n_synthesized",
+   "verdict": "PASS",
+   "detail": ""
+  },
+  {
+   "area": "stv_partition",
+   "check": "Hybrid-SORT: STV four classes sum to n_synthesized",
+   "verdict": "PASS",
+   "detail": ""
+  },
+  {
+   "area": "R1",
+   "check": "Hybrid-SORT: R1 identity set and row count == R0 + ADMITTED",
+   "verdict": "PASS",
+   "detail": ""
+  },
+  {
+   "area": "row_additive",
+   "check": "Hybrid-SORT: 0 deletions / 0 coordinate rewrites / 0 ID rewrites",
+   "verdict": "PASS",
+   "detail": ""
+  },
+  {
+   "area": "agreement_with_07",
+   "check": "Hybrid-SORT: counts and STV match the 07 record",
+   "verdict": "PASS",
+   "detail": ""
+  },
+  {
+   "area": "materiality",
+   "check": "Hybrid-SORT: criterion nonadm/synth >= 0.10 reproduced",
+   "verdict": "PASS",
+   "detail": "STV_COMPOSITION_MATERIAL; ratio=0.490241; R2 companion=0.028400"
+  },
+  {
+   "area": "gpr",
+   "check": "canonical and replay each have 7 files, same set",
+   "verdict": "PASS",
+   "detail": ""
+  },
+  {
+   "area": "gpr",
+   "check": "replay byte-identical to canonical (GPR_REPLAY_STATUS PASS)",
+   "verdict": "PASS",
+   "detail": ""
+  },
+  {
+   "area": "gpr",
+   "check": "S0 rows == S2 rows, 0 insertions, 0 deletions",
+   "verdict": "PASS",
+   "detail": "S0=S2=45927, coordinate rewrites=52, ID rewrites=0, ambiguous=0"
+  },
+  {
+   "area": "gpr",
+   "check": "R1 remains STRUCTURALLY_UNDEFINED",
+   "verdict": "PASS",
+   "detail": ""
+  },
+  {
+   "area": "gpr",
+   "check": "seed 20260830 recorded in canonical stdout",
+   "verdict": "PASS",
+   "detail": ""
+  },
+  {
+   "area": "gpr",
+   "check": "failed GPR-001 partial artifact absent from all scientific inputs",
+   "verdict": "PASS",
+   "detail": "sha256 ea74cdde\u2026; in no retry argv, no staging dir, no state dir"
+  },
+  {
+   "area": "metric_extraction",
+   "check": "full-precision reconstruction agrees with 3-dp summaries for all 5 deployments",
+   "verdict": "PASS",
+   "detail": ""
+  },
+  {
+   "area": "ordering",
+   "check": "independent recomputation field-wise identical to 07_ORDERING_MATRIX.json",
+   "verdict": "PASS",
+   "detail": ""
+  },
+  {
+   "area": "ordering",
+   "check": "10 eligible pairs and 50 pair x metric cells",
+   "verdict": "PASS",
+   "detail": ""
+  },
+  {
+   "area": "ordering",
+   "check": "no transition changed by 3-decimal rounding",
+   "verdict": "PASS",
+   "detail": ""
+  },
+  {
+   "area": "ordering",
+   "check": "no near-tie",
+   "verdict": "PASS",
+   "detail": "min |margin| 0.186903 (R0) / 0.150321 (R2); zero cells below 0.05"
+  },
+  {
+   "area": "chronology",
+   "check": "ByteTrack / BoT-SORT / OC-SORT = HISTORICAL_OUTCOME_KNOWN_PRE_V9",
+   "verdict": "PASS",
+   "detail": ""
+  },
+  {
+   "area": "chronology",
+   "check": "Deep-OC-SORT / Hybrid-SORT = PROSPECTIVE_OUTCOME_UNSEEN_AT_V9_FREEZE",
+   "verdict": "PASS",
+   "detail": ""
+  },
+  {
+   "area": "chronology",
+   "check": "GPR prospective quantities first known from GPR-002",
+   "verdict": "PASS",
+   "detail": ""
+  },
+  {
+   "area": "chronology",
+   "check": "procedural deviation and failed attempts preserved",
+   "verdict": "PASS",
+   "detail": ""
+  }
+ ],
+ "findings": [
+  {
+   "id": "NARRATIVE-TRANSCRIPTION-ERROR",
+   "severity": "reporting only; no artifact affected",
+   "detail": "The prior turn's chat-report metric tables for Hybrid-SORT (R0/R1/R2 and R2-R0) and for OC-SORT-GPR (S0/S2 and S2-S0) did not match the evaluator outputs; those rows were stated without being read. The COMMITTED artifacts contain the correct evaluator values, and the ordering matrix was computed from the correct values and verified field-wise identical at full precision. Correct: Hybrid-SORT R0 66.948/65.991/68.473/77.745/75.992, R1 68.194/67.784/69.183/78.815/78.616, R2 67.811/67.312/68.920/78.193/77.588, R2-R0 +0.863/+1.321/+0.447/+0.448/+1.596; OC-SORT-GPR S0 = S2 = 67.990/66.644/69.840/79.418/77.810, all deltas +0.000.",
+   "artifacts_affected": "none",
+   "corrective_action": "stated plainly in this record and in the report"
+  }
+ ],
+ "recomputed_cells": {
+  "Deep-OC-SORT": {
+   "n_R0": 43581,
+   "n_R2": 46541,
+   "n_synth": 2960,
+   "stv": {
+    "ANCHOR_UNMATCHED": 570,
+    "ANCHOR_ID_MISMATCH": 286,
+    "TARGET_REFERENCE_ABSENT": 0,
+    "SEMANTICALLY_ADMITTED": 2104
+   },
+   "inv": {
+    "ins": 2960,
+    "dele": 0,
+    "cw": 0,
+    "idr": 0,
+    "amb": 0
+   },
+   "n_R1": 45685,
+   "arith": {
+    "diff_eq_synth": true,
+    "stv_sum": true,
+    "r1_eq": true
+   },
+   "frac": {
+    "synth_R2": 0.06359983670312198,
+    "nonadm_synth": 0.2891891891891892,
+    "nonadm_R2": 0.01839238520874068,
+    "idmm_synth": 0.09662162162162162,
+    "idmm_R2": 0.006145119357125975
+   },
+   "materiality": "STV_COMPOSITION_MATERIAL"
+  },
+  "Hybrid-SORT": {
+   "n_R0": 49160,
+   "n_R2": 52183,
+   "n_synth": 3023,
+   "stv": {
+    "ANCHOR_UNMATCHED": 1266,
+    "ANCHOR_ID_MISMATCH": 216,
+    "TARGET_REFERENCE_ABSENT": 0,
+    "SEMANTICALLY_ADMITTED": 1541
+   },
+   "inv": {
+    "ins": 3023,
+    "dele": 0,
+    "cw": 0,
+    "idr": 0,
+    "amb": 0
+   },
+   "n_R1": 50701,
+   "arith": {
+    "diff_eq_synth": true,
+    "stv_sum": true,
+    "r1_eq": true
+   },
+   "frac": {
+    "synth_R2": 0.05793074372880057,
+    "nonadm_synth": 0.49024148197155143,
+    "nonadm_R2": 0.028400053657321348,
+    "idmm_synth": 0.07145219980152166,
+    "idmm_R2": 0.004139279075561006
+   },
+   "materiality": "STV_COMPOSITION_MATERIAL"
+  },
+  "GPR": {
+   "inv": {
+    "S0": 45927,
+    "S2": 45927,
+    "ins": 0,
+    "dele": 0,
+    "cw": 52,
+    "idr": 0,
+    "amb": 0,
+    "subset": true
+   },
+   "replay_identical": true,
+   "files": 7
+  }
+ },
+ "recomputed_metrics": {
+  "ByteTrack": {
+   "R0": {
+    "HOTA": 67.9198135187746,
+    "DetA": 66.62977918333115,
+    "AssA": 69.79037211126337,
+    "IDF1": 79.90367819041322,
+    "MOTA": 77.95509370940805
+   },
+   "R2": {
+    "HOTA": 68.96659692520576,
+    "DetA": 67.9706567935243,
+    "AssA": 70.5581460236628,
+    "IDF1": 80.82037979829265,
+    "MOTA": 79.74021154203005
+   },
+   "knowledge": "HISTORICAL_OUTCOME_KNOWN_PRE_V9",
+   "summary_agrees": true
+  },
+  "BoT-SORT": {
+   "R0": {
+    "HOTA": 69.19508101924357,
+    "DetA": 67.25141121387198,
+    "AssA": 71.7077285567164,
+    "IDF1": 81.64355579997643,
+    "MOTA": 78.43941362033773
+   },
+   "R2": {
+    "HOTA": 70.41914219428858,
+    "DetA": 68.74027587628456,
+    "AssA": 72.68000915882398,
+    "IDF1": 82.69758573203264,
+    "MOTA": 80.49916496567081
+   },
+   "knowledge": "HISTORICAL_OUTCOME_KNOWN_PRE_V9",
+   "summary_agrees": true
+  },
+  "OC-SORT": {
+   "R0": {
+    "HOTA": 66.37236857793627,
+    "DetA": 64.23770639842796,
+    "AssA": 69.00551749383685,
+    "IDF1": 77.93205256583634,
+    "MOTA": 74.53516422341806
+   },
+   "R2": {
+    "HOTA": 67.99014645642106,
+    "DetA": 66.64420137999191,
+    "AssA": 69.83950795657078,
+    "IDF1": 79.41753235652008,
+    "MOTA": 77.81035442568195
+   },
+   "knowledge": "HISTORICAL_OUTCOME_KNOWN_PRE_V9",
+   "summary_agrees": true
+  },
+  "Deep-OC-SORT": {
+   "R0": {
+    "HOTA": 68.3108061080418,
+    "DetA": 64.78749214377014,
+    "AssA": 72.44864788590624,
+    "IDF1": 81.13316313925718,
+    "MOTA": 75.153089627018
+   },
+   "R2": {
+    "HOTA": 70.26882148209404,
+    "DetA": 67.52343104136915,
+    "AssA": 73.60313922384277,
+    "IDF1": 82.90089153640106,
+    "MOTA": 78.9367229541659
+   },
+   "knowledge": "PROSPECTIVE_OUTCOME_UNSEEN_AT_V9_FREEZE",
+   "summary_agrees": true
+  },
+  "Hybrid-SORT": {
+   "R0": {
+    "HOTA": 66.94848316342402,
+    "DetA": 65.99118331660388,
+    "AssA": 68.47269088629126,
+    "IDF1": 77.74514986002623,
+    "MOTA": 75.99183521989238
+   },
+   "R2": {
+    "HOTA": 67.8105247554098,
+    "DetA": 67.31174294292866,
+    "AssA": 68.9197541586414,
+    "IDF1": 78.19331251428136,
+    "MOTA": 77.58767860456486
+   },
+   "knowledge": "PROSPECTIVE_OUTCOME_UNSEEN_AT_V9_FREEZE",
+   "summary_agrees": true
+  }
+ },
+ "ordering_summary": {
+  "n_pairs": 10,
+  "n_cells": 50,
+  "unchanged": 45,
+  "flips": 5,
+  "ties_created": 0,
+  "ties_broken": 0,
+  "metric_not_available": 0
+ },
+ "ordering_mismatches": [],
+ "results_tag_target": "a6e79c1793115aac705c56136b0e589b3a604689"
+}

@@ -1,0 +1,143 @@
+{
+ "amendment": "MOT20 semantic completion",
+ "cells_unchanged": true,
+ "chronology": {
+  "allowed_wording": "The MOT20 population and split rule were pre-specified before MOT17 execution; evaluator-native MOT20 GT semantics were completed afterward from the already-pinned TrackEval implementation, before any MOT20 execution.",
+  "any_mot20_outcome_exists": false,
+  "basis": "mechanically derived from TrackEval 12c8791b303e0a0b50f753af204249e622d0281a",
+  "completed_after_mot17": [
+   "evaluator-native MOT20 GT semantics",
+   "distractor handling",
+   "evaluator naming",
+   "population-manifest hashing specification"
+  ],
+  "forbidden_claim": "the complete MOT20 estimand was fully specified before all MOT17 results",
+  "inputs_not_used": [
+   "MOT17 flip count",
+   "MOT17 metric values",
+   "MOT17 STV composition",
+   "MOT17 materiality result",
+   "MOT17 GPR result"
+  ],
+  "pre_specified_before_mot17": [
+   "MOT20 dataset",
+   "sequence universe",
+   "second-half frame rule"
+  ]
+ },
+ "crowd_ignore_semantics": {
+  "crowd_class_id": 13,
+  "crowd_ignore_regions_used": false,
+  "crowd_in_class_map": true,
+  "crowd_in_distractor_list": false,
+  "evaluator_evidence": "gt_crowd_ignore_regions is not referenced in MOTChallenge2DBox.get_preprocessed_seq_data",
+  "invented_crowd_mask": false,
+  "post_preprocessing": "non-pedestrian GT is not part of the evaluated pedestrian GT set"
+ },
+ "date": "2026-08-31",
+ "distractor_preprocessing": {
+  "evaluator_evidence": "distractor_class_names = [...]; if self.benchmark == 'MOT20': distractor_class_names.append('non_mot_vehicle')",
+  "explicit_difference": "MOT20 ADDS non_mot_vehicle (class 6) to the distractor set; MOT17 does not. The MOT17 distractor list must not be transferred to MOT20.",
+  "mechanism": "TrackEval matches tracker predictions against GT with its frozen Hungarian/IoU preprocessing and removes tracker detections matched to these distractor classes.",
+  "mot17_distractor_class_ids": [
+   2,
+   7,
+   8,
+   12
+  ],
+  "mot20_distractor_class_ids": [
+   2,
+   6,
+   7,
+   8,
+   12
+  ],
+  "mot20_distractor_class_names": [
+   "person_on_vehicle",
+   "non_mot_vehicle",
+   "static_person",
+   "distractor",
+   "reflection"
+  ]
+ },
+ "evaluator_naming": {
+  "BENCHMARK": "MOT20",
+  "SPLIT_TO_EVAL": "val",
+  "disclaimer": "'val' is a STUDY-SIDE split identifier only. It does NOT imply that MOTChallenge publishes an official MOT20-val split; the population is constructed from MOT20 train.",
+  "physical_split_name": "MOT20-val",
+  "rationale": "BENCHMARK must remain MOT20 so the frozen evaluator activates MOT20 native preprocessing, including non_mot_vehicle",
+  "seqmap": [
+   "MOT20-01",
+   "MOT20-02",
+   "MOT20-03",
+   "MOT20-05"
+  ]
+ },
+ "frame_rule": {
+  "expected_total_frames": 4463,
+  "on_mismatch_at_materialization": "STOP",
+  "one_indexed": "native frames [N // 2 + 2, N]",
+  "sequences": [
+   {
+    "first_frame": 216,
+    "included_frames": 214,
+    "last_frame": 429,
+    "native_length": 429,
+    "sequence": "MOT20-01"
+   },
+   {
+    "first_frame": 1393,
+    "included_frames": 1390,
+    "last_frame": 2782,
+    "native_length": 2782,
+    "sequence": "MOT20-02"
+   },
+   {
+    "first_frame": 1204,
+    "included_frames": 1202,
+    "last_frame": 2405,
+    "native_length": 2405,
+    "sequence": "MOT20-03"
+   },
+   {
+    "first_frame": 1659,
+    "included_frames": 1657,
+    "last_frame": 3315,
+    "native_length": 3315,
+    "sequence": "MOT20-05"
+   }
+  ],
+  "unchanged": true,
+  "verified_independently": true,
+  "zero_indexed": "image_range = [N // 2 + 1, N - 1]"
+ },
+ "id": "09A",
+ "resolves": "MOT20_POPULATION_RULE_UNDERSPECIFIED",
+ "scoreable_gt_predicate": {
+  "additional_filters": "NONE. No visibility, crowd-density, box-size or occlusion filter is applied, because the frozen evaluator requires none for this target predicate.",
+  "evaluator_evidence": "gt_to_keep_mask = (np.not_equal(gt_zero_marked, 0)) & np.equal(gt_classes, cls_id)",
+  "pedestrian_class_id": 1,
+  "rule": "gt_zero_marked != 0 AND gt_class == pedestrian",
+  "used_for": "the V9 STV reference population on MOT20"
+ },
+ "source_of_semantics": {
+  "authoritative_implementation": "trackeval/datasets/mot_challenge_2d_box.py",
+  "derivation": "mechanical; verified against the pinned source, 10/10 checks PASS",
+  "principle": "MOT20 evaluation and GT semantics are defined by the NATIVE MOT20 branch of the already-frozen evaluator. They are NOT copied from MOT17.",
+  "trackeval_commit": "12c8791b303e0a0b50f753af204249e622d0281a"
+ },
+ "status": "SEMANTICS_FROZEN; DATA NOT ACQUIRED",
+ "stv_vs_trackeval": {
+  "anchors_may_not_match": "distractor, crowd or non-pedestrian objects as scoreable STV references",
+  "conflation": "FORBIDDEN; these are two distinct operations",
+  "stv_matcher_unchanged": {
+   "anchors": "R0 observations only",
+   "assignment": "one-to-one Hungarian",
+   "iou_gate": 0.5,
+   "order": "gate-before-assignment",
+   "thresholds_changed": false
+  },
+  "stv_reference_set": "scoreable pedestrian GT only (mark != 0, class == 1)",
+  "trackeval_preprocessing": "native MOT20 preprocessing from the pinned evaluator, including distractor handling before final pedestrian-only GT retention"
+ }
+}

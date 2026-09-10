@@ -1,0 +1,8 @@
+gap_length,cases,cells,independent_sequences,in_primary_aggregate,status
+1,634,113,113,True,evaluated
+2,313,79,79,True,evaluated
+3,190,70,70,True,evaluated
+5,70,46,46,True,evaluated
+8,41,27,27,False,insufficient_support
+10,18,11,11,False,insufficient_support
+20,4,4,4,False,insufficient_support

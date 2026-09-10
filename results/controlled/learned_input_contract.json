@@ -1,0 +1,27 @@
+{
+ "population": "PoseTrack21 VAL",
+ "contract": "corrected window-local (training-consistent)",
+ "input_contract": {
+  "slots": 17,
+  "available": 13,
+  "unavailable_ntu_slots": [
+   1,
+   2,
+   3,
+   4
+  ],
+  "unavailable_state": "NATIVE_INVALID",
+  "never_padding": true,
+  "confidence_available": false,
+  "confidence_synthesized": false
+ },
+ "no_retraining": true,
+ "no_checkpoint_reselection": true,
+ "no_architecture_change": true,
+ "bigru_seed_spread": {
+  "min": 3.8651997286194546,
+  "max": 4.055232356827414,
+  "range": 0.1900326282079594
+ },
+ "note": "This is the frozen source of the paper's statement that four of seventeen input slots are permanently unavailable on this population and no confidence channel exists: slots 17, available 13, unavailable NTU slots [1,2,3,4], state NATIVE_INVALID, never padded, confidence neither available nor synthesized."
+}

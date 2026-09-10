@@ -1,0 +1,156 @@
+{
+ "analysis": "Phase-1 zero-coverage classical-operator correction",
+ "label": "Stage A2",
+ "schema": "phase1_legacy",
+ "cell_key": [
+  "experiment",
+  "split",
+  "subject_id",
+  "sequence_id",
+  "sample_index",
+  "corruption",
+  "seed"
+ ],
+ "source_untouched": true,
+ "n_result_rows": 25500,
+ "n_gap_rows": 181275,
+ "n_gap_rows_linear_inapplicable": 900,
+ "applicability": {
+  "_schema": "phase1_legacy",
+  "_cell_key": [
+   "experiment",
+   "split",
+   "subject_id",
+   "sequence_id",
+   "sample_index",
+   "corruption",
+   "seed"
+  ],
+  "_n_cells": 5100,
+  "_n_rows": 25500,
+  "linear": {
+   "n_rows": 5100,
+   "n_completed": 5100,
+   "n_undefined_rows": 300,
+   "n_undefined_cells": 300,
+   "n_cells": 5100,
+   "applicability_failure_rate": 0.058823529411764705
+  },
+  "spline": {
+   "n_rows": 5100,
+   "n_completed": 5100,
+   "n_undefined_rows": 300,
+   "n_undefined_cells": 300,
+   "n_cells": 5100,
+   "applicability_failure_rate": 0.058823529411764705
+  },
+  "kalman": {
+   "n_rows": 5100,
+   "n_completed": 5100,
+   "n_undefined_rows": 300,
+   "n_undefined_cells": 300,
+   "n_cells": 5100,
+   "applicability_failure_rate": 0.058823529411764705
+  }
+ },
+ "headline": {
+  "before": {
+   "n_gaps": 181275,
+   "n_subjects": 14,
+   "linear_mean": 10.737953300457052,
+   "mae_mean": 9.529360715501024,
+   "oracle_mean": 4.657403957884825,
+   "paired_mae_minus_linear": -1.20859258495603,
+   "ci_lo": -2.550866024385908,
+   "ci_hi": -0.13772403119333898,
+   "ci_excludes_zero": true,
+   "mae_win_rate": 0.16892014894497312,
+   "linear_win_rate": 0.8310798510550269,
+   "mae_relative_improvement": 0.11255334709870504,
+   "oracle_headroom_vs_mae": 4.871956757616199
+  },
+  "after": {
+   "n_gaps_common_support": 180375,
+   "n_subjects_common_support": 14,
+   "linear_mean_common_support": 5.249800884611175,
+   "mae_mean_common_support": 8.886851395885746,
+   "oracle_mean_common_support": 3.990585498522606,
+   "paired_mae_minus_linear_common_support": 3.6370505112745715,
+   "ci_lo_common_support": 2.490743278621428,
+   "ci_hi_common_support": 4.582998385440199,
+   "ci_excludes_zero_common_support": true,
+   "mae_win_rate_common_support": 0.16477338877338876,
+   "linear_win_rate_common_support": 0.8352266112266112,
+   "mae_relative_improvement_common_support": -0.6927978015196566,
+   "oracle_headroom_vs_mae_common_support": 4.89626589736314
+  },
+  "after_estimand": "common_support",
+  "after_key_suffix": "_common_support",
+  "support": {
+   "learned_method": "mae",
+   "gap_rows_total": 181275,
+   "n_gaps_common_support": 180375,
+   "n_gaps_fallback_only": 900,
+   "fallback_only_region_size": 900,
+   "mae_n_all_applicable_gaps": 181275,
+   "mae_mean_common_support": 8.886851395885746,
+   "mae_mean_fallback_only": 138.29893685506278,
+   "mae_mean_all_applicable_gaps": 9.529360715501024,
+   "classical_operator_inapplicability_rate": {
+    "linear": {
+     "n_gaps_inapplicable": 900,
+     "inapplicability_rate": 0.004964832436905255
+    }
+   },
+   "classical_operator_inapplicability_rate_any": 0.004964832436905255,
+   "denominators": {
+    "common_support": "gaps where every classical method is applicable AND mae is finite \u2014 the ONLY region where a paired classical-vs-learned comparison is defined",
+    "fallback_only": "gaps where a classical method is undefined and only mae produced a value \u2014 no competitor exists, so no comparative claim may be made on this region",
+    "all_applicable": "union of the two \u2014 the denominator for a standalone mae statement, never for a comparison"
+   },
+   "comparative_claims_allowed_on": [
+    "common_support"
+   ]
+  },
+  "n_gaps_excluded": 900,
+  "excluded_linear_error_mean": 1110.6551666429018,
+  "excluded_best_method_counts": {
+   "mae": 900
+  },
+  "changes": {
+   "mean_ranking_before": "mae",
+   "mean_ranking_after": "linear",
+   "mean_ranking_changed": true,
+   "ci_excludes_zero_before": true,
+   "ci_excludes_zero_after": true,
+   "ci_conclusion_changed": false,
+   "paired_delta_before": -1.20859258495603,
+   "paired_delta_after": 3.6370505112745715,
+   "paired_delta_shift": 4.845643096230601,
+   "paired_delta_sign_flipped": true,
+   "direction_changed": true,
+   "linear_win_rate_before": 0.8310798510550269,
+   "linear_win_rate_after": 0.8352266112266112
+  }
+ },
+ "affected_gap_summary": {
+  "method": "linear",
+  "n_undefined_result_cells": 300,
+  "n_undefined_result_rows": 900,
+  "n_affected_gap_rows": 900,
+  "n_affected_cells_in_gap_table": 300,
+  "gaps_per_affected_cell_min": 3,
+  "gaps_per_affected_cell_max": 3,
+  "gaps_per_affected_cell_unique": [
+   3
+  ],
+  "affected_joint_names": [
+   "left_elbow",
+   "left_shoulder",
+   "left_wrist"
+  ],
+  "n_affected_joint_names": 3,
+  "gap_rows_total": 181275
+ },
+ "note": "Two absolute paths on the authors' execution host (source_dir, output_dir) were omitted from this derived copy; every count, mean, interval and rate is verbatim."
+}

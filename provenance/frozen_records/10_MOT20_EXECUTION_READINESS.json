@@ -1,0 +1,298 @@
+{
+ "cells": [
+  {
+   "additional_blockers": [
+    "ASSET_ABSENT (bytetrack_x_mot20.pth.tar)",
+    "NO_VERIFIED_ENVIRONMENT (tools/track.py: ModuleNotFoundError: yolox)",
+    "NO_DOCUMENTED_MOT20_VAL_EXPERIMENT_CONFIG (yolox_x_mix_mot20_ch.py targets the test split)",
+    "ADAPTER_DOUBLE_HALVING"
+   ],
+   "audit_mode": "STOPPED_BEFORE_EXECUTION",
+   "cell": "ByteTrack x MOT20",
+   "checkpoint_status": "CONFIRMED_EVAL_LEAKAGE",
+   "command_status": "TRACED_TEST_ONLY",
+   "dataset_status": "READY",
+   "documentation_role": "SECONDARY_SPLIT_ADAPTED",
+   "environment_status": "UNDEFINED",
+   "indexing_status": "BLOCKED_DOUBLE_HALVING",
+   "outcome_knowledge_status": "STOPPED_UNSEEN",
+   "primary_blocker": "bytetrack_x_mot20.pth.tar is trained on the COMPLETE MOT20 train split (tools/mix_data_test_mot20.py:17 consumes annotations/train.json), so every frame of the frozen validation population is a detector training frame. ByteTrack releases no MOT20 half-train detector.",
+   "readiness": "BLOCKED_CHECKPOINT_PROVENANCE",
+   "structural_family": "LINEAR_DTI_ROW_ADDITIVE"
+  },
+  {
+   "additional_blockers": [
+    "POTENTIAL_EVAL_LEAKAGE (mot20_sbs_S50: trained on the first half, but the frozen second half is its ReID gallery/test set)",
+    "ASSET_ABSENT (bytetrack_x_mot20.tar, mot20_sbs_S50.pth)",
+    "ADAPTER_DOUBLE_HALVING"
+   ],
+   "audit_mode": "STOPPED_BEFORE_EXECUTION",
+   "cell": "BoT-SORT x MOT20",
+   "checkpoint_status": "CONFIRMED_EVAL_LEAKAGE (detector) + POTENTIAL_EVAL_LEAKAGE (ReID)",
+   "command_status": "RESOLVED",
+   "dataset_status": "READY",
+   "documentation_role": "SECONDARY_SPLIT_ADAPTED",
+   "environment_status": "VERIFIED_ENTRYPOINT",
+   "indexing_status": "BLOCKED_DOUBLE_HALVING",
+   "note": "BoT-SORT's own --eval val slicing files[len//2+1:] reproduces the frozen ranges exactly; the population rule is compatible, the checkpoint is not.",
+   "outcome_knowledge_status": "STOPPED_UNSEEN",
+   "primary_blocker": "tools/track.py:320-324 ignores the ablation flag when MOT==20, so even --eval val loads bytetrack_x_mot20.tar, the full-MOT20-train detector. BoT-SORT releases no MOT20 ablation detector.",
+   "readiness": "BLOCKED_CHECKPOINT_PROVENANCE",
+   "structural_family": "LINEAR_DTI_ROW_ADDITIVE"
+  },
+  {
+   "additional_blockers": [
+    "ASSET_ABSENT (bytetrack_x_mot20.tar)",
+    "NO_VERIFIED_ENVIRONMENT (tools/run_ocsort.py: ModuleNotFoundError: yolox)",
+    "NO_MOT20_VAL_BRANCH (tools/run_ocsort.py:57-67 branches only on exp.val_ann and has no MOT20-val case)",
+    "ADAPTER_DOUBLE_HALVING",
+    "EXECUTING_PIN_UNDECLARED for the tracker core"
+   ],
+   "audit_mode": "STOPPED_BEFORE_EXECUTION",
+   "cell": "OC-SORT linear x MOT20",
+   "checkpoint_status": "CONFIRMED_EVAL_LEAKAGE",
+   "command_status": "TRACED_TEST_ONLY",
+   "dataset_status": "READY",
+   "documentation_role": "SECONDARY_SPLIT_ADAPTED",
+   "environment_status": "UNDEFINED",
+   "indexing_status": "BLOCKED_DOUBLE_HALVING",
+   "interpolation_rule_check": {
+    "COMMAND_RULE_CONFLICT": false,
+    "frozen": "n_min=30, n_dti=20 frozen on source evidence, not inherited from MOT17",
+    "mot20_documentation_differs_from_mot17": false,
+    "n_dti": 20,
+    "n_min": 30,
+    "source_evidence": "tools/interpolation.py::__main__ dti(txt_path, save_path, n_min=30, n_dti=20), not dataset-branched; docs/GET_STARTED.md:141-148 gives one dataset-agnostic command naming MOT17 and MOT20 together"
+   },
+   "outcome_knowledge_status": "STOPPED_UNSEEN",
+   "primary_blocker": "the documented MOT20 command loads bytetrack_x_mot20.tar, the same full-MOT20-train detector. OC-SORT ships a MOT17 half-train exp (yolox_x_mot17_ablation_half_train.py) but no MOT20 equivalent.",
+   "readiness": "BLOCKED_CHECKPOINT_PROVENANCE",
+   "structural_family": "LINEAR_DTI_ROW_ADDITIVE"
+  },
+  {
+   "additional_blockers": [
+    "any future MOT20 GPR result would inherit the upstream detector's CONFIRMED_EVAL_LEAKAGE"
+   ],
+   "audit_mode": "STOPPED_BEFORE_EXECUTION",
+   "blocker_root_cause": "UPSTREAM_CELL_BLOCKED_CHECKPOINT_PROVENANCE",
+   "cell": "OC-SORT-GPR x MOT20",
+   "checkpoint_status": "INHERITED_CONFIRMED_EVAL_LEAKAGE",
+   "command_status": "RESOLVED",
+   "dataset_status": "READY",
+   "documentation_role": "OPTIONAL_DOCUMENTED_FAMILY",
+   "environment_status": "VERIFIED",
+   "indexing_status": "INHERITED",
+   "outcome_knowledge_status": "STOPPED_UNSEEN",
+   "primary_blocker": "the required scientific input does not exist: S0 is the OC-SORT MOT20 linear-DTI state, and the OC-SORT linear MOT20 cell is itself blocked on checkpoint provenance. GPR cannot be run without its raw and S0 directories.",
+   "readiness": "BLOCKED_ASSET",
+   "resolved_execution_contract": {
+    "absolute_output_path_enforced": true,
+    "dedicated_staging_directory": true,
+    "entry_point": "tracking_provenance_audit.gpr_entry",
+    "exactly_four_sequence_files": [
+     "MOT20-01",
+     "MOT20-02",
+     "MOT20-03",
+     "MOT20-05"
+    ],
+    "fresh_process_same_seed_replay_required": true,
+    "no_detections_txt_contamination": true,
+    "seed": 20260830,
+    "seed_required": true,
+    "structural_semantics": "raw -> linear DTI S0 -> GPR S2; no R1"
+   },
+   "structural_family": "GPR_REWRITE"
+  },
+  {
+   "additional_blockers": [
+    "ADAPTER_DOUBLE_HALVING (main.py needs the FULL native MOT20 train sequences so that convert_mot20_to_coco.py can build val_half.json)"
+   ],
+   "audit_mode": "STOPPED_BEFORE_EXECUTION",
+   "cell": "Deep-OC-SORT x MOT20",
+   "checkpoint_status": "NO_KNOWN_EVAL_LEAKAGE",
+   "command_status": "RESOLVED",
+   "dataset_status": "READY",
+   "documentation_role": "PRIMARY_DOCUMENTED_VALIDATION",
+   "environment_status": "VERIFIED",
+   "indexing_status": "BLOCKED_DOUBLE_HALVING",
+   "leakage_reasoning": "The MOT20 validation branch deliberately avoids every MOT20-trained asset. main.py:76 carries the authors' own comment 'Just use the mot17 test model as the ablation model for 20', and embedding.py:190-193 states that the MOT17/20 SBS ReID models are trained over the half-val being evaluated and are therefore replaced by a general model. Both substitutions were read from source, and neither asset contains MOT20 data. This is the only one of the seven cells whose checkpoint provenance is acceptable.",
+   "mot20_checkpoint_leakage_verdict": "NOT RAISED",
+   "note": "the MOT17 command was NOT assumed identical: the MOT20 command adds --track_thresh 0.4 and main.py selects a different detector and a different input size (800,1440 vs 896,1600 for --test_dataset).",
+   "outcome_knowledge_status": "STOPPED_UNSEEN",
+   "primary_blocker": "external/weights/bytetrack_x_mot17.pth.tar, the detector the MOT20 validation branch selects (main.py:71-78), is not present locally. Substitution is forbidden without a new amendment.",
+   "readiness": "BLOCKED_ASSET",
+   "structural_family": "LINEAR_DTI_ROW_ADDITIVE"
+  },
+  {
+   "additional_blockers": [
+    "CONFIRMED_EVAL_LEAKAGE (ocsort_x_mot20: full MOT20 train + CrowdHuman)",
+    "ASSET_ABSENT (ocsort_x_mot20.pth.tar)",
+    "ADAPTER_DOUBLE_HALVING"
+   ],
+   "audit_mode": "STOPPED_BEFORE_EXECUTION",
+   "cell": "Hybrid-SORT x MOT20",
+   "checkpoint_status": "CONFIRMED_EVAL_LEAKAGE",
+   "command_status": "BLOCKED_NO_VAL_CONFIG",
+   "dataset_status": "READY",
+   "deployment_identity_preserved": {
+    "base": "Hybrid-SORT",
+    "hybrid_sort_with_reid": false
+   },
+   "documentation_role": "SECONDARY_SPLIT_ADAPTED",
+   "environment_decision": "ENV-HYBRIDSORT-MOT17-V9 reuse is VALID on package grounds and no new environment identity is required; see 10_MOT20_ENVIRONMENT_MANIFEST.json. Environment validity does not unblock the cell.",
+   "environment_status": "VERIFIED_REUSABLE",
+   "indexing_status": "BLOCKED_DOUBLE_HALVING",
+   "outcome_knowledge_status": "STOPPED_UNSEEN",
+   "primary_blocker": "no released MOT20 val-half Hybrid-SORT experiment config exists. The only MOT20 val-half exp, yolox_x_mix_mot20_ch_valhalf.py, was instantiated in this audit and carries ZERO tracker attributes (ckpt, dataset, hybrid_sort_with_reid, track_thresh, asso all absent). The only MOT20 Hybrid-SORT exp, yolox_x_mix_mot20_ch_hybrid_sort.py, has val_ann='test.json' and targets the test split. Authoring a val config would create a new experiment, not apply a documented rule unchanged.",
+   "readiness": "BLOCKED_COMMAND",
+   "structural_family": "LINEAR_DTI_ROW_ADDITIVE"
+  },
+  {
+   "additional_blockers": [
+    "ASSET_ABSENT: MOT20_val_YOLOX+BoT detections and appearance features are not published (README.md:63-65 lists MOT20 test artifacts only)",
+    "ASSET_ABSENT: MOT20_ECC_val.json is not published",
+    "UNKNOWN provenance for both absent artifacts"
+   ],
+   "audit_mode": "STOPPED_BEFORE_EXECUTION",
+   "cell": "StrongSORT++ x MOT20",
+   "checkpoint_status": "MIXED: AFLink NO_KNOWN_EVAL_LEAKAGE; detection/feature and ECC artifacts UNKNOWN and unresolvable",
+   "command_status": "BLOCKED_KEYERROR",
+   "dataset_status": "READY",
+   "documentation_role": "SECONDARY_SPLIT_ADAPTED",
+   "environment_status": "VERIFIED",
+   "independently_disqualifying": "the command blocker and the asset blocker each disqualify the cell on their own",
+   "indexing_status": "UNDETERMINABLE (fixed by absent precomputed detection files)",
+   "outcome_knowledge_status": "STOPPED_UNSEEN",
+   "primary_blocker": "opts.py:33-40 defines data['MOT20'] with a 'test' key only, and opts.py:145 does opt.sequences = data[opt.dataset][opt.mode]. Executed here as a configuration-only smoke test: `strong_sort.py MOT20 val --BoT --NSA --EMA --MC --woC --AFLink --GSI` raises KeyError: 'val'. MOT20 validation is not expressible in the frozen upstream code.",
+   "readiness": "BLOCKED_COMMAND",
+   "structural_family": "LINK_PLUS_SMOOTHING"
+  }
+ ],
+ "commands_selected_using_mot17_outcomes": false,
+ "companion_records": {
+  "10_MOT20_ASSET_MANIFEST.json": "d12c0e8e807cdb40bc50829192f07a3e949b1c67c4635cd7dd334a5581bb8980",
+  "10_MOT20_COMMAND_CENSUS.json": "fb475917e1bc7d9cd4ad9101e0cecafebadcabd85ba7d1da0ccde4edcf2e8ac4",
+  "10_MOT20_ENVIRONMENT_MANIFEST.json": "ea23c3275e77708d43a3012d80234395cbcd49a8dbe02c2694f6f90489f8e360",
+  "10_MOT20_FRAME_ADAPTERS.json": "5ab2aefb316e667a70b06249eb956f8a7560bb2a1eb8119cfcf854f9985c7924",
+  "10_MOT20_STATE_CONTRACT.json": "09405d674c421cd8874f93aa657d1fab79652a94e8c893d56ce787659ea65849"
+ },
+ "contains_scientific_outcome": false,
+ "counts": {
+  "BLOCKED_ASSET": 2,
+  "BLOCKED_CHECKPOINT_PROVENANCE": 3,
+  "BLOCKED_COMMAND": 2,
+  "BLOCKED_ENVIRONMENT": 0,
+  "BLOCKED_INDEXING": 0,
+  "BLOCKED_OTHER": 0,
+  "READY": 0,
+  "TOTAL": 7
+ },
+ "execution_authorized": false,
+ "frozen_on": "2026-08-31",
+ "frozen_population_modified": false,
+ "gt_semantics_modified": false,
+ "manifest": "TPAMI V9 MOT20 execution readiness",
+ "manuscript_modified": false,
+ "mot20_aflink_outputs": 0,
+ "mot20_gpr_outputs": 0,
+ "mot20_gsi_outputs": 0,
+ "mot20_interpolation_outputs": 0,
+ "mot20_metric_values": 0,
+ "mot20_ranking_values": 0,
+ "mot20_stv_outputs": 0,
+ "mot20_tracker_outputs": 0,
+ "mot20_trackeval_outputs": 0,
+ "population": {
+  "dataset": "MOT20",
+  "mirror_source_manifest_sha256": "c2d55f8020c83833f31fc345a100875296d938227ba19d9199e80630ce407eba",
+  "population_manifest_reverified": true,
+  "population_manifest_sha256": "aabe4907077934fb834a7639b9722b9120de0a007553bbc98a6132b768d3e232",
+  "provenance_caveat": "the corpus came from a Kaggle mirror; byte identity to an official MOT20.zip is NOT established and no wording may claim a direct MOTChallenge download",
+  "provenance_status": "MIRROR_TRANSPORT_FALLBACK",
+  "sequences": [
+   "MOT20-01",
+   "MOT20-02",
+   "MOT20-03",
+   "MOT20-05"
+  ],
+  "total_frames": 4463
+ },
+ "readiness_manifest_sha256": "90c9644d4a803f21f718db31015f1b078f5aa171516e95ee51ce955a172b4ba6",
+ "readiness_vocabulary": [
+  "READY",
+  "BLOCKED_ASSET",
+  "BLOCKED_ENVIRONMENT",
+  "BLOCKED_COMMAND",
+  "BLOCKED_CHECKPOINT_PROVENANCE",
+  "BLOCKED_INDEXING",
+  "BLOCKED_OTHER"
+ ],
+ "ready_definition": "dataset ready AND exact command frozen AND assets verified AND environment verified AND checkpoint provenance acceptable AND frame mapping deterministic AND output state semantics frozen. Repository support for MOT20 is never sufficient.",
+ "record": "10",
+ "required_ancestors": {
+  "tpami-v9-mot20-population-materialized-20260831": "07c217ddf6f1d618c306795a07b01a2349e7fe53",
+  "tpami-v9-mot20-semantics-frozen-20260831": "68dc01bfd5201717871e62bbd881af460927062f",
+  "tpami-v9-tracking-provenance-results-verified-20260831": "1df93d70e7d0359b1c890121b516357f70c43dcb"
+ },
+ "semantic_amendment": "tpami-v9-mot20-semantics-frozen-20260831 (09A_MOT20_SEMANTIC_COMPLETION)",
+ "third_party_commit_reverification": {
+  "BoT-SORT": {
+   "local_head": "251985436d6712aaf682aaaf5f71edb4987224bd",
+   "match": true,
+   "required": "251985436d6712aaf682aaaf5f71edb4987224bd",
+   "tracked_modifications": 0
+  },
+  "ByteTrack": {
+   "local_head": "d1bf0191adff59bc8fcfeaa0b33d3d1642552a99",
+   "match": true,
+   "required": "d1bf0191adff59bc8fcfeaa0b33d3d1642552a99",
+   "tracked_modifications": 0
+  },
+  "Deep-OC-SORT": {
+   "local_head": "6bb51d027b137233f5c520b6fcc4f2ae387a6ba9",
+   "match": true,
+   "required": "6bb51d027b137233f5c520b6fcc4f2ae387a6ba9",
+   "tracked_modifications": 0
+  },
+  "Hybrid-SORT": {
+   "local_head": "396f8d30db13304c0cbaf1dcf2e16ded93ce1701",
+   "match": true,
+   "required": "396f8d30db13304c0cbaf1dcf2e16ded93ce1701",
+   "tracked_modifications": 0
+  },
+  "OC-SORT": {
+   "local_head": "a9e24b6732b5d453b13399047207c0a515e0b8ae",
+   "match": "RECONCILED_TWO_FIELD",
+   "reconciliation": "01_SOURCE_MANIFEST.json records 8462e7e7 as upstream_head_at_census and a9e24b67 as local_clone_head; these are distinct frozen fields, not a single value. Reverified: a9e24b67 is an ancestor of 8462e7e7 (25 commits); tools/interpolation.py and tools/gp_interpolation.py are byte-identical at both ends (blobs 3eaf014ff261, c46434d3a82d), so the post-processing identity is pin-invariant. The 25 commits DO modify trackers/ocsort_tracker/{association,kalmanfilter,ocsort}.py, so a MOT20 raw tracker run would NOT be pin-invariant and the executing pin must be declared before any such run.",
+   "required_by_task": "8462e7e729a93ccd3bd995c0a79a890336cb3a0b",
+   "tracked_modifications": 0
+  },
+  "StrongSORT++": {
+   "local_head": "ee995076da5083e28d0da1f885297df62705ebd7",
+   "match": true,
+   "required": "ee995076da5083e28d0da1f885297df62705ebd7",
+   "tracked_modifications": 0
+  },
+  "source_tree_status": "every repository is clean of TRACKED modifications; all dirty entries are untracked build artefacts, __pycache__, dataset symlinks and weight files, which are scientifically accounted for. No upstream repository was updated in this task."
+ },
+ "trackeval": {
+  "BENCHMARK": "MOT20",
+  "CLASSES_TO_EVAL": "pedestrian",
+  "SPLIT_TO_EVAL": "val",
+  "commit": "12c8791b303e0a0b50f753af204249e622d0281a",
+  "executed": false,
+  "metrics": [
+   "HOTA",
+   "DetA",
+   "AssA",
+   "IDF1",
+   "MOTA"
+  ]
+ },
+ "universe": {
+  "added": 0,
+  "cells": 7,
+  "excluded_documentation_only": "SparseTrack x MOT20 remains DOCUMENTATION_ONLY_IMPLEMENTED / NO_QUANTITATIVE_OUTCOME_PLANNED and is not an eighth quantitative cell",
+  "removed": 0
+ }
+}

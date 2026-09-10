@@ -1,0 +1,45 @@
+{
+ "caveat": "historical deployments' metrics come from the frozen V8 evaluation record rather than a new V9 evaluator invocation; pin, config and GT hashes are identical, and no historical outcome is relabelled as prospective",
+ "deployments": {
+  "BoT-SORT": {
+   "knowledge": "HISTORICAL_OUTCOME_KNOWN_PRE_V9",
+   "metric_provenance": "V8 evaluation record (eval_ALL.json); same TrackEval pin, config and GT hashes"
+  },
+  "ByteTrack": {
+   "knowledge": "HISTORICAL_OUTCOME_KNOWN_PRE_V9",
+   "metric_provenance": "V8 evaluation record (eval_ALL.json); same TrackEval pin, config and GT hashes"
+  },
+  "Deep-OC-SORT": {
+   "knowledge": "PROSPECTIVE_OUTCOME_UNSEEN_AT_V9_FREEZE",
+   "metric_provenance": "V9 evaluator run (V9-MOT17-DEEPOCSORT-001)"
+  },
+  "Hybrid-SORT": {
+   "knowledge": "PROSPECTIVE_OUTCOME_UNSEEN_AT_V9_FREEZE",
+   "metric_provenance": "V9 evaluator run (V9-MOT17-HYBRIDSORT-002)"
+  },
+  "OC-SORT": {
+   "knowledge": "HISTORICAL_OUTCOME_KNOWN_PRE_V9",
+   "metric_provenance": "V8 evaluation record (eval_ALL.json); same TrackEval pin, config and GT hashes"
+  }
+ },
+ "eligibility": "same MOT17 val-half population (identical GT hashes), same TrackEval pin 12c8791b, same metric set, corresponding R0/R2 semantics",
+ "excluded_deployments": [
+  {
+   "name": "OC-SORT-GPR",
+   "reason": "only S0/S2 semantics are defined for GPR_REWRITE; the frozen non-row-additive protocol forbids manufacturing R0/R2 semantics, so this deployment is excluded from the R0/R2 ordering matrix",
+   "run": "V9-MOT17-OCSORTGPR-002"
+  }
+ ],
+ "mismatches_against_frozen_matrix": 0,
+ "precision_source": "TrackEval pedestrian_detailed.csv COMBINED row; HOTA/DetA/AssA recomputed as the mean over alpha thresholds, IDF1/MOTA direct",
+ "rounding_artifacts": 0,
+ "summary": {
+  "flips": 5,
+  "metric_not_available": 0,
+  "n_cells": 50,
+  "n_pairs": 10,
+  "ties_broken": 0,
+  "ties_created": 0,
+  "unchanged": 45
+ }
+}

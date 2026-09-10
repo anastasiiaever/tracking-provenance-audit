@@ -1,0 +1,167 @@
+{
+ "amendment_mode": "APPEND_ONLY",
+ "amends": "10",
+ "checkpoints_substituted": 0,
+ "chronology": {
+  "1_sequence_universe_and_split_rule": "the MOT20 sequence universe (MOT20-01/02/03/05) and the second-half split rule were frozen in 02_PROSPECTIVE_PROTOCOL BEFORE any MOT17 execution.",
+  "2_evaluator_native_semantics": "MOT20 evaluator-native GT semantics (09A) were completed AFTER MOT17 outcomes were known but BEFORE any MOT20 outcome existed.",
+  "3_readiness_audit": "the readiness audit (record 10) then established that most public MOT20 checkpoints are unsuitable for the held-out half-train estimand because of evaluation leakage.",
+  "4_selection_basis": "Deep-OC-SORT was carried forward for possible execution ONLY because that pre-existing readiness audit classified its documented validation path as the sole NO_KNOWN_EVAL_LEAKAGE cell.",
+  "no_mot20_outcome_existed_at_selection": true,
+  "selection_is_not_outcome_based": true,
+  "wording_prohibition": "this selection must NOT be described as a prospectively selected winner, nor as outcome-based selection, nor as a best-performing method."
+ },
+ "clean_cell": {
+  "cell": "Deep-OC-SORT x MOT20",
+  "checkpoint_provenance": "NO_KNOWN_EVAL_LEAKAGE",
+  "detector": "external/weights/bytetrack_x_mot17.pth.tar",
+  "documentation_role": "PRIMARY_DOCUMENTED_VALIDATION",
+  "execution_authorized": false,
+  "independent_confirmation": {
+   "detector_branch_trace": "main.py executed with the frozen MOT20 validation argv, with external.adaptors.detector.Detector stubbed: selected external/weights/bytetrack_x_mot17.pth.tar. With --test_dataset it selects bytetrack_x_mot20.tar, which the frozen command never passes.",
+   "detector_training_data": "MOT17 train + CrowdHuman + Cityperson + ETHZ (ByteTrack README.md:184-188). Contains NO MOT20 data.",
+   "reid_branch_trace": "EmbeddingComputer.initialize_model executed with dataset='mot20', test_dataset=False and every model constructor stubbed: it called _get_general_model() and loaded external/weights/osnet_ain_ms_d_c.pth.tar (552 tensors, build_model(name='osnet_ain_x1_0', num_classes=2510, loss='softmax', pretrained=False)). It never referenced mot20_sbs_S50.pth, which is reachable only under --test_dataset.",
+   "reid_training_data": "generic multi-source person-ReID corpora. Contains NO MOT17 and NO MOT20 data.",
+   "uses_mot20_evaluation_frames": false,
+   "uses_mot20_training_frames": false
+  },
+  "note": "READY_FOR_AUTHORIZATION is a readiness state introduced by this amendment. It is NOT EXECUTION_AUTHORIZED and confers no permission to run anything.",
+  "reid": "external/weights/osnet_ain_ms_d_c.pth.tar (general osnet_ain_x1_0, num_classes=2510)",
+  "status_if_asset_absent": "BLOCKED_ASSET",
+  "status_if_asset_present": "READY_FOR_AUTHORIZATION"
+ },
+ "companion_records": {
+  "10A_MOT20_DEEPOCSORT_ASSET_MANIFEST.json": "680331c7def5e0e114356051db2bfd919b7ff18d333559c66864e08741645c74",
+  "10A_MOT20_DEEPOCSORT_COMMAND_MANIFEST.json": "a8bc94e47ed61226815c67c25209c164d89016b8b6df9fe00bf50e4495ecb8bc",
+  "10A_MOT20_DEEPOCSORT_FRAME_CONTRACT.json": "0df43bfd89b0dea1fbc3c972a617088e3578d40f3585678d1d1694cef39b8238"
+ },
+ "contains_scientific_outcome": false,
+ "corrections": [
+  {
+   "cell": "OC-SORT-GPR x MOT20",
+   "corrected": {
+    "checkpoint_provenance": "CONFIRMED_EVAL_LEAKAGE",
+    "primary_scientific_blocker": "BLOCKED_CHECKPOINT_PROVENANCE",
+    "secondary_technical_blocker": "BLOCKED_ASSET"
+   },
+   "original_10_classification": {
+    "checkpoint_status": "INHERITED_CONFIRMED_EVAL_LEAKAGE",
+    "readiness": "BLOCKED_ASSET",
+    "why_incomplete": "BLOCKED_ASSET alone reads as a procurable blocker. It is not. The missing artifact is S0, the OC-SORT MOT20 linear-DTI state, which can only be produced by the OC-SORT MOT20 detector whose training set contains the frozen evaluation frames. Acquiring any asset cannot make this cell valid for the clean held-out V9 estimand."
+   },
+   "terminal_for_current_estimand": true
+  },
+  {
+   "cell": "Hybrid-SORT x MOT20",
+   "corrected": {
+    "checkpoint_blocker": "CONFIRMED_EVAL_LEAKAGE",
+    "command_blocker": "BLOCKED_COMMAND",
+    "terminal_scientific_blocker": "BLOCKED_CHECKPOINT_PROVENANCE"
+   },
+   "original_10_classification": {
+    "readiness": "BLOCKED_COMMAND",
+    "why_incomplete": "the absence of a MOT20 val experiment config is not the only blocker; record 10 already listed CONFIRMED_EVAL_LEAKAGE among additional_blockers, but the single headline classification understated it. Even if a val config existed, the only MOT20 detector Hybrid-SORT documents is trained on the frozen evaluation frames."
+   },
+   "terminal_for_current_estimand": true
+  }
+ ],
+ "counts": {
+  "READY_FOR_AUTHORIZATION": 1,
+  "STOPPED_BEFORE_EXECUTION": 6,
+  "TOTAL": 7
+ },
+ "execution_authorized": false,
+ "final_status": {
+  "BoT-SORT x MOT20": "STOPPED_BEFORE_EXECUTION",
+  "ByteTrack x MOT20": "STOPPED_BEFORE_EXECUTION",
+  "Deep-OC-SORT x MOT20": "READY_FOR_AUTHORIZATION",
+  "Hybrid-SORT x MOT20": "STOPPED_BEFORE_EXECUTION",
+  "OC-SORT linear x MOT20": "STOPPED_BEFORE_EXECUTION",
+  "OC-SORT-GPR x MOT20": "STOPPED_BEFORE_EXECUTION",
+  "StrongSORT++ x MOT20": "STOPPED_BEFORE_EXECUTION"
+ },
+ "final_status_basis": {
+  "READY_FOR_AUTHORIZATION_is_not_EXECUTION_AUTHORIZED": true,
+  "all_checks_passed": true,
+  "clean_detector_asset_acquired": true,
+  "detector_sha256": "e3945f3523fde1e107708aacd64dab0670c34e371d136e54587cac7a50d3cfba",
+  "frame_contract_frames": 4463,
+  "reid_sha256": "2f38acc25e28cb29407635db2be315edc08d5457a904b72a9a11e427f41f3242",
+  "supersedes_10_field": "10_MOT20_EXECUTION_READINESS.json cells[Deep-OC-SORT x MOT20].readiness = 'BLOCKED_ASSET' (left byte-unchanged; superseded here)"
+ },
+ "frozen_on": "2026-08-31",
+ "frozen_population_modified": false,
+ "gt_semantics_modified": false,
+ "manifest": "TPAMI V9 MOT20 readiness correction A1",
+ "manuscript_modified": false,
+ "models_trained": 0,
+ "mot20_interpolation_outputs": 0,
+ "mot20_metric_values": 0,
+ "mot20_ranking_values": 0,
+ "mot20_stv_outputs": 0,
+ "mot20_tracker_outputs": 0,
+ "mot20_trackeval_outputs": 0,
+ "original_readiness_commit": "4dbcf125acddcb5eb100cb55f2786f157c8919b4",
+ "original_readiness_tag": "tpami-v9-mot20-execution-readiness-20260831",
+ "original_readiness_tag_object": "e028bf5db1c5d90cb62fba56fb5a0f1b46bffd05",
+ "original_records_modified": false,
+ "original_records_note": "the 10_* records are byte-unchanged. Where this amendment supersedes a field, the original value is quoted verbatim beside the corrected one.",
+ "population_manifest_sha256": "aabe4907077934fb834a7639b9722b9120de0a007553bbc98a6132b768d3e232",
+ "readiness_correction_sha256": "c67ca417cf26a59a9762ead638ec8aa81cd188841858d8693b596792b982291b",
+ "record": "10A",
+ "strongsort": {
+  "blockers": [
+   {
+    "detail": "opts.py:33-40 defines data['MOT20'] with a 'test' key only; opts.py:145 does opt.sequences = data[opt.dataset][opt.mode]. Executed as a configuration-only smoke test: `strong_sort.py MOT20 val ...` raises KeyError: 'val'.",
+    "id": "MOT20_VAL_COMMAND_UNSUPPORTED"
+   },
+   {
+    "detail": "opt.dir_dets resolves to MOT20_val_YOLOX+BoT; README.md:63-65 publishes MOT20_test_YOLOX+BoT and MOT20_test_YOLOX+simpleCNN only. StrongSORT runs no detector or ReID of its own.",
+    "id": "MOT20_VAL_DETECTION_INPUTS_ABSENT"
+   },
+   {
+    "detail": "opts.py:142-144 loads MOT20_ECC_val.json; only MOT20_ECC_test.json is published.",
+    "id": "ECC_INPUT_ABSENT"
+   },
+   {
+    "detail": "the MOT20-val detection/feature and ECC artifacts do not exist upstream, so their training provenance cannot be resolved from source documentation and stays UNKNOWN.",
+    "id": "BASE_INPUT_PROVENANCE_UNKNOWN"
+   },
+   {
+    "detail": "StrongSORT performs no half-split of its own; its frame numbering is fixed by the precomputed .npy detection files, so no indexing contract can be settled until valid inputs exist.",
+    "id": "INDEXING_NOT_DETERMINABLE"
+   }
+  ],
+  "cell": "StrongSORT++ x MOT20",
+  "final_state": "STOPPED_BEFORE_EXECUTION",
+  "readiness": "BLOCKED_COMMAND",
+  "rule": "no study-side command may be constructed for this cell",
+  "study_side_command_constructed": false
+ },
+ "terminal_leakage_cells": {
+  "audit_mode": "STOPPED_BEFORE_EXECUTION",
+  "cells": [
+   "ByteTrack x MOT20",
+   "BoT-SORT x MOT20",
+   "OC-SORT linear x MOT20",
+   "OC-SORT-GPR x MOT20",
+   "Hybrid-SORT x MOT20"
+  ],
+  "evidence": [
+   "ByteTrack tools/mix_data_test_mot20.py:17 loads datasets/MOT20/annotations/train.json, the COMPLETE MOT20 train split",
+   "ByteTrack README.md:164 'Train on CrowdHuman and MOT20, evaluate on MOT20 train.'",
+   "BoT-SORT tools/track.py:320-324 ignores the ablation flag when MOT==20, so --eval val still loads bytetrack_x_mot20.tar",
+   "Hybrid-SORT exps/example/mot/yolox_x_mix_mot20_ch_hybrid_sort.py:34 self.ckpt='pretrained/ocsort_x_mot20.pth.tar', built by the same mix_mot20_ch recipe (README.md:211-216)",
+   "no repository in the frozen universe releases a MOT20 half-train ablation detector"
+  ],
+  "future_note": "a clean-detector controlled study would be a NEW experiment with its own protocol and its own pre-registration; it would NOT be execution of these frozen released-deployment cells, and no result from it may be presented as such.",
+  "outcome_knowledge_status": "STOPPED_UNSEEN",
+  "prohibitions": {
+   "download_these_checkpoints_to_execute_invalid_cells": "FORBIDDEN",
+   "replace_with_another_detector_in_this_amendment": "FORBIDDEN",
+   "substitute_any_checkpoint": "FORBIDDEN"
+  },
+  "reason": "the required detector state is trained using the frozen MOT20 evaluation frames",
+  "status": "NOT_ELIGIBLE_FOR_EXECUTION_WITH_DOCUMENTED_PUBLIC_MOT20_CHECKPOINTS"
+ }
+}
