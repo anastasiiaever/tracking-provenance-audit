@@ -17,6 +17,7 @@ authors:
     given-names: Soonchul
     affiliation: "Department of Plasma Bio Display, Kwangwoon University, Seoul, Republic of Korea"
 license: MIT
+repository-code: "https://github.com/anastasiiaever/tracking-provenance-audit"
 keywords:
   - multi-object tracking
   - evaluation

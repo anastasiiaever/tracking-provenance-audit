@@ -44,8 +44,8 @@
    "source_sha256": {},
    "transformation": "authored",
    "redistribution": "OWN_RECORD",
-   "public_sha256": "0ecd543e0107c81b3ea2a6b912d17164b56ac5a43c4a73cacacd4f749598315e",
-   "bytes": 1596
+   "public_sha256": "e186b49c527cfc556ccee8f55bffc2177d79233f49297a45fd96f3637aab28d8",
+   "bytes": 1675
   },
   {
    "public_file": "LICENSE",
@@ -186,7 +186,7 @@
    "source_sha256": {},
    "transformation": "authored",
    "redistribution": "OWN_RECORD",
-   "public_sha256": "9d7557a17b53112a263e4e73042e3c5802b9f0725aaa8a3b96d360dc634e72e2",
+   "public_sha256": "6878cb5cbb5f357cf46c1da6ede2e2a222b3d95f1ba6b9f7c456a2cbf07f6c9b",
    "bytes": 3395
   },
   {
