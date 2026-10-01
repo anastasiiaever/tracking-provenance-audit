@@ -38,23 +38,19 @@ offsets and ground-truth SHA-256 values are in
 
 Four sequences (MOT20-01, -02, -03, -05), second half, 4,463 frames.
 
-One caveat is carried explicitly rather than left to inference: the study's own
-MOT20 copy reached it through a verified mirror. Structural verification against
-the frozen population manifest passed, but byte identity to an official MOT20
-archive is **not** established. The corpus status is recorded as
-`MIRROR_TRANSPORT_FALLBACK` in `results/mot20/eligibility_context.json`, and
-`scripts/verify_mot20_eligibility.py` checks that the caveat is still there. If
-you obtain MOT20 from the official source your copy may differ in bytes; the
-frame count and sequence set are the thing to check.
+The MOT20 corpus status is `MIRROR_TRANSPORT_FALLBACK`; see
+[PROVENANCE.md](PROVENANCE.md#mot20-corpus). If you obtain MOT20 from the official
+source your copy may differ in bytes; check the frame count and sequence set
+against `provenance/frozen_records/09A_MOT20_POPULATION_MANIFEST_SPEC.json`.
 
 ### BDD100K (MOT labels)
 <https://bdd-data.berkeley.edu/> — registration required.
 
-The object-trajectory audit reads a derived parquet label table rather than the
-raw release. Its expected SHA-256 is pinned in
-`src/trajectory_cross_domain/protocol57.py` and the parser verifies the file it
-is given against that pin, so relocating the input cannot silently change which
-corpus was read.
+The object-trajectory audit read a derived parquet label table rather than the
+raw release, verified against the pinned SHA-256
+`e296934ebba47f360fb49a61060d5dfc6027f91a8655b96b565ece7ac1599e02`. That audit is
+a supplement-only analysis; its implementation is not part of this release and its
+released partition is `results/controlled/objecttraj_applicability.csv`.
 
 ### KITTI tracking
 <https://www.cvlibs.net/datasets/kitti/> — registration required.
@@ -100,14 +96,6 @@ and the frozen headline reading are released in
 `results/controlled/jta_applicability.csv` and `results/controlled/jta_headline.json`; the corpus is
 not, and neither are the learned checkpoints whose JTA scores the headline
 reports.
-
-### 3DPW
-<https://virtualhumans.mpi-inf.mpg.de/3DPW/> — research licence, request-based.
-
-Used for the external operator/aggregation validation. The matched-predictor
-Criterion-B table and the four cells that miss the band are released in
-`results/controlled/threedpw_matched_criterion_b.csv` and
-`results/controlled/threedpw_failing_cells.csv`; the corpus is not.
 
 ## Checkpoints
 

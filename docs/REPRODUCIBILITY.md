@@ -26,36 +26,34 @@ edited constants — but it is not an independent re-measurement.
 
 ### Requirements
 
-Python **3.9 or newer** (the audit core uses PEP 584 dict union), plus `PyYAML`
-and `pytest`. `numpy`, `scipy` and `pandas` are needed only for the
-object-trajectory modules and their tests.
+Python **3.9 or newer**: the audit core uses PEP 584 dict union. Beyond the
+standard library the release needs `pytest` and `PyYAML`, and `numpy` and `scipy`
+for the admission matcher and the MOTChallenge adapter. `environment.yml` pins
+the set.
 
-Two environments are documented, and they are different things.
+`environment.yml` describes the environment the reported numbers were produced
+under: Python 3.9.23, NumPy 1.23.5, SciPy 1.10.1.
 
-| | Python | role |
-|---|---|---|
-| **Frozen reproduction environment** | 3.9.23 | the interpreter the reported numbers were produced under; pinned in `environment.yml` |
-| **Verified modern environments** | 3.10.21, 3.11.15, 3.12.14 | the offline verification and the full test suite were run on each and pass identically |
+### Measured for this release
 
-Measured, not assumed:
+Run as `python -m pytest -q` from the repository root. These counts are specific
+to this frozen release and change whenever tests are added or removed.
 
-| Python | tests | verification scripts | minimal example |
+| Python | `python -m pytest -q` | verification scripts | minimal example |
 |---|---|---|---|
-| 3.8.10 | **2 failed**, 187 passed | 6/6 exit 0 | ok |
-| 3.9.23 | **189 passed** | 6/6 exit 0 | ok |
-| 3.10.21 | **189 passed** | 6/6 exit 0 | ok |
-| 3.11.15 | **189 passed** | 6/6 exit 0 | ok |
-| 3.12.14 | **189 passed** | 6/6 exit 0 | ok |
+| 3.8.10 | **2 failed**, 184 passed | 6/6 exit 0 | ok |
+| 3.9.23 | **186 passed** | 6/6 exit 0 | ok |
+| 3.11.15 | **186 passed** | 6/6 exit 0 | ok |
 
-Python 3.8 is genuinely not enough. The two failures are
+Python 3.9 and 3.11 are the interpreters this release was validated on. Other
+3.x versions are not claimed, because they were not run against this release.
+
+Python 3.8 is not enough. The two failures are
 `test_a_missing_state_yields_an_unavailable_delta` — `metrics.delta` uses
 `dict | dict`, added in 3.9 — and the version guard that asserts exactly this.
 Neither was worked around: changing frozen scientific code to widen
-compatibility is not a trade this release makes.
-
-The modern runs used current dependency versions (NumPy 2.x, SciPy 1.17, pandas
-3.x on 3.11), so the pass is a real compatibility result, not an artefact of
-pinning everything back to 2026.
+compatibility is not a trade this release makes. The six verification scripts
+still exit 0 on 3.8, but the suite does not pass, so 3.8 is unsupported.
 
 ## Level 2 — re-derive the audit from tracker outputs (hours, needs corpora)
 
@@ -164,7 +162,8 @@ artifact it came from, that artifact's SHA-256, and the transformation applied.
 
 - The offline verification checks internal consistency, not independent
   re-measurement. Level 2 is the independent path.
-- The MOT20 corpus provenance is a mirror, not a byte-verified official archive.
+- The MOT20 corpus provenance is a mirror, not a byte-verified official archive
+  ([PROVENANCE.md](PROVENANCE.md#mot20-corpus)).
 - Five of the eight census pipelines have no released results here; the census
   records why each cell was or was not executed.
 - Historical MOT17 metrics come from the study's earlier evaluation record rather

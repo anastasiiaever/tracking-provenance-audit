@@ -1,9 +1,0 @@
-quantity,spline,kalman
-ratio min,0.527324,0.990923
-ratio median,0.996523,0.999585
-ratio max,1.072278,1.008730
-max |ratio − 1|,0.472676,0.009077
-cells within ±25 %,24 / 28,28 / 28
-median deviation from 1,0.003477,0.000415
-per-cell B,FAIL,PASS
-median B,PASS,PASS

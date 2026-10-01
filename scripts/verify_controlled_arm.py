@@ -13,7 +13,6 @@ cell-for-cell with the frozen record it was derived from:
   BDD100K/MOT17 the object-trajectory Gate-1R partition
   KITTI         the applicability partition and the one frozen hypothesis
   JTA           the within-corpus structural replication partition
-  3DPW          the matched-predictor operator/aggregation validation
   learned models the noise-sensitivity grid and the frozen input contract
 
 Needs no dataset, no checkpoint and no GPU. See docs/DATASETS.md for what a full
@@ -239,43 +238,6 @@ def check_jta(c):
             "SENSITIVITY" in head["what_this_result_is"].upper())
 
 
-def check_threedpw(c):
-    rows = {r["quantity"]: r for r in
-            read_csv("results", "controlled", "threedpw_matched_criterion_b.csv")}
-    fails = read_csv("results", "controlled", "threedpw_failing_cells.csv")
-
-    c.equal("3DPW: Criterion-B table has the eight frozen quantities", len(rows), 8)
-    c.equal("3DPW: kalman passes the per-cell band", rows["per-cell B"]["kalman"], "PASS")
-    c.equal("3DPW: spline fails the per-cell band", rows["per-cell B"]["spline"], "FAIL")
-    c.equal("3DPW: both pass the median criterion",
-            (rows["median B"]["spline"], rows["median B"]["kalman"]), ("PASS", "PASS"))
-    c.equal("3DPW: kalman is inside the band in every cell",
-            rows["cells within \u00b125 %"]["kalman"].replace(" ", ""), "28/28")
-    c.equal("3DPW: spline misses four cells",
-            rows["cells within \u00b125 %"]["spline"].replace(" ", ""), "24/28")
-
-    for m in ("spline", "kalman"):
-        lo = float(rows["ratio min"][m]); hi = float(rows["ratio max"][m])
-        med = float(rows["ratio median"][m]); dev = float(rows["median deviation from 1"][m])
-        worst = float(rows["max |ratio \u2212 1|"][m])
-        c.check(f"3DPW [{m}]: median lies inside the observed ratio range", lo <= med <= hi)
-        c.check(f"3DPW [{m}]: median deviation from 1 recomputes",
-                close(dev, abs(med - 1.0), 5e-7))
-        c.check(f"3DPW [{m}]: worst deviation is the extreme of the range",
-                close(worst, max(abs(lo - 1.0), abs(hi - 1.0)), 5e-7))
-
-    c.equal("3DPW: four failing cells released", len(fails), 4)
-    c.check("3DPW: every failing cell is spline at gap length 20",
-            all(f["method"] == "spline" and f["g"] == "20" for f in fails))
-    c.check("3DPW: each failing ratio is measured/predicted",
-            all(close(float(f["ratio"]), float(f["measured"]) / float(f["predicted"]), 1e-6)
-                for f in fails))
-    c.check("3DPW: each failing ratio is outside the +/-25% band",
-            all(abs(float(f["ratio"]) - 1.0) > 0.25 for f in fails))
-    c.check("3DPW: the worst failing ratio equals the reported spline minimum",
-            close(min(float(f["ratio"]) for f in fails),
-                  float(rows["ratio min"]["spline"]), 1e-9))
-
 
 def check_learned(c):
     ic = read_json("results", "controlled", "learned_input_contract.json")["input_contract"]
@@ -320,7 +282,6 @@ def main() -> int:
     check_objecttraj(c)
     check_kitti(c)
     check_jta(c)
-    check_threedpw(c)
     check_learned(c)
     failed = c.report()
 

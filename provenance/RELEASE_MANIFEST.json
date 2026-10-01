@@ -17,13 +17,6 @@
    "commit": "ff8569a44d0263fde0aa55e0429b27f1f80e84e8",
    "why_separate": "The KITTI transfer has its own separately frozen chain, tagged before the tracking arm existed. Its result artifacts are not present at the primary tag, so the three KITTI records released here are taken from this tag instead.",
    "git_history_copied": false
-  },
-  "threedpw_matched_arm": {
-   "repository": "private research repository (not published)",
-   "tag": "v7-m0-matched-comparison-result-20260828",
-   "commit": "8bcd216bc21ac0fb30372b713995c888d58499ad",
-   "why_separate": "The matched-predictor 3DPW comparison was frozen and tagged on its own, and its record is not present at the primary tag. The one record released from it is byte-identical; the two derived tables were parsed from it programmatically.",
-   "git_history_copied": false
   }
  },
  "redistribution_summary": {
@@ -31,7 +24,7 @@
   "checkpoints_included": false,
   "third_party_source_included": false,
   "note": "Only own code, own frozen records and small derived aggregate tables are published. Every corpus and checkpoint is obtained by the reader from its own distributor under its own terms; see docs/DATASETS.md.",
-  "files_total": 159
+  "files_total": 146
  },
  "files": [
   {
@@ -71,8 +64,8 @@
    "source_sha256": {},
    "transformation": "authored",
    "redistribution": "OWN_RECORD",
-   "public_sha256": "cf1d2389dca17440a3194abfb87ed191a3283be702e108a0b5cbddddd6093af1",
-   "bytes": 13158
+   "public_sha256": "2767273e6a5a61945659f8fcb053b0c19d11c575fe3b19738dd55bf68ee47506",
+   "bytes": 4883
   },
   {
    "public_file": "configs/frozen/admission_stv.yaml",
@@ -163,8 +156,8 @@
    "source_sha256": {},
    "transformation": "authored",
    "redistribution": "OWN_RECORD",
-   "public_sha256": "e2926eb494447569baa14224c531e8a86ff3c31ce82eb42d6dbc9d42863b59ed",
-   "bytes": 9374
+   "public_sha256": "5f812a833db0cddb5c4e775d3a891880eb70ee3bf5b41d7615db04de9085394b",
+   "bytes": 8721
   },
   {
    "public_file": "docs/DATASETS.md",
@@ -173,8 +166,8 @@
    "source_sha256": {},
    "transformation": "authored",
    "redistribution": "OWN_RECORD",
-   "public_sha256": "af0050a3770f5fbdc1b07c532eb7673d790d6833e0fa7f4f0f103bb35926b0c6",
-   "bytes": 6616
+   "public_sha256": "a7692beebc26bb07874ae27e1786bc53281061967c66bab90131ec59376ed991",
+   "bytes": 6016
   },
   {
    "public_file": "docs/ESTIMAND_ELIGIBILITY.md",
@@ -193,8 +186,18 @@
    "source_sha256": {},
    "transformation": "authored",
    "redistribution": "OWN_RECORD",
-   "public_sha256": "cb7442f1001c08aa5315b6e6df2fed3c9a95d5c752595aa74e571b7734f2e44c",
-   "bytes": 3405
+   "public_sha256": "9d7557a17b53112a263e4e73042e3c5802b9f0725aaa8a3b96d360dc634e72e2",
+   "bytes": 3395
+  },
+  {
+   "public_file": "docs/PROVENANCE.md",
+   "role": "provenance: source state, MOT17 population naming, MOT20 corpus status, eligibility vocabulary, history normalization",
+   "source_frozen_artifact": "authored for this release",
+   "source_sha256": {},
+   "transformation": "authored",
+   "redistribution": "OWN_CODE",
+   "public_sha256": "158516b542913400640854a3f8110b8b516613e9eb02b7162f49d9c07d180070",
+   "bytes": 3448
   },
   {
    "public_file": "docs/PROVENANCE_FIELDS.md",
@@ -213,8 +216,8 @@
    "source_sha256": {},
    "transformation": "authored",
    "redistribution": "OWN_RECORD",
-   "public_sha256": "cc95b0f285a7d5416f02e9242ae386cc1150702f71e8821480a177c9396e3952",
-   "bytes": 8334
+   "public_sha256": "bece3952eabe6a816ad3f7a24ed00d55de2c8eae91c775912a8abb4dd49eb0e8",
+   "bytes": 8316
   },
   {
    "public_file": "environment.yml",
@@ -223,8 +226,8 @@
    "source_sha256": {},
    "transformation": "authored",
    "redistribution": "OWN_RECORD",
-   "public_sha256": "55d65e00ae85d21e6c9a970a444abcdd5060d258f742726bb46423d4b6d8f638",
-   "bytes": 763
+   "public_sha256": "bec9bb00ff19c9f010034a05cefd558a240f3cd4d7d0b26c6ed50f934a9e2a4f",
+   "bytes": 752
   },
   {
    "public_file": "examples/minimal_example/R0.txt",
@@ -273,8 +276,8 @@
    "source_sha256": {},
    "transformation": "authored (no frozen artifact is a table of this shape)",
    "redistribution": "REFERENCE_ONLY (names third-party corpora; contains none of their data)",
-   "public_sha256": "c706ca9767c6cf81f61cf1c30db05445fa81f794177cf763944fdcb5194eb2d8",
-   "bytes": 2336
+   "public_sha256": "1cc4177c5547bf8e619ef5c4f2d075f3ca1b583e07326df0ab76cc513e8050f6",
+   "bytes": 2226
   },
   {
    "public_file": "metadata/external_assets.csv",
@@ -694,8 +697,8 @@
    "source_sha256": {},
    "transformation": "authored",
    "redistribution": "OWN_RECORD",
-   "public_sha256": "925512abe229bc50b153a6d88f239b712c9c40b5ca414729337e82789e233260",
-   "bytes": 3795
+   "public_sha256": "4bda83c1ed96f9761c1816ae05856754e5430d55f66005fee162707f32d739c1",
+   "bytes": 3926
   },
   {
    "public_file": "provenance/frozen_records/controlled/45_THIRD_FAMILY_EVALUATION_RESULT.json",
@@ -840,18 +843,6 @@
    "redistribution": "OWN_RECORD",
    "public_sha256": "80b64b98773b676539de82e0517f5b005db010d30c80af6a1646970da684b336",
    "bytes": 508
-  },
-  {
-   "public_file": "provenance/frozen_records/controlled/V7_M0_MATCHED_COMPARISON_RESULT_20260828.md",
-   "role": "3DPW matched-predictor comparison result, released verbatim (the authoritative source for the Criterion-B table)",
-   "source_frozen_artifact": "docs/wacv/plan/V7_M0_MATCHED_COMPARISON_RESULT_20260828.md",
-   "source_sha256": {
-    "docs/wacv/plan/V7_M0_MATCHED_COMPARISON_RESULT_20260828.md": "3d02261ba7f9e7944968673211ff0c68599e473ac0719c908489270ddaee6a2a"
-   },
-   "transformation": "none (byte-identical copy)",
-   "redistribution": "OWN_RECORD",
-   "public_sha256": "3d02261ba7f9e7944968673211ff0c68599e473ac0719c908489270ddaee6a2a",
-   "bytes": 6225
   },
   {
    "public_file": "provenance/path_map.json",
@@ -1029,30 +1020,6 @@
    "bytes": 295
   },
   {
-   "public_file": "results/controlled/threedpw_failing_cells.csv",
-   "role": "3DPW: the four cells that miss the Criterion-B band, all at gap length 20",
-   "source_frozen_artifact": "docs/wacv/plan/V7_M0_MATCHED_COMPARISON_RESULT_20260828.md",
-   "source_sha256": {
-    "docs/wacv/plan/V7_M0_MATCHED_COMPARISON_RESULT_20260828.md": "3d02261ba7f9e7944968673211ff0c68599e473ac0719c908489270ddaee6a2a"
-   },
-   "transformation": "parsed the record's failing-cell markdown table programmatically; cell text verbatim",
-   "redistribution": "OWN_DERIVED_AGGREGATE",
-   "public_sha256": "4f4b11ac93308d4443ace38ff9632d4c5b47181f8c6d1defdfef46a0bd8d053f",
-   "bytes": 294
-  },
-  {
-   "public_file": "results/controlled/threedpw_matched_criterion_b.csv",
-   "role": "3DPW matched-predictor comparison, Criterion B applied unchanged (the frozen operator/aggregation validation)",
-   "source_frozen_artifact": "docs/wacv/plan/V7_M0_MATCHED_COMPARISON_RESULT_20260828.md",
-   "source_sha256": {
-    "docs/wacv/plan/V7_M0_MATCHED_COMPARISON_RESULT_20260828.md": "3d02261ba7f9e7944968673211ff0c68599e473ac0719c908489270ddaee6a2a"
-   },
-   "transformation": "parsed the record's Criterion-B markdown table programmatically; cell text verbatim",
-   "redistribution": "OWN_DERIVED_AGGREGATE",
-   "public_sha256": "0fc0de9517c37c0caea3fc9fef51bd7e4ca059a38cb250a0831c79e146ddcec5",
-   "bytes": 264
-  },
-  {
    "public_file": "results/mot17/metrics_by_state.csv",
    "role": "MOT17 metric values per deployment and evaluated state (R0 / R1 / R2)",
    "source_frozen_artifact": [
@@ -1095,6 +1062,27 @@
    "redistribution": "OWN_DERIVED_AGGREGATE",
    "public_sha256": "d6882312d66d45a1db8b1cb25852f04bd08646bab5e43f21ec0acdd060df9aab",
    "bytes": 1910
+  },
+  {
+   "public_file": "results/mot17/row_totals.csv",
+   "role": "MOT17 R0/R2 row totals per deployment: the denominators behind the submitted-row fractions",
+   "source_frozen_artifact": [
+    "78a439a",
+    "docs/tpami_v9_tracking_provenance/08_INDEPENDENT_RESULT_VERIFICATION.json",
+    "results/mot_audit/BoTSORT_states.json",
+    "results/mot_audit/ByteTrack_states.json",
+    "results/mot_audit/OCSORT_states.json"
+   ],
+   "source_sha256": {
+    "docs/tpami_v9_tracking_provenance/08_INDEPENDENT_RESULT_VERIFICATION.json": "f3c82867646b1f0c978ebef126a9c3f1e14c0488673f41375f4cbf8ea64ddb8c",
+    "results/mot_audit/BoTSORT_states.json": "1f3759e8848b9dcd82f34f3e246792baeb8165d0b6cf4efe01fc6ebf711e27f9",
+    "results/mot_audit/ByteTrack_states.json": "e2852c7a13843e0afa4997fb28b099728ecbed3fea63811563600e8b4272f247",
+    "results/mot_audit/OCSORT_states.json": "a87ce8a17a871f79983a34e941cb99d9b5d4c9590ebbe176ae1434c213ab1cbf"
+   },
+   "transformation": "per-deployment totals summed from the frozen per-sequence r0_rows/r2_rows; n_synth recomputed as n_r2 - n_r0 and cross-checked against the released STV composition counts; no published figure used as an input",
+   "redistribution": "OWN_DERIVED_AGGREGATE",
+   "public_sha256": "8dd263963c8ac776f2c35c4340f93d9e5262c9ae1e2d5d746f55f29f71f2ea34",
+   "bytes": 788
   },
   {
    "public_file": "results/mot17/strongsort_decomposition.csv",
@@ -1264,13 +1252,13 @@
   },
   {
    "public_file": "scripts/verify_admission.py",
-   "role": "offline verification script, authored for this release",
+   "role": "offline verification script, authored for this release; two-layer (recompute + frozen-record cross-check)",
    "source_frozen_artifact": "authored for this release",
    "source_sha256": {},
    "transformation": "authored",
    "redistribution": "OWN_CODE",
-   "public_sha256": "94feef6f6bcbd8db72d187770853380096ac297a4aae8b067450e1ed1474d223",
-   "bytes": 7141
+   "public_sha256": "72edc918a657019d7cc16f0e086fe05fd183545cc30831b93e2c519d10486a7c",
+   "bytes": 10856
   },
   {
    "public_file": "scripts/verify_controlled_arm.py",
@@ -1279,28 +1267,28 @@
    "source_sha256": {},
    "transformation": "authored",
    "redistribution": "OWN_CODE",
-   "public_sha256": "a022780b38987df4bb5067d768a46475a3f608836169bb7fa88de7bba085c4cd",
-   "bytes": 19520
+   "public_sha256": "34f1a7ca9e0d4d3618ecd204df0b4f6e52cecaf12d2d732fb905dd6a418f9b49",
+   "bytes": 17184
   },
   {
    "public_file": "scripts/verify_mot20_eligibility.py",
-   "role": "offline verification script, authored for this release",
+   "role": "offline verification script, authored for this release; two-layer (recompute + frozen-record cross-check)",
    "source_frozen_artifact": "authored for this release",
    "source_sha256": {},
    "transformation": "authored",
    "redistribution": "OWN_CODE",
-   "public_sha256": "4ca49c5c8ab7ec471faceea5d17d40bd69d3a88c82b88e2e7abbf3b8e5bb2481",
-   "bytes": 4833
+   "public_sha256": "2e2fccf6147f5d77a79428b94a6f2b8638dbb8bc5caecb7f47728d6fd1a5f6dc",
+   "bytes": 8438
   },
   {
    "public_file": "scripts/verify_ordering.py",
-   "role": "offline verification script, authored for this release",
+   "role": "offline verification script, authored for this release; two-layer (recompute + frozen-record cross-check)",
    "source_frozen_artifact": "authored for this release",
    "source_sha256": {},
    "transformation": "authored",
    "redistribution": "OWN_CODE",
-   "public_sha256": "a45b6ef7dcba24872ba2094de4575c1e02738240088dee044d474378151eb6d2",
-   "bytes": 4018
+   "public_sha256": "6d4dca64aabaa5702d50ce5c40913d36c06e2ee295173f7e50dc23e1af4baa0f",
+   "bytes": 7045
   },
   {
    "public_file": "scripts/verify_release.py",
@@ -1489,30 +1477,6 @@
    "redistribution": "OWN_CODE",
    "public_sha256": "b43a2cda7418517abe3d429eca7c7f095ed2e20f82452feda9280bf38c69b070",
    "bytes": 2907
-  },
-  {
-   "public_file": "src/reconstruction_generic/__init__.py",
-   "role": "released audit source",
-   "source_frozen_artifact": "reconstruction_generic/__init__.py",
-   "source_sha256": {
-    "reconstruction_generic/__init__.py": "39c55e7f72695dd65baf8d31ab55e02ae91cc9775249792bed7f05b85cea12da"
-   },
-   "transformation": "none (byte-identical copy)",
-   "redistribution": "OWN_CODE",
-   "public_sha256": "39c55e7f72695dd65baf8d31ab55e02ae91cc9775249792bed7f05b85cea12da",
-   "bytes": 382
-  },
-  {
-   "public_file": "src/reconstruction_generic/traj_ops.py",
-   "role": "released audit source",
-   "source_frozen_artifact": "reconstruction_generic/traj_ops.py",
-   "source_sha256": {
-    "reconstruction_generic/traj_ops.py": "01719f05c7086448b2b9ac00fc7d1be3d3ab498fa1bc7147112d221ae185094b"
-   },
-   "transformation": "none (byte-identical copy)",
-   "redistribution": "OWN_CODE",
-   "public_sha256": "01719f05c7086448b2b9ac00fc7d1be3d3ab498fa1bc7147112d221ae185094b",
-   "bytes": 6662
   },
   {
    "public_file": "src/tracking_provenance_audit/__init__.py",
@@ -1719,126 +1683,6 @@
    "bytes": 3831
   },
   {
-   "public_file": "src/trajectory_cross_domain/__init__.py",
-   "role": "released audit source",
-   "source_frozen_artifact": "scripts/trajectory_cross_domain/__init__.py",
-   "source_sha256": {
-    "scripts/trajectory_cross_domain/__init__.py": "5a688e548b023afeccb567e71d9dbbe81edb53f02cd9b2e8be811e86160a379b"
-   },
-   "transformation": "none (byte-identical copy)",
-   "redistribution": "OWN_CODE",
-   "public_sha256": "5a688e548b023afeccb567e71d9dbbe81edb53f02cd9b2e8be811e86160a379b",
-   "bytes": 391
-  },
-  {
-   "public_file": "src/trajectory_cross_domain/bdd_parser.py",
-   "role": "released audit source",
-   "source_frozen_artifact": "scripts/trajectory_cross_domain/bdd_parser.py",
-   "source_sha256": {
-    "scripts/trajectory_cross_domain/bdd_parser.py": "22ccbf726cb188183b8063569bf705aa490dbd6cc9bf6db98c9a57b3efca9022"
-   },
-   "transformation": "none (byte-identical copy)",
-   "redistribution": "OWN_CODE",
-   "public_sha256": "22ccbf726cb188183b8063569bf705aa490dbd6cc9bf6db98c9a57b3efca9022",
-   "bytes": 5911
-  },
-  {
-   "public_file": "src/trajectory_cross_domain/bootstrap.py",
-   "role": "released audit source",
-   "source_frozen_artifact": "scripts/trajectory_cross_domain/bootstrap.py",
-   "source_sha256": {
-    "scripts/trajectory_cross_domain/bootstrap.py": "899b8d8888aba88507788397190ecd1d815d5cb47b3e331e869d0ba7625de6a5"
-   },
-   "transformation": "none (byte-identical copy)",
-   "redistribution": "OWN_CODE",
-   "public_sha256": "899b8d8888aba88507788397190ecd1d815d5cb47b3e331e869d0ba7625de6a5",
-   "bytes": 2279
-  },
-  {
-   "public_file": "src/trajectory_cross_domain/canonical.py",
-   "role": "released audit source",
-   "source_frozen_artifact": "scripts/trajectory_cross_domain/canonical.py",
-   "source_sha256": {
-    "scripts/trajectory_cross_domain/canonical.py": "74bb5b9646f15a896d5178487a8d5dd63e2741349532f809c9fbd3e945c20942"
-   },
-   "transformation": "none (byte-identical copy)",
-   "redistribution": "OWN_CODE",
-   "public_sha256": "74bb5b9646f15a896d5178487a8d5dd63e2741349532f809c9fbd3e945c20942",
-   "bytes": 8646
-  },
-  {
-   "public_file": "src/trajectory_cross_domain/evaluate.py",
-   "role": "released audit source",
-   "source_frozen_artifact": "scripts/trajectory_cross_domain/evaluate.py",
-   "source_sha256": {
-    "scripts/trajectory_cross_domain/evaluate.py": "918bc550d7a781701b8a30c63163680593c01673f3fc4862ae5e33dd8dd45bd5"
-   },
-   "transformation": "path normalisation only: the sys.path injection reaching reconstruction_generic replaced by a direct import; all operators, metrics, support rules and ladders unchanged",
-   "redistribution": "OWN_CODE",
-   "public_sha256": "4d274356a85eba6c4faa875de90364c5cdddced779d693a91b3a1aaa0cdfddf5",
-   "bytes": 5679
-  },
-  {
-   "public_file": "src/trajectory_cross_domain/mot17_parser.py",
-   "role": "released audit source",
-   "source_frozen_artifact": "scripts/trajectory_cross_domain/mot17_parser.py",
-   "source_sha256": {
-    "scripts/trajectory_cross_domain/mot17_parser.py": "cac21087caf354590b3366aa5c018e4f839aa5b9a81c2e480f4f32682f7af7b7"
-   },
-   "transformation": "none (byte-identical copy)",
-   "redistribution": "OWN_CODE",
-   "public_sha256": "cac21087caf354590b3366aa5c018e4f839aa5b9a81c2e480f4f32682f7af7b7",
-   "bytes": 5841
-  },
-  {
-   "public_file": "src/trajectory_cross_domain/orchestrate.py",
-   "role": "released audit source",
-   "source_frozen_artifact": "scripts/trajectory_cross_domain/orchestrate.py",
-   "source_sha256": {
-    "scripts/trajectory_cross_domain/orchestrate.py": "668fa41b641a7f84392119c8f453b14c990617b80d7c01a95fca575b4d976f81"
-   },
-   "transformation": "none (byte-identical copy)",
-   "redistribution": "OWN_CODE",
-   "public_sha256": "668fa41b641a7f84392119c8f453b14c990617b80d7c01a95fca575b4d976f81",
-   "bytes": 27067
-  },
-  {
-   "public_file": "src/trajectory_cross_domain/protocol57.py",
-   "role": "released audit source",
-   "source_frozen_artifact": "scripts/trajectory_cross_domain/protocol57.py",
-   "source_sha256": {
-    "scripts/trajectory_cross_domain/protocol57.py": "b611531d83b9a753e7077537667ef85c64d9e97d31383702fd9fbe6cb187c12c"
-   },
-   "transformation": "path normalisation only: two absolute dataset paths replaced by environment lookups; every SHA-256 pin and every contract constant unchanged",
-   "redistribution": "OWN_CODE",
-   "public_sha256": "f2a9971b42e8dc96595f2f5b767ee8abb6e3972a3bc0dcc077a0d6d88b09064a",
-   "bytes": 3286
-  },
-  {
-   "public_file": "src/trajectory_cross_domain/serialize.py",
-   "role": "released audit source",
-   "source_frozen_artifact": "scripts/trajectory_cross_domain/serialize.py",
-   "source_sha256": {
-    "scripts/trajectory_cross_domain/serialize.py": "2f140d017aadf1fa11e1187a2964a818f5a9e4180afac85d000e382ee49ba6d2"
-   },
-   "transformation": "none (byte-identical copy)",
-   "redistribution": "OWN_CODE",
-   "public_sha256": "2f140d017aadf1fa11e1187a2964a818f5a9e4180afac85d000e382ee49ba6d2",
-   "bytes": 2765
-  },
-  {
-   "public_file": "src/trajectory_cross_domain/writer.py",
-   "role": "released audit source",
-   "source_frozen_artifact": "scripts/trajectory_cross_domain/writer.py",
-   "source_sha256": {
-    "scripts/trajectory_cross_domain/writer.py": "0fc400eb7250edeafd74f1b726da5f52cf7e0ee93e449dd8e621ace6634cd87f"
-   },
-   "transformation": "none (byte-identical copy)",
-   "redistribution": "OWN_CODE",
-   "public_sha256": "0fc400eb7250edeafd74f1b726da5f52cf7e0ee93e449dd8e621ace6634cd87f",
-   "bytes": 9092
-  },
-  {
    "public_file": "tests/__init__.py",
    "role": "test",
    "source_frozen_artifact": "authored for this release",
@@ -1873,18 +1717,6 @@
    "bytes": 12683
   },
   {
-   "public_file": "tests/test_applicability_audit_equivalence.py",
-   "role": "test",
-   "source_frozen_artifact": "tests/test_applicability_audit_equivalence.py",
-   "source_sha256": {
-    "tests/test_applicability_audit_equivalence.py": "73bbe2c0b10da82b221be2784a03d0085ccd97ab0f68153541430da83c391f9c"
-   },
-   "transformation": "import paths rebased to the release layout; the frozen-reference digest test updated to the release paths, keeping the two unchanged frozen digests and pinning the one normalised file explicitly",
-   "redistribution": "OWN_CODE",
-   "public_sha256": "6432958505975188cf9464b49abff43527b1ef8c3549ac3997c13e3c9e3d175c",
-   "bytes": 14297
-  },
-  {
    "public_file": "tests/test_applicability_audit_precomputed.py",
    "role": "test",
    "source_frozen_artifact": "tests/test_applicability_audit_precomputed.py",
@@ -1897,14 +1729,24 @@
    "bytes": 12843
   },
   {
+   "public_file": "tests/test_corruption_detection.py",
+   "role": "test: the verifiers must fail on corrupted public or frozen data",
+   "source_frozen_artifact": "authored for this release",
+   "source_sha256": {},
+   "transformation": "authored",
+   "redistribution": "OWN_CODE",
+   "public_sha256": "2ecc17b326f327f2493c8d230fc34d8d39bf3c9276e068f27ca9925e050fef96",
+   "bytes": 5499
+  },
+  {
    "public_file": "tests/test_release_integrity.py",
    "role": "test",
    "source_frozen_artifact": "authored for this release",
    "source_sha256": {},
    "transformation": "authored",
    "redistribution": "OWN_CODE",
-   "public_sha256": "bb2b41cf127836b93b68dda228322117a7264dbe38386ba6b96f336de0dcf4b0",
-   "bytes": 15153
+   "public_sha256": "2171af25f80d4a441f5b65524fd78cdf748a1d11b6a98195b9b3481d6c80825b",
+   "bytes": 14094
   },
   {
    "public_file": "tests/test_tracking_provenance_core.py",

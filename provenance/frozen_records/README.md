@@ -52,10 +52,13 @@ adapter and protocol specifications. In the research tree they lived under
 The controlled arm's own frozen records, released the same way — byte-identical.
 PoseTrack21 records 54, 55 and 56; the JTA prospective result (record 51); the
 third-family evaluation result (record 45), which carries the noise-sensitivity
-grid; the KITTI hypothesis, descriptive summary and execution log; and the 3DPW
-matched-predictor comparison result.
+grid; and the KITTI hypothesis, descriptive summary and execution log.
 
-Three of these come from tags other than the primary frozen state, because the
-KITTI and matched-predictor arms were frozen separately and their artifacts are
-not present at the primary tag. `../RELEASE_MANIFEST.json` declares all three
-source states under `source_frozen_state`.
+The three KITTI records come from a tag other than the primary frozen state,
+because that arm was frozen separately and its artifacts are not present at the
+primary tag. `../RELEASE_MANIFEST.json` declares both source states under
+`source_frozen_state`.
+
+Some of these records mention a matched-predictor 3DPW comparison. That arm is
+not part of this release; the records are published byte-identical and are not
+edited to remove internal cross-references.

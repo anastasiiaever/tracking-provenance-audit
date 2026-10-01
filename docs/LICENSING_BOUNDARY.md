@@ -46,7 +46,7 @@ Three independent checks, all recorded rather than assumed:
   often in `src/tracking_provenance_audit/` — it is the domain vocabulary: an
   authorization marker *licenses* a run.)
 - **Imports.** The released code imports only the standard library plus `numpy`,
-  `scipy`, `pandas`, `pytest` and `yaml`. Those are dependencies resolved at
+  `scipy`, `pytest` and `yaml`. Those are dependencies resolved at
   install time, not vendored code; none of their source is in this tree.
 
 The eight tracker repositories and TrackEval are **read, never included**. The

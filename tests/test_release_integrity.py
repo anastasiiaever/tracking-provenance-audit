@@ -272,27 +272,6 @@ def test_the_jta_headline_refuses_an_architecture_verdict():
     assert h["what_this_result_is_NOT"]
 
 
-def test_threedpw_criterion_b_is_internally_consistent():
-    rows = {r["quantity"]: r for r in
-            load_csv("results", "controlled", "threedpw_matched_criterion_b.csv")}
-    for m in ("spline", "kalman"):
-        lo, hi = float(rows["ratio min"][m]), float(rows["ratio max"][m])
-        med = float(rows["ratio median"][m])
-        assert lo <= med <= hi
-        assert float(rows["median deviation from 1"][m]) == pytest.approx(abs(med - 1.0),
-                                                                          abs=5e-7)
-    assert rows["per-cell B"]["kalman"] == "PASS"
-    assert rows["per-cell B"]["spline"] == "FAIL"
-
-
-def test_the_threedpw_failing_cells_are_all_spline_at_gap_twenty():
-    fails = load_csv("results", "controlled", "threedpw_failing_cells.csv")
-    assert len(fails) == 4
-    for f in fails:
-        assert f["method"] == "spline" and f["g"] == "20"
-        assert float(f["ratio"]) == pytest.approx(
-            float(f["measured"]) / float(f["predicted"]), rel=1e-6)
-        assert abs(float(f["ratio"]) - 1.0) > 0.25
 
 
 def test_the_learned_input_contract_accounts_for_every_slot():

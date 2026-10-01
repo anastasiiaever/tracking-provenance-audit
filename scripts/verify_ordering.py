@@ -61,10 +61,64 @@ def main() -> int:
                 "ties_broken", "metric_not_available"):
         c.equal(f"summary.{key}", engine[key], summary["summary"][key])
 
-    c.equal("independent recomputation found no mismatch",
-            summary["mismatches_against_frozen_matrix"], 0)
-    c.equal("no ordering decided by a rounding artifact",
-            summary["rounding_artifacts"], 0)
+    # LAYER B. Compare the released matrix against the frozen provenance record
+    # instead of trusting the summary's own self-report. The two fields
+    # mismatches_against_frozen_matrix and rounding_artifacts are NOT read as
+    # assertions here; they are re-derived below and only then compared.
+    frozen = read_json("provenance", "frozen_records", "07_ORDERING_MATRIX.json")
+    fcells = {(f["a"], f["b"], f["metric"]): f for f in frozen["matrix"]}
+    c.equal("frozen record also holds 50 cells", len(fcells), 50)
+
+    key_bad, rel_f_bad, trans_f_bad = [], [], []
+    for r in rows:
+        k = (r["deployment_a"], r["deployment_b"], r["metric"])
+        f = fcells.get(k)
+        if f is None:
+            key_bad.append(k)
+            continue
+        if f["r0"] != r["relation_R0"] or f["r2"] != r["relation_R2"]:
+            rel_f_bad.append(k)
+        if f["transition"] != r["transition"]:
+            trans_f_bad.append(k)
+    c.check("every released cell exists in the frozen matrix", not key_bad,
+            f"{len(key_bad)} missing: {key_bad[:3]}")
+    c.check("every relation agrees with the frozen matrix", not rel_f_bad,
+            f"{len(rel_f_bad)} disagreed: {rel_f_bad[:3]}")
+    c.check("every transition agrees with the frozen matrix", not trans_f_bad,
+            f"{len(trans_f_bad)} disagreed: {trans_f_bad[:3]}")
+
+    # re-derived, not read from the summary
+    recomputed_mismatches = len(key_bad) + len(rel_f_bad) + len(trans_f_bad)
+    c.equal("recomputed mismatch count against the frozen matrix",
+            recomputed_mismatches, 0)
+    c.equal("the summary's self-reported mismatch count matches the recomputed one",
+            summary["mismatches_against_frozen_matrix"], recomputed_mismatches)
+
+    # A rounding artifact would be a cell whose relation depends on the printed
+    # precision. Re-derive it: compare the relation at full precision with the
+    # relation at the precision the paper prints (3 decimals).
+    def _r3(x):
+        return round(float(x), 3)
+    rounding = [r for r in rows
+                if ordering.relation(_r3(r["a_R0"]), _r3(r["b_R0"])) != r["relation_R0"]
+                or ordering.relation(_r3(r["a_R2"]), _r3(r["b_R2"])) != r["relation_R2"]]
+    c.equal("recomputed rounding-artifact count", len(rounding), 0)
+    c.equal("the summary's rounding-artifact count matches the recomputed one",
+            summary["rounding_artifacts"], len(rounding))
+
+    # Flip identities must agree with the frozen record, not just the count.
+    released_flips = {(r["deployment_a"], r["deployment_b"], r["metric"])
+                      for r in rows if r["transition"] == "FLIP"}
+    frozen_flips = {k for k, f in fcells.items() if f["transition"] == "FLIP"}
+    c.check("flip identities agree with the frozen matrix",
+            released_flips == frozen_flips,
+            f"released-only {sorted(released_flips - frozen_flips)[:3]} "
+            f"frozen-only {sorted(frozen_flips - released_flips)[:3]}")
+
+    # Frozen headline counts must equal the engine's counts.
+    for key in ("n_pairs", "n_cells", "unchanged", "flips",
+                "ties_created", "ties_broken", "metric_not_available"):
+        c.equal(f"frozen summary.{key}", frozen["summary"][key], engine[key])
 
     # A flip must be a genuine sign change, never a tie.
     flips = [r for r in rows if r["transition"] == "FLIP"]

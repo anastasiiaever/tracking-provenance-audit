@@ -104,6 +104,77 @@ def check_table(c, rows, label, r2_rows=None):
                 verdict["status"], "DESCRIPTIVE")
 
 
+
+def check_row_totals(c, mot17):
+    """Row totals: internal identity, agreement with the composition table, and
+    agreement with the frozen provenance record for the prospective cells.
+
+    This is what makes the denominator-dependent fractions checkable: without
+    n_R2 the 'fraction of submitted rows' claims cannot be re-derived at all.
+    """
+    totals = {r["deployment"]: r for r in read_csv("results", "mot17", "row_totals.csv")}
+    comp = {r["deployment"]: r for r in mot17
+            if r["n_synthesized"] != "STRUCTURALLY_UNDEFINED"}
+
+    c.equal("row totals cover every row-additive MOT17 deployment",
+            sorted(totals), sorted(comp))
+
+    for dep, r in sorted(totals.items()):
+        n_r0, n_r2, n_syn = int(r["n_r0"]), int(r["n_r2"]), int(r["n_synth"])
+        c.equal(f"row totals: {dep} n_synth == n_r2 - n_r0", n_syn, n_r2 - n_r0)
+        c.equal(f"row totals: {dep} agrees with the composition table",
+                n_syn, int(comp[dep]["n_synthesized"]))
+        c.check(f"row totals: {dep} names its source record",
+                bool(r["source_record"]) and len(r["source_sha256"]) == 64)
+        c.check(f"row totals: {dep} rows are positive and ordered",
+                0 < n_r0 < n_r2)
+
+    # LAYER B. The two prospective cells are independently present in the frozen
+    # verification record; their row counts must agree with it exactly.
+    frozen = read_json("provenance", "frozen_records",
+                       "08_INDEPENDENT_RESULT_VERIFICATION.json")["recomputed_cells"]
+    for dep in ("Deep-OC-SORT", "Hybrid-SORT"):
+        f = frozen[dep]
+        c.equal(f"frozen record: {dep} n_R0", int(totals[dep]["n_r0"]), f["n_R0"])
+        c.equal(f"frozen record: {dep} n_R2", int(totals[dep]["n_r2"]), f["n_R2"])
+        c.equal(f"frozen record: {dep} n_synth", int(totals[dep]["n_synth"]), f["n_synth"])
+        for cls, col in (("SEMANTICALLY_ADMITTED", "semantically_admitted"),
+                         ("ANCHOR_UNMATCHED", "anchor_unmatched"),
+                         ("ANCHOR_ID_MISMATCH", "anchor_id_mismatch"),
+                         ("TARGET_REFERENCE_ABSENT", "target_reference_absent")):
+            c.equal(f"frozen record: {dep} {cls}", int(comp[dep][col]), f["stv"][cls])
+
+    return totals, comp
+
+
+def check_ranges(c, totals, comp):
+    """Re-derive the three denominator-dependent ranges across all five
+    deployments. Nothing here reads a published range; the bounds are computed
+    and only then compared with the frozen regression constants below."""
+    synth_sub, nonadm_sub, idmm_syn, nonadm_syn = [], [], [], []
+    for dep, r in totals.items():
+        n_r2, n_syn = int(r["n_r2"]), int(r["n_synth"])
+        non_adm = int(comp[dep]["non_admitted"])
+        idmm = int(comp[dep]["anchor_id_mismatch"])
+        synth_sub.append(100.0 * n_syn / n_r2)
+        nonadm_sub.append(100.0 * non_adm / n_r2)
+        nonadm_syn.append(100.0 * non_adm / n_syn)
+        idmm_syn.append(100.0 * idmm / n_syn)
+
+    c.equal("ranges cover five deployments", len(synth_sub), 5)
+
+    def band(vals):
+        return (round(min(vals), 2), round(max(vals), 2))
+
+    # Regression constants. These are assertions on an already independent
+    # derivation, never the source of the derivation.
+    for label, vals, expect in (
+            ("synthesized / submitted", synth_sub, (4.12, 6.36)),
+            ("non-admitted / submitted", nonadm_sub, (1.58, 2.84)),
+            ("non-admitted / synthesized", nonadm_syn, (28.92, 49.02)),
+            ("anchor ID mismatch / synthesized", idmm_syn, (7.15, 14.30))):
+        c.equal(f"re-derived range: {label}", band(vals), expect)
+
 def main() -> int:
     c = Checks("Admission (STV) composition and materiality")
 
@@ -111,6 +182,9 @@ def main() -> int:
 
     mot17 = read_csv("results", "mot17", "stv_composition.csv")
     check_table(c, mot17, "MOT17")
+
+    totals, comp = check_row_totals(c, mot17)
+    check_ranges(c, totals, comp)
 
     m20 = read_csv("results", "mot20", "deep_oc_sort_stv.csv")
     agg = [r for r in m20 if r["sequence"] == "ALL"][0]
