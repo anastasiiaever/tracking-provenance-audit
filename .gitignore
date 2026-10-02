@@ -40,3 +40,9 @@ checkpoints/
 *.tar
 *.mp4
 *.avi
+
+# Credentials and keys are never committed.
+.env
+.env.*
+*.pem
+*.key

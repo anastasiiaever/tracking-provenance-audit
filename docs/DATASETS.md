@@ -71,10 +71,9 @@ counts, percentages and bootstrap intervals; **no annotation row is
 redistributed here**, and the dataset's terms remain between you and its
 maintainers.
 
-If you obtain it, the annotation-only acquisition discipline the study used is
-worth repeating: read the token from an environment variable or a no-echo prompt,
-never from `argv`, and extract in-process so it never reaches `ps` or shell
-history.
+The study read the access token from an environment variable or a no-echo
+prompt, never from `argv`, and extracted the archive in-process, so the token did
+not reach `ps` output or shell history.
 
 ### NTU RGB+D 60
 <https://rose1.ntu.edu.sg/dataset/actionRecognition/> — request-based access.

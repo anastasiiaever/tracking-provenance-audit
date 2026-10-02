@@ -49,16 +49,3 @@ column.
 | JTA learned deployment-sensitivity failure: classical best **0.456**, learned best **14.86**, factor **32.57**, BiGRU seed range **0.461** — a deployment failure, not an architecture verdict | `results/controlled/jta_headline.json` | `python scripts/verify_controlled_arm.py` | JTA corpus + the frozen checkpoints | `PUBLIC_SUMMARY_ONLY` |
 | Learned-model noise-sensitivity grid: β at φ ∈ {0, 0.5, 0.7, 0.85} for every operator and every trained checkpoint, with intervals | `results/controlled/learned_beta_by_phi.csv` | `python scripts/verify_controlled_arm.py` | NTU + the nine checkpoints | `PUBLIC_SUMMARY_ONLY` |
 | Architecture-level magnitude **unresolved**: across-training-realization variability exceeds the between-family gap; the third family is a probe, not a proposed method | `results/controlled/learned_architecture_diagnostics.json` | `python scripts/verify_controlled_arm.py` | NTU + the nine checkpoints | `PUBLIC_SUMMARY_ONLY` |
-
-## What this means in one sentence
-
-The **tracking arm is publicly reproducible offline end to end** at the level of
-the released summaries and audit logic. The **controlled arm is released as
-summaries checked against their frozen records**, not as a re-runnable pipeline:
-six corpora and nine trained checkpoints stand between this repository and a
-re-measurement. Every controlled figure the paper puts in front of a reader now
-has a released artifact and a check; **nothing in the controlled arm is
-`MISSING_FROM_RELEASE`**.
-
-No command in this repository re-measures anything. `docs/REPRODUCIBILITY.md`
-sets out what a real re-measurement costs.

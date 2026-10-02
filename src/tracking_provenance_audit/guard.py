@@ -7,18 +7,41 @@ Fixtures and the immutable historical V8 replay are always permitted.
 from __future__ import annotations
 import os
 
+import yaml
+
 MARKER_ENV = "TPAMI_V9_EXECUTION_AUTHORIZED"  # retained for reference only; NOT an authorization path
 MARKER_FILE = "docs/tpami_v9_tracking_provenance/EXECUTION_AUTHORIZED"
 RETRY_MARKER_FILE = "docs/tpami_v9_tracking_provenance/EXECUTION_AUTHORIZED_RETRY"
-REQUIRED_RETRY_FIELDS = ("schema:", "authorized_run_ids:", "refused_run_ids:", "stop_rule:")
+REQUIRED_RETRY_KEYS = ("schema", "authorized_run_ids", "refused_run_ids", "stop_rule")
 REASON = "V9_EXECUTION_NOT_AUTHORIZED"
+
+
+def _structured_marker(text, required_keys):
+    """Parse a marker as YAML and return the mapping, or None if it is not a
+    valid marker.
+
+    A marker authorizes execution only if it parses as a YAML mapping whose
+    top-level keys include every required key. A substring test cannot do this:
+    a comment line, or prose containing `schema:` and `authorization:`, would
+    satisfy it without ever defining those keys.
+    """
+    try:
+        doc = yaml.safe_load(text)
+    except yaml.YAMLError:
+        return None
+    if not isinstance(doc, dict):
+        return None
+    for key in required_keys:
+        if key not in doc:
+            return None
+    return doc
 
 
 class ExecutionNotAuthorized(RuntimeError):
     pass
 
 
-REQUIRED_MARKER_FIELDS = ("schema:", "run_order:", "authorization:")
+REQUIRED_MARKER_KEYS = ("schema", "run_order", "authorization")
 
 
 def release_marker_present(repo_root: str = ".") -> bool:
@@ -36,7 +59,7 @@ def release_marker_present(repo_root: str = ".") -> bool:
         text = open(path, encoding="utf-8").read()
     except OSError:
         return False
-    return all(f in text for f in REQUIRED_MARKER_FIELDS)
+    return _structured_marker(text, REQUIRED_MARKER_KEYS) is not None
 
 
 def require_authorization(mode: str, repo_root: str = ".") -> None:
@@ -71,7 +94,7 @@ def authorized_retry_run_ids(repo_root: str = ".") -> set:
         text = open(path, encoding="utf-8").read()
     except OSError:
         return set()
-    if not all(f in text for f in REQUIRED_RETRY_FIELDS):
+    if _structured_marker(text, REQUIRED_RETRY_KEYS) is None:
         return set()
     out, inblock = set(), False
     for line in text.splitlines():
@@ -108,9 +131,9 @@ DATASET_MARKERS = {
     "MOT20": ("docs/tpami_v9_tracking_provenance/EXECUTION_AUTHORIZED_MOT20",),
 }
 RUN_ID_BLOCKS = ("run_order:", "authorized_run_ids:", "authorized_cells:")
-DATASET_MARKER_REQUIRED_FIELDS = {
-    "MOT17": ("schema:", "authorization:"),
-    "MOT20": ("schema:", "dataset:", "authorized_cells:", "authorization:"),
+DATASET_MARKER_REQUIRED_KEYS = {
+    "MOT17": ("schema", "authorization"),
+    "MOT20": ("schema", "dataset", "authorized_cells", "authorization"),
 }
 
 
@@ -172,17 +195,18 @@ def authorized_cells(dataset: str, repo_root: str = ".") -> set:
     rels = DATASET_MARKERS.get(dataset)
     if not rels:
         return set()
-    required = DATASET_MARKER_REQUIRED_FIELDS[dataset]
+    required = DATASET_MARKER_REQUIRED_KEYS[dataset]
     out = set()
     for rel in rels:
         text = _marker_text(repo_root, rel)
         if text is None:
             continue
-        if not all(f in text for f in required):
+        doc = _structured_marker(text, required)
+        if doc is None:
             continue
         if dataset == "MOT20":
-            # a MOT20 marker must declare itself as such
-            if "dataset: MOT20" not in text:
+            # a MOT20 marker must declare itself as such, as a parsed value
+            if doc.get("dataset") != "MOT20":
                 continue
         out |= _parse_authorized_entries(text)
     return out

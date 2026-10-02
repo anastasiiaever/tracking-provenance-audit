@@ -40,15 +40,24 @@ def content_hash(content: Dict[str, Any]) -> str:
     return hashlib.sha256(canonical_json(content).encode("utf-8")).hexdigest()
 
 
+# build() supplies this itself, so a caller is not required to pass it.
+_SELF_SUPPLIED = ("schema_version",)
+
+
 def build(**kw) -> Dict[str, Any]:
+    # The requirement is key PRESENCE, not a non-null value: several required
+    # fields are legitimately None (a documentation-only cell has no metric
+    # table). Checking the assembled content cannot detect an omission, because
+    # every required key would already have been created there.
+    missing = [k for k in REQUIRED
+               if k not in _SELF_SUPPLIED and k not in kw]
+    if missing:
+        raise ValueError(f"report missing required fields: {missing}")
     content = {k: kw.get(k) for k in REQUIRED}
     for k in OPTIONAL:
         if kw.get(k) is not None:
             content[k] = kw[k]
     content["schema_version"] = SCHEMA_VERSION
-    missing = [k for k in REQUIRED if k not in content]
-    if missing:
-        raise ValueError(f"report missing required fields: {missing}")
     return content
 
 

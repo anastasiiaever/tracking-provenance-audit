@@ -1,7 +1,6 @@
 # Reproducibility
 
-There are three levels here, and they cost very different amounts. Level 1 is
-what most readers want.
+There are three levels here, and they cost very different amounts.
 
 ## Level 1 — verify the released audit, offline (seconds, no data)
 
@@ -20,9 +19,9 @@ constants they were transcribed from.
 
 **What it does not do:** it does not re-run a tracker, an evaluator, or the
 matcher over real ground truth. It verifies that the released logic produces the
-released numbers, and that the released numbers are internally consistent. That
-is a real check — it catches transcription error, arithmetic drift and silently
-edited constants — but it is not an independent re-measurement.
+released numbers, and that the released numbers are internally consistent. It
+catches transcription error, arithmetic drift and edited constants. It is not an
+independent re-measurement.
 
 ### Requirements
 
@@ -96,11 +95,13 @@ from the ordering matrix for the same reason.
 
 ## Level 3 — re-run the executed MOT20 cell (needs corpus, checkpoints, GPU)
 
-This is the one prospective tracker execution in the study. It is deliberately
-hard to start by accident.
+This is the one prospective tracker execution in the study. Launching it
+requires an authorization marker, a run identifier bound to the dataset and
+deployment, and a sandbox that passes the preflight checks below.
 
-`src/tracking_provenance_audit/guard.py` refuses prospective execution unless a
-schema-valid authorization marker file exists, and binds authorization to
+`src/tracking_provenance_audit/guard.py` refuses prospective execution unless an
+authorization marker file exists that parses as a YAML mapping carrying the
+required top-level keys, and binds authorization to
 `(dataset, pipeline, run_id)` simultaneously. A MOT17 marker cannot license a
 MOT20 run: the two datasets map to disjoint marker files, and a run identifier
 must carry its dataset prefix. There is no environment-variable bypass; that was

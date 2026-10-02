@@ -34,8 +34,8 @@
    "source_sha256": {},
    "transformation": "authored",
    "redistribution": "OWN_RECORD",
-   "public_sha256": "664aeccd15ea7b18ce78b132e292e3afd4e0ea4bf35b119e16782fdce169e3e0",
-   "bytes": 505
+   "public_sha256": "82ffc97e2d26afbc4bc6a051a989cbafc3ed8f235213e4de8ffa6aae5a65978a",
+   "bytes": 574
   },
   {
    "public_file": "CITATION.cff",
@@ -128,18 +128,6 @@
    "bytes": 4423
   },
   {
-   "public_file": "configs/frozen/wording_contract.yaml",
-   "role": "frozen protocol constants, machine-readable",
-   "source_frozen_artifact": "docs/tpami_v9_tracking_provenance/02_PROSPECTIVE_PROTOCOL.json",
-   "source_sha256": {
-    "docs/tpami_v9_tracking_provenance/02_PROSPECTIVE_PROTOCOL.json": "c3059bf3018af8e032e031ed7c1bbc45fca169a5a5bad3adda680e953131e1ab"
-   },
-   "transformation": "selected protocol block serialised to YAML; values verbatim",
-   "redistribution": "OWN_RECORD",
-   "public_sha256": "1adcb20c2e803b6eda4c6318ee44ed9e1517f016454a385468fb591762071f26",
-   "bytes": 2612
-  },
-  {
    "public_file": "conftest.py",
    "role": "released file",
    "source_frozen_artifact": "authored for this release",
@@ -156,8 +144,8 @@
    "source_sha256": {},
    "transformation": "authored",
    "redistribution": "OWN_RECORD",
-   "public_sha256": "5f812a833db0cddb5c4e775d3a891880eb70ee3bf5b41d7615db04de9085394b",
-   "bytes": 8721
+   "public_sha256": "5c94497f2d9a94b7a788078c77e83275fa2f13833b41d143b7a48a94fbcdb045",
+   "bytes": 8069
   },
   {
    "public_file": "docs/DATASETS.md",
@@ -166,8 +154,8 @@
    "source_sha256": {},
    "transformation": "authored",
    "redistribution": "OWN_RECORD",
-   "public_sha256": "a7692beebc26bb07874ae27e1786bc53281061967c66bab90131ec59376ed991",
-   "bytes": 6016
+   "public_sha256": "6e99b99a3c784678f22b018ea77cac13311950e3bcd62544bf5ba900807217b7",
+   "bytes": 5966
   },
   {
    "public_file": "docs/ESTIMAND_ELIGIBILITY.md",
@@ -186,8 +174,8 @@
    "source_sha256": {},
    "transformation": "authored",
    "redistribution": "OWN_RECORD",
-   "public_sha256": "6878cb5cbb5f357cf46c1da6ede2e2a222b3d95f1ba6b9f7c456a2cbf07f6c9b",
-   "bytes": 3395
+   "public_sha256": "e27bed0298c123ac154f19651394533dfed1ea9c6a281a404059b435434c50ce",
+   "bytes": 3424
   },
   {
    "public_file": "docs/PROVENANCE.md",
@@ -216,8 +204,8 @@
    "source_sha256": {},
    "transformation": "authored",
    "redistribution": "OWN_RECORD",
-   "public_sha256": "bece3952eabe6a816ad3f7a24ed00d55de2c8eae91c775912a8abb4dd49eb0e8",
-   "bytes": 8316
+   "public_sha256": "263b8c6291b89a567146e2b41b34647c80d7d549071db51a2f2d6e18874bc2f1",
+   "bytes": 8404
   },
   {
    "public_file": "environment.yml",
@@ -1319,8 +1307,8 @@
    },
    "transformation": "two internal path references updated for the release layout; text otherwise verbatim",
    "redistribution": "OWN_CODE",
-   "public_sha256": "8ccea2875511eceb055690a8e901e41e2be0e4119ce0979672ff4d77c228e380",
-   "bytes": 10030
+   "public_sha256": "59a0393342359e3c5245836d00cd83313791f05386072552aedb564ac6a1b116",
+   "bytes": 3128
   },
   {
    "public_file": "src/applicability_audit/__init__.py",
@@ -1523,8 +1511,8 @@
    },
    "transformation": "none (byte-identical copy)",
    "redistribution": "OWN_CODE",
-   "public_sha256": "3763b0a83580cd68eafcc730dcc0ccbbbd165d7caed8d89ba2d87483121e37be",
-   "bytes": 7595
+   "public_sha256": "6c953e321ed14aaa475de0bb7c04281cf6e2fe28c723bbfe48c97957989ddc6e",
+   "bytes": 6605
   },
   {
    "public_file": "src/tracking_provenance_audit/cli.py",
@@ -1547,8 +1535,8 @@
    },
    "transformation": "none (byte-identical copy)",
    "redistribution": "OWN_CODE",
-   "public_sha256": "7cefd7fd480fe2b98db53a69f476b715d1c621d2402a2a78bcfcaf7c9ff2b1ad",
-   "bytes": 1923
+   "public_sha256": "69d219b994648ec42b3ff771e0e019b5927f6971dc29e66cf9f0dec1bd984cb1",
+   "bytes": 2513
   },
   {
    "public_file": "src/tracking_provenance_audit/gpr_wrapper.py",
@@ -1571,8 +1559,8 @@
    },
    "transformation": "none (byte-identical copy)",
    "redistribution": "OWN_CODE",
-   "public_sha256": "e0eb879b23d67d80622fd73752266c9c499b3723a278f837ebc4605f8ea9d592",
-   "bytes": 8234
+   "public_sha256": "eb13b4c30548b1cd6ebd963ad04f558d8c49952f5bd2e51fd932f418808a4c55",
+   "bytes": 8961
   },
   {
    "public_file": "src/tracking_provenance_audit/materiality.py",
@@ -1619,8 +1607,8 @@
    },
    "transformation": "none (byte-identical copy)",
    "redistribution": "OWN_CODE",
-   "public_sha256": "5f87b192aa2c82ebf38c55edfc867ae660bd640dc178452fd0e114f4f0cf0858",
-   "bytes": 2243
+   "public_sha256": "50f943645d1550cf1d326d724c9fecb89853c572d11a01c17defb776895c3358",
+   "bytes": 2690
   },
   {
    "public_file": "src/tracking_provenance_audit/rowid.py",
@@ -1643,8 +1631,8 @@
    },
    "transformation": "path normalisation only: eight absolute host paths replaced by environment lookups with workspace-relative defaults; every check, hash and refusal rule unchanged",
    "redistribution": "OWN_CODE",
-   "public_sha256": "27bcb57c8c6d4fd494ad335dd42af69b3748d7186df1c56f43d9ad888b269248",
-   "bytes": 13588
+   "public_sha256": "dd227b1970fa989cd826f648b2aec4f17a93035f0ad6eb64a45b1afd4bd3298a",
+   "bytes": 15975
   },
   {
    "public_file": "src/tracking_provenance_audit/states.py",
@@ -1737,6 +1725,16 @@
    "redistribution": "OWN_CODE",
    "public_sha256": "2ecc17b326f327f2493c8d230fc34d8d39bf3c9276e068f27ca9925e050fef96",
    "bytes": 5499
+  },
+  {
+   "public_file": "tests/test_release_audit_fixes.py",
+   "role": "test: regression tests for the pre-publication audit fixes",
+   "source_frozen_artifact": "authored for this release",
+   "source_sha256": {},
+   "transformation": "authored",
+   "redistribution": "OWN_CODE",
+   "public_sha256": "7978364378c484b1084f2cabde6a3158b0530708eb8e6fcfaaf1627ba299c820",
+   "bytes": 5890
   },
   {
    "public_file": "tests/test_release_integrity.py",

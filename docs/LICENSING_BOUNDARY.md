@@ -11,8 +11,8 @@ classifies each file individually:
 
 | class | files | what it is |
 |---|---|---|
-| `OWN_CODE` | 50 | the audit implementation, the verification scripts, the tests, the worked example, `conftest.py` |
-| `OWN_RECORD` | 64 | the study's own frozen protocol, census, eligibility and result records, plus authored documentation and the frozen config transcriptions |
+| `OWN_CODE` | 51 | the audit implementation, the verification scripts, the tests, the worked example, `conftest.py` |
+| `OWN_RECORD` | 63 | the study's own frozen protocol, census, eligibility and result records, plus authored documentation and the frozen config transcriptions |
 | `OWN_DERIVED_AGGREGATE` | 29 | tables derived from the study's own frozen results — counts, fractions, metric values, intervals |
 | `REFERENCE_ONLY` | 3 | tables that *name* third-party corpora, pipelines and checkpoints without containing any of them |
 
@@ -31,7 +31,8 @@ under its own terms:
 
 The released tables are aggregate counts, fractions, metric values and
 intervals. They contain no image, video, annotation row or personally
-identifying material, so no dataset licence is triggered by publishing them.
+identifying material. No corpus content is redistributed here; what each corpus
+licence permits remains a matter between you and its distributor.
 
 ## How the boundary was established
 
@@ -64,4 +65,4 @@ repeated as per-file headers.
 
 MIT governs reuse of this repository's contents. It does not remove the citation
 obligations that the corpora and the upstream methods carry in their own right.
-See `CITATION.cff` and the acknowledgements in `README.md`.
+See `CITATION.cff`.

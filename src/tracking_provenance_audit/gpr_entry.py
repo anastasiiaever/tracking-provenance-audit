@@ -6,6 +6,15 @@ wrapper. Upstream source is imported, never edited. Seed and RNG controls are
 exactly those exercised by the fresh-process reproducibility preflight.
 
 argv: <oc_sort_repo> <raw_dir> <li_dir> <abs_save_dir> [seed]
+
+SECURITY. The first argument is a path to an upstream repository, and this entry
+point EXECUTES code from it: `<oc_sort_repo>/tools/gp_interpolation.py` is loaded
+and run as Python, and `<oc_sort_repo>/tools` is prepended to `sys.path`. Pass
+only the trusted, pinned OC-SORT checkout named in
+`metadata/upstream_pipelines.csv`. Pointing this at an untrusted or unpinned
+directory runs arbitrary code with the privileges of the calling process. The
+path is deliberately not sanitised here: the audit must execute the upstream
+source unmodified, so the trust decision belongs to the caller.
 """
 from __future__ import annotations
 import importlib.util, os, sys

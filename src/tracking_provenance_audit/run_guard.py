@@ -29,6 +29,7 @@ the full-length MOTChallenge copies.
 from __future__ import annotations
 
 import hashlib
+import re
 import os
 from typing import Dict, List, Optional
 
@@ -104,12 +105,49 @@ class ImportPrerequisiteMissing(RuntimeError):
     """A cwd-dependent import prerequisite is absent from the sandbox."""
 
 
+class UnsafeRunId(ValueError):
+    """A run id that cannot be used as a single path component."""
+
+
+# A run id names one directory under a configured root. It is never a path.
+_SAFE_RUN_ID = re.compile(r"\A[A-Za-z0-9][A-Za-z0-9._-]*\Z")
+
+
+def require_safe_run_id(run_id: str) -> str:
+    """Validate a run id before it is used to build any path.
+
+    Every path in this module is rooted at a configured directory and extended
+    by the run id, so an unconstrained run id would be a traversal primitive:
+    `../../etc` would resolve outside the sandbox. This is the single gate that
+    all run_guard path construction reaches, via sandbox_root().
+    """
+    if not isinstance(run_id, str) or not run_id:
+        raise UnsafeRunId("run id must be a non-empty string")
+    if run_id in (".", ".."):
+        raise UnsafeRunId(f"run id {run_id!r} is a path reference, not a name")
+    if os.path.isabs(run_id) or run_id.startswith(("/", "\\")):
+        raise UnsafeRunId(f"run id {run_id!r} must not be an absolute path")
+    if "/" in run_id or "\\" in run_id or os.sep in run_id or (os.altsep and os.altsep in run_id):
+        raise UnsafeRunId(f"run id {run_id!r} must not contain a path separator")
+    if not _SAFE_RUN_ID.match(run_id):
+        raise UnsafeRunId(
+            f"run id {run_id!r} must match {_SAFE_RUN_ID.pattern} "
+            f"(letters, digits, dot, underscore, hyphen)")
+    # Belt and braces: the joined path must stay inside its root.
+    probe = os.path.normpath(os.path.join(SANDBOX_ROOT, run_id))
+    root = os.path.normpath(SANDBOX_ROOT)
+    if os.path.commonpath([root, probe]) != root or probe == root:
+        raise UnsafeRunId(f"run id {run_id!r} escapes the sandbox root")
+    return run_id
+
+
 def sandbox_root(run_id: str) -> str:
-    return os.path.join(SANDBOX_ROOT, run_id)
+    return os.path.join(SANDBOX_ROOT, require_safe_run_id(run_id))
 
 
 def canonical_artifacts(run_id: str) -> Dict[str, str]:
     """Every canonical location that must be ABSENT before launch (V9-B30)."""
+    require_safe_run_id(run_id)      # also reached via sandbox_root(); explicit
     sb = sandbox_root(run_id)
     return {
         "R0": os.path.join(sb, "results/trackers", RESULT_SPLIT, run_id),
@@ -159,8 +197,16 @@ def reachable_weights(run_id: str) -> List[str]:
     return sorted(os.listdir(d)) if os.path.isdir(d) else []
 
 
-def require_clean_asset_isolation(run_id: str, verify_hashes: bool = False) -> None:
-    """Only the two clean checkpoints may be reachable from the sandbox."""
+def require_clean_asset_isolation(run_id: str, verify_hashes: bool = True) -> None:
+    """Only the two clean checkpoints may be reachable from the sandbox.
+
+    Content hashes are verified by default. A filename check alone cannot
+    establish checkpoint identity: a file named `bytetrack_x_mot17.pth.tar`
+    carrying different bytes would otherwise pass, and the MOT20 eligibility
+    argument rests on which detector actually ran, not on what it was called.
+    `verify_hashes=False` exists only for unit tests that construct a sandbox
+    without real checkpoint bytes.
+    """
     names = reachable_weights(run_id)
     if not names:
         raise SandboxInvalid(f"sandbox weights directory is missing for {run_id!r}")
@@ -272,11 +318,15 @@ def require_import_prerequisites(run_id: str) -> None:
                 "it. Without it main.py raises ModuleNotFoundError at import time.")
 
 
-def preflight(run_id: str = DEEP_MOT20_RUN_ID, verify_hashes: bool = False) -> dict:
-    """All launch preconditions. Raises on the first violation; never mutates."""
+def preflight(run_id: str = DEEP_MOT20_RUN_ID) -> dict:
+    """All launch preconditions. Raises on the first violation; never mutates.
+
+    Checkpoint content hashes are always verified here: the canonical execution
+    path has no option to skip them.
+    """
     require_no_run_artifacts(run_id)
     require_corrected_adapter(run_id)
-    require_clean_asset_isolation(run_id, verify_hashes=verify_hashes)
+    require_clean_asset_isolation(run_id, verify_hashes=True)
     require_cache_isolation(run_id)
     require_import_prerequisites(run_id)
     return {
@@ -287,6 +337,7 @@ def preflight(run_id: str = DEEP_MOT20_RUN_ID, verify_hashes: bool = False) -> d
         "cmc_alignment": cmc_alignment(run_id),
         "import_prerequisites": list(CWD_IMPORT_PREREQUISITES),
         "canonical_artifacts_absent": sorted(canonical_artifacts(run_id)),
+        "asset_hashes_verified": True,
         "launch_permitted_by_run_guard": True,
         "execution_authorized": False,
         "note": ("the run guard only certifies isolation and non-reuse. It confers "

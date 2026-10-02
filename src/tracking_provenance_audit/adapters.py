@@ -1,6 +1,6 @@
 """Dataset adapters. Only frozen semantics are implemented."""
 from __future__ import annotations
-import hashlib, json, os
+import hashlib
 from typing import Dict
 
 STOPPED = "STOPPED_DATASET_NOT_ACQUIRED"
@@ -48,9 +48,10 @@ def verify_mot17_manifest() -> bool:
 
 # Frozen MOT20 population, materialised in 09B and unchanged since
 # (tag tpami-v9-mot20-population-materialized-20260831).  The hash is the
-# canonical hash of 09B_MOT20_MATERIALIZED_POPULATION.json and is asserted here
-# rather than recomputed from a shorthand record: verify_mot20_manifest()
-# recomputes it from the committed record.
+# canonical hash of 09B_MOT20_MATERIALIZED_POPULATION.json, asserted here as a
+# constant. That record is part of the private research tree and is not
+# published, so this repository states the hash rather than recomputing it;
+# mot20_manifest() names the record under `record` so the source is citable.
 MOT20_SEQUENCES = [
     ("MOT20-01", 429, 216, 429, 214,
      "e768e229779ca13d6dc9f9da7adb122d2cee9fb22a320574ce2f087889219385"),
@@ -90,30 +91,6 @@ def mot20_manifest() -> dict:
                                    "claim a direct MOTChallenge download"),
                 record=MOT20_RECORD)
 
-
-def verify_mot20_manifest(repo_root: str = ".") -> bool:
-    """Recompute the frozen hash from the committed 09B record."""
-    m = mot20_manifest()
-    if (m["total_frames"] != MOT20_TOTAL_FRAMES or len(m["sequences"]) != 4):
-        return False
-    path = os.path.join(repo_root, MOT20_RECORD)
-    if not os.path.isfile(path):
-        return False
-    with open(path, encoding="utf-8") as fh:
-        rec = json.load(fh)
-    body = {k: v for k, v in rec.items() if k != "population_manifest_sha256"}
-    digest = hashlib.sha256(
-        json.dumps(body, sort_keys=True, separators=(",", ":")).encode()).hexdigest()
-    if digest != rec["population_manifest_sha256"] != MOT20_MANIFEST_SHA256:
-        return False
-    for s, n, lo, hi, c, h in MOT20_SEQUENCES:
-        r = rec["sequences"][s]
-        if (r["native_sequence_length"] != n
-                or r["included_native_frame_range"] != [lo, hi]
-                or r["included_frame_count"] != c
-                or r["materialized_gt_sha256"] != h):
-            return False
-    return rec["total_frames"] == MOT20_TOTAL_FRAMES
 
 
 def stopped_manifest(dataset: str) -> dict:
