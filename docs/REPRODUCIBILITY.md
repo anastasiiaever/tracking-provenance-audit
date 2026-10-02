@@ -27,25 +27,31 @@ independent re-measurement.
 
 Python **3.9 or newer**: the audit core uses PEP 584 dict union. Beyond the
 standard library the release needs `pytest` and `PyYAML`, and `numpy` and `scipy`
-for the admission matcher and the MOTChallenge adapter. `environment.yml` pins
-the set.
+for the admission matcher and the MOTChallenge adapter.
 
-`environment.yml` describes the environment the reported numbers were produced
-under: Python 3.9.23, NumPy 1.23.5, SciPy 1.10.1.
+`environment.yml` pins the Python, NumPy and SciPy versions used by the release's
+offline verification environment: Python 3.9.23, NumPy 1.23.5, SciPy 1.10.1. It
+does not contain the GPU execution stack; that is documented under level 3 below.
 
 ### Measured for this release
 
 Run as `python -m pytest -q` from the repository root. These counts are specific
 to this frozen release and change whenever tests are added or removed.
 
-| Python | `python -m pytest -q` | verification scripts | minimal example |
-|---|---|---|---|
-| 3.8.10 | **2 failed**, 184 passed | 6/6 exit 0 | ok |
-| 3.9.23 | **186 passed** | 6/6 exit 0 | ok |
-| 3.11.15 | **186 passed** | 6/6 exit 0 | ok |
+| Python | NumPy / SciPy | `python -m pytest -q` | verification scripts | minimal example |
+|---|---|---|---|---|
+| 3.8.10 | 1.22.3 / 1.8.0 | **2 failed**, 210 passed, 0 skipped | 6/6 exit 0 | ok |
+| 3.9.23 | 1.23.5 / 1.10.1 | **212 passed**, 0 skipped | 6/6 exit 0 | ok |
+| 3.11.15 | 2.4.6 / 1.17.1 | **212 passed**, 0 skipped | 6/6 exit 0 | ok |
+
+Every row was measured against this commit. No test is skipped on any of the
+three: the suite needs no private research artifact.
 
 Python 3.9 and 3.11 are the interpreters this release was validated on. Other
 3.x versions are not claimed, because they were not run against this release.
+The 3.9.23 row is the pinned `environment.yml` set. The 3.11.15 row used the
+newer NumPy and SciPy shown above rather than the pinned versions, so it shows
+the suite passing on a later interpreter, not a second pinned environment.
 
 Python 3.8 is not enough. The two failures are
 `test_a_missing_state_yields_an_unavailable_delta` — `metrics.delta` uses

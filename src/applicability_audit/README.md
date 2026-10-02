@@ -48,22 +48,78 @@ support, for a benchmark you did not run.
 
 ## Usage
 
-```python
-import applicability_audit as aa
-from applicability_audit.audit import audit_precomputed_results
+Two cases, two methods, audited in precomputed mode. Run it from the repository
+root with `src` importable, for example `PYTHONPATH=src python example.py`.
 
-result = audit_precomputed_results(
-    observations=observations,     # CanonicalObservation sequence
-    results=results,               # {(method, case_key): error}
-    applicability=applicability_contract,
-    methods=method_contracts,
-    aggregation=aggregation_contract,
+```python
+from applicability_audit import (AggregationContract, AggregationLevel,
+                                 audit_precomputed_results)
+
+# Two admitted cases. The metadata fields are the ones a ladder may group by.
+cases = [
+    {"case_id": "c1", "sequence_id": "s1", "trajectory_id": "t1",
+     "first_target_frame": 0, "run_length": 10, "stratum": None},
+    {"case_id": "c2", "sequence_id": "s2", "trajectory_id": "t2",
+     "first_target_frame": 0, "run_length": 10, "stratum": None},
+]
+
+# Keyed by method id, then by case id, never by position. Each entry holds the
+# per-target errors for that case, which the first rung averages into a case
+# mean. Lower is better.
+method_results = {
+    "linear": {"c1": {"normalized": [0.25, 0.75]},
+               "c2": {"normalized": [0.75, 1.25]}},
+    "learned": {"c1": {"normalized": [0.25, 0.25]},
+                "c2": {"normalized": [1.25, 1.75]}},
+}
+
+# The declared ladder: target error -> case mean -> mean within sequence ->
+# equal-weight mean across sequences. The final rung must group everything.
+ladder = AggregationContract(
+    levels=(AggregationLevel("sequence", ("sequence_id",)),
+            AggregationLevel("headline", ())),
+    metric_fields=("normalized",),
 )
-print(result["ranking_status"], result["support"]["D"])
+
+result = audit_precomputed_results(cases=cases, method_results=method_results,
+                                   aggregation=ladder)
+cert = result.certificate()
+
+print("ranking_verdict ", cert["ranking_verdict"])
+print("reason_codes    ", cert["reason_codes"])
+print("admitted A      ", result["cases"]["admitted_A"])
+print("common support D", result["common_support"]["D"])
+print("retention       ", result["support_retention"])
+print("method_support  ", result["method_support"])
+for m in sorted(result["common_support_estimates"]):
+    print(m, "on D      ",
+          result["common_support_estimates"][m]["normalized"]["headline"],
+          "| on own support",
+          result["method_specific_estimates"][m]["normalized"]["headline"],
+          "| support_shift", result["support_shift"][m]["normalized"])
 ```
 
-`scripts/verify_support_accounting.py` runs this on a worked example in which
-reading each method on its own support reverses the ranking.
+Output:
+
+```
+ranking_verdict  RANKING_ADMISSIBLE
+reason_codes     []
+admitted A       2
+common support D 2
+retention        1.0
+method_support   {'learned': 2, 'linear': 2}
+learned on D       0.875 | on own support 0.875 | support_shift 0.0
+linear on D       0.75 | on own support 0.75 | support_shift 0.0
+```
+
+Both methods report both cases here, so `D` is the whole admitted set and each
+`support_shift` is `0.0`. `scripts/verify_support_accounting.py` runs the same
+entry point on a worked example where the supports differ and reading each method
+on its own support reverses the ranking.
+
+`applicability` is optional: without it the audit reports the applicability block
+as unavailable rather than assuming a partition. Pass `applicability` to have the
+population counts and the exact-partition check reported too.
 
 ## Tests
 

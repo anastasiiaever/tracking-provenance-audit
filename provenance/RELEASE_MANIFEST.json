@@ -204,8 +204,8 @@
    "source_sha256": {},
    "transformation": "authored",
    "redistribution": "OWN_RECORD",
-   "public_sha256": "263b8c6291b89a567146e2b41b34647c80d7d549071db51a2f2d6e18874bc2f1",
-   "bytes": 8404
+   "public_sha256": "5a5b2e8a88650fad19e10d02aec83e0e94ecafdfffaff272d754e1e9ce80b4c5",
+   "bytes": 8954
   },
   {
    "public_file": "environment.yml",
@@ -1307,8 +1307,8 @@
    },
    "transformation": "two internal path references updated for the release layout; text otherwise verbatim",
    "redistribution": "OWN_CODE",
-   "public_sha256": "59a0393342359e3c5245836d00cd83313791f05386072552aedb564ac6a1b116",
-   "bytes": 3128
+   "public_sha256": "6c9d1e4ea9fc1ff88e56af1c4ad9da6e055c922b1250dc245fbdebd18dc6e69f",
+   "bytes": 5572
   },
   {
    "public_file": "src/applicability_audit/__init__.py",
