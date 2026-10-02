@@ -93,11 +93,11 @@ Score `R0`, `R1` and `R2` with the pinned TrackEval and the configuration in
 `configs/frozen/evaluator.yaml`. The ordering matrix then follows from
 `ordering.matrix(...)` and `ordering.summary(...)`.
 
-Four of the eight pipelines in the census admit no row-additive decomposition.
-For those, `R1` does not exist and none is manufactured —
-`states.r1_status_for_non_row_additive` returns `STRUCTURALLY_UNDEFINED` and the
-reason. StrongSORT++ is reported as `S0`/`S2` only, and OC-SORT-GPR is excluded
-from the ordering matrix for the same reason.
+Two of the eight pipelines in the census, OC-SORT-GPR and StrongSORT++, admit no
+row-additive decomposition. For those, `R1` does not exist and none is
+manufactured — `states.r1_status_for_non_row_additive` returns
+`STRUCTURALLY_UNDEFINED` and the reason. StrongSORT++ is reported as `S0`/`S2`
+only, and OC-SORT-GPR is excluded from the ordering matrix for the same reason.
 
 ## Level 3 — re-run the executed MOT20 cell (needs corpus, checkpoints, GPU)
 

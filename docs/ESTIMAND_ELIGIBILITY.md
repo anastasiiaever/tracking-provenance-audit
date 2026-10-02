@@ -21,10 +21,12 @@ label it `gt_informed_diagnostic` and `non_deployable`.
 
 ## When R1 does not exist
 
-Four of the eight census pipelines apply an operator that rewrites values its own
-fit consumes. Removing a subset of generated rows would change the fit itself, so
-a row-subset decomposition is not defined. The audit reports
-`STRUCTURALLY_UNDEFINED` and manufactures nothing:
+Two of the eight census pipelines, OC-SORT-GPR and StrongSORT++, are
+non-row-additive. Across the three datasets, they account for six of the 24
+census cells. Both apply an operator that rewrites values its own fit consumes.
+Removing a subset of generated rows would change the fit itself, so a row-subset
+decomposition is not defined. The audit reports `STRUCTURALLY_UNDEFINED` and
+manufactures nothing:
 
 - **GPR rewrite** — the regression consumes the interpolated rows as its input.
 - **Link plus smoothing** — smoothing refits every row of every track, so removing

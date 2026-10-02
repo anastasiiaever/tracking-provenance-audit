@@ -164,8 +164,8 @@
    "source_sha256": {},
    "transformation": "authored",
    "redistribution": "OWN_RECORD",
-   "public_sha256": "1f6494fa490506f545c4f0cecaab1b257f0827cbbf9eee0171ee157549cb6d89",
-   "bytes": 5827
+   "public_sha256": "0a6da358bc5db482d67c40b0df6f9d6a0d106d29de6bd0754c71cdd0f0540c90",
+   "bytes": 5956
   },
   {
    "public_file": "docs/LICENSING_BOUNDARY.md",
@@ -204,8 +204,8 @@
    "source_sha256": {},
    "transformation": "authored",
    "redistribution": "OWN_RECORD",
-   "public_sha256": "5a5b2e8a88650fad19e10d02aec83e0e94ecafdfffaff272d754e1e9ce80b4c5",
-   "bytes": 8954
+   "public_sha256": "a53b142de71687163a32918f86c58465a1d22768932a6fbfe23360ea7260b3ff",
+   "bytes": 8984
   },
   {
    "public_file": "environment.yml",
