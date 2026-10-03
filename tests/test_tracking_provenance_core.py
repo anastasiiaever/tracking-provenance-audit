@@ -96,6 +96,67 @@ def test_the_gate_is_applied_before_assignment():
         == stv.ANCHOR_UNMATCHED
 
 
+def test_the_matcher_uses_the_trackeval_zero_before_assignment_form():
+    """Distinguish the frozen TrackEval form from a blocked-edge formulation.
+
+    One frame, two predictions, two references, gate 0.30. Square boxes on a line
+    give the similarity matrix
+
+                      gt 101     gt 102
+          pred 1     0.850139   0.325381
+          pred 2     0.333333   0.000000
+
+    Only pred 2 / gt 102 is below the gate. Under the TrackEval form that entry is
+    zeroed but still competes for a slot, so the assignment maximising total
+    similarity takes 0.850139 + 0 = 0.850 rather than 0.325 + 0.333 = 0.659, and
+    the selected zero-similarity pair is then dropped: pred 2 ends up unmatched.
+    A formulation that makes sub-gate pairs unreachable cannot choose that
+    assignment and is forced into {pred 1 -> 102, pred 2 -> 101} instead. The two
+    therefore return different accepted pair sets on this input.
+    """
+    def sq(tid, x):
+        return Row(SEQ, 1, tid, x, 0.0, 10.0, 10.0, 1.0, 1.0, ())
+
+    preds = [sq(1, 10.81), sq(2, 5.0)]
+    gts = [sq(101, 10.0), sq(102, 15.9)]
+
+    got = stv.assign_reference(preds, gts, gate=0.30)
+    by_track = {rid[2]: gt_id for rid, gt_id in got.items()}
+
+    # the TrackEval form, not the blocked-edge form
+    assert by_track == {1: 101}
+    assert by_track != {1: 102, 2: 101}
+
+    # no below-gate pair is ever returned
+    for rid, gt_id in got.items():
+        pred = next(p for p in preds if p.rid == rid)
+        ref = next(g for g in gts if g.track_id == gt_id)
+        assert iou(pred, ref) >= 0.30
+
+    # one-to-one in both directions
+    assert len(set(got)) == len(got)
+    assert len(set(got.values())) == len(got)
+
+    # input order must not change the result
+    assert stv.assign_reference(list(reversed(preds)), list(reversed(gts)),
+                                gate=0.30) == got
+
+
+def test_sub_gate_pairs_never_appear_in_the_returned_assignment():
+    """Whatever the solver does internally, the result holds no sub-gate pair."""
+    def sq(tid, x):
+        return Row(SEQ, 1, tid, x, 0.0, 10.0, 10.0, 1.0, 1.0, ())
+
+    preds = [sq(1, 10.81), sq(2, 5.0)]
+    gts = [sq(101, 10.0), sq(102, 15.9)]
+    for gate in stv.SENSITIVITY_GATES:
+        got = stv.assign_reference(preds, gts, gate=gate)
+        for rid, gt_id in got.items():
+            pred = next(p for p in preds if p.rid == rid)
+            ref = next(g for g in gts if g.track_id == gt_id)
+            assert iou(pred, ref) >= gate - 1e-12
+
+
 def test_reference_assignment_is_one_to_one():
     # Two predictions compete for one ground-truth box; only one may take it.
     r0 = [row(1, 1, 0.0, 0.0), row(1, 2, 0.0, 1.0)]

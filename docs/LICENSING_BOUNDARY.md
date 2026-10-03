@@ -12,8 +12,8 @@ classifies each file individually:
 | class | files | what it is |
 |---|---|---|
 | `OWN_CODE` | 51 | the audit implementation, the verification scripts, the tests, the worked example, `conftest.py` |
-| `OWN_RECORD` | 63 | the study's own frozen protocol, census, eligibility and result records, plus authored documentation and the frozen config transcriptions |
-| `OWN_DERIVED_AGGREGATE` | 29 | tables derived from the study's own frozen results — counts, fractions, metric values, intervals |
+| `OWN_RECORD` | 66 | the study's own frozen protocol, census, eligibility and result records, plus authored documentation and the frozen config transcriptions |
+| `OWN_DERIVED_AGGREGATE` | 32 | tables derived from the study's own frozen results — counts, fractions, metric values, intervals |
 | `REFERENCE_ONLY` | 3 | tables that *name* third-party corpora, pipelines and checkpoints without containing any of them |
 
 All four classes are the authors' own work.

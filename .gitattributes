@@ -1,0 +1,5 @@
+# Manifest integrity: provenance/MANIFEST.sha256 records repository blob bytes.
+# Disabling all end-of-line conversion keeps checkout bytes identical to blob
+# bytes on every platform, so `sha256sum -c` holds on Windows with
+# core.autocrlf=true just as it does on Linux.
+* -text

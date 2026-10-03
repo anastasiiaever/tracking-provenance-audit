@@ -24,9 +24,19 @@
   "checkpoints_included": false,
   "third_party_source_included": false,
   "note": "Only own code, own frozen records and small derived aggregate tables are published. Every corpus and checkpoint is obtained by the reader from its own distributor under its own terms; see docs/DATASETS.md.",
-  "files_total": 146
+  "files_total": 152
  },
  "files": [
+  {
+   "public_file": ".gitattributes",
+   "role": "released file",
+   "source_frozen_artifact": "authored for this release",
+   "source_sha256": {},
+   "transformation": "authored",
+   "redistribution": "OWN_RECORD",
+   "public_sha256": "bbc96880b282ffc44ef99519d9a29488471b19a37855fca39df6460865f5e4eb",
+   "bytes": 280
+  },
   {
    "public_file": ".gitignore",
    "role": "released file",
@@ -64,8 +74,8 @@
    "source_sha256": {},
    "transformation": "authored",
    "redistribution": "OWN_RECORD",
-   "public_sha256": "2767273e6a5a61945659f8fcb053b0c19d11c575fe3b19738dd55bf68ee47506",
-   "bytes": 4883
+   "public_sha256": "279e39f994adc56dcd6d7dd13afc3f3d1d97c59edbaa05a5f1616399119c73fb",
+   "bytes": 5347
   },
   {
    "public_file": "configs/frozen/admission_stv.yaml",
@@ -144,8 +154,8 @@
    "source_sha256": {},
    "transformation": "authored",
    "redistribution": "OWN_RECORD",
-   "public_sha256": "5c94497f2d9a94b7a788078c77e83275fa2f13833b41d143b7a48a94fbcdb045",
-   "bytes": 8069
+   "public_sha256": "4bf7c0d24a961ff5923cf1cc7fb3f14621710b5eb753527088308bff39c2bfc1",
+   "bytes": 9128
   },
   {
    "public_file": "docs/DATASETS.md",
@@ -164,8 +174,8 @@
    "source_sha256": {},
    "transformation": "authored",
    "redistribution": "OWN_RECORD",
-   "public_sha256": "0a6da358bc5db482d67c40b0df6f9d6a0d106d29de6bd0754c71cdd0f0540c90",
-   "bytes": 5956
+   "public_sha256": "e89ec2337cd3027aed5b741dd8c37f8999e67f5c9e418f7cc053315bcc6580a5",
+   "bytes": 7173
   },
   {
    "public_file": "docs/LICENSING_BOUNDARY.md",
@@ -174,7 +184,7 @@
    "source_sha256": {},
    "transformation": "authored",
    "redistribution": "OWN_RECORD",
-   "public_sha256": "e27bed0298c123ac154f19651394533dfed1ea9c6a281a404059b435434c50ce",
+   "public_sha256": "29eaf08483a84f989c328b7afb837409fcc6af4260a27bceb9c9e588c34a8722",
    "bytes": 3424
   },
   {
@@ -1008,6 +1018,16 @@
    "bytes": 295
   },
   {
+   "public_file": "results/mot17/SEQUENCE_HETEROGENEITY_README.md",
+   "role": "scope note for the sequence-level heterogeneity table",
+   "source_frozen_artifact": "authored for this release",
+   "source_sha256": {},
+   "transformation": "authored",
+   "redistribution": "OWN_RECORD",
+   "public_sha256": "1f347d21827489d757cbcc645061629dbb3e1d115005eb1e5df6744c586a8b4a",
+   "bytes": 2142
+  },
+  {
    "public_file": "results/mot17/metrics_by_state.csv",
    "role": "MOT17 metric values per deployment and evaluated state (R0 / R1 / R2)",
    "source_frozen_artifact": [
@@ -1071,6 +1091,36 @@
    "redistribution": "OWN_DERIVED_AGGREGATE",
    "public_sha256": "8dd263963c8ac776f2c35c4340f93d9e5262c9ae1e2d5d746f55f29f71f2ea34",
    "bytes": 788
+  },
+  {
+   "public_file": "results/mot17/sequence_ordering_heterogeneity.csv",
+   "role": "post-hoc sequence-level heterogeneity of the five aggregate ordering changes, 35 rows",
+   "source_frozen_artifact": "no single frozen artifact; newly derived",
+   "source_sha256": {
+    "tpami_strengthening_20261003/gate_sensitivity/full_gate_sensitivity.csv": "bdc351614638c1567e0a4648077721115c84807783bdf74afe1a40920d7eaee2",
+    "tpami_strengthening_20261003/sequence_heterogeneity/sequence_flip_table.csv": "7df25004b46edb97113cdd3d814c0814c579a94c444cbe2d22d59b963b6071d3",
+    "tpami_strengthening_20261003/sequence_heterogeneity/sequence_flip_summary.csv": "3aece189969d66db07a02fbb4382bccc455e43eac0c9cdf45c3cbecccd2bc945",
+    "tpami_strengthening_20261003/metadata/analysis_manifest.json": "e625865bd98cb997fe3f19c6cc1ef57ab581496638f112ba4f8a304645e82f19"
+   },
+   "transformation": "derived from the per-sequence evaluator outputs that already existed when the aggregate ordering result was produced; no tracker or evaluator was re-run",
+   "redistribution": "OWN_DERIVED_AGGREGATE",
+   "public_sha256": "3d85c51ad9f20e59135d855dbbfc25a36aa5e5a1791790d8245bc3402e3d60ca",
+   "bytes": 6835
+  },
+  {
+   "public_file": "results/mot17/sequence_ordering_heterogeneity_summary.csv",
+   "role": "per-comparison summary of the sequence-level heterogeneity table, 5 rows",
+   "source_frozen_artifact": "no single frozen artifact; newly derived",
+   "source_sha256": {
+    "tpami_strengthening_20261003/gate_sensitivity/full_gate_sensitivity.csv": "bdc351614638c1567e0a4648077721115c84807783bdf74afe1a40920d7eaee2",
+    "tpami_strengthening_20261003/sequence_heterogeneity/sequence_flip_table.csv": "7df25004b46edb97113cdd3d814c0814c579a94c444cbe2d22d59b963b6071d3",
+    "tpami_strengthening_20261003/sequence_heterogeneity/sequence_flip_summary.csv": "3aece189969d66db07a02fbb4382bccc455e43eac0c9cdf45c3cbecccd2bc945",
+    "tpami_strengthening_20261003/metadata/analysis_manifest.json": "e625865bd98cb997fe3f19c6cc1ef57ab581496638f112ba4f8a304645e82f19"
+   },
+   "transformation": "derived from the per-sequence evaluator outputs that already existed when the aggregate ordering result was produced; no tracker or evaluator was re-run",
+   "redistribution": "OWN_DERIVED_AGGREGATE",
+   "public_sha256": "39beea5d3ff852fe0cc721c16207254c32e9150cee74d05f16e0f99e7ab169c3",
+   "bytes": 1124
   },
   {
    "public_file": "results/mot17/strongsort_decomposition.csv",
@@ -1167,6 +1217,31 @@
    "redistribution": "OWN_DERIVED_AGGREGATE",
    "public_sha256": "ae5bc124244ccfe7931a6fd873469f65c3abae621df98d71be6cbd217cbcc5de",
    "bytes": 2994
+  },
+  {
+   "public_file": "results/stv_sensitivity/FULL_FIVE_PIPELINE_README.md",
+   "role": "scope and provenance note for the five-pipeline sensitivity table",
+   "source_frozen_artifact": "authored for this release",
+   "source_sha256": {},
+   "transformation": "authored",
+   "redistribution": "OWN_RECORD",
+   "public_sha256": "70f0c4ef9116417d815de7b8643799991693282d4a20505af6ec0f86e0b828c8",
+   "bytes": 2295
+  },
+  {
+   "public_file": "results/stv_sensitivity/full_five_pipeline_summary.csv",
+   "role": "post-hoc descriptive admission-gate sensitivity over all five row-additive MOT17 pipelines",
+   "source_frozen_artifact": "no single frozen artifact; newly derived",
+   "source_sha256": {
+    "tpami_strengthening_20261003/gate_sensitivity/full_gate_sensitivity.csv": "bdc351614638c1567e0a4648077721115c84807783bdf74afe1a40920d7eaee2",
+    "tpami_strengthening_20261003/sequence_heterogeneity/sequence_flip_table.csv": "7df25004b46edb97113cdd3d814c0814c579a94c444cbe2d22d59b963b6071d3",
+    "tpami_strengthening_20261003/sequence_heterogeneity/sequence_flip_summary.csv": "3aece189969d66db07a02fbb4382bccc455e43eac0c9cdf45c3cbecccd2bc945",
+    "tpami_strengthening_20261003/metadata/analysis_manifest.json": "e625865bd98cb997fe3f19c6cc1ef57ab581496638f112ba4f8a304645e82f19"
+   },
+   "transformation": "derived from the frozen MOT17 validation-half R0/R2 state rows and scoreable ground truth with the released matcher; newly computed for this release, not a copy of a frozen artifact",
+   "redistribution": "OWN_DERIVED_AGGREGATE",
+   "public_sha256": "9d87769f29afb621511a88c927b01f8296f892b66a424b3b6a6b3355b85525b1",
+   "bytes": 2432
   },
   {
    "public_file": "results/stv_sensitivity/gaplen_SPEC.md",
@@ -1655,8 +1730,8 @@
    },
    "transformation": "none (byte-identical copy)",
    "redistribution": "OWN_CODE",
-   "public_sha256": "93b1da68e9d4358c54208b811b3b7f9d9b8f172a0758721acbf3549aae2415b0",
-   "bytes": 5502
+   "public_sha256": "2bdd6a0ee6a0c9ceea25bc30008c812e4cf1b1ec43658c0c984438f84c123be3",
+   "bytes": 7276
   },
   {
    "public_file": "src/tracking_provenance_audit/transitions.py",
@@ -1753,8 +1828,8 @@
    "source_sha256": {},
    "transformation": "authored",
    "redistribution": "OWN_CODE",
-   "public_sha256": "4b98aeeba8813ccf83a5d3d7cfdff7f835c1530e64fbb041425f2487d460f49b",
-   "bytes": 10183
+   "public_sha256": "18425ba28305b94edc5371fd74e602f54a58983d271f33e013d503669dafc8e8",
+   "bytes": 12676
   }
  ],
  "licence": {

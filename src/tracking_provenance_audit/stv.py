@@ -2,10 +2,22 @@
 
 Gate before assignment; one-to-one Hungarian assignment on R0 only, per frame,
 against scoreable GT; the assignment is frozen before synthesized rows exist.
+
+The matcher follows the stateless TrackEval preprocessing form. IoU similarities
+below the gate are set to zero before the one-to-one assignment, and selected
+zero-similarity pairs are removed from the returned assignment. No below-gate pair
+is ever returned as a reference match, but a zeroed entry can still affect the
+global assignment through row/column competition. Selected pairs are therefore not
+guaranteed to be nested as the gate rises; only the set of above-gate entries is.
 """
 from __future__ import annotations
+import sys
 from typing import Dict, List, Optional, Tuple
 from .rowid import Row, RowId, iou
+
+# Same numerical convention as the frozen classifier and TrackEval, which both
+# use numpy's float eps; sys.float_info.epsilon is that identical value.
+_EPS = sys.float_info.epsilon
 
 PRIMARY_IOU_GATE = 0.5
 SENSITIVITY_GATES = (0.3, 0.4, 0.5, 0.6, 0.7)
@@ -32,7 +44,13 @@ SEMANTIC_REASON = {
 
 
 def _hungarian(cost: List[List[float]]) -> List[Tuple[int, int]]:
-    """Optimal one-to-one assignment. scipy when available, else exact fallback."""
+    """Minimum-cost one-to-one assignment. scipy when available, else exact search.
+
+    Both paths minimise the same objective over exactly min(n, m) pairs. When the
+    rows outnumber the columns the search runs over row subsets, otherwise over
+    column subsets; taking only the first rows would ignore cheaper assignments
+    available to later rows and would disagree with scipy.
+    """
     if not cost or not cost[0]:
         return []
     try:
@@ -43,19 +61,28 @@ def _hungarian(cost: List[List[float]]) -> List[Tuple[int, int]]:
     except Exception:
         import itertools
         n, m = len(cost), len(cost[0])
+        if n <= m:
+            candidates = ([(i, cols[i]) for i in range(n)]
+                          for cols in itertools.permutations(range(m), n))
+        else:
+            candidates = ([(rows[j], j) for j in range(m)]
+                          for rows in itertools.permutations(range(n), m))
         best, pairs = None, []
-        rows = range(n)
-        for perm in itertools.permutations(range(m), min(n, m)):
-            tot = sum(cost[i][perm[i]] for i in range(len(perm)))
+        for candidate in candidates:
+            tot = sum(cost[i][j] for i, j in candidate)
             if best is None or tot < best:
-                best = tot
-                pairs = [(i, perm[i]) for i in range(len(perm))]
+                best, pairs = tot, candidate
         return pairs
 
 
 def assign_reference(r0_rows: List[Row], gt_rows: List[Row],
                      gate: float = PRIMARY_IOU_GATE) -> Dict[RowId, int]:
-    """Per-frame one-to-one R0 -> GT identity assignment, gate applied first."""
+    """Per-frame one-to-one R0 -> GT identity assignment, gate applied first.
+
+    Similarities below ``gate`` are zeroed before assignment and selected
+    zero-similarity pairs are removed from the result, so no below-gate pair is
+    returned. Zeroed entries may still compete for a row or column slot.
+    """
     by_frame_pred: Dict[int, List[Row]] = {}
     by_frame_gt: Dict[int, List[Row]] = {}
     for r in r0_rows:
@@ -70,12 +97,16 @@ def assign_reference(r0_rows: List[Row], gt_rows: List[Row],
         preds = sorted(preds, key=lambda r: r.track_id)
         gts = sorted(gts, key=lambda g: g.track_id)
         ious = [[iou(p, g) for g in gts] for p in preds]
-        # gate BEFORE assignment: ineligible pairs cannot be selected
-        BIG = 1e6
-        cost = [[(1.0 - ious[i][j]) if ious[i][j] >= gate else BIG
-                 for j in range(len(gts))] for i in range(len(preds))]
-        for i, j in _hungarian(cost):
-            if i < len(preds) and j < len(gts) and cost[i][j] < BIG:
+        # Gate BEFORE assignment, in the TrackEval preprocessing form: sub-gate
+        # similarities are zeroed, the assignment maximises the total remaining
+        # similarity, and any selected zero-similarity pair is then dropped.
+        score = [[ious[i][j] if ious[i][j] >= gate - _EPS else 0.0
+                  for j in range(len(gts))] for i in range(len(preds))]
+        # _hungarian minimises, so negating makes it maximise total similarity;
+        # the scipy path and the fallback therefore solve the same problem.
+        neg = [[-v for v in row] for row in score]
+        for i, j in _hungarian(neg):
+            if i < len(preds) and j < len(gts) and score[i][j] > _EPS:
                 out[preds[i].rid] = gts[j].track_id
     return out
 

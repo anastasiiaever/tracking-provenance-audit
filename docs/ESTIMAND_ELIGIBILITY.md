@@ -55,11 +55,32 @@ Four classes, applied in this priority order, exhaustive and mutually exclusive:
 
 Two properties are load-bearing:
 
-- **Gate before assignment.** The IoU gate is a hard admissibility mask applied
-  before the Hungarian assignment, not a filter afterwards. Ineligible pairs
-  cannot be selected at all.
+- **Gate before assignment.** The matcher follows the stateless TrackEval
+  preprocessing form. IoU similarities below the gate are set to zero before the
+  one-to-one Hungarian assignment, and selected zero-similarity pairs are removed
+  from the returned assignment. Consequently, no below-gate pair is returned as a
+  reference match, although zeroed entries can affect the global assignment
+  through row/column competition.
 - **One class only.** `stv.partition_counts` asserts the partition is exact. The
   released tables are checked against this in `tests/test_release_integrity.py`.
+
+Four further points fix the semantics exactly:
+
+- The assignment is computed on `R0` only, and is frozen before any synthesized
+  row is assessed. Synthesized rows never influence it.
+- The primary gate is **0.5**.
+- The gates 0.3, 0.4, 0.5, 0.6 and 0.7 are **descriptive** sensitivity gates. The
+  0.5 result remains primary regardless of what the sweep shows.
+- Raising the gate shrinks the set of above-gate entries monotonically. It does
+  **not** make the selected assignment pairs nested: they may be reassigned as the
+  gate moves.
+
+**Implementation note.** The initial public reimplementation used an
+equivalent-looking blocked-edge formulation. It agrees with the frozen
+implementation at the primary gate 0.5 but can differ at permissive sensitivity
+gates. The public implementation was aligned with the frozen TrackEval form in
+v1.0.4. Published result tables were already generated with the frozen TrackEval
+form and therefore required no numerical correction.
 
 ### What the classes do and do not license
 

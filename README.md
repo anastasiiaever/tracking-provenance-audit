@@ -61,11 +61,18 @@ The scripts recompute the released quantities and compare them with the correspo
 | MOT17: 28.92%-49.02% of synthesized rows are not admitted | `results/mot17/stv_composition.csv` | `python scripts/verify_admission.py` |
 | MOT17: all 25 deployment-by-metric values rise from R0 to R2 | `results/mot17/metrics_by_state.csv` | `python scripts/verify_release.py` |
 | MOT17: 5 of 50 pairwise relations change, 45 remain unchanged | `results/mot17/ordering_matrix.csv` | `python scripts/verify_ordering.py` |
-| MOT20: 1 eligible, 5 ineligible through training overlap, 1 unresolved | `results/mot20/eligibility.csv` | `python scripts/verify_mot20_eligibility.py` |
+| MOT20: 1 eligible for the pre-specified held-out second-half comparison, 5 ineligible through training overlap, 1 unresolved | `results/mot20/eligibility.csv` | `python scripts/verify_mot20_eligibility.py` |
 | MOT20: 34,814 synthesized rows, 25.14% not admitted | `results/mot20/deep_oc_sort_stv.csv` | `python scripts/verify_mot20_eligibility.py` |
 | Controlled arm: the pooled comparison reverses on common support | `results/controlled/ntu_support_accounting.json` | `python scripts/verify_controlled_arm.py` |
 
 `docs/CLAIM_MATRIX.md` gives the full claim-to-artifact mapping.
+
+Two post-hoc descriptive tables extend the released results without changing
+them: `results/stv_sensitivity/full_five_pipeline_summary.csv` carries the
+admission-gate sweep over all five row-additive MOT17 pipelines, and
+`results/mot17/sequence_ordering_heterogeneity_summary.csv` reports the
+sequence-level heterogeneity of the five aggregate ordering changes. Each has a
+README beside it stating its scope.
 
 ## Repository layout
 
