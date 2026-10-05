@@ -107,23 +107,23 @@ for ax, (title, seq, track, lo, hi, r0, r2, gt, ids, gap) in zip(axes, CASES):
                 ax.plot(run, [cen(gt[z][gid]) for z in run], **st); run = [q]
         ax.plot(run, [cen(gt[z][gid]) for z in run], **st)
         ax.text(0.985, 0.95 if k == 0 else 0.07, f"GT {gid}", transform=ax.transAxes,
-                fontsize=5.4, color=S.INK if k == 0 else S.MID, ha="right",
+                fontsize=6.9, color=S.INK if k == 0 else S.MID, ha="right",
                 va="top" if k == 0 else "bottom",
                 bbox=dict(fc="white", ec="none", alpha=0.85, pad=0.5))
     if gap:
         ax.axvspan(gap[0], gap[1], color=S.PALE, alpha=0.45, lw=0, zorder=0)
     ax.plot([la, ra], [cen(r0[la][track]), cen(r0[ra][track])], **S.ROLE["anchor"], zorder=5)
     ax.plot(sorted(add), [cen(add[q]) for q in sorted(add)], **S.ROLE["added"], zorder=4)
-    ax.set_title(f"{title}\n{seq} · track {track}", fontsize=6.0, pad=2.6, linespacing=1.3)
-    ax.set_xlabel("frame", fontsize=6.2, labelpad=1.4)
-    ax.tick_params(pad=1.4, labelsize=5.8)
-axes[0].set_ylabel("box centre $x$ (px)", fontsize=6.2, labelpad=1.6)
+    ax.set_title(f"{title}\n{seq} · track {track}", fontsize=7.5, pad=2.6, linespacing=1.3)
+    ax.set_xlabel("frame", fontsize=7.5, labelpad=1.4)
+    ax.tick_params(pad=1.4, labelsize=7.0)
+axes[0].set_ylabel("box centre $x$ (px)", fontsize=7.5, labelpad=1.6)
 fig.legend([plt.Line2D([], [], **S.ROLE["anchor"]), plt.Line2D([], [], **S.ROLE["added"]),
             plt.Line2D([], [], **S.ROLE["reference"]), plt.Line2D([], [], **S.ROLE["reference_other"])],
            ["$R_0$ anchor", "added row", "anchor-resolved reference identity",
             "second reference identity"],
            loc="lower center", ncol=4, bbox_to_anchor=(0.5, -0.30),
-           handletextpad=0.5, columnspacing=1.5, fontsize=6.0)
+           handletextpad=0.5, columnspacing=1.5, fontsize=7.2)
 S.finish(fig, OUT)
 PROV["artifacts"] = {k: sha(v) for k, v in
                      dict(rec_mot=REC_MOT, rec_abs=REC_ABS, gt_mot=GT_MOT, gt_dt=GT_DT,

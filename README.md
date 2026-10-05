@@ -91,7 +91,7 @@ redistributed here; see `tpami/UPSTREAM.md` and `tpami/PATHS.md`.
 | check | expected |
 |---|---|
 | `scripts/verify_release.py` | all stages PASS |
-| `provenance/MANIFEST.sha256` | 264 of 264 OK |
+| `provenance/MANIFEST.sha256` | 266 of 266 OK |
 | `tpami/source_of_truth/RELEASE_MANIFEST_SANITISED.sha256` | 52 of 52 OK |
 | `pytest tests/` | 107 passed |
 | `pytest tests/ other-work/tests/` | 214 passed |
@@ -108,8 +108,9 @@ artifacts that are legally publishable.
 
 ## 8. Release
 
-The commit tagged **`tpami-submission-v1`** is the state this paper's claims were
-checked against.
+The commit tagged **`v1.1.1-tpami-submission`** is the state this paper's claims
+were checked against. It supersedes `v1.1.0-tpami-submission`, which remains in
+place; neither tag is rewritten.
 
 ## 9. Other work in this repository
 

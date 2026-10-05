@@ -233,7 +233,7 @@ for k, p in enumerate(PANELS):
             ax.add_patch(Rectangle((gx, gy), gw, gh, fill=False, ec=tone, lw=0.8,
                                    ls=(0, (1, 1.2)), zorder=4))
             ax.text(gx + gw / 2, gy - 0.012 * chh if i == 0 else gy + gh + 0.012 * chh,
-                    f"GT {gid}", color="white", fontsize=5.2, ha="center",
+                    f"GT {gid}", color="white", fontsize=6.6, ha="center",
                     va="bottom" if i == 0 else "top", zorder=7,
                     bbox=dict(fc=tone, ec="none", pad=1.0))
         # the tracker row itself: solid for an anchor, dashed for a synthesized row
@@ -245,16 +245,16 @@ for k, p in enumerate(PANELS):
                                ls=style, zorder=5))
         ax.add_patch(Rectangle((bx, by), bw, bh, fill=False, ec=S.INK, lw=lw,
                                ls=style, zorder=6))
-        ax.set_xlabel(f"{roles[j]}\nframe {f}", fontsize=8.4, labelpad=2.0,
+        ax.set_xlabel(f"{roles[j]}\nframe {f}", fontsize=7.0, labelpad=2.0,
                       linespacing=1.25)
         if p["note"] and p["note"][j]:
             at_top = p["tag"] == "(d)"      # bottom is taken by the second identity
             ax.text(0.5, 0.978 if at_top else 0.022, p["note"][j],
-                    transform=ax.transAxes, fontsize=7.6, ha="center",
+                    transform=ax.transAxes, fontsize=6.8, ha="center",
                     va="top" if at_top else "bottom", color="white", zorder=9,
                     clip_on=False, bbox=dict(fc=S.INK, ec="none", alpha=0.85, pad=1.0))
         if j == 1:
-            ax.set_title(f"{p['tag']} {p['cls']}", fontsize=9.0, pad=3.4)
+            ax.set_title(f"{p['tag']} {p['cls']}", fontsize=7.4, pad=3.4)
 
 h_anchor = plt.Line2D([], [], color=S.INK, ls="-", lw=1.0)
 h_added = plt.Line2D([], [], color=S.INK, ls=(0, (2.4, 1.3)), lw=1.0)
@@ -267,7 +267,7 @@ fig.legend([h_anchor, h_added, h_ref, h_ref2],
             "anchor-resolved reference identity (dotted)",
             "second reference identity (dotted, grey)"],
            loc="lower center", ncol=2, bbox_to_anchor=(0.5, -0.075),
-           handletextpad=0.5, columnspacing=1.6, fontsize=8.4)
+           handletextpad=0.5, columnspacing=1.6, fontsize=7.0)
 
 S.finish(fig, OUT)
 

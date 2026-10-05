@@ -74,8 +74,8 @@
       "source_sha256": {},
       "transformation": "authored",
       "redistribution": "OWN_RECORD",
-      "public_sha256": "279e39f994adc56dcd6d7dd13afc3f3d1d97c59edbaa05a5f1616399119c73fb",
-      "bytes": 5347
+      "public_sha256": "e41c9af91fa35d6e86a1ec1f1d4f280f14bd5c9b9a1edcc4bd7cc9be486dce40",
+      "bytes": 5817
     },
     {
       "public_file": "configs/frozen/admission_stv.yaml",
@@ -144,8 +144,8 @@
       "source_sha256": {},
       "transformation": "authored",
       "redistribution": "OWN_RECORD",
-      "public_sha256": "2c763b2e0dbb6b7fec377510c3c6798f5b4988884a63722d94ec365cddcf21c2",
-      "bytes": 257
+      "public_sha256": "c130d3cd38a1a6e33aa2365c3ee304aefbb24c4502e06c9ce9f21c9818bcf0e6",
+      "bytes": 347
     },
     {
       "public_file": "docs/CLAIM_MATRIX.md",
@@ -328,8 +328,8 @@
       "source_sha256": {},
       "transformation": "authored",
       "redistribution": "OWN_RECORD",
-      "public_sha256": null,
-      "bytes": null,
+      "public_sha256": "7e7c43567ef649329fd19cc740557997cf1b84a3cda8ac8470d463ffd1d36f28",
+      "bytes": 148704,
       "note": "self-referential; this file's own digest is in provenance/MANIFEST.sha256"
     },
     {
@@ -1360,8 +1360,8 @@
       "source_sha256": {},
       "transformation": "authored",
       "redistribution": "OWN_CODE",
-      "public_sha256": "394fe327cff21417b6f95d4dbc145f7890bca080a0b7d775bdbfb0976b1987c4",
-      "bytes": 5715
+      "public_sha256": "582136680245f68e48b769cf43aa4cd7afdc4e96ce0e72548fbf0b5e516b7a8c",
+      "bytes": 6253
     },
     {
       "public_file": "other-work/scripts/verify_support_accounting.py",
@@ -1776,8 +1776,8 @@
       },
       "transformation": "none (byte-identical copy)",
       "redistribution": "OWN_CODE",
-      "public_sha256": "54f3347006a1736433797692cdde6af098c793f1a38e3913c34bacbc4f671e65",
-      "bytes": 12683
+      "public_sha256": "6276eb10418bb8f647fb57563f46c63c0a31018fdbd45a58338c2822bf8e09b7",
+      "bytes": 12677
     },
     {
       "public_file": "other-work/tests/test_applicability_audit_precomputed.py",
@@ -1788,8 +1788,8 @@
       },
       "transformation": "none (byte-identical copy)",
       "redistribution": "OWN_CODE",
-      "public_sha256": "69c55a5a1d44c46f007c03c475653623dca1e82abc8c56b845bf8f399a2753da",
-      "bytes": 12843
+      "public_sha256": "c2ec727c5ea3a5f7007af61a7b63191ef85229e10253f67191340694148fe57e",
+      "bytes": 12837
     },
     {
       "public_file": "tests/test_corruption_detection.py",
@@ -1818,8 +1818,8 @@
       "source_sha256": {},
       "transformation": "authored",
       "redistribution": "OWN_CODE",
-      "public_sha256": "2171af25f80d4a441f5b65524fd78cdf748a1d11b6a98195b9b3481d6c80825b",
-      "bytes": 14094
+      "public_sha256": "0bb3617021e72094d3c120fb3491610dd902ef3bf036042350d0afd39e5e2841",
+      "bytes": 14315
     },
     {
       "public_file": "tests/test_tracking_provenance_core.py",
@@ -1927,7 +1927,7 @@
       "source_frozen_artifact": "this project's own audit output",
       "transformation": "copied verbatim from the frozen audit tree; host paths replaced by placeholders",
       "redistribution": "OWN_CODE",
-      "public_sha256": "586396f37987e68cb87eab923f44d07a60446da101fc0e120a6b339661716c32",
+      "public_sha256": "94961800d0723a84a46c637921f53ca64a5731012aed2b1c90ae33e2c0adcaa2",
       "bytes": 15362
     },
     {
@@ -1945,8 +1945,8 @@
       "source_frozen_artifact": "this project's own audit output",
       "transformation": "copied verbatim from the frozen audit tree; host paths replaced by placeholders",
       "redistribution": "OWN_CODE",
-      "public_sha256": "6f4ee23413db7d1d7647e1d36be69a00ad1f80157511a540ebdbd4f92561066b",
-      "bytes": 9898
+      "public_sha256": "e2f344731e4105ce68fa102c65d443d9fcc9911a60c20f6a8c390a7c6cb4b892",
+      "bytes": 9899
     },
     {
       "public_file": "tpami/figures/scripts/gen_fig3.py",
@@ -1954,8 +1954,8 @@
       "source_frozen_artifact": "this project's own audit output",
       "transformation": "copied verbatim from the frozen audit tree; host paths replaced by placeholders",
       "redistribution": "OWN_CODE",
-      "public_sha256": "5d03d304e84f645733d3b6c33c102887a3b698e81153c5adfd80bf88231691b1",
-      "bytes": 7443
+      "public_sha256": "8eb9dff25f31a2442dc41fd8145fa7107880b2e31873217eb5cb079f997bf082",
+      "bytes": 7306
     },
     {
       "public_file": "tpami/figures/scripts/gen_fig4_margins.py",
@@ -1963,7 +1963,7 @@
       "source_frozen_artifact": "this project's own audit output",
       "transformation": "copied verbatim from the frozen audit tree; host paths replaced by placeholders",
       "redistribution": "OWN_CODE",
-      "public_sha256": "501f1b753c4f8f05556720bd91f91ced62fc3c3a95c9c5d48167333457ae5b11",
+      "public_sha256": "ff1c32981166a5e7dae25ef1544eba73200033ce475698f13110fad8281f345a",
       "bytes": 4346
     },
     {
@@ -1972,7 +1972,7 @@
       "source_frozen_artifact": "this project's own audit output",
       "transformation": "copied verbatim from the frozen audit tree; host paths replaced by placeholders",
       "redistribution": "OWN_CODE",
-      "public_sha256": "14c126ec5044b8c316cab927a9c854eb86cac7a702551e45792228b462b6b3d8",
+      "public_sha256": "48303976dca6bbed1dec7489acd12062827687b33c5555fa6661727993323888",
       "bytes": 5256
     },
     {
@@ -1981,7 +1981,7 @@
       "source_frozen_artifact": "this project's own audit output",
       "transformation": "copied verbatim from the frozen audit tree; host paths replaced by placeholders",
       "redistribution": "OWN_CODE",
-      "public_sha256": "7f7782916c3e0e65fc0eb2bc7055de43401bf9bd0c0f446a63330a0730322fbe",
+      "public_sha256": "f285769cdded39dc46d6570efef955c5eb8b5316628840493ba92cb49864f75d",
       "bytes": 6557
     },
     {
@@ -2858,6 +2858,7 @@
     "boundary_document": "docs/LICENSING_BOUNDARY.md"
   },
   "notes": [
-    "2026-10-05: tpami/ added for the paper 'Post-Processing Provenance and the Evaluated State of Tracking Submissions'; the separate common-support paper's material moved to other-work/ with history preserved."
+    "2026-10-05: tpami/ added for the paper 'Post-Processing Provenance and the Evaluated State of Tracking Submissions'; the separate common-support paper's material moved to other-work/ with history preserved.",
+    "2026-10-05 (v1.1.1): Fig. 3 regenerated for journal typography; generators and figure provenance refreshed. No figure data changed."
   ]
 }

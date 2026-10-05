@@ -111,7 +111,7 @@ check("identity-remapping example is audited",
 # and therefore the scientific content, is unchanged.
 import textwrap as _tw
 
-FS_TITLE, FS_HDR, FS_BODY, FS_SMALL = 9.0, 8.6, 9.0, 8.2
+FS_TITLE, FS_HDR, FS_BODY, FS_SMALL = 9.2, 8.8, 9.2, 8.6
 
 fig = plt.figure(figsize=(TWOCOL, 3.45))
 gs = fig.add_gridspec(2, 2, height_ratios=[1.00, 1.85], width_ratios=[1.0, 1.0],
@@ -151,7 +151,7 @@ axB.text(0.02, 0.24, "clause (ii)  undefined execution path", fontsize=FS_SMALL,
 axB.text(0.02, 0.07, "eligible / ineligible / unresolved", fontsize=FS_BODY, va="center")
 
 # (c) the permission matrix -- plain rules, plain text, no shaded cells
-axC.set_title("(c) which diagnostics each transition permits",
+axC.set_title("(c) Diagnostic availability by transition type",
               fontsize=FS_TITLE, loc="left", pad=3)
 COLS = [("key set", "keys"), ("surviving content", "content"),
         ("attribution", "attribution"), ("admission", "admission"),
@@ -171,7 +171,7 @@ for i, (name, v) in enumerate(SPEC.items()):
     axC.text(x0, y + hrow * 0.70, "\n".join(_tw.wrap(name, 24)), ha="left",
              va="center", fontsize=FS_BODY, linespacing=1.05)
     axC.text(x0, y + hrow * 0.13, v["example"], ha="left", va="center",
-             fontsize=7.6, color=MID)
+             fontsize=8.4, color=MID)
     for j, (_, k) in enumerate(COLS):
         val = v[k]
         shown = ("yes" if val else "no") if isinstance(val, bool) else \

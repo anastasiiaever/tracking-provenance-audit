@@ -99,12 +99,14 @@ check("TARGET REFERENCE ABSENT non-empty on every controlled column",
       all(seg[2] > 0 for _, _, seg in controlled))
 
 # ---------------------------------------------------------------- draw
-fig, axes = plt.subplots(2, 1, figsize=(TWOCOL, 3.05),
+# V7.4: typography only. The data, the ordering, the four segments per column,
+# every percentage and the hatch/fill encoding are unchanged. The per-row totals
+# move out (they are in Tables 2 and 3) and the two operator explanations move
+# into the caption, which frees the width those needed and lets the informative
+# text sit near 9 pt once the figure is placed at \textwidth.
+fig, axes = plt.subplots(2, 1, figsize=(TWOCOL, 4.35),
                          gridspec_kw={"height_ratios": [6, 4]})
-# the per-column "N rows" labels sit outside the axes; leaving room for them
-# keeps the tight bounding box at the figure width, so the figure is not
-# shrunk when it is placed at \textwidth and its text stays legible
-fig.subplots_adjust(hspace=0.70, left=0.175, right=0.995, top=0.93, bottom=0.14)
+fig.subplots_adjust(hspace=0.46, left=0.205, right=0.995, top=0.945, bottom=0.135)
 
 def panel(ax, data, title):
     ys = list(range(len(data)))[::-1]
@@ -119,29 +121,27 @@ def panel(ax, data, title):
                 # a white backing box keeps the figure readable where a segment
                 # is hatched; the hatch is what carries the class in grayscale
                 ax.text(left + w / 2, y, f"{w:.1f}", ha="center", va="center",
-                        fontsize=5.6, color="black", zorder=5,
+                        fontsize=9.5, color="black", zorder=5,
                         bbox=dict(facecolor="white", edgecolor="none",
-                                  pad=0.6, alpha=0.92))
+                                  pad=0.8, alpha=0.92))
             left += w
-        ax.text(100.8, y, f"{tot:,} rows", va="center", fontsize=5.8, color=MID)
     ax.set_yticks(ys)
-    ax.set_yticklabels([d[0].replace("\n", ", ") for d in data], fontsize=6.3)
-    # the "N rows" labels are drawn just past 100; widening the limit keeps them
-    # inside the axes so the tight bounding box equals the figure width and the
-    # figure is not shrunk when placed at \textwidth
-    ax.set_xlim(0, 119); ax.set_xticks([0, 20, 40, 60, 80, 100])
-    ax.set_xlabel("per cent of that column's added rows", labelpad=1.5)
-    ax.set_title(title, fontsize=7.0, loc="left", pad=3)
+    ax.set_yticklabels([d[0].replace("\n", ", ") for d in data], fontsize=9.7)
+    ax.set_xlim(0, 100); ax.set_xticks([0, 20, 40, 60, 80, 100])
+    ax.tick_params(axis="x", labelsize=9.5)
+    ax.set_xlabel("per cent of that column's added rows", fontsize=9.7, labelpad=2.0)
+    ax.set_title(title, fontsize=10.4, loc="left", pad=4)
     ax.spines["left"].set_visible(False)
     ax.tick_params(axis="y", length=0)
 
-panel(axes[0], released, "(a) released audit: each deployment's own operator at its own parameters")
-panel(axes[1], controlled, "(b) controlled evaluation: one operator of ours across four trackers")
+panel(axes[0], released, "(a) Released deployments")
+panel(axes[1], controlled, "(b) Controlled DanceTrack")
 
 handles = [plt.Rectangle((0, 0), 1, 1, facecolor=FILL[k], edgecolor=EDGE,
                          linewidth=0.5, hatch=HATCH[k]) for k in range(4)]
 fig.legend(handles, [c.lower() for c in CLASSES], loc="lower center", ncol=4,
-           bbox_to_anchor=(0.5, -0.025), handlelength=1.5, columnspacing=1.6)
+           bbox_to_anchor=(0.5, -0.018), handlelength=1.6, columnspacing=1.8,
+           fontsize=9.7)
 fig.savefig(f"{OUT}/fig3_final.pdf", format="pdf", bbox_inches="tight", metadata={"CreationDate": None, "Producer": None, "Creator": None})
 
 json.dump({"released": released, "controlled": controlled, "checks": CHECKS},

@@ -66,11 +66,11 @@ for ax, (arm, title, n_expect, sub) in zip(axes, ARMS):
                 mec=S.INK if crossing else S.LIGHT, mew=0.0, zorder=4)
     ax.set_yticks([])
     ax.set_ylim(-1.5, len(cells) + 0.5)
-    ax.set_xlabel("pairwise margin (metric points)", fontsize=6.6, labelpad=1.8)
-    ax.set_title(f"{title}\n{sub}", fontsize=6.6, pad=3.0, linespacing=1.3)
+    ax.set_xlabel("pairwise margin (metric points)", fontsize=7.2, labelpad=1.8)
+    ax.set_title(f"{title}\n{sub}", fontsize=7.2, pad=3.0, linespacing=1.3)
     ax.tick_params(pad=1.6)
     ax.text(0.02, 0.97, f"{len(cells)} cells, {cross} cross zero",
-            transform=ax.transAxes, fontsize=6.0, va="top", ha="left")
+            transform=ax.transAxes, fontsize=6.8, va="top", ha="left")
     ax.spines["left"].set_visible(False)
 
 h_b = plt.Line2D([], [], color=S.LIGHT, marker="o", ms=2.4, mfc="white",
@@ -80,7 +80,7 @@ fig.legend([h_b, h_c],
            ["one cell: open marker before the transition, filled marker after",
             "cell whose pooled point estimate changes sign"],
            loc="lower center", ncol=2, bbox_to_anchor=(0.5, -0.09),
-           handletextpad=0.5, columnspacing=1.6, fontsize=6.2)
+           handletextpad=0.5, columnspacing=1.6, fontsize=6.8)
 
 S.finish(fig, OUT)
 PROV["source"] = {"path": SRC, "sha256": sha(SRC)}

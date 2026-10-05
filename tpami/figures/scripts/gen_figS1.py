@@ -74,9 +74,9 @@ for ax, (key, _, n) in zip(axes, ARMS):
     ax.axhspan(-0.005, 0.005, color=PALE, zorder=0, lw=0)
     ax.axhline( 0.0005, color=MID, lw=0.4, ls=":", zorder=1)
     ax.axhline(-0.0005, color=MID, lw=0.4, ls=":", zorder=1)
-    ax.set_title(TITLE[key], fontsize=6.8, loc="left", pad=3)
+    ax.set_title(TITLE[key], fontsize=9.2, loc="left", pad=3)
     ax.set_xlabel(f"{n} cells",
-                  fontsize=6.0, labelpad=1.5)
+                  fontsize=8.8, labelpad=1.5)
     ax.set_xticks([])
     lo = min(min(float(x["margin_before"]), float(x["margin_after"])) for x in rows)
     hi = max(max(float(x["margin_before"]), float(x["margin_after"])) for x in rows)
