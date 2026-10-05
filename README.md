@@ -59,7 +59,7 @@ conda activate tracking-provenance-audit
 ```bash
 python scripts/verify_release.py          # all offline verification stages
 sha256sum -c provenance/MANIFEST.sha256   # released-file integrity
-sha256sum -c tpami/source_of_truth/V6_SOURCE_OF_TRUTH_MANIFEST.sha256
+cd tpami/source_of_truth && sha256sum -c RELEASE_MANIFEST_SANITISED.sha256
 python -m pytest -q tests/                # the tracking-paper test suite
 ```
 
@@ -92,7 +92,7 @@ redistributed here; see `tpami/UPSTREAM.md` and `tpami/PATHS.md`.
 |---|---|
 | `scripts/verify_release.py` | all stages PASS |
 | `provenance/MANIFEST.sha256` | 264 of 264 OK |
-| `tpami/source_of_truth/V6_SOURCE_OF_TRUTH_MANIFEST.sha256` | 52 of 52 OK |
+| `tpami/source_of_truth/RELEASE_MANIFEST_SANITISED.sha256` | 52 of 52 OK |
 | `pytest tests/` | 107 passed |
 | `pytest tests/ other-work/tests/` | 214 passed |
 
