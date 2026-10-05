@@ -2829,6 +2829,24 @@
       "redistribution": "OWN_CODE",
       "public_sha256": "dafe5aea358fc9cd9090bc512c8513df0fc3b0570a731c1debbc616a87e532b2",
       "bytes": 1602
+    },
+    {
+      "public_file": "tpami/source_of_truth/README_RELEASE.md",
+      "role": "release note for the published copies",
+      "source_frozen_artifact": "this project's own audit output",
+      "transformation": "generated over the published copies",
+      "redistribution": "OWN_RECORD",
+      "public_sha256": "c950b460efb72cad4ff03fa6a8df1e7ba12cfd543837d54b3b36005e7ae16483",
+      "bytes": 1353
+    },
+    {
+      "public_file": "tpami/source_of_truth/RELEASE_MANIFEST_SANITISED.sha256",
+      "role": "release manifest for the published, path-sanitised copies",
+      "source_frozen_artifact": "this project's own audit output",
+      "transformation": "generated over the published copies",
+      "redistribution": "OWN_RECORD",
+      "public_sha256": "3ac53c41bc24f5e3fea0f74cab139abd4e2f046f3b792783ec88276e6ec9455f",
+      "bytes": 4761
     }
   ],
   "licence": {
