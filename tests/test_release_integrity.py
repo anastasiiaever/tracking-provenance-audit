@@ -137,7 +137,8 @@ def test_the_release_manifest_covers_every_published_data_file():
     man = load_json("provenance", "RELEASE_MANIFEST.json")
     listed = {f["public_file"] for f in man["files"]}
     on_disk = set()
-    for sub in ("results", "metadata", "provenance/frozen_records", "configs/frozen"):
+    for sub in ("results", "metadata", "provenance/frozen_records", "configs/frozen",
+                "tpami"):
         base = os.path.join(ROOT, sub)
         for dirpath, _, names in os.walk(base):
             for n in names:
@@ -192,7 +193,7 @@ def test_no_private_path_email_or_host_survives_in_the_tree():
 
 # ------------------------------------------------------------ controlled arm
 def test_posetrack_classes_partition_under_every_segmentation_rule():
-    rows = load_csv("results", "controlled", "posetrack21_applicability.csv")
+    rows = load_csv("other-work", "results", "controlled", "posetrack21_applicability.csv")
     assert len(rows) == 3
     for r in rows:
         parts = sum(int(r[k]) for k in ("eligible", "leading", "trailing", "no_anchor"))
@@ -201,8 +202,8 @@ def test_posetrack_classes_partition_under_every_segmentation_rule():
 
 
 def test_the_posetrack_target_count_is_rule_invariant():
-    rows = load_csv("results", "controlled", "posetrack21_applicability.csv")
-    rec = load_json("provenance", "frozen_records", "controlled",
+    rows = load_csv("other-work", "results", "controlled", "posetrack21_applicability.csv")
+    rec = load_json("other-work", "provenance", "frozen_records", "controlled",
                     "56_POSETRACK21_SEGMENTATION_SENSITIVITY.json")
     counts = {int(r["scoreable_occluded_targets"]) for r in rows}
     assert len(counts) == 1
@@ -210,12 +211,12 @@ def test_the_posetrack_target_count_is_rule_invariant():
 
 
 def test_posetrack_bootstrap_intervals_bracket_their_estimates():
-    for r in load_csv("results", "controlled", "posetrack21_bootstrap.csv"):
+    for r in load_csv("other-work", "results", "controlled", "posetrack21_bootstrap.csv"):
         assert float(r["ci95_lo"]) <= float(r["point_estimate"]) <= float(r["ci95_hi"])
 
 
 def test_the_ntu_reversal_changes_sign_between_supports():
-    h = load_json("results", "controlled", "ntu_support_accounting.json")["headline"]
+    h = load_json("other-work", "results", "controlled", "ntu_support_accounting.json")["headline"]
     assert h["before"]["paired_mae_minus_linear"] < 0
     assert h["after"]["paired_mae_minus_linear_common_support"] > 0
     assert h["before"]["ci_hi"] < 0 < h["after"]["ci_lo_common_support"]
@@ -223,7 +224,7 @@ def test_the_ntu_reversal_changes_sign_between_supports():
 
 
 def test_object_trajectory_partitions_are_exact_on_both_populations():
-    rows = load_csv("results", "controlled", "objecttraj_applicability.csv")
+    rows = load_csv("other-work", "results", "controlled", "objecttraj_applicability.csv")
     assert {r["population"] for r in rows} == {"bdd", "mot17"}
     for r in rows:
         parts = sum(int(r[k]) for k in ("eligible", "leading", "trailing", "no_anchor"))
@@ -234,7 +235,7 @@ def test_object_trajectory_partitions_are_exact_on_both_populations():
 
 
 def test_kitti_strata_sum_to_the_pooled_partition():
-    rows = load_csv("results", "controlled", "kitti_applicability.csv")
+    rows = load_csv("other-work", "results", "controlled", "kitti_applicability.csv")
     pooled = next(r for r in rows if r["stratum"] == "all")
     for prefix in ("occlusion=", "category="):
         group = [r for r in rows if r["stratum"].startswith(prefix)]
@@ -244,8 +245,8 @@ def test_kitti_strata_sum_to_the_pooled_partition():
 
 
 def test_the_kitti_hypothesis_matches_its_frozen_record():
-    released = load_json("results", "controlled", "kitti_hypothesis.json")
-    frozen = load_json("provenance", "frozen_records", "controlled",
+    released = load_json("other-work", "results", "controlled", "kitti_hypothesis.json")
+    frozen = load_json("other-work", "provenance", "frozen_records", "controlled",
                        "KITTI_hypothesis_status.json")
     assert released == frozen
     assert released["ineligible_fraction"] >= released["threshold"]
@@ -253,7 +254,7 @@ def test_the_kitti_hypothesis_matches_its_frozen_record():
 
 
 def test_jta_partition_is_exact_and_rates_recompute():
-    r = load_csv("results", "controlled", "jta_applicability.csv")[0]
+    r = load_csv("other-work", "results", "controlled", "jta_applicability.csv")[0]
     tot = int(r["primary_targets"])
     parts = sum(int(r[k]) for k in ("eligible_strictly_interior", "ineligible_leading",
                                     "ineligible_trailing", "no_anchor"))
@@ -265,7 +266,7 @@ def test_jta_partition_is_exact_and_rates_recompute():
 
 
 def test_the_jta_headline_refuses_an_architecture_verdict():
-    h = load_json("results", "controlled", "jta_headline.json")
+    h = load_json("other-work", "results", "controlled", "jta_headline.json")
     assert h["learned_worse_than_best_classical_by_factor"] == pytest.approx(
         h["learned_best_estimate"] / h["classical_best_estimate"])
     assert "SENSITIVITY" in h["what_this_result_is"].upper()
@@ -275,7 +276,7 @@ def test_the_jta_headline_refuses_an_architecture_verdict():
 
 
 def test_the_learned_input_contract_accounts_for_every_slot():
-    ic = load_json("results", "controlled", "learned_input_contract.json")["input_contract"]
+    ic = load_json("other-work", "results", "controlled", "learned_input_contract.json")["input_contract"]
     assert ic["slots"] == 17
     assert ic["available"] == 13
     assert len(ic["unavailable_ntu_slots"]) == 4
@@ -285,12 +286,12 @@ def test_the_learned_input_contract_accounts_for_every_slot():
 
 
 def test_every_beta_row_has_a_bracketing_interval():
-    for r in load_csv("results", "controlled", "learned_beta_by_phi.csv"):
+    for r in load_csv("other-work", "results", "controlled", "learned_beta_by_phi.csv"):
         assert float(r["ci95_lo"]) <= float(r["beta"]) <= float(r["ci95_hi"])
 
 
 def test_the_architecture_claim_stays_unresolved():
-    d = load_json("results", "controlled", "learned_architecture_diagnostics.json")
+    d = load_json("other-work", "results", "controlled", "learned_architecture_diagnostics.json")
     assert "unresolved" in d["note"].lower()
     assert "not a proposed method" in d["note"].lower()
     assert d["estimand"]

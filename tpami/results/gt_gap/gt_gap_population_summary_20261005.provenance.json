@@ -1,0 +1,422 @@
+{
+ "what": "ground-truth interior-gap population summary",
+ "generated": "2026-10-05",
+ "definition_interior_gap": "for one scoreable ground-truth identity in one sequence, a maximal run of frames strictly between its first and last observed frame at which the identity is not annotated",
+ "scoreable_rule": "mark != 0 and class == 1, the evaluator's own preprocessing",
+ "script": "make_gt_gap_population_summary.py",
+ "script_sha256": "f35bf178e5f02cd1cc7b1973ffd8341bb499355252a1a8f5f2567fd2d67ca0b8",
+ "populations": {
+  "MOT17-val_half": {
+   "totals": {
+    "sequences": 7,
+    "scoreable_tracks": 339,
+    "tracks_with_interior_gap": 0,
+    "interior_gaps": 0,
+    "missing_frame_slots": 0
+   },
+   "per_sequence": [
+    {
+     "sequence": "MOT17-02-FRCNN",
+     "scoreable_tracks": 53,
+     "tracks_with_interior_gap": 0,
+     "interior_gaps": 0,
+     "missing_frame_slots": 0
+    },
+    {
+     "sequence": "MOT17-04-FRCNN",
+     "scoreable_tracks": 69,
+     "tracks_with_interior_gap": 0,
+     "interior_gaps": 0,
+     "missing_frame_slots": 0
+    },
+    {
+     "sequence": "MOT17-05-FRCNN",
+     "scoreable_tracks": 71,
+     "tracks_with_interior_gap": 0,
+     "interior_gaps": 0,
+     "missing_frame_slots": 0
+    },
+    {
+     "sequence": "MOT17-09-FRCNN",
+     "scoreable_tracks": 22,
+     "tracks_with_interior_gap": 0,
+     "interior_gaps": 0,
+     "missing_frame_slots": 0
+    },
+    {
+     "sequence": "MOT17-10-FRCNN",
+     "scoreable_tracks": 36,
+     "tracks_with_interior_gap": 0,
+     "interior_gaps": 0,
+     "missing_frame_slots": 0
+    },
+    {
+     "sequence": "MOT17-11-FRCNN",
+     "scoreable_tracks": 44,
+     "tracks_with_interior_gap": 0,
+     "interior_gaps": 0,
+     "missing_frame_slots": 0
+    },
+    {
+     "sequence": "MOT17-13-FRCNN",
+     "scoreable_tracks": 44,
+     "tracks_with_interior_gap": 0,
+     "interior_gaps": 0,
+     "missing_frame_slots": 0
+    }
+   ],
+   "sources": [
+    {
+     "path": "<MOT_AUDIT_ROOT>/repos/TrackEval/data/gt/mot_challenge/MOT17-val_half/MOT17-02-FRCNN/gt/gt.txt",
+     "sha256": "51390514c58bcd580a1a614a93d84ed1241bd3708cd4f3e7a4a35f508f8d2ff8"
+    },
+    {
+     "path": "<MOT_AUDIT_ROOT>/repos/TrackEval/data/gt/mot_challenge/MOT17-val_half/MOT17-04-FRCNN/gt/gt.txt",
+     "sha256": "7c849ece19e0b28e73b71c3ea38a0ecc516fbd903f8108c88d3a921299107f9d"
+    },
+    {
+     "path": "<MOT_AUDIT_ROOT>/repos/TrackEval/data/gt/mot_challenge/MOT17-val_half/MOT17-05-FRCNN/gt/gt.txt",
+     "sha256": "bbc278f8ca51f7ea75d47e7ed2e5f40a1c8734f3f6e777bcaf86b1a0d24137f1"
+    },
+    {
+     "path": "<MOT_AUDIT_ROOT>/repos/TrackEval/data/gt/mot_challenge/MOT17-val_half/MOT17-09-FRCNN/gt/gt.txt",
+     "sha256": "5d6999a90f484ccc0bc2209b3b90877bee094dabee49c188443576fda67e3b14"
+    },
+    {
+     "path": "<MOT_AUDIT_ROOT>/repos/TrackEval/data/gt/mot_challenge/MOT17-val_half/MOT17-10-FRCNN/gt/gt.txt",
+     "sha256": "b5e5afb90a4974bbf8107743886b953bcddfec1d5a405ba0fe1314411e583090"
+    },
+    {
+     "path": "<MOT_AUDIT_ROOT>/repos/TrackEval/data/gt/mot_challenge/MOT17-val_half/MOT17-11-FRCNN/gt/gt.txt",
+     "sha256": "8b95ce717406def67f9437c461e5b56a42d696fc25fb0dc72219d6d7337c6507"
+    },
+    {
+     "path": "<MOT_AUDIT_ROOT>/repos/TrackEval/data/gt/mot_challenge/MOT17-val_half/MOT17-13-FRCNN/gt/gt.txt",
+     "sha256": "1f314df9b7ac28969f11aafd072db091d3e3ad7fbc272373232a7cd68de44ea2"
+    }
+   ]
+  },
+  "DanceTrack-val": {
+   "totals": {
+    "sequences": 25,
+    "scoreable_tracks": 273,
+    "tracks_with_interior_gap": 209,
+    "interior_gaps": 1370,
+    "missing_frame_slots": 15326
+   },
+   "per_sequence": [
+    {
+     "sequence": "dancetrack0004",
+     "scoreable_tracks": 4,
+     "tracks_with_interior_gap": 4,
+     "interior_gaps": 24,
+     "missing_frame_slots": 215
+    },
+    {
+     "sequence": "dancetrack0005",
+     "scoreable_tracks": 4,
+     "tracks_with_interior_gap": 3,
+     "interior_gaps": 10,
+     "missing_frame_slots": 70
+    },
+    {
+     "sequence": "dancetrack0007",
+     "scoreable_tracks": 8,
+     "tracks_with_interior_gap": 7,
+     "interior_gaps": 23,
+     "missing_frame_slots": 153
+    },
+    {
+     "sequence": "dancetrack0010",
+     "scoreable_tracks": 6,
+     "tracks_with_interior_gap": 5,
+     "interior_gaps": 14,
+     "missing_frame_slots": 189
+    },
+    {
+     "sequence": "dancetrack0014",
+     "scoreable_tracks": 12,
+     "tracks_with_interior_gap": 12,
+     "interior_gaps": 127,
+     "missing_frame_slots": 1776
+    },
+    {
+     "sequence": "dancetrack0018",
+     "scoreable_tracks": 8,
+     "tracks_with_interior_gap": 3,
+     "interior_gaps": 22,
+     "missing_frame_slots": 966
+    },
+    {
+     "sequence": "dancetrack0019",
+     "scoreable_tracks": 7,
+     "tracks_with_interior_gap": 6,
+     "interior_gaps": 37,
+     "missing_frame_slots": 310
+    },
+    {
+     "sequence": "dancetrack0025",
+     "scoreable_tracks": 9,
+     "tracks_with_interior_gap": 4,
+     "interior_gaps": 17,
+     "missing_frame_slots": 140
+    },
+    {
+     "sequence": "dancetrack0026",
+     "scoreable_tracks": 19,
+     "tracks_with_interior_gap": 19,
+     "interior_gaps": 166,
+     "missing_frame_slots": 899
+    },
+    {
+     "sequence": "dancetrack0030",
+     "scoreable_tracks": 6,
+     "tracks_with_interior_gap": 2,
+     "interior_gaps": 2,
+     "missing_frame_slots": 6
+    },
+    {
+     "sequence": "dancetrack0034",
+     "scoreable_tracks": 14,
+     "tracks_with_interior_gap": 14,
+     "interior_gaps": 94,
+     "missing_frame_slots": 1689
+    },
+    {
+     "sequence": "dancetrack0035",
+     "scoreable_tracks": 8,
+     "tracks_with_interior_gap": 7,
+     "interior_gaps": 44,
+     "missing_frame_slots": 339
+    },
+    {
+     "sequence": "dancetrack0041",
+     "scoreable_tracks": 22,
+     "tracks_with_interior_gap": 22,
+     "interior_gaps": 331,
+     "missing_frame_slots": 2149
+    },
+    {
+     "sequence": "dancetrack0043",
+     "scoreable_tracks": 14,
+     "tracks_with_interior_gap": 13,
+     "interior_gaps": 39,
+     "missing_frame_slots": 261
+    },
+    {
+     "sequence": "dancetrack0047",
+     "scoreable_tracks": 8,
+     "tracks_with_interior_gap": 6,
+     "interior_gaps": 15,
+     "missing_frame_slots": 214
+    },
+    {
+     "sequence": "dancetrack0058",
+     "scoreable_tracks": 7,
+     "tracks_with_interior_gap": 4,
+     "interior_gaps": 11,
+     "missing_frame_slots": 157
+    },
+    {
+     "sequence": "dancetrack0063",
+     "scoreable_tracks": 8,
+     "tracks_with_interior_gap": 7,
+     "interior_gaps": 30,
+     "missing_frame_slots": 386
+    },
+    {
+     "sequence": "dancetrack0065",
+     "scoreable_tracks": 5,
+     "tracks_with_interior_gap": 3,
+     "interior_gaps": 3,
+     "missing_frame_slots": 5
+    },
+    {
+     "sequence": "dancetrack0073",
+     "scoreable_tracks": 14,
+     "tracks_with_interior_gap": 6,
+     "interior_gaps": 11,
+     "missing_frame_slots": 655
+    },
+    {
+     "sequence": "dancetrack0077",
+     "scoreable_tracks": 9,
+     "tracks_with_interior_gap": 0,
+     "interior_gaps": 0,
+     "missing_frame_slots": 0
+    },
+    {
+     "sequence": "dancetrack0079",
+     "scoreable_tracks": 18,
+     "tracks_with_interior_gap": 2,
+     "interior_gaps": 3,
+     "missing_frame_slots": 11
+    },
+    {
+     "sequence": "dancetrack0081",
+     "scoreable_tracks": 20,
+     "tracks_with_interior_gap": 19,
+     "interior_gaps": 78,
+     "missing_frame_slots": 856
+    },
+    {
+     "sequence": "dancetrack0090",
+     "scoreable_tracks": 14,
+     "tracks_with_interior_gap": 14,
+     "interior_gaps": 103,
+     "missing_frame_slots": 910
+    },
+    {
+     "sequence": "dancetrack0094",
+     "scoreable_tracks": 25,
+     "tracks_with_interior_gap": 23,
+     "interior_gaps": 153,
+     "missing_frame_slots": 2826
+    },
+    {
+     "sequence": "dancetrack0097",
+     "scoreable_tracks": 4,
+     "tracks_with_interior_gap": 4,
+     "interior_gaps": 13,
+     "missing_frame_slots": 144
+    }
+   ],
+   "sources": [
+    {
+     "path": "<AUDIT_ROOT>/dancetrack_controlled_20261003/inputs/gt/DANCE-val/dancetrack0004/gt/gt.txt",
+     "sha256": "a6ce73e1eedb04f299943f92231aa4b6b7ce177af500f3862cd12a690b86fc86"
+    },
+    {
+     "path": "<AUDIT_ROOT>/dancetrack_controlled_20261003/inputs/gt/DANCE-val/dancetrack0005/gt/gt.txt",
+     "sha256": "994864664feeb88f9ae51ea5248f0f9631a4f209fcfdc04492912748943734aa"
+    },
+    {
+     "path": "<AUDIT_ROOT>/dancetrack_controlled_20261003/inputs/gt/DANCE-val/dancetrack0007/gt/gt.txt",
+     "sha256": "83771c676ef958e726ad073d219170bb48d2269698b8a92cd982ec2d369160cc"
+    },
+    {
+     "path": "<AUDIT_ROOT>/dancetrack_controlled_20261003/inputs/gt/DANCE-val/dancetrack0010/gt/gt.txt",
+     "sha256": "71fa468ecc9feaa1afe45bce7c173c300ead8879eaf231f860168353154ac09a"
+    },
+    {
+     "path": "<AUDIT_ROOT>/dancetrack_controlled_20261003/inputs/gt/DANCE-val/dancetrack0014/gt/gt.txt",
+     "sha256": "05ea3b15c4172fc9f5b4559d5a084e0140e90ef05ee8e3c5271624db9ad54dc8"
+    },
+    {
+     "path": "<AUDIT_ROOT>/dancetrack_controlled_20261003/inputs/gt/DANCE-val/dancetrack0018/gt/gt.txt",
+     "sha256": "40afe0df566f65fcd1e1630eb0a8322e0af7049397e3635c8ad090256a774637"
+    },
+    {
+     "path": "<AUDIT_ROOT>/dancetrack_controlled_20261003/inputs/gt/DANCE-val/dancetrack0019/gt/gt.txt",
+     "sha256": "eef3d602c3a515d37eeb88c6f401de01646fd5b569dae584535de57431dbcd72"
+    },
+    {
+     "path": "<AUDIT_ROOT>/dancetrack_controlled_20261003/inputs/gt/DANCE-val/dancetrack0025/gt/gt.txt",
+     "sha256": "600911ec4dd1974656913d9839d7a3a509289970746acef51eccfa1974e43659"
+    },
+    {
+     "path": "<AUDIT_ROOT>/dancetrack_controlled_20261003/inputs/gt/DANCE-val/dancetrack0026/gt/gt.txt",
+     "sha256": "cd8aaa7953ad174c7bf874b05488210408e4905637d4282f7a08d0933da6e836"
+    },
+    {
+     "path": "<AUDIT_ROOT>/dancetrack_controlled_20261003/inputs/gt/DANCE-val/dancetrack0030/gt/gt.txt",
+     "sha256": "dd091b6ad1c4cdb54737582ed0d0850ceacae5a5b64efafc046be8330177cf41"
+    },
+    {
+     "path": "<AUDIT_ROOT>/dancetrack_controlled_20261003/inputs/gt/DANCE-val/dancetrack0034/gt/gt.txt",
+     "sha256": "0e487ba2f4c6996af629a896aab7d615f87b56a741a71c076dcb4c549c608923"
+    },
+    {
+     "path": "<AUDIT_ROOT>/dancetrack_controlled_20261003/inputs/gt/DANCE-val/dancetrack0035/gt/gt.txt",
+     "sha256": "89c5e9773e3b619e9deb90783fb51121f02aa6315ebb6ffb8c130aa01eb1e279"
+    },
+    {
+     "path": "<AUDIT_ROOT>/dancetrack_controlled_20261003/inputs/gt/DANCE-val/dancetrack0041/gt/gt.txt",
+     "sha256": "91c75f56f96a83d9d0b817ee9450706d2f8fcb8eb9a4cdb5fd86414e24b2990c"
+    },
+    {
+     "path": "<AUDIT_ROOT>/dancetrack_controlled_20261003/inputs/gt/DANCE-val/dancetrack0043/gt/gt.txt",
+     "sha256": "bbbc5a7da20df53b630041e9f3d6fb7273630251639518e1f8a87eaeaa36e9fc"
+    },
+    {
+     "path": "<AUDIT_ROOT>/dancetrack_controlled_20261003/inputs/gt/DANCE-val/dancetrack0047/gt/gt.txt",
+     "sha256": "7bc317e6cfd4069bc96a94619ed2e109ad956f0669c9188d87fc40805f469a45"
+    },
+    {
+     "path": "<AUDIT_ROOT>/dancetrack_controlled_20261003/inputs/gt/DANCE-val/dancetrack0058/gt/gt.txt",
+     "sha256": "b4f0e6ffd926afcf8f00ebd41b925c407cf699dbb91f0304898619092b9aa179"
+    },
+    {
+     "path": "<AUDIT_ROOT>/dancetrack_controlled_20261003/inputs/gt/DANCE-val/dancetrack0063/gt/gt.txt",
+     "sha256": "cdbe63f53b65fc9f817623488119ce7e5887ab2b98bdfee4ef405ec0ada9d51c"
+    },
+    {
+     "path": "<AUDIT_ROOT>/dancetrack_controlled_20261003/inputs/gt/DANCE-val/dancetrack0065/gt/gt.txt",
+     "sha256": "8ef8182cd5a68b7fcf639e48e8c34031fd3de7fdd44a0dca8b9ee610370bd918"
+    },
+    {
+     "path": "<AUDIT_ROOT>/dancetrack_controlled_20261003/inputs/gt/DANCE-val/dancetrack0073/gt/gt.txt",
+     "sha256": "e4666c17a91307fbb7d0a319997fdab81bb3fe4bb216a078a08450d6443810ea"
+    },
+    {
+     "path": "<AUDIT_ROOT>/dancetrack_controlled_20261003/inputs/gt/DANCE-val/dancetrack0077/gt/gt.txt",
+     "sha256": "f27f5e43e743d49903ca06d46aceebb987d807015fd3200380d37f1e86da5071"
+    },
+    {
+     "path": "<AUDIT_ROOT>/dancetrack_controlled_20261003/inputs/gt/DANCE-val/dancetrack0079/gt/gt.txt",
+     "sha256": "fa3c330b143d05a267025a0b0438600b2fc2661d45336e67cafb7fe692ae0e8b"
+    },
+    {
+     "path": "<AUDIT_ROOT>/dancetrack_controlled_20261003/inputs/gt/DANCE-val/dancetrack0081/gt/gt.txt",
+     "sha256": "210a8e080f9a51df802452650a3897e4a69546629cb819b0aec94147ac68251a"
+    },
+    {
+     "path": "<AUDIT_ROOT>/dancetrack_controlled_20261003/inputs/gt/DANCE-val/dancetrack0090/gt/gt.txt",
+     "sha256": "0568cc5b0c52cdc42e96acb00b8e334902982c23cdc7c79d9933320ed3c24688"
+    },
+    {
+     "path": "<AUDIT_ROOT>/dancetrack_controlled_20261003/inputs/gt/DANCE-val/dancetrack0094/gt/gt.txt",
+     "sha256": "6ce8a8e56860d094dd8c1fa9735019a38c2b7218355ae2003a1423c9fa6587d2"
+    },
+    {
+     "path": "<AUDIT_ROOT>/dancetrack_controlled_20261003/inputs/gt/DANCE-val/dancetrack0097/gt/gt.txt",
+     "sha256": "5a5b518c51612761abaaae90e2452c89437fad28e7bb7f71129047b80645de2d"
+    }
+   ]
+  }
+ },
+ "ledger_values_reproduced": {
+  "MOT17 scoreable GT tracks": {
+   "regenerated": 339,
+   "ledger": 339,
+   "match": true
+  },
+  "MOT17 tracks with an interior gap": {
+   "regenerated": 0,
+   "ledger": 0,
+   "match": true
+  },
+  "DanceTrack scoreable GT tracks": {
+   "regenerated": 273,
+   "ledger": 273,
+   "match": true
+  },
+  "DanceTrack tracks with an interior gap": {
+   "regenerated": 209,
+   "ledger": 209,
+   "match": true
+  },
+  "DanceTrack interior gaps": {
+   "regenerated": 1370,
+   "ledger": 1370,
+   "match": true
+  },
+  "DanceTrack missing GT frame-slots": {
+   "regenerated": 15326,
+   "ledger": 15326,
+   "match": true
+  }
+ },
+ "output_csv": "gt_gap_population_summary_20261005.csv",
+ "output_csv_sha256": "34b7f9edf3423aacaa116766b76df81d79183dcc3e4b3dace479b7d33f35ebec"
+}

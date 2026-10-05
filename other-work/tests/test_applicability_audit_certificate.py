@@ -14,7 +14,7 @@ from applicability_audit.certificate import (REASON_TAXONOMY, build_certificate,
                                              render_support_matrix)
 from applicability_audit.diagnostics import jaccard, pairwise_support_geometry
 
-from tests.test_applicability_audit import (GRID, audit, contract, method,
+from test_applicability_audit import (GRID, audit, contract, method,
                                             reference_corpus, trajectory,
                                             constant_predict, three_methods)
 

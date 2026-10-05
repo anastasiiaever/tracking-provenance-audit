@@ -1,0 +1,10 @@
+must_not_appear,why
+DanceTrack reproduces released post-processing practice,the operator was applied by us; no released DanceTrack submission is audited
+30 independent comparisons,six pairs are formed from four trackers and the five metrics share detections and assignments; the matrix is exhaustive and dependent
+7 statistically significant ranking reversals,"no test was performed; P(sign differs) is a resampling frequency, and one of the seven has support 0.32 with intervals spanning zero in both states"
+non-admitted rows are false positives,non-admission means absence of reference support under the stated criterion
+all DanceTrack checkpoints are fully held out,"training-split disjointness holds, but selection provenance is UNRESOLVED for Deep-OC-SORT's checkpoint and for hyperparameters in all four"
+the effect universally generalizes,"two populations, one operator family, four controlled trackers"
+"12,767 frozen MOT17 row-level classifications were independently reproduced",no frozen per-row class table exists; frozen agreement is at the sequence-by-class level
+25 independent sequences,independence was never established; write '25 sequences' or '25 sequence-level clusters'
+robust flip / robust ranking instability,"no robustness rule was pre-specified; report full precision, 3-dp survival, 2-dp survival and bootstrap support as four separate descriptive facts"

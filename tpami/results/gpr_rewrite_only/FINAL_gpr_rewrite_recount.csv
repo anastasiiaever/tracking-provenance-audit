@@ -1,0 +1,32 @@
+quantity,value,note
+G0_state_dir,V9-MOT17-OCSORTGPR-002__S0/data,"pre-GPR interpolated state, 7 MOT17 sequences"
+G2_state_dir,V9-MOT17-OCSORTGPR-002__S2/data,post-GPR rewritten state
+G0_rows,45927,matches the frozen manuscript value
+G2_rows,45927,matches the frozen manuscript value
+matching_key,"(frame, track_id)",0 duplicate keys in either state
+insertions,0,
+deletions,0,
+rows_any_coord_changed_exact,2622,"exact float equality on x,y,w,h"
+rows_x_changed,2622,
+rows_y_changed,2622,
+rows_w_changed,0,"w is bit-identical in all 45,927 rows"
+rows_h_changed,0,"h is bit-identical in all 45,927 rows"
+changed_coordinate_scalars,5244,2622 rows x 2 components
+rows_change_gt_1e-6_px,52,REPRODUCES the frozen manuscript value of 52
+rows_change_gt_0.001_px,0,
+diff_min_px,8.868e-12,
+diff_median_px,3.690e-09,
+diff_p90_px,6.678e-08,
+diff_max_px,0.000017,
+rows_at_0dp,59,"rounding-boundary artifacts, non-monotone"
+rows_at_1dp,239,rounding-boundary artifacts
+rows_at_2dp,212,SOURCE OF THE ERRONEOUS 212 IN THE EARLIER FINAL-DEFENSE DRAFT
+rows_at_3dp,69,rounding-boundary artifacts
+rows_at_6dp,87,rounding-boundary artifacts
+rows_at_9dp,2255,rounding-boundary artifacts
+summary_txt_identical,YES,sha256 b4ef939ee9b2fcd74d117d217f53e00d65ebdbd6676cd5bf1603269e31c62791 on both
+detailed_csv_differs,YES,"197 fields, all LocA family, ~11th significant digit"
+authoritative_row_level_count,52,under the >1e-6 px criterion the manuscript implies
+earlier_manuscript_value_correct,YES,
+final_defense_required_correction,YES,212 -> 52
+major_scientific_blocker,NO,no manuscript value changes

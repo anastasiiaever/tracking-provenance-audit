@@ -1,0 +1,1015 @@
+{
+ "figure": "Figure 1, four-class admission taxonomy on dataset frames",
+ "panels": [
+  {
+   "panel": "(a)",
+   "class": "SEMANTICALLY ADMITTED",
+   "dataset": "MOT17",
+   "sequence": "MOT17-02-FRCNN",
+   "tracker": "ByteTrack",
+   "track_id": 26,
+   "synthesized_frames_audit": [
+    51,
+    61
+   ],
+   "n_synthesized_rows": 11,
+   "anchor_frames_audit": [
+    50,
+    62
+   ],
+   "displayed_frames_audit": [
+    50,
+    56,
+    62
+   ],
+   "displayed_frames_image": [
+    351,
+    357,
+    363
+   ],
+   "reference_identities_drawn": {
+    "50": [
+     32
+    ],
+    "56": [
+     32
+    ],
+    "62": [
+     32
+    ]
+   },
+   "image_files": [
+    "<MOT_AUDIT_ROOT>/datasets/mot/train/MOT17-02-FRCNN/img1/000351.jpg",
+    "<MOT_AUDIT_ROOT>/datasets/mot/train/MOT17-02-FRCNN/img1/000357.jpg",
+    "<MOT_AUDIT_ROOT>/datasets/mot/train/MOT17-02-FRCNN/img1/000363.jpg"
+   ],
+   "image_sha256": [
+    "8adc11c7dfc0ee0ba2da92266689b61d646dd85774293d19d92d34bde57e16ac",
+    "2d4ee07debf5110cc387770994c3b24b87e42a890dbea1893e45bbcf3ee2768a",
+    "81099e9727c61213f397d57a77858a16b346db94173c9e979cf6d3bff314a436"
+   ],
+   "gt_gap": null
+  },
+  {
+   "panel": "(b)",
+   "class": "ANCHOR UNMATCHED",
+   "dataset": "MOT17",
+   "sequence": "MOT17-02-FRCNN",
+   "tracker": "ByteTrack",
+   "track_id": 36,
+   "synthesized_frames_audit": [
+    44,
+    50
+   ],
+   "n_synthesized_rows": 7,
+   "anchor_frames_audit": [
+    43,
+    51
+   ],
+   "displayed_frames_audit": [
+    43,
+    47,
+    51
+   ],
+   "displayed_frames_image": [
+    344,
+    348,
+    352
+   ],
+   "reference_identities_drawn": {
+    "43": [],
+    "47": [
+     32
+    ],
+    "51": [
+     32
+    ]
+   },
+   "image_files": [
+    "<MOT_AUDIT_ROOT>/datasets/mot/train/MOT17-02-FRCNN/img1/000344.jpg",
+    "<MOT_AUDIT_ROOT>/datasets/mot/train/MOT17-02-FRCNN/img1/000348.jpg",
+    "<MOT_AUDIT_ROOT>/datasets/mot/train/MOT17-02-FRCNN/img1/000352.jpg"
+   ],
+   "image_sha256": [
+    "20dfebed27c648ee0f3a55b99995c3e63cd48234464b8f65baaaa5a3072eebcd",
+    "22f50cc26810b34c70ee301ea7128126c7a35e4709fafbde4dfa6d3767cfe512",
+    "dcc9f72183a80d04688fa210e2dd108f61b40fc0367206c1c4af44faf8434382"
+   ],
+   "gt_gap": null
+  },
+  {
+   "panel": "(c)",
+   "class": "ANCHOR ID MISMATCH",
+   "dataset": "MOT17",
+   "sequence": "MOT17-02-FRCNN",
+   "tracker": "ByteTrack",
+   "track_id": 33,
+   "synthesized_frames_audit": [
+    232,
+    239
+   ],
+   "n_synthesized_rows": 8,
+   "anchor_frames_audit": [
+    231,
+    240
+   ],
+   "displayed_frames_audit": [
+    231,
+    235,
+    240
+   ],
+   "displayed_frames_image": [
+    532,
+    536,
+    541
+   ],
+   "reference_identities_drawn": {
+    "231": [
+     15
+    ],
+    "235": [
+     15,
+     18
+    ],
+    "240": [
+     18
+    ]
+   },
+   "image_files": [
+    "<MOT_AUDIT_ROOT>/datasets/mot/train/MOT17-02-FRCNN/img1/000532.jpg",
+    "<MOT_AUDIT_ROOT>/datasets/mot/train/MOT17-02-FRCNN/img1/000536.jpg",
+    "<MOT_AUDIT_ROOT>/datasets/mot/train/MOT17-02-FRCNN/img1/000541.jpg"
+   ],
+   "image_sha256": [
+    "2dde15ebb5345d5a5aa7333225253fa0bb32dd4efeb1dc7e47229140ce9078ca",
+    "8cd494687357482e2ec7f5123bc23a1022d3ae86cbc85929ba216a342e8c1c57",
+    "b02d248478b51b016ab3b1d4efe7bcdede026e6f5072090ee9fc81a955a58811"
+   ],
+   "gt_gap": null
+  },
+  {
+   "panel": "(d)",
+   "class": "TARGET REFERENCE ABSENT",
+   "dataset": "DanceTrack",
+   "sequence": "dancetrack0026",
+   "tracker": "ByteTrack",
+   "track_id": 210,
+   "synthesized_frames_audit": [
+    192,
+    208
+   ],
+   "n_synthesized_rows": 17,
+   "anchor_frames_audit": [
+    191,
+    209
+   ],
+   "displayed_frames_audit": [
+    191,
+    200,
+    209
+   ],
+   "displayed_frames_image": [
+    191,
+    200,
+    209
+   ],
+   "reference_identities_drawn": {
+    "191": [
+     0
+    ],
+    "200": [
+     0,
+     13
+    ],
+    "209": [
+     0
+    ]
+   },
+   "image_files": [
+    "<DATASETS_ROOT>/dancetrack/val/dancetrack0026/img1/00000191.jpg",
+    "<DATASETS_ROOT>/dancetrack/val/dancetrack0026/img1/00000200.jpg",
+    "<DATASETS_ROOT>/dancetrack/val/dancetrack0026/img1/00000209.jpg"
+   ],
+   "image_sha256": [
+    "718061cda14fd4403d3343c2014c9b3e894a5391df85fcd99f6eca89a31bf31b",
+    "c2599bc16f0d7cecb07ca12c20af08bc69e87400805531b0e099f35358c6be0e",
+    "b655ddee3ec03187677c57839bd3608497802632e0bd5c571baa8c7684336568"
+   ],
+   "gt_gap": [
+    191,
+    209
+   ]
+  }
+ ],
+ "checks": [
+  {
+   "check": "MOT17-02 image offset is unique and derived",
+   "pass": true,
+   "detail": "[301], 15430 rows"
+  },
+  {
+   "check": "track 26: run 51-61 present and contiguous",
+   "pass": true,
+   "detail": "11 rows"
+  },
+  {
+   "check": "track 26: every row is SEMANTICALLY_ADMITTED",
+   "pass": true,
+   "detail": "['SEMANTICALLY_ADMITTED']"
+  },
+  {
+   "check": "track 26: anchor case is A",
+   "pass": true,
+   "detail": "{'A'}"
+  },
+  {
+   "check": "track 26: one left and one right anchor identity",
+   "pass": true,
+   "detail": "['32'] ['32']"
+  },
+  {
+   "check": "track 36: run 44-50 present and contiguous",
+   "pass": true,
+   "detail": "7 rows"
+  },
+  {
+   "check": "track 36: every row is ANCHOR_UNMATCHED",
+   "pass": true,
+   "detail": "['ANCHOR_UNMATCHED']"
+  },
+  {
+   "check": "track 36: anchor case is C",
+   "pass": true,
+   "detail": "{'C'}"
+  },
+  {
+   "check": "track 36: one left and one right anchor identity",
+   "pass": true,
+   "detail": "['-1'] ['32']"
+  },
+  {
+   "check": "track 33: run 232-239 present and contiguous",
+   "pass": true,
+   "detail": "8 rows"
+  },
+  {
+   "check": "track 33: every row is ANCHOR_ID_MISMATCH",
+   "pass": true,
+   "detail": "['ANCHOR_ID_MISMATCH']"
+  },
+  {
+   "check": "track 33: anchor case is B",
+   "pass": true,
+   "detail": "{'B'}"
+  },
+  {
+   "check": "track 33: one left and one right anchor identity",
+   "pass": true,
+   "detail": "['15'] ['18']"
+  },
+  {
+   "check": "admitted: both anchors resolve to the same identity",
+   "pass": true,
+   "detail": "32==32"
+  },
+  {
+   "check": "unmatched: exactly one anchor has no reference match",
+   "pass": true,
+   "detail": "L=-1 R=32"
+  },
+  {
+   "check": "mismatch: anchors resolve to different identities",
+   "pass": true,
+   "detail": "L=15 R=18"
+  },
+  {
+   "check": "absent: run 192-208 present and contiguous",
+   "pass": true,
+   "detail": "17"
+  },
+  {
+   "check": "absent: one anchor-resolved identity",
+   "pass": true,
+   "detail": "[0]"
+  },
+  {
+   "check": "absent: every row inside a verified internal GT gap",
+   "pass": true,
+   "detail": ""
+  },
+  {
+   "check": "absent: intended identity absent at every frame",
+   "pass": true,
+   "detail": ""
+  },
+  {
+   "check": "absent: another scoreable identity overlaps at every frame",
+   "pass": true,
+   "detail": ""
+  },
+  {
+   "check": "absent: a single gap, 191 -> 209",
+   "pass": true,
+   "detail": ""
+  },
+  {
+   "check": "anchors bracket 51-61 for track 26",
+   "pass": true,
+   "detail": "50,62"
+  },
+  {
+   "check": "row (51,26) present in R2",
+   "pass": true,
+   "detail": ""
+  },
+  {
+   "check": "row (51,26) absent from R0",
+   "pass": true,
+   "detail": ""
+  },
+  {
+   "check": "row (52,26) present in R2",
+   "pass": true,
+   "detail": ""
+  },
+  {
+   "check": "row (52,26) absent from R0",
+   "pass": true,
+   "detail": ""
+  },
+  {
+   "check": "row (53,26) present in R2",
+   "pass": true,
+   "detail": ""
+  },
+  {
+   "check": "row (53,26) absent from R0",
+   "pass": true,
+   "detail": ""
+  },
+  {
+   "check": "row (54,26) present in R2",
+   "pass": true,
+   "detail": ""
+  },
+  {
+   "check": "row (54,26) absent from R0",
+   "pass": true,
+   "detail": ""
+  },
+  {
+   "check": "row (55,26) present in R2",
+   "pass": true,
+   "detail": ""
+  },
+  {
+   "check": "row (55,26) absent from R0",
+   "pass": true,
+   "detail": ""
+  },
+  {
+   "check": "row (56,26) present in R2",
+   "pass": true,
+   "detail": ""
+  },
+  {
+   "check": "row (56,26) absent from R0",
+   "pass": true,
+   "detail": ""
+  },
+  {
+   "check": "row (57,26) present in R2",
+   "pass": true,
+   "detail": ""
+  },
+  {
+   "check": "row (57,26) absent from R0",
+   "pass": true,
+   "detail": ""
+  },
+  {
+   "check": "row (58,26) present in R2",
+   "pass": true,
+   "detail": ""
+  },
+  {
+   "check": "row (58,26) absent from R0",
+   "pass": true,
+   "detail": ""
+  },
+  {
+   "check": "row (59,26) present in R2",
+   "pass": true,
+   "detail": ""
+  },
+  {
+   "check": "row (59,26) absent from R0",
+   "pass": true,
+   "detail": ""
+  },
+  {
+   "check": "row (60,26) present in R2",
+   "pass": true,
+   "detail": ""
+  },
+  {
+   "check": "row (60,26) absent from R0",
+   "pass": true,
+   "detail": ""
+  },
+  {
+   "check": "row (61,26) present in R2",
+   "pass": true,
+   "detail": ""
+  },
+  {
+   "check": "row (61,26) absent from R0",
+   "pass": true,
+   "detail": ""
+  },
+  {
+   "check": "anchors bracket 44-50 for track 36",
+   "pass": true,
+   "detail": "43,51"
+  },
+  {
+   "check": "row (44,36) present in R2",
+   "pass": true,
+   "detail": ""
+  },
+  {
+   "check": "row (44,36) absent from R0",
+   "pass": true,
+   "detail": ""
+  },
+  {
+   "check": "row (45,36) present in R2",
+   "pass": true,
+   "detail": ""
+  },
+  {
+   "check": "row (45,36) absent from R0",
+   "pass": true,
+   "detail": ""
+  },
+  {
+   "check": "row (46,36) present in R2",
+   "pass": true,
+   "detail": ""
+  },
+  {
+   "check": "row (46,36) absent from R0",
+   "pass": true,
+   "detail": ""
+  },
+  {
+   "check": "row (47,36) present in R2",
+   "pass": true,
+   "detail": ""
+  },
+  {
+   "check": "row (47,36) absent from R0",
+   "pass": true,
+   "detail": ""
+  },
+  {
+   "check": "row (48,36) present in R2",
+   "pass": true,
+   "detail": ""
+  },
+  {
+   "check": "row (48,36) absent from R0",
+   "pass": true,
+   "detail": ""
+  },
+  {
+   "check": "row (49,36) present in R2",
+   "pass": true,
+   "detail": ""
+  },
+  {
+   "check": "row (49,36) absent from R0",
+   "pass": true,
+   "detail": ""
+  },
+  {
+   "check": "row (50,36) present in R2",
+   "pass": true,
+   "detail": ""
+  },
+  {
+   "check": "row (50,36) absent from R0",
+   "pass": true,
+   "detail": ""
+  },
+  {
+   "check": "anchors bracket 232-239 for track 33",
+   "pass": true,
+   "detail": "231,240"
+  },
+  {
+   "check": "row (232,33) present in R2",
+   "pass": true,
+   "detail": ""
+  },
+  {
+   "check": "row (232,33) absent from R0",
+   "pass": true,
+   "detail": ""
+  },
+  {
+   "check": "row (233,33) present in R2",
+   "pass": true,
+   "detail": ""
+  },
+  {
+   "check": "row (233,33) absent from R0",
+   "pass": true,
+   "detail": ""
+  },
+  {
+   "check": "row (234,33) present in R2",
+   "pass": true,
+   "detail": ""
+  },
+  {
+   "check": "row (234,33) absent from R0",
+   "pass": true,
+   "detail": ""
+  },
+  {
+   "check": "row (235,33) present in R2",
+   "pass": true,
+   "detail": ""
+  },
+  {
+   "check": "row (235,33) absent from R0",
+   "pass": true,
+   "detail": ""
+  },
+  {
+   "check": "row (236,33) present in R2",
+   "pass": true,
+   "detail": ""
+  },
+  {
+   "check": "row (236,33) absent from R0",
+   "pass": true,
+   "detail": ""
+  },
+  {
+   "check": "row (237,33) present in R2",
+   "pass": true,
+   "detail": ""
+  },
+  {
+   "check": "row (237,33) absent from R0",
+   "pass": true,
+   "detail": ""
+  },
+  {
+   "check": "row (238,33) present in R2",
+   "pass": true,
+   "detail": ""
+  },
+  {
+   "check": "row (238,33) absent from R0",
+   "pass": true,
+   "detail": ""
+  },
+  {
+   "check": "row (239,33) present in R2",
+   "pass": true,
+   "detail": ""
+  },
+  {
+   "check": "row (239,33) absent from R0",
+   "pass": true,
+   "detail": ""
+  },
+  {
+   "check": "anchors bracket 192-208 for track 210",
+   "pass": true,
+   "detail": "191,209"
+  },
+  {
+   "check": "row (192,210) present in R2",
+   "pass": true,
+   "detail": ""
+  },
+  {
+   "check": "row (192,210) absent from R0",
+   "pass": true,
+   "detail": ""
+  },
+  {
+   "check": "row (193,210) present in R2",
+   "pass": true,
+   "detail": ""
+  },
+  {
+   "check": "row (193,210) absent from R0",
+   "pass": true,
+   "detail": ""
+  },
+  {
+   "check": "row (194,210) present in R2",
+   "pass": true,
+   "detail": ""
+  },
+  {
+   "check": "row (194,210) absent from R0",
+   "pass": true,
+   "detail": ""
+  },
+  {
+   "check": "row (195,210) present in R2",
+   "pass": true,
+   "detail": ""
+  },
+  {
+   "check": "row (195,210) absent from R0",
+   "pass": true,
+   "detail": ""
+  },
+  {
+   "check": "row (196,210) present in R2",
+   "pass": true,
+   "detail": ""
+  },
+  {
+   "check": "row (196,210) absent from R0",
+   "pass": true,
+   "detail": ""
+  },
+  {
+   "check": "row (197,210) present in R2",
+   "pass": true,
+   "detail": ""
+  },
+  {
+   "check": "row (197,210) absent from R0",
+   "pass": true,
+   "detail": ""
+  },
+  {
+   "check": "row (198,210) present in R2",
+   "pass": true,
+   "detail": ""
+  },
+  {
+   "check": "row (198,210) absent from R0",
+   "pass": true,
+   "detail": ""
+  },
+  {
+   "check": "row (199,210) present in R2",
+   "pass": true,
+   "detail": ""
+  },
+  {
+   "check": "row (199,210) absent from R0",
+   "pass": true,
+   "detail": ""
+  },
+  {
+   "check": "row (200,210) present in R2",
+   "pass": true,
+   "detail": ""
+  },
+  {
+   "check": "row (200,210) absent from R0",
+   "pass": true,
+   "detail": ""
+  },
+  {
+   "check": "row (201,210) present in R2",
+   "pass": true,
+   "detail": ""
+  },
+  {
+   "check": "row (201,210) absent from R0",
+   "pass": true,
+   "detail": ""
+  },
+  {
+   "check": "row (202,210) present in R2",
+   "pass": true,
+   "detail": ""
+  },
+  {
+   "check": "row (202,210) absent from R0",
+   "pass": true,
+   "detail": ""
+  },
+  {
+   "check": "row (203,210) present in R2",
+   "pass": true,
+   "detail": ""
+  },
+  {
+   "check": "row (203,210) absent from R0",
+   "pass": true,
+   "detail": ""
+  },
+  {
+   "check": "row (204,210) present in R2",
+   "pass": true,
+   "detail": ""
+  },
+  {
+   "check": "row (204,210) absent from R0",
+   "pass": true,
+   "detail": ""
+  },
+  {
+   "check": "row (205,210) present in R2",
+   "pass": true,
+   "detail": ""
+  },
+  {
+   "check": "row (205,210) absent from R0",
+   "pass": true,
+   "detail": ""
+  },
+  {
+   "check": "row (206,210) present in R2",
+   "pass": true,
+   "detail": ""
+  },
+  {
+   "check": "row (206,210) absent from R0",
+   "pass": true,
+   "detail": ""
+  },
+  {
+   "check": "row (207,210) present in R2",
+   "pass": true,
+   "detail": ""
+  },
+  {
+   "check": "row (207,210) absent from R0",
+   "pass": true,
+   "detail": ""
+  },
+  {
+   "check": "row (208,210) present in R2",
+   "pass": true,
+   "detail": ""
+  },
+  {
+   "check": "row (208,210) absent from R0",
+   "pass": true,
+   "detail": ""
+  },
+  {
+   "check": "(b) left anchor frame draws no reference box",
+   "pass": true,
+   "detail": ""
+  },
+  {
+   "check": "(d) identity 0 is NOT annotated at frame 192",
+   "pass": true,
+   "detail": ""
+  },
+  {
+   "check": "(d) identity 0 is NOT annotated at frame 193",
+   "pass": true,
+   "detail": ""
+  },
+  {
+   "check": "(d) identity 0 is NOT annotated at frame 194",
+   "pass": true,
+   "detail": ""
+  },
+  {
+   "check": "(d) identity 0 is NOT annotated at frame 195",
+   "pass": true,
+   "detail": ""
+  },
+  {
+   "check": "(d) identity 0 is NOT annotated at frame 196",
+   "pass": true,
+   "detail": ""
+  },
+  {
+   "check": "(d) identity 0 is NOT annotated at frame 197",
+   "pass": true,
+   "detail": ""
+  },
+  {
+   "check": "(d) identity 0 is NOT annotated at frame 198",
+   "pass": true,
+   "detail": ""
+  },
+  {
+   "check": "(d) identity 0 is NOT annotated at frame 199",
+   "pass": true,
+   "detail": ""
+  },
+  {
+   "check": "(d) identity 0 is NOT annotated at frame 200",
+   "pass": true,
+   "detail": ""
+  },
+  {
+   "check": "(d) identity 0 is NOT annotated at frame 201",
+   "pass": true,
+   "detail": ""
+  },
+  {
+   "check": "(d) identity 0 is NOT annotated at frame 202",
+   "pass": true,
+   "detail": ""
+  },
+  {
+   "check": "(d) identity 0 is NOT annotated at frame 203",
+   "pass": true,
+   "detail": ""
+  },
+  {
+   "check": "(d) identity 0 is NOT annotated at frame 204",
+   "pass": true,
+   "detail": ""
+  },
+  {
+   "check": "(d) identity 0 is NOT annotated at frame 205",
+   "pass": true,
+   "detail": ""
+  },
+  {
+   "check": "(d) identity 0 is NOT annotated at frame 206",
+   "pass": true,
+   "detail": ""
+  },
+  {
+   "check": "(d) identity 0 is NOT annotated at frame 207",
+   "pass": true,
+   "detail": ""
+  },
+  {
+   "check": "(d) identity 0 is NOT annotated at frame 208",
+   "pass": true,
+   "detail": ""
+  },
+  {
+   "check": "(a) frame 50: image file exists",
+   "pass": true,
+   "detail": "<MOT_AUDIT_ROOT>/datasets/mot/train/MOT17-02-FRCNN/img1/000351.jpg"
+  },
+  {
+   "check": "(a) frame 50: crop inside image",
+   "pass": true,
+   "detail": ""
+  },
+  {
+   "check": "(a) frame 56: image file exists",
+   "pass": true,
+   "detail": "<MOT_AUDIT_ROOT>/datasets/mot/train/MOT17-02-FRCNN/img1/000357.jpg"
+  },
+  {
+   "check": "(a) frame 56: crop inside image",
+   "pass": true,
+   "detail": ""
+  },
+  {
+   "check": "(a) frame 62: image file exists",
+   "pass": true,
+   "detail": "<MOT_AUDIT_ROOT>/datasets/mot/train/MOT17-02-FRCNN/img1/000363.jpg"
+  },
+  {
+   "check": "(a) frame 62: crop inside image",
+   "pass": true,
+   "detail": ""
+  },
+  {
+   "check": "(b) frame 43: image file exists",
+   "pass": true,
+   "detail": "<MOT_AUDIT_ROOT>/datasets/mot/train/MOT17-02-FRCNN/img1/000344.jpg"
+  },
+  {
+   "check": "(b) frame 43: crop inside image",
+   "pass": true,
+   "detail": ""
+  },
+  {
+   "check": "(b) frame 47: image file exists",
+   "pass": true,
+   "detail": "<MOT_AUDIT_ROOT>/datasets/mot/train/MOT17-02-FRCNN/img1/000348.jpg"
+  },
+  {
+   "check": "(b) frame 47: crop inside image",
+   "pass": true,
+   "detail": ""
+  },
+  {
+   "check": "(b) frame 51: image file exists",
+   "pass": true,
+   "detail": "<MOT_AUDIT_ROOT>/datasets/mot/train/MOT17-02-FRCNN/img1/000352.jpg"
+  },
+  {
+   "check": "(b) frame 51: crop inside image",
+   "pass": true,
+   "detail": ""
+  },
+  {
+   "check": "(c) frame 231: image file exists",
+   "pass": true,
+   "detail": "<MOT_AUDIT_ROOT>/datasets/mot/train/MOT17-02-FRCNN/img1/000532.jpg"
+  },
+  {
+   "check": "(c) frame 231: crop inside image",
+   "pass": true,
+   "detail": ""
+  },
+  {
+   "check": "(c) frame 235: image file exists",
+   "pass": true,
+   "detail": "<MOT_AUDIT_ROOT>/datasets/mot/train/MOT17-02-FRCNN/img1/000536.jpg"
+  },
+  {
+   "check": "(c) frame 235: crop inside image",
+   "pass": true,
+   "detail": ""
+  },
+  {
+   "check": "(c) frame 240: image file exists",
+   "pass": true,
+   "detail": "<MOT_AUDIT_ROOT>/datasets/mot/train/MOT17-02-FRCNN/img1/000541.jpg"
+  },
+  {
+   "check": "(c) frame 240: crop inside image",
+   "pass": true,
+   "detail": ""
+  },
+  {
+   "check": "(d) frame 191: image file exists",
+   "pass": true,
+   "detail": "<DATASETS_ROOT>/dancetrack/val/dancetrack0026/img1/00000191.jpg"
+  },
+  {
+   "check": "(d) frame 191: crop inside image",
+   "pass": true,
+   "detail": ""
+  },
+  {
+   "check": "(d) frame 200: image file exists",
+   "pass": true,
+   "detail": "<DATASETS_ROOT>/dancetrack/val/dancetrack0026/img1/00000200.jpg"
+  },
+  {
+   "check": "(d) frame 200: crop inside image",
+   "pass": true,
+   "detail": ""
+  },
+  {
+   "check": "(d) frame 209: image file exists",
+   "pass": true,
+   "detail": "<DATASETS_ROOT>/dancetrack/val/dancetrack0026/img1/00000209.jpg"
+  },
+  {
+   "check": "(d) frame 209: crop inside image",
+   "pass": true,
+   "detail": ""
+  }
+ ],
+ "artifacts": {
+  "admission_record_mot17": {
+   "path": "<AUDIT_ROOT>/posthoc_composition_20261003/results/C6_identity_support_rows.csv",
+   "sha256": "9d500a5ca9eb242f7e27415d853f68de65cae90aa9e139c6efc20bba14859c7a"
+  },
+  "reference_absent_record": {
+   "path": "<AUDIT_ROOT>/dancetrack_controlled_20261003/final_defense_20261004/D1B2_reference_absent_local_support.csv",
+   "sha256": "17c8c51cded4e5c251126d9ee2f83406578dcb36b0e027b4e43bc0a9f8a0d9db"
+  },
+  "gt_mot17_valhalf": {
+   "path": "<MOT_AUDIT_ROOT>/repos/TrackEval/data/gt/mot_challenge/MOT17-val_half/MOT17-02-FRCNN/gt/gt.txt",
+   "sha256": "51390514c58bcd580a1a614a93d84ed1241bd3708cd4f3e7a4a35f508f8d2ff8"
+  },
+  "gt_mot17_original": {
+   "path": "<MOT_AUDIT_ROOT>/datasets/mot/train/MOT17-02-FRCNN/gt/gt.txt",
+   "sha256": "2e3ecb488da8886d3200d402b2b08890c6d2879923839444e9b74fa43a551440"
+  },
+  "gt_dancetrack": {
+   "path": "<AUDIT_ROOT>/dancetrack_controlled_20261003/inputs/gt/DANCE-val/dancetrack0026/gt/gt.txt",
+   "sha256": "cd8aaa7953ad174c7bf874b05488210408e4905637d4282f7a08d0933da6e836"
+  },
+  "R0_mot17": {
+   "path": "<MOT_AUDIT_ROOT>/states/ByteTrack/R0/MOT17-02-FRCNN.txt",
+   "sha256": "6975845d7567799631f813f202005b57f72f8bed202b512f4593fb54e7aff711"
+  },
+  "R2_mot17": {
+   "path": "<MOT_AUDIT_ROOT>/states/ByteTrack/R2/MOT17-02-FRCNN.txt",
+   "sha256": "638e81b932666731f9c4988441d2c98a4965928383989ed56540927326f236b4"
+  },
+  "R0_dancetrack": {
+   "path": "<AUDIT_ROOT>/dancetrack_controlled_20261003/r0/bytetrack/dancetrack0026.txt",
+   "sha256": "b1ef2f9a466e0ee8169ec8774cb06c25ed1d0deb41ca8a059844adc9d2cda5ce"
+  },
+  "R2_dancetrack": {
+   "path": "<AUDIT_ROOT>/dancetrack_controlled_20261003/r2_primary/bytetrack/dancetrack0026.txt",
+   "sha256": "e329b360d68f1a44f8b9ece6671792ea32965f6c8fe5b5cd5177be9fc464f448"
+  }
+ },
+ "mot17_image_offset": 301
+}

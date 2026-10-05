@@ -1,0 +1,270 @@
+{
+ "figure": "Supplement Fig. S2, trajectories of the four Figure 1 cases",
+ "checks": [
+  {
+   "check": "track 26 run 51-61 is SEMANTICALLY_ADMITTED and contiguous",
+   "pass": true,
+   "detail": "11"
+  },
+  {
+   "check": "track 36 run 44-50 is ANCHOR_UNMATCHED and contiguous",
+   "pass": true,
+   "detail": "7"
+  },
+  {
+   "check": "track 33 run 232-239 is ANCHOR_ID_MISMATCH and contiguous",
+   "pass": true,
+   "detail": "8"
+  },
+  {
+   "check": "absent run has 17 rows",
+   "pass": true,
+   "detail": "17"
+  },
+  {
+   "check": "(a) semantically admitted: anchors bracket the run",
+   "pass": true,
+   "detail": "50,62"
+  },
+  {
+   "check": "(a) semantically admitted: row 51 in R2 not R0",
+   "pass": true,
+   "detail": ""
+  },
+  {
+   "check": "(a) semantically admitted: row 52 in R2 not R0",
+   "pass": true,
+   "detail": ""
+  },
+  {
+   "check": "(a) semantically admitted: row 53 in R2 not R0",
+   "pass": true,
+   "detail": ""
+  },
+  {
+   "check": "(a) semantically admitted: row 54 in R2 not R0",
+   "pass": true,
+   "detail": ""
+  },
+  {
+   "check": "(a) semantically admitted: row 55 in R2 not R0",
+   "pass": true,
+   "detail": ""
+  },
+  {
+   "check": "(a) semantically admitted: row 56 in R2 not R0",
+   "pass": true,
+   "detail": ""
+  },
+  {
+   "check": "(a) semantically admitted: row 57 in R2 not R0",
+   "pass": true,
+   "detail": ""
+  },
+  {
+   "check": "(a) semantically admitted: row 58 in R2 not R0",
+   "pass": true,
+   "detail": ""
+  },
+  {
+   "check": "(a) semantically admitted: row 59 in R2 not R0",
+   "pass": true,
+   "detail": ""
+  },
+  {
+   "check": "(a) semantically admitted: row 60 in R2 not R0",
+   "pass": true,
+   "detail": ""
+  },
+  {
+   "check": "(a) semantically admitted: row 61 in R2 not R0",
+   "pass": true,
+   "detail": ""
+  },
+  {
+   "check": "(b) anchor unmatched: anchors bracket the run",
+   "pass": true,
+   "detail": "43,51"
+  },
+  {
+   "check": "(b) anchor unmatched: row 44 in R2 not R0",
+   "pass": true,
+   "detail": ""
+  },
+  {
+   "check": "(b) anchor unmatched: row 45 in R2 not R0",
+   "pass": true,
+   "detail": ""
+  },
+  {
+   "check": "(b) anchor unmatched: row 46 in R2 not R0",
+   "pass": true,
+   "detail": ""
+  },
+  {
+   "check": "(b) anchor unmatched: row 47 in R2 not R0",
+   "pass": true,
+   "detail": ""
+  },
+  {
+   "check": "(b) anchor unmatched: row 48 in R2 not R0",
+   "pass": true,
+   "detail": ""
+  },
+  {
+   "check": "(b) anchor unmatched: row 49 in R2 not R0",
+   "pass": true,
+   "detail": ""
+  },
+  {
+   "check": "(b) anchor unmatched: row 50 in R2 not R0",
+   "pass": true,
+   "detail": ""
+  },
+  {
+   "check": "(c) anchor id mismatch: anchors bracket the run",
+   "pass": true,
+   "detail": "231,240"
+  },
+  {
+   "check": "(c) anchor id mismatch: row 232 in R2 not R0",
+   "pass": true,
+   "detail": ""
+  },
+  {
+   "check": "(c) anchor id mismatch: row 233 in R2 not R0",
+   "pass": true,
+   "detail": ""
+  },
+  {
+   "check": "(c) anchor id mismatch: row 234 in R2 not R0",
+   "pass": true,
+   "detail": ""
+  },
+  {
+   "check": "(c) anchor id mismatch: row 235 in R2 not R0",
+   "pass": true,
+   "detail": ""
+  },
+  {
+   "check": "(c) anchor id mismatch: row 236 in R2 not R0",
+   "pass": true,
+   "detail": ""
+  },
+  {
+   "check": "(c) anchor id mismatch: row 237 in R2 not R0",
+   "pass": true,
+   "detail": ""
+  },
+  {
+   "check": "(c) anchor id mismatch: row 238 in R2 not R0",
+   "pass": true,
+   "detail": ""
+  },
+  {
+   "check": "(c) anchor id mismatch: row 239 in R2 not R0",
+   "pass": true,
+   "detail": ""
+  },
+  {
+   "check": "(d) target reference absent: anchors bracket the run",
+   "pass": true,
+   "detail": "191,209"
+  },
+  {
+   "check": "(d) target reference absent: row 192 in R2 not R0",
+   "pass": true,
+   "detail": ""
+  },
+  {
+   "check": "(d) target reference absent: row 193 in R2 not R0",
+   "pass": true,
+   "detail": ""
+  },
+  {
+   "check": "(d) target reference absent: row 194 in R2 not R0",
+   "pass": true,
+   "detail": ""
+  },
+  {
+   "check": "(d) target reference absent: row 195 in R2 not R0",
+   "pass": true,
+   "detail": ""
+  },
+  {
+   "check": "(d) target reference absent: row 196 in R2 not R0",
+   "pass": true,
+   "detail": ""
+  },
+  {
+   "check": "(d) target reference absent: row 197 in R2 not R0",
+   "pass": true,
+   "detail": ""
+  },
+  {
+   "check": "(d) target reference absent: row 198 in R2 not R0",
+   "pass": true,
+   "detail": ""
+  },
+  {
+   "check": "(d) target reference absent: row 199 in R2 not R0",
+   "pass": true,
+   "detail": ""
+  },
+  {
+   "check": "(d) target reference absent: row 200 in R2 not R0",
+   "pass": true,
+   "detail": ""
+  },
+  {
+   "check": "(d) target reference absent: row 201 in R2 not R0",
+   "pass": true,
+   "detail": ""
+  },
+  {
+   "check": "(d) target reference absent: row 202 in R2 not R0",
+   "pass": true,
+   "detail": ""
+  },
+  {
+   "check": "(d) target reference absent: row 203 in R2 not R0",
+   "pass": true,
+   "detail": ""
+  },
+  {
+   "check": "(d) target reference absent: row 204 in R2 not R0",
+   "pass": true,
+   "detail": ""
+  },
+  {
+   "check": "(d) target reference absent: row 205 in R2 not R0",
+   "pass": true,
+   "detail": ""
+  },
+  {
+   "check": "(d) target reference absent: row 206 in R2 not R0",
+   "pass": true,
+   "detail": ""
+  },
+  {
+   "check": "(d) target reference absent: row 207 in R2 not R0",
+   "pass": true,
+   "detail": ""
+  },
+  {
+   "check": "(d) target reference absent: row 208 in R2 not R0",
+   "pass": true,
+   "detail": ""
+  }
+ ],
+ "artifacts": {
+  "rec_mot": "9d500a5ca9eb242f7e27415d853f68de65cae90aa9e139c6efc20bba14859c7a",
+  "rec_abs": "17c8c51cded4e5c251126d9ee2f83406578dcb36b0e027b4e43bc0a9f8a0d9db",
+  "gt_mot": "51390514c58bcd580a1a614a93d84ed1241bd3708cd4f3e7a4a35f508f8d2ff8",
+  "gt_dt": "cd8aaa7953ad174c7bf874b05488210408e4905637d4282f7a08d0933da6e836",
+  "r0m": "6975845d7567799631f813f202005b57f72f8bed202b512f4593fb54e7aff711",
+  "r2m": "638e81b932666731f9c4988441d2c98a4965928383989ed56540927326f236b4",
+  "r0d": "b1ef2f9a466e0ee8169ec8774cb06c25ed1d0deb41ca8a059844adc9d2cda5ce",
+  "r2d": "e329b360d68f1a44f8b9ece6671792ea32965f6c8fe5b5cd5177be9fc464f448"
+ }
+}

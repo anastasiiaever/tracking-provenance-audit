@@ -17,16 +17,24 @@ import yaml
 
 from _common import Checks, ROOT, path, read_csv, read_json
 
+# The TPAMI tracking paper's own verification stages. The two stages that
+# verify the separate common-support paper now live under other-work/ and are
+# run from there, so this release's default path covers the tracking paper only.
 STAGES = ("verify_ordering.py", "verify_admission.py",
-          "verify_mot20_eligibility.py", "verify_controlled_arm.py",
-          "verify_support_accounting.py")
+          "verify_mot20_eligibility.py")
+OTHER_WORK_STAGES = ("verify_controlled_arm.py", "verify_support_accounting.py")
 
 
-def run_stages():
+def run_stages(include_other_work=False):
     codes = {}
     for s in STAGES:
         print(f"\n{'-' * 72}\n$ python scripts/{s}")
         codes[s] = subprocess.call([sys.executable, path("scripts", s)])
+    if include_other_work:
+        for s in OTHER_WORK_STAGES:
+            print(f"\n{'-' * 72}\n$ python other-work/scripts/{s}")
+            codes[s] = subprocess.call(
+                [sys.executable, path("other-work", "scripts", s)])
     return codes
 
 
@@ -106,7 +114,7 @@ def cross_checks():
 
 
 def main() -> int:
-    codes = run_stages()
+    codes = run_stages('--with-other-work' in sys.argv)
     print(f"\n{'-' * 72}")
     failed_cross = cross_checks()
 

@@ -13,7 +13,7 @@ import applicability_audit as aa
 from applicability_audit import aggregation as agg
 from applicability_audit.audit import audit_precomputed_results
 
-from tests.test_applicability_audit import (GRID, audit, linear_predict, method,
+from test_applicability_audit import (GRID, audit, linear_predict, method,
                                             reference_corpus, three_methods)
 
 LADDER = agg.simple_case_ladder()

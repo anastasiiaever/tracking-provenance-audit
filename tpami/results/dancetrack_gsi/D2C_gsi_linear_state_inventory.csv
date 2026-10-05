@@ -1,0 +1,9 @@
+tracker,transition,files,rows_before,rows_after,inserted,deleted,surviving,coordinate_rewrites,coordinate_rewrite_pct,tracker_id_changes,score_rewrites,aux_rewrites,duplicates,nonfinite,invalid_boxes,frames_out_of_range,extrapolated,gap_rule_violation,characterisation,deterministic
+ByteTrack,R0 -> L_GSI,25/25,216310,225199,8889,0,216310,0,0.0,0,0,0,0,0,0,0,0,0,"strictly row-additive, including the confidence column","YES, two builds byte-identical"
+ByteTrack,L_GSI -> GSI,25/25,225199,225199,0,0,225199,134528,59.7374,0,225199,0,0,0,0,0,0,0,no insertion or deletion; coordinate rewriting only,"YES, GSI verified byte-identical on repeat in D2B"
+OC-SORT,R0 -> L_GSI,25/25,202787,218591,15804,0,202787,0,0.0,0,0,0,0,0,0,0,0,0,"strictly row-additive, including the confidence column","YES, two builds byte-identical"
+OC-SORT,L_GSI -> GSI,25/25,218591,218591,0,0,218591,150335,68.7746,0,218591,0,0,0,0,0,0,0,no insertion or deletion; coordinate rewriting only,"YES, GSI verified byte-identical on repeat in D2B"
+Deep-OC-SORT,R0 -> L_GSI,25/25,203149,218075,14926,0,203149,0,0.0,0,0,0,0,0,0,0,0,0,"strictly row-additive, including the confidence column","YES, two builds byte-identical"
+Deep-OC-SORT,L_GSI -> GSI,25/25,218075,218075,0,0,218075,136145,62.4304,0,218075,0,0,0,0,0,0,0,no insertion or deletion; coordinate rewriting only,"YES, GSI verified byte-identical on repeat in D2B"
+Hybrid-SORT,R0 -> L_GSI,25/25,215393,228696,13303,0,215393,0,0.0,0,0,0,0,0,0,0,0,0,"strictly row-additive, including the confidence column","YES, two builds byte-identical"
+Hybrid-SORT,L_GSI -> GSI,25/25,228696,228696,0,0,228696,133187,58.2376,0,228696,0,0,0,0,0,0,0,no insertion or deletion; coordinate rewriting only,"YES, GSI verified byte-identical on repeat in D2B"

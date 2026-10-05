@@ -1,113 +1,127 @@
-# Tracking Provenance Audit
+# Post-Processing Provenance and the Evaluated State of Tracking Submissions
 
-Code and released audit artifacts for  
-*Post-Processing Provenance and Estimand Eligibility in Multi-Object Tracking Evaluation*.
+Code and released audit artifacts for the paper
+***Post-Processing Provenance and the Evaluated State of Tracking Submissions*.**
 
-This repository contains the public audit implementation, frozen provenance records, result tables, and scripts for checking the results reported in the paper. It does not contain tracker training code, datasets, or model checkpoints.
+This repository contains the audit implementation, the frozen provenance records,
+the result tables behind the paper's claims, and the scripts that check them. It
+contains **no tracker training code, no datasets and no model checkpoints**.
 
-## Quick verification
+## 1. What is audited
 
-Python 3.9 or newer.
+Several released multi-object trackers apply an offline post-processing stage
+before submission, so the file a benchmark scores is not the tracker's output.
+The audit measures what that file contains and what the transition that produced
+it permits anyone to measure.
+
+| arm | what it covers |
+|---|---|
+| released MOT17 | five released deployments, their added rows, the four-class admission decomposition, metric change and every pairwise margin |
+| released MOT20 | the estimand-eligibility census over seven configurations and the one eligible cell |
+| controlled DanceTrack, linear DTI | one operator of ours held fixed across four trackers that share a detector |
+| controlled DanceTrack, GSI | a second operator that also rewrites surviving rows, decomposed into its linear and Gaussian-process stages |
+| released OC-SORT GPR | the rewrite-only boundary case |
+| released StrongSORT++ | the linking-and-smoothing structural audit |
+
+## 2. Repository structure
+
+```
+tpami/                     everything this paper rests on
+  results/                 per-arm released summaries
+    dancetrack_dti/        controlled linear-DTI arm
+    dancetrack_gsi/        controlled GSI arm and its stage decomposition
+    gpr_rewrite_only/      the rewrite-only recount at several tolerances
+    margins/               the unified pairwise-margin matrix, all arms
+    gt_gap/                ground-truth interior-gap population summary
+  source_of_truth/         the frozen artifact set and its manifest
+  figures/                 figure generators and per-figure provenance
+  ARTIFACT_MAP.md          manuscript claim/table/figure -> file
+  UPSTREAM.md              upstream code, datasets, expected layout
+  PATHS.md                 what the path placeholders mean
+src/tracking_provenance_audit/   the audit implementation
+scripts/                   the verification stages
+results/, provenance/      the MOT17 and MOT20 released records
+other-work/                a SEPARATE paper; see other-work/README.md
+```
+
+## 3. Environment
+
+Python 3.9 or newer. The audit core uses PEP 584 dict-union and will not run on
+3.8.
 
 ```bash
 conda env create -f environment.yml
 conda activate tracking-provenance-audit
-
-python scripts/verify_release.py
-sha256sum -c provenance/MANIFEST.sha256
-python -m pytest -q
 ```
 
-## Synthetic example
-
-A small synthetic example runs without external data:
+## 4. Reproduction order
 
 ```bash
-python examples/minimal_example/run.py
+python scripts/verify_release.py          # all offline verification stages
+sha256sum -c provenance/MANIFEST.sha256   # released-file integrity
+sha256sum -c tpami/source_of_truth/V6_SOURCE_OF_TRUTH_MANIFEST.sha256
+python -m pytest -q tests/                # the tracking-paper test suite
 ```
 
-## Paper artifacts
+Each stage is offline and re-measures nothing: it checks that every released
+summary is internally exact and agrees cell for cell with the frozen record it
+came from.
 
-`results/mot17/` contains the MOT17 state metrics, admission composition, row totals, and the complete 50-cell ordering matrix.
+## 5. Tables and figures
 
-`results/mot20/` contains the seven-cell eligibility record and the results of the eligible Deep-OC-SORT deployment.
-
-`results/controlled/` contains the frozen summaries for the controlled support-accounting analysis.
-
-`provenance/frozen_records/` contains the protocol and frozen records used to check the released summaries.
-
-`provenance/RELEASE_MANIFEST.json` maps published files to their frozen sources and recorded hashes.
-
-## Verification
+The generators under `tpami/figures/scripts/` rebuild the manuscript figures and
+write a provenance record beside each one. They assert every case they draw
+against the frozen records and abort rather than draw an unverified example.
 
 ```bash
-python scripts/verify_release.py
-python scripts/verify_ordering.py
-python scripts/verify_admission.py
-python scripts/verify_mot20_eligibility.py
-python scripts/verify_controlled_arm.py
-python scripts/verify_support_accounting.py
+python tpami/figures/scripts/gen_fig1_fourclass.py      # Fig. 1, four admission classes
+python tpami/figures/scripts/gen_fig2.py                # Fig. 2, states and permitted diagnostics
+python tpami/figures/scripts/gen_fig3.py                # Fig. 3, composition across all columns
+python tpami/figures/scripts/gen_fig4_margins.py        # Fig. 4, margin movement
+python tpami/figures/scripts/gen_figS1.py               # Fig. S1
+python tpami/figures/scripts/gen_figS2_trajectories.py  # Fig. S2
+python tpami/results/gt_gap/make_gt_gap_population_summary.py
 ```
 
-The scripts recompute the released quantities and compare them with the corresponding frozen records. They do not rerun trackers or training.
+They need the frozen state files and the dataset frames, which are not
+redistributed here; see `tpami/UPSTREAM.md` and `tpami/PATHS.md`.
 
-`verify_support_accounting.py` runs a worked support-accounting example. The paper's controlled-arm results are checked by `verify_controlled_arm.py`.
+## 6. Expected checks
 
-### Headline claims
+| check | expected |
+|---|---|
+| `scripts/verify_release.py` | all stages PASS |
+| `provenance/MANIFEST.sha256` | 264 of 264 OK |
+| `tpami/source_of_truth/V6_SOURCE_OF_TRUTH_MANIFEST.sha256` | 52 of 52 OK |
+| `pytest tests/` | 107 passed |
+| `pytest tests/ other-work/tests/` | 214 passed |
 
-| paper claim | public artifact | command |
-|---|---|---|
-| MOT17: synthesized rows are 4.12%-6.36% of submitted rows | `results/mot17/row_totals.csv`, `results/mot17/stv_composition.csv` | `python scripts/verify_admission.py` |
-| MOT17: 28.92%-49.02% of synthesized rows are not admitted | `results/mot17/stv_composition.csv` | `python scripts/verify_admission.py` |
-| MOT17: all 25 deployment-by-metric values rise from R0 to R2 | `results/mot17/metrics_by_state.csv` | `python scripts/verify_release.py` |
-| MOT17: 5 of 50 pairwise relations change, 45 remain unchanged | `results/mot17/ordering_matrix.csv` | `python scripts/verify_ordering.py` |
-| MOT20: 1 eligible for the pre-specified held-out second-half comparison, 5 ineligible through training overlap, 1 unresolved | `results/mot20/eligibility.csv` | `python scripts/verify_mot20_eligibility.py` |
-| MOT20: 34,814 synthesized rows, 25.14% not admitted | `results/mot20/deep_oc_sort_stv.csv` | `python scripts/verify_mot20_eligibility.py` |
-| Controlled arm: the pooled comparison reverses on common support | `results/controlled/ntu_support_accounting.json` | `python scripts/verify_controlled_arm.py` |
+Last run on Python 3.10.21: **107 passed** for the tracking suite, **214 passed**
+including the separate paper's suite.
 
-`docs/CLAIM_MATRIX.md` gives the full claim-to-artifact mapping.
+## 7. Upstream code and data
 
-Two post-hoc descriptive tables extend the released results without changing
-them: `results/stv_sensitivity/full_five_pipeline_summary.csv` carries the
-admission-gate sweep over all five row-additive MOT17 pipelines, and
-`results/mot17/sequence_ordering_heterogeneity_summary.csv` reports the
-sequence-level heterogeneity of the five aggregate ordering changes. Each has a
-README beside it stating its scope.
+Not redistributed. `tpami/UPSTREAM.md` gives, for each tracker and operator, the
+upstream repository and the pinned commit the audit used, the datasets and how to
+obtain them, the directory layout the scripts expect, and content hashes for the
+artifacts that are legally publishable.
 
-## Repository layout
+## 8. Release
 
-```text
-src/tracking_provenance_audit/   tracking audit implementation
-src/applicability_audit/         support and applicability audit
-scripts/                         verification entry points
-results/                         released result tables
-provenance/                      frozen records, manifests, and hashes
-metadata/                        upstream repositories and external assets
-docs/                            provenance and reproducibility documentation
-tests/                           unit, integrity, and corruption-detection tests
-examples/                        synthetic example
-```
+The commit tagged **`tpami-submission-v1`** is the state this paper's claims were
+checked against.
 
-## Provenance
+## 9. Other work in this repository
 
-The reported experimental results were produced by the frozen research execution pipeline described in the paper. The code released here checks the audit logic and the recorded results; it was not the execution path that produced the original experimental outputs.
+`other-work/` holds the records and code of a **different, separate paper** on
+common-support and skeleton reconstruction. It is kept for history and is **not
+part of this paper**. Nothing in `tpami/`, `src/tracking_provenance_audit/`,
+`results/` or `provenance/` depends on it.
 
-`docs/PROVENANCE.md` records the source commits, MOT17 population naming, MOT20 corpus status, eligibility vocabulary, and history normalization.
+## 10. Limitations on what can be released
 
-## Data and external assets
-
-Datasets and third-party checkpoints are not redistributed.
-
-Upstream tracker repositories are recorded by exact commit in `metadata/upstream_pipelines.csv`. External assets are recorded in `metadata/external_assets.csv`, including hashes where available.
-
-Evaluation used TrackEval at commit `12c8791b303e0a0b50f753af204249e622d0281a`.
-
-See `docs/DATASETS.md` and `docs/LICENSING_BOUNDARY.md` for dataset and licensing details.
-
-## Citation
-
-See `CITATION.cff`. Venue and DOI information will be added when available.
-
-## Licence
-
-The code and original material in this repository are released under the MIT License. Third-party datasets, repositories, and model assets retain their original licences.
+No dataset frames, no ground-truth annotation files, no tracker weights and no
+upstream tracker source are redistributed here. What is released is this project's
+own audit outputs, the frozen records they were derived from, the implementation,
+and the verification scripts. Absolute host paths are replaced by placeholders;
+see `tpami/PATHS.md`.

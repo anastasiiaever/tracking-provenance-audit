@@ -1,0 +1,17 @@
+quantity,value
+draws,10000
+seed,20261003
+index_sha256,342b76e2d37fc63304bae85051fda940ea2c32263324f8f756080fc5120b891f
+index_reused_from,D1B
+metric_deltas_L_GSI-R0_pos_zero_neg,12/0/8
+metric_deltas_GSI-L_GSI_pos_zero_neg,12/0/8
+metric_deltas_GSI-R0_pos_zero_neg,12/0/8
+crossings_R0->L_GSI,7/30
+crossings_R0->L_GSI_3dp,7/30
+crossings_R0->L_GSI_2dp,7/30
+crossings_L_GSI->GSI,0/30
+crossings_L_GSI->GSI_3dp,0/30
+crossings_L_GSI->GSI_2dp,0/30
+crossings_R0->GSI,7/30
+crossings_R0->GSI_3dp,7/30
+crossings_R0->GSI_2dp,7/30

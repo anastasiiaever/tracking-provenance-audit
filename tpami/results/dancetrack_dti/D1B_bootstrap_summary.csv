@@ -1,0 +1,9 @@
+quantity,value
+draws,10000
+seed,20261003
+cells,30
+relation_sign_changes,7
+R0_ci_excludes_zero,23
+R2_ci_excludes_zero,21
+delta_ci_excludes_zero,21
+indices_sha256,342b76e2d37fc63304bae85051fda940ea2c32263324f8f756080fc5120b891f

@@ -1,0 +1,444 @@
+{
+ "figure": "Figure 4, pairwise margin movement",
+ "checks": [
+  {
+   "check": "source carries 110 cells",
+   "pass": true,
+   "detail": "110"
+  },
+  {
+   "check": "A_MOT17_released_DTI: 50 cells",
+   "pass": true,
+   "detail": "50"
+  },
+  {
+   "check": "A_MOT17_released_DTI BoT-SORT-Deep-OC-SORT AssA: recorded crossing matches the signs",
+   "pass": true,
+   "detail": "recorded=NO before=-0.7409193291898362 after=-0.9231300650188103"
+  },
+  {
+   "check": "A_MOT17_released_DTI BoT-SORT-Deep-OC-SORT DetA: recorded crossing matches the signs",
+   "pass": true,
+   "detail": "recorded=NO before=2.463919070101838 after=1.216844834915392"
+  },
+  {
+   "check": "A_MOT17_released_DTI BoT-SORT-Deep-OC-SORT HOTA: recorded crossing matches the signs",
+   "pass": true,
+   "detail": "recorded=NO before=0.8842749112017714 after=0.15032071219452803"
+  },
+  {
+   "check": "A_MOT17_released_DTI BoT-SORT-Deep-OC-SORT IDF1: recorded crossing matches the signs",
+   "pass": true,
+   "detail": "recorded=YES before=0.5103926607192477 after=-0.20330580436842638"
+  },
+  {
+   "check": "A_MOT17_released_DTI BoT-SORT-Deep-OC-SORT MOTA: recorded crossing matches the signs",
+   "pass": true,
+   "detail": "recorded=NO before=3.2863239933197264 after=1.5624420115049134"
+  },
+  {
+   "check": "A_MOT17_released_DTI BoT-SORT-Hybrid-SORT AssA: recorded crossing matches the signs",
+   "pass": true,
+   "detail": "recorded=NO before=3.235037670425143 after=3.760255000182582"
+  },
+  {
+   "check": "A_MOT17_released_DTI BoT-SORT-Hybrid-SORT DetA: recorded crossing matches the signs",
+   "pass": true,
+   "detail": "recorded=NO before=1.260227897268095 after=1.4285329333559105"
+  },
+  {
+   "check": "A_MOT17_released_DTI BoT-SORT-Hybrid-SORT HOTA: recorded crossing matches the signs",
+   "pass": true,
+   "detail": "recorded=NO before=2.246597855819573 after=2.6086174388787526"
+  },
+  {
+   "check": "A_MOT17_released_DTI BoT-SORT-Hybrid-SORT IDF1: recorded crossing matches the signs",
+   "pass": true,
+   "detail": "recorded=NO before=3.8984059399501945 after=4.504273217751276"
+  },
+  {
+   "check": "A_MOT17_released_DTI BoT-SORT-Hybrid-SORT MOTA: recorded crossing matches the signs",
+   "pass": true,
+   "detail": "recorded=NO before=2.4475784004453516 after=2.9114863611059576"
+  },
+  {
+   "check": "A_MOT17_released_DTI BoT-SORT-OC-SORT AssA: recorded crossing matches the signs",
+   "pass": true,
+   "detail": "recorded=NO before=2.702211062879556 after=2.8405012022531935"
+  },
+  {
+   "check": "A_MOT17_released_DTI BoT-SORT-OC-SORT DetA: recorded crossing matches the signs",
+   "pass": true,
+   "detail": "recorded=NO before=3.013704815444001 after=2.096074496292644"
+  },
+  {
+   "check": "A_MOT17_released_DTI BoT-SORT-OC-SORT HOTA: recorded crossing matches the signs",
+   "pass": true,
+   "detail": "recorded=NO before=2.822712441307317 after=2.428995737867524"
+  },
+  {
+   "check": "A_MOT17_released_DTI BoT-SORT-OC-SORT IDF1: recorded crossing matches the signs",
+   "pass": true,
+   "detail": "recorded=NO before=3.711503234140082 after=3.2800533755125514"
+  },
+  {
+   "check": "A_MOT17_released_DTI BoT-SORT-OC-SORT MOTA: recorded crossing matches the signs",
+   "pass": true,
+   "detail": "recorded=NO before=3.904249396919667 after=2.6888105399888644"
+  },
+  {
+   "check": "A_MOT17_released_DTI ByteTrack-BoT-SORT AssA: recorded crossing matches the signs",
+   "pass": true,
+   "detail": "recorded=NO before=-1.9173564454530378 after=-2.1218631351611776"
+  },
+  {
+   "check": "A_MOT17_released_DTI ByteTrack-BoT-SORT DetA: recorded crossing matches the signs",
+   "pass": true,
+   "detail": "recorded=NO before=-0.6216320305408232 after=-0.7696190827602578"
+  },
+  {
+   "check": "A_MOT17_released_DTI ByteTrack-BoT-SORT HOTA: recorded crossing matches the signs",
+   "pass": true,
+   "detail": "recorded=NO before=-1.2752675004689706 after=-1.4525452690827905"
+  },
+  {
+   "check": "A_MOT17_released_DTI ByteTrack-BoT-SORT IDF1: recorded crossing matches the signs",
+   "pass": true,
+   "detail": "recorded=NO before=-1.7398776095632087 after=-1.8772059337399867"
+  },
+  {
+   "check": "A_MOT17_released_DTI ByteTrack-BoT-SORT MOTA: recorded crossing matches the signs",
+   "pass": true,
+   "detail": "recorded=NO before=-0.48431991092968474 after=-0.7589534236407616"
+  },
+  {
+   "check": "A_MOT17_released_DTI ByteTrack-Deep-OC-SORT AssA: recorded crossing matches the signs",
+   "pass": true,
+   "detail": "recorded=NO before=-2.658275774642874 after=-3.044993200179988"
+  },
+  {
+   "check": "A_MOT17_released_DTI ByteTrack-Deep-OC-SORT DetA: recorded crossing matches the signs",
+   "pass": true,
+   "detail": "recorded=NO before=1.8422870395610147 after=0.44722575215513416"
+  },
+  {
+   "check": "A_MOT17_released_DTI ByteTrack-Deep-OC-SORT HOTA: recorded crossing matches the signs",
+   "pass": true,
+   "detail": "recorded=NO before=-0.39099258926719926 after=-1.3022245568882624"
+  },
+  {
+   "check": "A_MOT17_released_DTI ByteTrack-Deep-OC-SORT IDF1: recorded crossing matches the signs",
+   "pass": true,
+   "detail": "recorded=NO before=-1.229484948843961 after=-2.080511738108413"
+  },
+  {
+   "check": "A_MOT17_released_DTI ByteTrack-Deep-OC-SORT MOTA: recorded crossing matches the signs",
+   "pass": true,
+   "detail": "recorded=NO before=2.8020040823900416 after=0.8034885878641518"
+  },
+  {
+   "check": "A_MOT17_released_DTI ByteTrack-Hybrid-SORT AssA: recorded crossing matches the signs",
+   "pass": true,
+   "detail": "recorded=NO before=1.3176812249721053 after=1.6383918650214042"
+  },
+  {
+   "check": "A_MOT17_released_DTI ByteTrack-Hybrid-SORT DetA: recorded crossing matches the signs",
+   "pass": true,
+   "detail": "recorded=NO before=0.6385958667272718 after=0.6589138505956527"
+  },
+  {
+   "check": "A_MOT17_released_DTI ByteTrack-Hybrid-SORT HOTA: recorded crossing matches the signs",
+   "pass": true,
+   "detail": "recorded=NO before=0.9713303553506023 after=1.1560721697959622"
+  },
+  {
+   "check": "A_MOT17_released_DTI ByteTrack-Hybrid-SORT IDF1: recorded crossing matches the signs",
+   "pass": true,
+   "detail": "recorded=NO before=2.1585283303869858 after=2.6270672840112894"
+  },
+  {
+   "check": "A_MOT17_released_DTI ByteTrack-Hybrid-SORT MOTA: recorded crossing matches the signs",
+   "pass": true,
+   "detail": "recorded=NO before=1.9632584895156668 after=2.152532937465196"
+  },
+  {
+   "check": "A_MOT17_released_DTI ByteTrack-OC-SORT AssA: recorded crossing matches the signs",
+   "pass": true,
+   "detail": "recorded=NO before=0.7848546174265181 after=0.7186380670920158"
+  },
+  {
+   "check": "A_MOT17_released_DTI ByteTrack-OC-SORT DetA: recorded crossing matches the signs",
+   "pass": true,
+   "detail": "recorded=NO before=2.3920727849031778 after=1.3264554135323863"
+  },
+  {
+   "check": "A_MOT17_released_DTI ByteTrack-OC-SORT HOTA: recorded crossing matches the signs",
+   "pass": true,
+   "detail": "recorded=NO before=1.5474449408383464 after=0.9764504687847335"
+  },
+  {
+   "check": "A_MOT17_released_DTI ByteTrack-OC-SORT IDF1: recorded crossing matches the signs",
+   "pass": true,
+   "detail": "recorded=NO before=1.9716256245768733 after=1.4028474417725647"
+  },
+  {
+   "check": "A_MOT17_released_DTI ByteTrack-OC-SORT MOTA: recorded crossing matches the signs",
+   "pass": true,
+   "detail": "recorded=NO before=3.4199294859899823 after=1.9298571163481029"
+  },
+  {
+   "check": "A_MOT17_released_DTI Deep-OC-SORT-Hybrid-SORT AssA: recorded crossing matches the signs",
+   "pass": true,
+   "detail": "recorded=NO before=3.9759569996149793 after=4.683385065201392"
+  },
+  {
+   "check": "A_MOT17_released_DTI Deep-OC-SORT-Hybrid-SORT DetA: recorded crossing matches the signs",
+   "pass": true,
+   "detail": "recorded=YES before=-1.203691172833743 after=0.2116880984405185"
+  },
+  {
+   "check": "A_MOT17_released_DTI Deep-OC-SORT-Hybrid-SORT HOTA: recorded crossing matches the signs",
+   "pass": true,
+   "detail": "recorded=NO before=1.3623229446178016 after=2.4582967266842246"
+  },
+  {
+   "check": "A_MOT17_released_DTI Deep-OC-SORT-Hybrid-SORT IDF1: recorded crossing matches the signs",
+   "pass": true,
+   "detail": "recorded=NO before=3.3880132792309468 after=4.7075790221197025"
+  },
+  {
+   "check": "A_MOT17_released_DTI Deep-OC-SORT-Hybrid-SORT MOTA: recorded crossing matches the signs",
+   "pass": true,
+   "detail": "recorded=YES before=-0.8387455928743748 after=1.3490443496010442"
+  },
+  {
+   "check": "A_MOT17_released_DTI OC-SORT-Deep-OC-SORT AssA: recorded crossing matches the signs",
+   "pass": true,
+   "detail": "recorded=NO before=-3.443130392069392 after=-3.763631267272004"
+  },
+  {
+   "check": "A_MOT17_released_DTI OC-SORT-Deep-OC-SORT DetA: recorded crossing matches the signs",
+   "pass": true,
+   "detail": "recorded=NO before=-0.5497857453421631 after=-0.8792296613772521"
+  },
+  {
+   "check": "A_MOT17_released_DTI OC-SORT-Deep-OC-SORT HOTA: recorded crossing matches the signs",
+   "pass": true,
+   "detail": "recorded=NO before=-1.9384375301055456 after=-2.278675025672996"
+  },
+  {
+   "check": "A_MOT17_released_DTI OC-SORT-Deep-OC-SORT IDF1: recorded crossing matches the signs",
+   "pass": true,
+   "detail": "recorded=NO before=-3.2011105734208343 after=-3.4833591798809778"
+  },
+  {
+   "check": "A_MOT17_released_DTI OC-SORT-Deep-OC-SORT MOTA: recorded crossing matches the signs",
+   "pass": true,
+   "detail": "recorded=NO before=-0.6179254035999406 after=-1.126368528483951"
+  },
+  {
+   "check": "A_MOT17_released_DTI OC-SORT-Hybrid-SORT AssA: recorded crossing matches the signs",
+   "pass": true,
+   "detail": "recorded=NO before=0.5328266075455872 after=0.9197537979293884"
+  },
+  {
+   "check": "A_MOT17_released_DTI OC-SORT-Hybrid-SORT DetA: recorded crossing matches the signs",
+   "pass": true,
+   "detail": "recorded=NO before=-1.753476918175906 after=-0.6675415629367336"
+  },
+  {
+   "check": "A_MOT17_released_DTI OC-SORT-Hybrid-SORT HOTA: recorded crossing matches the signs",
+   "pass": true,
+   "detail": "recorded=YES before=-0.5761145854877441 after=0.17962170101122865"
+  },
+  {
+   "check": "A_MOT17_released_DTI OC-SORT-Hybrid-SORT IDF1: recorded crossing matches the signs",
+   "pass": true,
+   "detail": "recorded=NO before=0.18690270581011248 after=1.2242198422387247"
+  },
+  {
+   "check": "A_MOT17_released_DTI OC-SORT-Hybrid-SORT MOTA: recorded crossing matches the signs",
+   "pass": true,
+   "detail": "recorded=YES before=-1.4566709964743154 after=0.22267582111709316"
+  },
+  {
+   "check": "A_MOT17_released_DTI: crossing count",
+   "pass": true,
+   "detail": "5"
+  },
+  {
+   "check": "B_DanceTrack_controlled_DTI: 30 cells",
+   "pass": true,
+   "detail": "30"
+  },
+  {
+   "check": "B_DanceTrack_controlled_DTI ByteTrack-Deep-OC-SORT AssA: recorded crossing matches the signs",
+   "pass": true,
+   "detail": "recorded=NO before=-13.2086412091804 after=-13.352988914016876"
+  },
+  {
+   "check": "B_DanceTrack_controlled_DTI ByteTrack-Deep-OC-SORT DetA: recorded crossing matches the signs",
+   "pass": true,
+   "detail": "recorded=NO before=-6.978335675085418 after=-8.873377325298975"
+  },
+  {
+   "check": "B_DanceTrack_controlled_DTI ByteTrack-Deep-OC-SORT HOTA: recorded crossing matches the signs",
+   "pass": true,
+   "detail": "recorded=NO before=-11.761911290817494 after=-12.52409677497824"
+  },
+  {
+   "check": "B_DanceTrack_controlled_DTI ByteTrack-Deep-OC-SORT IDF1: recorded crossing matches the signs",
+   "pass": true,
+   "detail": "recorded=NO before=-7.825372634777153 after=-8.36267977202364"
+  },
+  {
+   "check": "B_DanceTrack_controlled_DTI ByteTrack-Deep-OC-SORT MOTA: recorded crossing matches the signs",
+   "pass": true,
+   "detail": "recorded=YES before=0.7297422140103436 after=-2.5019098548510357"
+  },
+  {
+   "check": "B_DanceTrack_controlled_DTI ByteTrack-Hybrid-SORT AssA: recorded crossing matches the signs",
+   "pass": true,
+   "detail": "recorded=NO before=-13.565372666745219 after=-13.490479876970376"
+  },
+  {
+   "check": "B_DanceTrack_controlled_DTI ByteTrack-Hybrid-SORT DetA: recorded crossing matches the signs",
+   "pass": true,
+   "detail": "recorded=NO before=-8.208527201233494 after=-8.161711789527118"
+  },
+  {
+   "check": "B_DanceTrack_controlled_DTI ByteTrack-Hybrid-SORT HOTA: recorded crossing matches the signs",
+   "pass": true,
+   "detail": "recorded=NO before=-12.420002325972519 after=-12.313921406628594"
+  },
+  {
+   "check": "B_DanceTrack_controlled_DTI ByteTrack-Hybrid-SORT IDF1: recorded crossing matches the signs",
+   "pass": true,
+   "detail": "recorded=NO before=-9.239435982558597 after=-9.165752929963574"
+  },
+  {
+   "check": "B_DanceTrack_controlled_DTI ByteTrack-Hybrid-SORT MOTA: recorded crossing matches the signs",
+   "pass": true,
+   "detail": "recorded=NO before=-1.2072059267681539 after=-1.6593529589425629"
+  },
+  {
+   "check": "B_DanceTrack_controlled_DTI ByteTrack-OC-SORT AssA: recorded crossing matches the signs",
+   "pass": true,
+   "detail": "recorded=NO before=-4.132081712700476 after=-4.345933705619466"
+  },
+  {
+   "check": "B_DanceTrack_controlled_DTI ByteTrack-OC-SORT DetA: recorded crossing matches the signs",
+   "pass": true,
+   "detail": "recorded=NO before=-6.725302359110856 after=-8.517930442520864"
+  },
+  {
+   "check": "B_DanceTrack_controlled_DTI ByteTrack-OC-SORT HOTA: recorded crossing matches the signs",
+   "pass": true,
+   "detail": "recorded=NO before=-5.342327785578078 after=-6.084635982098689"
+  },
+  {
+   "check": "B_DanceTrack_controlled_DTI ByteTrack-OC-SORT IDF1: recorded crossing matches the signs",
+   "pass": true,
+   "detail": "recorded=NO before=-0.21703276577457586 after=-0.7767395216103807"
+  },
+  {
+   "check": "B_DanceTrack_controlled_DTI ByteTrack-OC-SORT MOTA: recorded crossing matches the signs",
+   "pass": true,
+   "detail": "recorded=YES before=1.0131113756284833 after=-2.0262227512569524"
+  },
+  {
+   "check": "B_DanceTrack_controlled_DTI Deep-OC-SORT-Hybrid-SORT AssA: recorded crossing matches the signs",
+   "pass": true,
+   "detail": "recorded=NO before=-0.3567314575648197 after=-0.13749096295349972"
+  },
+  {
+   "check": "B_DanceTrack_controlled_DTI Deep-OC-SORT-Hybrid-SORT DetA: recorded crossing matches the signs",
+   "pass": true,
+   "detail": "recorded=YES before=-1.2301915261480758 after=0.7116655357718571"
+  },
+  {
+   "check": "B_DanceTrack_controlled_DTI Deep-OC-SORT-Hybrid-SORT HOTA: recorded crossing matches the signs",
+   "pass": true,
+   "detail": "recorded=YES before=-0.6580910351550244 after=0.21017536834964545"
+  },
+  {
+   "check": "B_DanceTrack_controlled_DTI Deep-OC-SORT-Hybrid-SORT IDF1: recorded crossing matches the signs",
+   "pass": true,
+   "detail": "recorded=NO before=-1.4140633477814433 after=-0.8030731579399344"
+  },
+  {
+   "check": "B_DanceTrack_controlled_DTI Deep-OC-SORT-Hybrid-SORT MOTA: recorded crossing matches the signs",
+   "pass": true,
+   "detail": "recorded=YES before=-1.9369481407784974 after=0.8425568959084728"
+  },
+  {
+   "check": "B_DanceTrack_controlled_DTI OC-SORT-Deep-OC-SORT AssA: recorded crossing matches the signs",
+   "pass": true,
+   "detail": "recorded=NO before=-9.076559496479923 after=-9.00705520839741"
+  },
+  {
+   "check": "B_DanceTrack_controlled_DTI OC-SORT-Deep-OC-SORT DetA: recorded crossing matches the signs",
+   "pass": true,
+   "detail": "recorded=NO before=-0.25303331597456236 after=-0.35544688277811076"
+  },
+  {
+   "check": "B_DanceTrack_controlled_DTI OC-SORT-Deep-OC-SORT HOTA: recorded crossing matches the signs",
+   "pass": true,
+   "detail": "recorded=NO before=-6.419583505239416 after=-6.439460792879551"
+  },
+  {
+   "check": "B_DanceTrack_controlled_DTI OC-SORT-Deep-OC-SORT IDF1: recorded crossing matches the signs",
+   "pass": true,
+   "detail": "recorded=NO before=-7.608339869002577 after=-7.585940250413259"
+  },
+  {
+   "check": "B_DanceTrack_controlled_DTI OC-SORT-Deep-OC-SORT MOTA: recorded crossing matches the signs",
+   "pass": true,
+   "detail": "recorded=NO before=-0.28336916161813974 after=-0.4756871035940833"
+  },
+  {
+   "check": "B_DanceTrack_controlled_DTI OC-SORT-Hybrid-SORT AssA: recorded crossing matches the signs",
+   "pass": true,
+   "detail": "recorded=NO before=-9.433290954044743 after=-9.14454617135091"
+  },
+  {
+   "check": "B_DanceTrack_controlled_DTI OC-SORT-Hybrid-SORT DetA: recorded crossing matches the signs",
+   "pass": true,
+   "detail": "recorded=YES before=-1.4832248421226382 after=0.35621865299374633"
+  },
+  {
+   "check": "B_DanceTrack_controlled_DTI OC-SORT-Hybrid-SORT HOTA: recorded crossing matches the signs",
+   "pass": true,
+   "detail": "recorded=NO before=-7.07767454039444 after=-6.229285424529905"
+  },
+  {
+   "check": "B_DanceTrack_controlled_DTI OC-SORT-Hybrid-SORT IDF1: recorded crossing matches the signs",
+   "pass": true,
+   "detail": "recorded=NO before=-9.02240321678402 after=-8.389013408353193"
+  },
+  {
+   "check": "B_DanceTrack_controlled_DTI OC-SORT-Hybrid-SORT MOTA: recorded crossing matches the signs",
+   "pass": true,
+   "detail": "recorded=YES before=-2.220317302396637 after=0.36686979231438954"
+  },
+  {
+   "check": "B_DanceTrack_controlled_DTI: crossing count",
+   "pass": true,
+   "detail": "7"
+  }
+ ],
+ "arms": {
+  "A_MOT17_released_DTI": {
+   "cells": 50,
+   "crossings": 5
+  },
+  "B_DanceTrack_controlled_DTI": {
+   "cells": 30,
+   "crossings": 7
+  }
+ },
+ "source": {
+  "path": "<AUDIT_ROOT>/dancetrack_controlled_20261003/final_defense_20261004/FINAL_unified_pairwise_margins.csv",
+  "sha256": "b50ef556328288a7645ddecfd23d326dd1de79a0453a730cc9d428951f5fc57c"
+ }
+}
