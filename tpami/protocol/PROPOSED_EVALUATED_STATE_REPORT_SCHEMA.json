@@ -1,0 +1,209 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://example.org/evaluated-state-report/v1",
+  "title": "Evaluated-state provenance record for a tracking submission",
+  "description": "Minimum machine-readable record that identifies the exact artifact a reported tracking score was computed on, the transformation that produced it, and the evaluator configuration that scored it. The reference-side block is optional by design: it requires ground truth and is not deployable at submission time.",
+  "type": "object",
+  "required": ["record_version", "pre_transition_state", "transition", "evaluated_state", "evaluation"],
+  "additionalProperties": false,
+  "properties": {
+    "record_version": { "const": "evaluated-state-report/1.0" },
+
+    "pre_transition_state": {
+      "description": "The tracker output before any post-inference transformation. Omit the artifact only if no transformation was applied, in which case transition.structural_type must be 'none'.",
+      "type": "object",
+      "required": ["artifact_identifier", "sha256", "row_count", "producer"],
+      "additionalProperties": false,
+      "properties": {
+        "artifact_identifier": { "type": "string" },
+        "sha256": { "type": "string", "pattern": "^[0-9a-f]{64}$" },
+        "row_count": { "type": "integer", "minimum": 0 },
+        "row_identity_fields": {
+          "type": "array", "items": { "type": "string" },
+          "default": ["sequence", "frame", "track_id"],
+          "description": "The tuple that makes a row unique. Required for any state comparison to be well defined."
+        },
+        "producer": {
+          "type": "object",
+          "required": ["repository", "commit"],
+          "additionalProperties": false,
+          "properties": {
+            "repository": { "type": "string" },
+            "commit": { "type": "string", "pattern": "^[0-9a-f]{7,40}$" },
+            "entry_point": { "type": "string" },
+            "detector": { "$ref": "#/$defs/checkpoint" },
+            "appearance_model": { "$ref": "#/$defs/checkpoint" },
+            "execution_commit_is_the_declared_commit": {
+              "type": "boolean",
+              "description": "False where the declared commit is not the commit that was executed. If false, declare execution_commit."
+            },
+            "execution_commit": { "type": "string" }
+          }
+        }
+      }
+    },
+
+    "transition": {
+      "description": "The post-inference transformation. 'structural_type' is load-bearing: it determines which downstream diagnostics are even definable.",
+      "type": "object",
+      "required": ["structural_type", "stages"],
+      "additionalProperties": false,
+      "properties": {
+        "structural_type": {
+          "enum": ["none", "row-additive", "key-additive-content-rewriting", "rewrite-only", "identity-remapping"],
+          "description": "row-additive: keys grow, surviving content unchanged. key-additive-content-rewriting: keys grow, surviving content changed. rewrite-only: keys unchanged, content changed. identity-remapping: surviving identities change and rows may be lost."
+        },
+        "stages": {
+          "type": "array", "minItems": 0,
+          "description": "In applied order. Order is part of the record because stage composition is not commutative.",
+          "items": {
+            "type": "object",
+            "required": ["order", "name", "implementation"],
+            "additionalProperties": false,
+            "properties": {
+              "order": { "type": "integer", "minimum": 1 },
+              "name": { "type": "string" },
+              "implementation": {
+                "type": "object",
+                "required": ["repository", "commit", "source_file"],
+                "additionalProperties": false,
+                "properties": {
+                  "repository": { "type": "string" },
+                  "commit": { "type": "string", "pattern": "^[0-9a-f]{7,40}$" },
+                  "source_file": { "type": "string" },
+                  "symbol": { "type": "string" },
+                  "call_site": { "type": "string", "description": "Where the parameter values actually came from: a __main__ block, an argparse default, a signature default, or a documented command." }
+                }
+              },
+              "parameters": {
+                "type": "object",
+                "description": "Name to value. Record the values used, not the defaults, and record the semantics where a name is ambiguous.",
+                "additionalProperties": true
+              },
+              "parameter_semantics": {
+                "type": "object",
+                "additionalProperties": { "type": "string" },
+                "description": "One line per parameter stating the exact condition it controls, including strictness of inequalities."
+              },
+              "inserted_row_marking": {
+                "type": "string",
+                "description": "How an inserted row is distinguishable in the output, if at all. 'none' is the common and problematic case."
+              }
+            }
+          }
+        },
+        "row_delta": {
+          "type": "object",
+          "additionalProperties": false,
+          "properties": {
+            "inserted": { "type": "integer", "minimum": 0 },
+            "deleted": { "type": "integer", "minimum": 0 },
+            "surviving_content_changed": { "type": "integer", "minimum": 0 },
+            "identities_remapped": { "type": "integer", "minimum": 0 }
+          }
+        }
+      }
+    },
+
+    "evaluated_state": {
+      "description": "The exact artifact that was scored. This is the field whose absence motivates the whole record.",
+      "type": "object",
+      "required": ["artifact_identifier", "sha256", "row_count"],
+      "additionalProperties": false,
+      "properties": {
+        "artifact_identifier": { "type": "string" },
+        "sha256": { "type": "string", "pattern": "^[0-9a-f]{64}$" },
+        "row_count": { "type": "integer", "minimum": 0 },
+        "format": { "type": "string", "default": "MOTChallenge-2D-10-column" }
+      }
+    },
+
+    "evaluation": {
+      "description": "What produced the reported number. An evaluator commit alone is insufficient: configuration defaults change scoring semantics.",
+      "type": "object",
+      "required": ["dataset", "split", "evaluator", "evaluator_commit", "configuration", "reported_metrics"],
+      "additionalProperties": false,
+      "properties": {
+        "dataset": { "type": "string" },
+        "split": {
+          "type": "object",
+          "required": ["identifier", "definition"],
+          "additionalProperties": false,
+          "properties": {
+            "identifier": { "type": "string" },
+            "definition": { "type": "string", "description": "The construction rule, explicitly. A split name is not a definition." },
+            "sequence_count": { "type": "integer" },
+            "frame_count": { "type": "integer" },
+            "ground_truth_sha256": { "type": "string", "pattern": "^[0-9a-f]{64}$" },
+            "is_official_benchmark_split": { "type": "boolean" }
+          }
+        },
+        "evaluator": { "type": "string" },
+        "evaluator_commit": { "type": "string", "pattern": "^[0-9a-f]{7,40}$" },
+        "evaluator_modified": { "type": "boolean", "default": false },
+        "configuration": {
+          "type": "object",
+          "description": "Every setting that changes scoring semantics, INCLUDING values left at their defaults. Record the resolved value, not the command line.",
+          "required": ["resolved_settings"],
+          "additionalProperties": false,
+          "properties": {
+            "invocation": { "type": "string" },
+            "resolved_settings": { "type": "object", "additionalProperties": true },
+            "omitted_arguments_and_why": { "type": "string" }
+          }
+        },
+        "reported_metrics": { "type": "object", "additionalProperties": { "type": "number" } },
+        "reported_precision_decimals": { "type": "integer", "minimum": 0 }
+      }
+    },
+
+    "reference_side_diagnostics": {
+      "description": "OPTIONAL. Requires ground truth for the evaluated split and is therefore not computable by a submitter at submission time, and not deployable. A record without this block is still complete.",
+      "type": "object",
+      "additionalProperties": false,
+      "properties": {
+        "computable": { "type": "boolean" },
+        "not_computable_reason": { "type": "string" },
+        "admission_gate": { "type": "number" },
+        "gate_sweep": { "type": "array", "items": { "type": "number" } },
+        "scoreable_reference_definition": { "type": "string" },
+        "class_counts": {
+          "type": "object", "additionalProperties": { "type": "integer" },
+          "description": "Admission classes of the inserted rows. Defined only when transition.structural_type is 'row-additive'."
+        },
+        "withheld_row_state": {
+          "type": "object",
+          "description": "The R1 state: the evaluated state with non-admitted inserted rows withheld. A row subset of the evaluated state; requires no evaluator change to score.",
+          "additionalProperties": false,
+          "properties": {
+            "artifact_identifier": { "type": "string" },
+            "sha256": { "type": "string", "pattern": "^[0-9a-f]{64}$" },
+            "row_count": { "type": "integer" },
+            "metrics": { "type": "object", "additionalProperties": { "type": "number" } }
+          }
+        }
+      }
+    }
+  },
+
+  "$defs": {
+    "checkpoint": {
+      "type": "object",
+      "required": ["identifier"],
+      "additionalProperties": false,
+      "properties": {
+        "identifier": { "type": "string" },
+        "sha256": { "type": "string", "pattern": "^[0-9a-f]{64}$" },
+        "source_url": { "type": "string" },
+        "upstream_checksum_published": { "type": "boolean" },
+        "retrieved": { "type": "string" },
+        "training_data": { "type": "array", "items": { "type": "string" } },
+        "training_split_disjoint_from_evaluated_split": { "enum": ["yes", "no", "unresolved"] },
+        "selection_provenance": {
+          "enum": ["confirmed_no_evaluated_split_use", "unresolved", "evaluated_split_used", "not_applicable"],
+          "description": "Whether the checkpoint was chosen without consulting the evaluated split. 'No recorded validation metric' is NOT 'confirmed'; it is 'unresolved'."
+        }
+      }
+    }
+  }
+}

@@ -68,6 +68,16 @@
       "bytes": 1077
     },
     {
+      "bytes": 8931,
+      "public_file": "PAPER_ARTIFACT_MAP.md",
+      "public_sha256": "214553936c50973b2f60e927191efde2c833d878a4e4fb5e0d0d0a2a9d4bd5d8",
+      "redistribution": "OWN_RECORD",
+      "role": "reader entry point: manuscript and supplement material mapped to repository paths",
+      "source_frozen_artifact": "authored for this release",
+      "source_sha256": {},
+      "transformation": "authored"
+    },
+    {
       "public_file": "README.md",
       "role": "released file",
       "source_frozen_artifact": "authored for this release",
@@ -310,6 +320,539 @@
       "redistribution": "REFERENCE_ONLY (no upstream code in this repository)",
       "public_sha256": "6842d20051a2948b401db0ac504a44c7a7af43e26645d211cf9824097bd40af8",
       "bytes": 1580
+    },
+    {
+      "public_file": "other-work/provenance/frozen_records/controlled/45_THIRD_FAMILY_EVALUATION_RESULT.json",
+      "role": "Third-family reserved evaluation result, released verbatim",
+      "source_frozen_artifact": "docs/wacv/plan/45_THIRD_FAMILY_EVALUATION_RESULT.json",
+      "source_sha256": {
+        "docs/wacv/plan/45_THIRD_FAMILY_EVALUATION_RESULT.json": "c1d0ab27e8e1cb584233d88fc3e8a2c7d1d4b1cedbb20b95f12e07ef70fcfd7b"
+      },
+      "transformation": "none (byte-identical copy)",
+      "redistribution": "OWN_RECORD",
+      "public_sha256": "c1d0ab27e8e1cb584233d88fc3e8a2c7d1d4b1cedbb20b95f12e07ef70fcfd7b",
+      "bytes": 30045
+    },
+    {
+      "public_file": "other-work/provenance/frozen_records/controlled/51_JTA_PROSPECTIVE_EVALUATION_RESULT.json",
+      "role": "JTA prospective evaluation result, released verbatim",
+      "source_frozen_artifact": "docs/wacv/plan/51_JTA_PROSPECTIVE_EVALUATION_RESULT.json",
+      "source_sha256": {
+        "docs/wacv/plan/51_JTA_PROSPECTIVE_EVALUATION_RESULT.json": "4cdb4c38eb30af6681f49874146276701c8e74c178f25c0218e5e1a526d2ffaa"
+      },
+      "transformation": "none (byte-identical copy)",
+      "redistribution": "OWN_RECORD",
+      "public_sha256": "4cdb4c38eb30af6681f49874146276701c8e74c178f25c0218e5e1a526d2ffaa",
+      "bytes": 28730
+    },
+    {
+      "public_file": "other-work/provenance/frozen_records/controlled/51_JTA_PROSPECTIVE_EVALUATION_RESULT.md",
+      "role": "JTA prospective evaluation result (rendered), released verbatim",
+      "source_frozen_artifact": "docs/wacv/plan/51_JTA_PROSPECTIVE_EVALUATION_RESULT.md",
+      "source_sha256": {
+        "docs/wacv/plan/51_JTA_PROSPECTIVE_EVALUATION_RESULT.md": "654bd4724660c6fd1f8c8ea8fb844f716759ae6e2374aedfe774d3000412756b"
+      },
+      "transformation": "none (byte-identical copy)",
+      "redistribution": "OWN_RECORD",
+      "public_sha256": "654bd4724660c6fd1f8c8ea8fb844f716759ae6e2374aedfe774d3000412756b",
+      "bytes": 18038
+    },
+    {
+      "public_file": "other-work/provenance/frozen_records/controlled/54_POSETRACK21_PROSPECTIVE_EVALUATION_RESULT.json",
+      "role": "PoseTrack21 prospective evaluation result, released verbatim",
+      "source_frozen_artifact": "docs/wacv/plan/54_POSETRACK21_PROSPECTIVE_EVALUATION_RESULT.json",
+      "source_sha256": {
+        "docs/wacv/plan/54_POSETRACK21_PROSPECTIVE_EVALUATION_RESULT.json": "f8dc7b54cc780921bda1717789b2370095e8f2aecc58b0409ba3b8b6d1e720c2"
+      },
+      "transformation": "none (byte-identical copy)",
+      "redistribution": "OWN_RECORD",
+      "public_sha256": "f8dc7b54cc780921bda1717789b2370095e8f2aecc58b0409ba3b8b6d1e720c2",
+      "bytes": 24823
+    },
+    {
+      "public_file": "other-work/provenance/frozen_records/controlled/54_POSETRACK21_PROSPECTIVE_EVALUATION_RESULT.md",
+      "role": "PoseTrack21 prospective evaluation result (rendered), released verbatim",
+      "source_frozen_artifact": "docs/wacv/plan/54_POSETRACK21_PROSPECTIVE_EVALUATION_RESULT.md",
+      "source_sha256": {
+        "docs/wacv/plan/54_POSETRACK21_PROSPECTIVE_EVALUATION_RESULT.md": "0ff4bae99ee04ca5e960abb02faa97a755f8b3422f9ee8dd616f3aab6f8e3fbe"
+      },
+      "transformation": "none (byte-identical copy)",
+      "redistribution": "OWN_RECORD",
+      "public_sha256": "0ff4bae99ee04ca5e960abb02faa97a755f8b3422f9ee8dd616f3aab6f8e3fbe",
+      "bytes": 14190
+    },
+    {
+      "public_file": "other-work/provenance/frozen_records/controlled/55_POSETRACK21_SEQUENCE_UNCERTAINTY.json",
+      "role": "PoseTrack21 sequence-clustered uncertainty, released verbatim",
+      "source_frozen_artifact": "docs/wacv/plan/55_POSETRACK21_SEQUENCE_UNCERTAINTY.json",
+      "source_sha256": {
+        "docs/wacv/plan/55_POSETRACK21_SEQUENCE_UNCERTAINTY.json": "07ccf2f93e966fd9b87df4ac8633b993a6c6a8ecced38f250b231a08253cf2d9"
+      },
+      "transformation": "none (byte-identical copy)",
+      "redistribution": "OWN_RECORD",
+      "public_sha256": "07ccf2f93e966fd9b87df4ac8633b993a6c6a8ecced38f250b231a08253cf2d9",
+      "bytes": 15537
+    },
+    {
+      "public_file": "other-work/provenance/frozen_records/controlled/55_POSETRACK21_SEQUENCE_UNCERTAINTY.md",
+      "role": "PoseTrack21 sequence-clustered uncertainty (rendered), released verbatim",
+      "source_frozen_artifact": "docs/wacv/plan/55_POSETRACK21_SEQUENCE_UNCERTAINTY.md",
+      "source_sha256": {
+        "docs/wacv/plan/55_POSETRACK21_SEQUENCE_UNCERTAINTY.md": "fdb168f5c05e9b3091f2f68ebf601c131e21a2a62ff0be7c62ea935fbc85085c"
+      },
+      "transformation": "none (byte-identical copy)",
+      "redistribution": "OWN_RECORD",
+      "public_sha256": "fdb168f5c05e9b3091f2f68ebf601c131e21a2a62ff0be7c62ea935fbc85085c",
+      "bytes": 7262
+    },
+    {
+      "public_file": "other-work/provenance/frozen_records/controlled/56_POSETRACK21_SEGMENTATION_SENSITIVITY.json",
+      "role": "PoseTrack21 segmentation sensitivity, released verbatim",
+      "source_frozen_artifact": "docs/wacv/plan/56_POSETRACK21_SEGMENTATION_SENSITIVITY.json",
+      "source_sha256": {
+        "docs/wacv/plan/56_POSETRACK21_SEGMENTATION_SENSITIVITY.json": "bcf127dca9fe32a5746557b456bdb8bfed9d1b38679767bcb265033ff57907fe"
+      },
+      "transformation": "none (byte-identical copy)",
+      "redistribution": "OWN_RECORD",
+      "public_sha256": "bcf127dca9fe32a5746557b456bdb8bfed9d1b38679767bcb265033ff57907fe",
+      "bytes": 10600
+    },
+    {
+      "public_file": "other-work/provenance/frozen_records/controlled/56_POSETRACK21_SEGMENTATION_SENSITIVITY.md",
+      "role": "PoseTrack21 segmentation sensitivity (rendered), released verbatim",
+      "source_frozen_artifact": "docs/wacv/plan/56_POSETRACK21_SEGMENTATION_SENSITIVITY.md",
+      "source_sha256": {
+        "docs/wacv/plan/56_POSETRACK21_SEGMENTATION_SENSITIVITY.md": "53b4db1c1c70cef2e8419435ad97036bcb58ac169e40255cb07583a43c62a31a"
+      },
+      "transformation": "none (byte-identical copy)",
+      "redistribution": "OWN_RECORD",
+      "public_sha256": "53b4db1c1c70cef2e8419435ad97036bcb58ac169e40255cb07583a43c62a31a",
+      "bytes": 6175
+    },
+    {
+      "public_file": "other-work/provenance/frozen_records/controlled/KITTI_descriptive_summary.json",
+      "role": "KITTI frozen descriptive summary, released verbatim",
+      "source_frozen_artifact": "docs/q1/kitti_result_artifacts_20260824/descriptive_summary.json",
+      "source_sha256": {
+        "docs/q1/kitti_result_artifacts_20260824/descriptive_summary.json": "f18a620c80006a5950ecfcff72ec23fd2afb2209493513c1f0e4047d272400a0"
+      },
+      "transformation": "none (byte-identical copy)",
+      "redistribution": "OWN_RECORD",
+      "public_sha256": "f18a620c80006a5950ecfcff72ec23fd2afb2209493513c1f0e4047d272400a0",
+      "bytes": 39346
+    },
+    {
+      "public_file": "other-work/provenance/frozen_records/controlled/KITTI_execution_log.txt",
+      "role": "KITTI one-shot execution log, released verbatim",
+      "source_frozen_artifact": "docs/q1/kitti_result_artifacts_20260824/execution_log.txt",
+      "source_sha256": {
+        "docs/q1/kitti_result_artifacts_20260824/execution_log.txt": "7e97857797f15eecfdb358f184b9d0f0a1d8c9ab77dd75021a5be94e148d602c"
+      },
+      "transformation": "none (byte-identical copy)",
+      "redistribution": "OWN_RECORD",
+      "public_sha256": "7e97857797f15eecfdb358f184b9d0f0a1d8c9ab77dd75021a5be94e148d602c",
+      "bytes": 625
+    },
+    {
+      "public_file": "other-work/provenance/frozen_records/controlled/KITTI_hypothesis_status.json",
+      "role": "KITTI frozen hypothesis status, released verbatim",
+      "source_frozen_artifact": "docs/q1/kitti_result_artifacts_20260824/hypothesis_status.json",
+      "source_sha256": {
+        "docs/q1/kitti_result_artifacts_20260824/hypothesis_status.json": "80b64b98773b676539de82e0517f5b005db010d30c80af6a1646970da684b336"
+      },
+      "transformation": "none (byte-identical copy)",
+      "redistribution": "OWN_RECORD",
+      "public_sha256": "80b64b98773b676539de82e0517f5b005db010d30c80af6a1646970da684b336",
+      "bytes": 508
+    },
+    {
+      "public_file": "other-work/results/controlled/jta_applicability.csv",
+      "role": "JTA within-corpus structural replication: the Gate-1R applicability partition on the held-out val+test population",
+      "source_frozen_artifact": "docs/wacv/plan/51_JTA_PROSPECTIVE_EVALUATION_RESULT.json",
+      "source_sha256": {
+        "docs/wacv/plan/51_JTA_PROSPECTIVE_EVALUATION_RESULT.json": "4cdb4c38eb30af6681f49874146276701c8e74c178f25c0218e5e1a526d2ffaa"
+      },
+      "transformation": "selected the applicability block; every count and rate verbatim",
+      "redistribution": "OWN_DERIVED_AGGREGATE",
+      "public_sha256": "de0ca3a0245271d9095285c780f52bdeb7586007e73c0a62374c96acf20b0707",
+      "bytes": 367
+    },
+    {
+      "public_file": "other-work/results/controlled/jta_headline.json",
+      "role": "JTA frozen headline: the classical/learned estimates and the reading the frozen protocol licenses",
+      "source_frozen_artifact": "docs/wacv/plan/51_JTA_PROSPECTIVE_EVALUATION_RESULT.json",
+      "source_sha256": {
+        "docs/wacv/plan/51_JTA_PROSPECTIVE_EVALUATION_RESULT.json": "4cdb4c38eb30af6681f49874146276701c8e74c178f25c0218e5e1a526d2ffaa"
+      },
+      "transformation": "selected headline fields; values and wording verbatim",
+      "redistribution": "OWN_DERIVED_AGGREGATE",
+      "public_sha256": "63d7829bc3a11bdb9e979f2069f347e34ff18c7dbbb61989b268f22a53d320e9",
+      "bytes": 1812
+    },
+    {
+      "public_file": "other-work/results/controlled/kitti_applicability.csv",
+      "role": "KITTI applicability partition, pooled (D1)",
+      "source_frozen_artifact": [
+        "q1-kitti-generality-result-20260824",
+        "docs/q1/kitti_result_artifacts_20260824/descriptive_summary.json"
+      ],
+      "source_sha256": {
+        "docs/q1/kitti_result_artifacts_20260824/descriptive_summary.json": "f18a620c80006a5950ecfcff72ec23fd2afb2209493513c1f0e4047d272400a0"
+      },
+      "transformation": "selected D1_overall; values verbatim",
+      "redistribution": "OWN_DERIVED_AGGREGATE",
+      "public_sha256": "c557951f8f5006fb6956c9c30e33224c2bfc5711bf757aa5ca9fb53d474c11ab",
+      "bytes": 877
+    },
+    {
+      "public_file": "other-work/results/controlled/kitti_hypothesis.json",
+      "role": "KITTI transfer: the single pre-frozen confirmatory hypothesis and its observed status",
+      "source_frozen_artifact": [
+        "q1-kitti-generality-result-20260824",
+        "docs/q1/kitti_result_artifacts_20260824/hypothesis_status.json"
+      ],
+      "source_sha256": {
+        "docs/q1/kitti_result_artifacts_20260824/hypothesis_status.json": "80b64b98773b676539de82e0517f5b005db010d30c80af6a1646970da684b336"
+      },
+      "transformation": "none (byte-identical content, re-serialised)",
+      "redistribution": "OWN_DERIVED_AGGREGATE",
+      "public_sha256": "1ed48b56be8c8f1be8a2e4f89a09f3befe168dd3d1af5397f9222653619d1227",
+      "bytes": 500
+    },
+    {
+      "public_file": "other-work/results/controlled/learned_architecture_diagnostics.json",
+      "role": "Learned-model architecture diagnostics: the frozen seed-disagreement summary and the interpretation the protocol licenses",
+      "source_frozen_artifact": "docs/wacv/plan/45_THIRD_FAMILY_EVALUATION_RESULT.json",
+      "source_sha256": {
+        "docs/wacv/plan/45_THIRD_FAMILY_EVALUATION_RESULT.json": "c1d0ab27e8e1cb584233d88fc3e8a2c7d1d4b1cedbb20b95f12e07ef70fcfd7b"
+      },
+      "transformation": "selected estimand, seed and interpretation blocks; values and wording verbatim",
+      "redistribution": "OWN_DERIVED_AGGREGATE",
+      "public_sha256": "552cc54aa97d1cd8d086ee5b64344688d95d3c5121874fb872d980226127bc1e",
+      "bytes": 5936
+    },
+    {
+      "public_file": "other-work/results/controlled/learned_beta_by_phi.csv",
+      "role": "Noise-sensitivity coefficient beta at each anchor-noise correlation phi, per operator and per trained checkpoint",
+      "source_frozen_artifact": "docs/wacv/plan/45_THIRD_FAMILY_EVALUATION_RESULT.json",
+      "source_sha256": {
+        "docs/wacv/plan/45_THIRD_FAMILY_EVALUATION_RESULT.json": "c1d0ab27e8e1cb584233d88fc3e8a2c7d1d4b1cedbb20b95f12e07ef70fcfd7b"
+      },
+      "transformation": "flattened results[*].beta_by_phi to CSV; values verbatim",
+      "redistribution": "OWN_DERIVED_AGGREGATE",
+      "public_sha256": "4af4148a705dfe8bf99ec7f9af5d179d3938ed1a42ed5a0cbc18bdf5aca46edd",
+      "bytes": 3843
+    },
+    {
+      "public_file": "other-work/results/controlled/learned_input_contract.json",
+      "role": "The frozen learned-model input contract on the cross-population evaluation: 17 slots, 13 available, 4 unavailable, no confidence channel",
+      "source_frozen_artifact": "docs/wacv/plan/54_POSETRACK21_PROSPECTIVE_EVALUATION_RESULT.json",
+      "source_sha256": {
+        "docs/wacv/plan/54_POSETRACK21_PROSPECTIVE_EVALUATION_RESULT.json": "f8dc7b54cc780921bda1717789b2370095e8f2aecc58b0409ba3b8b6d1e720c2"
+      },
+      "transformation": "selected the learned_cross_population.input_contract block and its guarantees; values verbatim",
+      "redistribution": "OWN_DERIVED_AGGREGATE",
+      "public_sha256": "45982dbd5ae19d021428ed649d180bbd0db5eb771dce06b7a82065ee395077d4",
+      "bytes": 873
+    },
+    {
+      "public_file": "other-work/results/controlled/ntu_support_accounting.json",
+      "role": "NTU RGB+D controlled support-accounting audit: the reclassification, the affected gap rows and the common-support reversal",
+      "source_frozen_artifact": [
+        "78a439a",
+        "results/frozen_sources/a2_correction_summary.json"
+      ],
+      "source_sha256": {
+        "results/frozen_sources/a2_correction_summary.json": "f090b61ffdc90722769c646d12ce5349d6cbe379236e5eaf803f7ef3525e81ae"
+      },
+      "transformation": "selected fields; two absolute host paths omitted; all values verbatim",
+      "redistribution": "OWN_DERIVED_AGGREGATE",
+      "public_sha256": "0783e2bb06a8a7c817616d55b6513437dfe58ec2369b4bce73628faaeb0f2cab",
+      "bytes": 4886
+    },
+    {
+      "public_file": "other-work/results/controlled/objecttraj_applicability.csv",
+      "role": "Object-trajectory Gate-1R applicability on the BDD100K-derived subset and on MOT17 ground truth",
+      "source_frozen_artifact": [
+        "78a439a",
+        "results/frozen_sources/bdd_result.json"
+      ],
+      "source_sha256": {
+        "results/frozen_sources/bdd_result.json": "b26da30bbc2a48a5262bccdcfe29a5253537d64185e7f5251bb3429b0b4a8bbb"
+      },
+      "transformation": "selected the two applicability blocks; counts and fractions verbatim; totals recomputed from the released counts",
+      "redistribution": "OWN_DERIVED_AGGREGATE",
+      "public_sha256": "25943c6e1078c9d49f792567fc0a1046c93dcd9f6cfffb39d55beeabf561fca2",
+      "bytes": 418
+    },
+    {
+      "public_file": "other-work/results/controlled/posetrack21_applicability.csv",
+      "role": "PoseTrack21 Gate-1R applicability partition under the three audited segmentation rules; rule B is the frozen primary",
+      "source_frozen_artifact": [
+        "78a439a",
+        "docs/wacv/plan/56_POSETRACK21_SEGMENTATION_SENSITIVITY.json"
+      ],
+      "source_sha256": {
+        "docs/wacv/plan/56_POSETRACK21_SEGMENTATION_SENSITIVITY.json": "bcf127dca9fe32a5746557b456bdb8bfed9d1b38679767bcb265033ff57907fe"
+      },
+      "transformation": "flattened the three variant blocks to CSV; every count and percentage verbatim",
+      "redistribution": "OWN_DERIVED_AGGREGATE",
+      "public_sha256": "2496ad40acfef8d5d0e36fbab944caccf4e9aab61c8fedffd63b4bde5f7e5514",
+      "bytes": 560
+    },
+    {
+      "public_file": "other-work/results/controlled/posetrack21_bootstrap.csv",
+      "role": "PoseTrack21 sequence-clustered bootstrap: marginal per-method estimates and the paired differences",
+      "source_frozen_artifact": [
+        "78a439a",
+        "docs/wacv/plan/55_POSETRACK21_SEQUENCE_UNCERTAINTY.json"
+      ],
+      "source_sha256": {
+        "docs/wacv/plan/55_POSETRACK21_SEQUENCE_UNCERTAINTY.json": "07ccf2f93e966fd9b87df4ac8633b993a6c6a8ecced38f250b231a08253cf2d9"
+      },
+      "transformation": "flattened results and paired_differences to CSV; values verbatim",
+      "redistribution": "OWN_DERIVED_AGGREGATE",
+      "public_sha256": "de7df73365d84a3b69dee413fa88d0b863db3c7e8661fc4502665d5d7d210a4f",
+      "bytes": 1680
+    },
+    {
+      "public_file": "other-work/results/controlled/posetrack21_support_by_gap.csv",
+      "role": "PoseTrack21 evaluated support by gap length, and which gap lengths enter the primary aggregate",
+      "source_frozen_artifact": [
+        "78a439a",
+        "docs/wacv/plan/54_POSETRACK21_PROSPECTIVE_EVALUATION_RESULT.json"
+      ],
+      "source_sha256": {
+        "docs/wacv/plan/54_POSETRACK21_PROSPECTIVE_EVALUATION_RESULT.json": "f8dc7b54cc780921bda1717789b2370095e8f2aecc58b0409ba3b8b6d1e720c2"
+      },
+      "transformation": "flattened support.per_g to CSV; values verbatim",
+      "redistribution": "OWN_DERIVED_AGGREGATE",
+      "public_sha256": "af6c9ebe14c85f4244e4beacf57a3a363bed823258f6042e75556ff4858eda68",
+      "bytes": 295
+    },
+    {
+      "public_file": "other-work/scripts/verify_controlled_arm.py",
+      "role": "offline verification script, authored for this release",
+      "source_frozen_artifact": "authored for this release",
+      "source_sha256": {},
+      "transformation": "authored",
+      "redistribution": "OWN_CODE",
+      "public_sha256": "34f1a7ca9e0d4d3618ecd204df0b4f6e52cecaf12d2d732fb905dd6a418f9b49",
+      "bytes": 17184
+    },
+    {
+      "public_file": "other-work/scripts/verify_support_accounting.py",
+      "role": "offline verification script, authored for this release",
+      "source_frozen_artifact": "authored for this release",
+      "source_sha256": {},
+      "transformation": "authored",
+      "redistribution": "OWN_CODE",
+      "public_sha256": "60b80168fd760024f152edc4ecd9e487c4eb3e9c28ae61b04202c07908811888",
+      "bytes": 6793
+    },
+    {
+      "public_file": "other-work/src/applicability_audit/README.md",
+      "role": "released audit source",
+      "source_frozen_artifact": "applicability_audit/README.md",
+      "source_sha256": {
+        "applicability_audit/README.md": "68557c428e9279872f2965b7f77c38929e626724cb3ea34e34a74645187d0d2e"
+      },
+      "transformation": "two internal path references updated for the release layout; text otherwise verbatim",
+      "redistribution": "OWN_CODE",
+      "public_sha256": "6c9d1e4ea9fc1ff88e56af1c4ad9da6e055c922b1250dc245fbdebd18dc6e69f",
+      "bytes": 5572
+    },
+    {
+      "public_file": "other-work/src/applicability_audit/__init__.py",
+      "role": "released audit source",
+      "source_frozen_artifact": "applicability_audit/__init__.py",
+      "source_sha256": {
+        "applicability_audit/__init__.py": "fcd3bb158d5bd8b02e0b18d7bf1704debc592edc86ecbca79faee95201950477"
+      },
+      "transformation": "none (byte-identical copy)",
+      "redistribution": "OWN_CODE",
+      "public_sha256": "fcd3bb158d5bd8b02e0b18d7bf1704debc592edc86ecbca79faee95201950477",
+      "bytes": 2197
+    },
+    {
+      "public_file": "other-work/src/applicability_audit/adapters/__init__.py",
+      "role": "released audit source",
+      "source_frozen_artifact": "applicability_audit/adapters/__init__.py",
+      "source_sha256": {
+        "applicability_audit/adapters/__init__.py": "8427bf6cd139e3d6e86c444afe6dcd5d4d6db6071c9da349ae06179d7faf3ec6"
+      },
+      "transformation": "none (byte-identical copy)",
+      "redistribution": "OWN_CODE",
+      "public_sha256": "8427bf6cd139e3d6e86c444afe6dcd5d4d6db6071c9da349ae06179d7faf3ec6",
+      "bytes": 206
+    },
+    {
+      "public_file": "other-work/src/applicability_audit/adapters/motchallenge.py",
+      "role": "released audit source",
+      "source_frozen_artifact": "applicability_audit/adapters/motchallenge.py",
+      "source_sha256": {
+        "applicability_audit/adapters/motchallenge.py": "e2f695664b6dd42efe6729ccc8a114c588b9b2bf09ba4825c7666642b16ea426"
+      },
+      "transformation": "none (byte-identical copy)",
+      "redistribution": "OWN_CODE",
+      "public_sha256": "e2f695664b6dd42efe6729ccc8a114c588b9b2bf09ba4825c7666642b16ea426",
+      "bytes": 11151
+    },
+    {
+      "public_file": "other-work/src/applicability_audit/aggregation.py",
+      "role": "released audit source",
+      "source_frozen_artifact": "applicability_audit/aggregation.py",
+      "source_sha256": {
+        "applicability_audit/aggregation.py": "ba8f37a2ca5e010a605ab81b27129a7ae09e1537ebe4c71fbd450248af16fe5c"
+      },
+      "transformation": "none (byte-identical copy)",
+      "redistribution": "OWN_CODE",
+      "public_sha256": "ba8f37a2ca5e010a605ab81b27129a7ae09e1537ebe4c71fbd450248af16fe5c",
+      "bytes": 6437
+    },
+    {
+      "public_file": "other-work/src/applicability_audit/applicability.py",
+      "role": "released audit source",
+      "source_frozen_artifact": "applicability_audit/applicability.py",
+      "source_sha256": {
+        "applicability_audit/applicability.py": "c0345853c4af6101f699ef3e992694f62fd1b520c53d3b0c30765be209c6784e"
+      },
+      "transformation": "none (byte-identical copy)",
+      "redistribution": "OWN_CODE",
+      "public_sha256": "c0345853c4af6101f699ef3e992694f62fd1b520c53d3b0c30765be209c6784e",
+      "bytes": 5090
+    },
+    {
+      "public_file": "other-work/src/applicability_audit/audit.py",
+      "role": "released audit source",
+      "source_frozen_artifact": "applicability_audit/audit.py",
+      "source_sha256": {
+        "applicability_audit/audit.py": "69372097950009ddef4c1f81383bfadb51cd628e72587c39c2b37550fa08544d"
+      },
+      "transformation": "none (byte-identical copy)",
+      "redistribution": "OWN_CODE",
+      "public_sha256": "69372097950009ddef4c1f81383bfadb51cd628e72587c39c2b37550fa08544d",
+      "bytes": 28428
+    },
+    {
+      "public_file": "other-work/src/applicability_audit/cases.py",
+      "role": "released audit source",
+      "source_frozen_artifact": "applicability_audit/cases.py",
+      "source_sha256": {
+        "applicability_audit/cases.py": "3edd3659f76af6ca8c88be4d68c35603563a8d2c1d212eecbfeb1f9f039edb16"
+      },
+      "transformation": "none (byte-identical copy)",
+      "redistribution": "OWN_CODE",
+      "public_sha256": "3edd3659f76af6ca8c88be4d68c35603563a8d2c1d212eecbfeb1f9f039edb16",
+      "bytes": 3904
+    },
+    {
+      "public_file": "other-work/src/applicability_audit/certificate.py",
+      "role": "released audit source",
+      "source_frozen_artifact": "applicability_audit/certificate.py",
+      "source_sha256": {
+        "applicability_audit/certificate.py": "bfdf9274478843e796a0eaa99e403624330fd2efabb5244a8695613def8d4633"
+      },
+      "transformation": "none (byte-identical copy)",
+      "redistribution": "OWN_CODE",
+      "public_sha256": "bfdf9274478843e796a0eaa99e403624330fd2efabb5244a8695613def8d4633",
+      "bytes": 9178
+    },
+    {
+      "public_file": "other-work/src/applicability_audit/contracts.py",
+      "role": "released audit source",
+      "source_frozen_artifact": "applicability_audit/contracts.py",
+      "source_sha256": {
+        "applicability_audit/contracts.py": "eef98d01dc3e920f74c788c9ffb5c5f60292b62e8aa833fb767f9cad64d7a9a7"
+      },
+      "transformation": "none (byte-identical copy)",
+      "redistribution": "OWN_CODE",
+      "public_sha256": "eef98d01dc3e920f74c788c9ffb5c5f60292b62e8aa833fb767f9cad64d7a9a7",
+      "bytes": 8751
+    },
+    {
+      "public_file": "other-work/src/applicability_audit/diagnostics.py",
+      "role": "released audit source",
+      "source_frozen_artifact": "applicability_audit/diagnostics.py",
+      "source_sha256": {
+        "applicability_audit/diagnostics.py": "af9fdabb5d73c054375f8c3b77f0ee1e397226192684b0300669750a631574dc"
+      },
+      "transformation": "none (byte-identical copy)",
+      "redistribution": "OWN_CODE",
+      "public_sha256": "af9fdabb5d73c054375f8c3b77f0ee1e397226192684b0300669750a631574dc",
+      "bytes": 3550
+    },
+    {
+      "public_file": "other-work/src/applicability_audit/serialization.py",
+      "role": "released audit source",
+      "source_frozen_artifact": "applicability_audit/serialization.py",
+      "source_sha256": {
+        "applicability_audit/serialization.py": "aac294898e82652f8199a090343ef4cec6a917571e0320d56e4633804042eb29"
+      },
+      "transformation": "none (byte-identical copy)",
+      "redistribution": "OWN_CODE",
+      "public_sha256": "aac294898e82652f8199a090343ef4cec6a917571e0320d56e4633804042eb29",
+      "bytes": 2227
+    },
+    {
+      "public_file": "other-work/src/applicability_audit/support.py",
+      "role": "released audit source",
+      "source_frozen_artifact": "applicability_audit/support.py",
+      "source_sha256": {
+        "applicability_audit/support.py": "8df81caca70710e740f2a4cc0ea00014ef66f1c5b8bde0b562365039f8a3555d"
+      },
+      "transformation": "none (byte-identical copy)",
+      "redistribution": "OWN_CODE",
+      "public_sha256": "8df81caca70710e740f2a4cc0ea00014ef66f1c5b8bde0b562365039f8a3555d",
+      "bytes": 4620
+    },
+    {
+      "public_file": "other-work/src/applicability_audit/synthesis.py",
+      "role": "released audit source",
+      "source_frozen_artifact": "applicability_audit/synthesis.py",
+      "source_sha256": {
+        "applicability_audit/synthesis.py": "b43a2cda7418517abe3d429eca7c7f095ed2e20f82452feda9280bf38c69b070"
+      },
+      "transformation": "none (byte-identical copy)",
+      "redistribution": "OWN_CODE",
+      "public_sha256": "b43a2cda7418517abe3d429eca7c7f095ed2e20f82452feda9280bf38c69b070",
+      "bytes": 2907
+    },
+    {
+      "public_file": "other-work/tests/test_applicability_audit.py",
+      "role": "test",
+      "source_frozen_artifact": "tests/test_applicability_audit.py",
+      "source_sha256": {
+        "tests/test_applicability_audit.py": "930ed3176616415029ab359cac2c5afae9b882221e82217939ac718a9c2afa5e"
+      },
+      "transformation": "none (byte-identical copy)",
+      "redistribution": "OWN_CODE",
+      "public_sha256": "930ed3176616415029ab359cac2c5afae9b882221e82217939ac718a9c2afa5e",
+      "bytes": 27917
+    },
+    {
+      "public_file": "other-work/tests/test_applicability_audit_certificate.py",
+      "role": "test",
+      "source_frozen_artifact": "tests/test_applicability_audit_certificate.py",
+      "source_sha256": {
+        "tests/test_applicability_audit_certificate.py": "54f3347006a1736433797692cdde6af098c793f1a38e3913c34bacbc4f671e65"
+      },
+      "transformation": "none (byte-identical copy)",
+      "redistribution": "OWN_CODE",
+      "public_sha256": "6276eb10418bb8f647fb57563f46c63c0a31018fdbd45a58338c2822bf8e09b7",
+      "bytes": 12677
+    },
+    {
+      "public_file": "other-work/tests/test_applicability_audit_precomputed.py",
+      "role": "test",
+      "source_frozen_artifact": "tests/test_applicability_audit_precomputed.py",
+      "source_sha256": {
+        "tests/test_applicability_audit_precomputed.py": "69c55a5a1d44c46f007c03c475653623dca1e82abc8c56b845bf8f399a2753da"
+      },
+      "transformation": "none (byte-identical copy)",
+      "redistribution": "OWN_CODE",
+      "public_sha256": "c2ec727c5ea3a5f7007af61a7b63191ef85229e10253f67191340694148fe57e",
+      "bytes": 12837
     },
     {
       "public_file": "provenance/README.md",
@@ -699,150 +1242,6 @@
       "bytes": 3926
     },
     {
-      "public_file": "other-work/provenance/frozen_records/controlled/45_THIRD_FAMILY_EVALUATION_RESULT.json",
-      "role": "Third-family reserved evaluation result, released verbatim",
-      "source_frozen_artifact": "docs/wacv/plan/45_THIRD_FAMILY_EVALUATION_RESULT.json",
-      "source_sha256": {
-        "docs/wacv/plan/45_THIRD_FAMILY_EVALUATION_RESULT.json": "c1d0ab27e8e1cb584233d88fc3e8a2c7d1d4b1cedbb20b95f12e07ef70fcfd7b"
-      },
-      "transformation": "none (byte-identical copy)",
-      "redistribution": "OWN_RECORD",
-      "public_sha256": "c1d0ab27e8e1cb584233d88fc3e8a2c7d1d4b1cedbb20b95f12e07ef70fcfd7b",
-      "bytes": 30045
-    },
-    {
-      "public_file": "other-work/provenance/frozen_records/controlled/51_JTA_PROSPECTIVE_EVALUATION_RESULT.json",
-      "role": "JTA prospective evaluation result, released verbatim",
-      "source_frozen_artifact": "docs/wacv/plan/51_JTA_PROSPECTIVE_EVALUATION_RESULT.json",
-      "source_sha256": {
-        "docs/wacv/plan/51_JTA_PROSPECTIVE_EVALUATION_RESULT.json": "4cdb4c38eb30af6681f49874146276701c8e74c178f25c0218e5e1a526d2ffaa"
-      },
-      "transformation": "none (byte-identical copy)",
-      "redistribution": "OWN_RECORD",
-      "public_sha256": "4cdb4c38eb30af6681f49874146276701c8e74c178f25c0218e5e1a526d2ffaa",
-      "bytes": 28730
-    },
-    {
-      "public_file": "other-work/provenance/frozen_records/controlled/51_JTA_PROSPECTIVE_EVALUATION_RESULT.md",
-      "role": "JTA prospective evaluation result (rendered), released verbatim",
-      "source_frozen_artifact": "docs/wacv/plan/51_JTA_PROSPECTIVE_EVALUATION_RESULT.md",
-      "source_sha256": {
-        "docs/wacv/plan/51_JTA_PROSPECTIVE_EVALUATION_RESULT.md": "654bd4724660c6fd1f8c8ea8fb844f716759ae6e2374aedfe774d3000412756b"
-      },
-      "transformation": "none (byte-identical copy)",
-      "redistribution": "OWN_RECORD",
-      "public_sha256": "654bd4724660c6fd1f8c8ea8fb844f716759ae6e2374aedfe774d3000412756b",
-      "bytes": 18038
-    },
-    {
-      "public_file": "other-work/provenance/frozen_records/controlled/54_POSETRACK21_PROSPECTIVE_EVALUATION_RESULT.json",
-      "role": "PoseTrack21 prospective evaluation result, released verbatim",
-      "source_frozen_artifact": "docs/wacv/plan/54_POSETRACK21_PROSPECTIVE_EVALUATION_RESULT.json",
-      "source_sha256": {
-        "docs/wacv/plan/54_POSETRACK21_PROSPECTIVE_EVALUATION_RESULT.json": "f8dc7b54cc780921bda1717789b2370095e8f2aecc58b0409ba3b8b6d1e720c2"
-      },
-      "transformation": "none (byte-identical copy)",
-      "redistribution": "OWN_RECORD",
-      "public_sha256": "f8dc7b54cc780921bda1717789b2370095e8f2aecc58b0409ba3b8b6d1e720c2",
-      "bytes": 24823
-    },
-    {
-      "public_file": "other-work/provenance/frozen_records/controlled/54_POSETRACK21_PROSPECTIVE_EVALUATION_RESULT.md",
-      "role": "PoseTrack21 prospective evaluation result (rendered), released verbatim",
-      "source_frozen_artifact": "docs/wacv/plan/54_POSETRACK21_PROSPECTIVE_EVALUATION_RESULT.md",
-      "source_sha256": {
-        "docs/wacv/plan/54_POSETRACK21_PROSPECTIVE_EVALUATION_RESULT.md": "0ff4bae99ee04ca5e960abb02faa97a755f8b3422f9ee8dd616f3aab6f8e3fbe"
-      },
-      "transformation": "none (byte-identical copy)",
-      "redistribution": "OWN_RECORD",
-      "public_sha256": "0ff4bae99ee04ca5e960abb02faa97a755f8b3422f9ee8dd616f3aab6f8e3fbe",
-      "bytes": 14190
-    },
-    {
-      "public_file": "other-work/provenance/frozen_records/controlled/55_POSETRACK21_SEQUENCE_UNCERTAINTY.json",
-      "role": "PoseTrack21 sequence-clustered uncertainty, released verbatim",
-      "source_frozen_artifact": "docs/wacv/plan/55_POSETRACK21_SEQUENCE_UNCERTAINTY.json",
-      "source_sha256": {
-        "docs/wacv/plan/55_POSETRACK21_SEQUENCE_UNCERTAINTY.json": "07ccf2f93e966fd9b87df4ac8633b993a6c6a8ecced38f250b231a08253cf2d9"
-      },
-      "transformation": "none (byte-identical copy)",
-      "redistribution": "OWN_RECORD",
-      "public_sha256": "07ccf2f93e966fd9b87df4ac8633b993a6c6a8ecced38f250b231a08253cf2d9",
-      "bytes": 15537
-    },
-    {
-      "public_file": "other-work/provenance/frozen_records/controlled/55_POSETRACK21_SEQUENCE_UNCERTAINTY.md",
-      "role": "PoseTrack21 sequence-clustered uncertainty (rendered), released verbatim",
-      "source_frozen_artifact": "docs/wacv/plan/55_POSETRACK21_SEQUENCE_UNCERTAINTY.md",
-      "source_sha256": {
-        "docs/wacv/plan/55_POSETRACK21_SEQUENCE_UNCERTAINTY.md": "fdb168f5c05e9b3091f2f68ebf601c131e21a2a62ff0be7c62ea935fbc85085c"
-      },
-      "transformation": "none (byte-identical copy)",
-      "redistribution": "OWN_RECORD",
-      "public_sha256": "fdb168f5c05e9b3091f2f68ebf601c131e21a2a62ff0be7c62ea935fbc85085c",
-      "bytes": 7262
-    },
-    {
-      "public_file": "other-work/provenance/frozen_records/controlled/56_POSETRACK21_SEGMENTATION_SENSITIVITY.json",
-      "role": "PoseTrack21 segmentation sensitivity, released verbatim",
-      "source_frozen_artifact": "docs/wacv/plan/56_POSETRACK21_SEGMENTATION_SENSITIVITY.json",
-      "source_sha256": {
-        "docs/wacv/plan/56_POSETRACK21_SEGMENTATION_SENSITIVITY.json": "bcf127dca9fe32a5746557b456bdb8bfed9d1b38679767bcb265033ff57907fe"
-      },
-      "transformation": "none (byte-identical copy)",
-      "redistribution": "OWN_RECORD",
-      "public_sha256": "bcf127dca9fe32a5746557b456bdb8bfed9d1b38679767bcb265033ff57907fe",
-      "bytes": 10600
-    },
-    {
-      "public_file": "other-work/provenance/frozen_records/controlled/56_POSETRACK21_SEGMENTATION_SENSITIVITY.md",
-      "role": "PoseTrack21 segmentation sensitivity (rendered), released verbatim",
-      "source_frozen_artifact": "docs/wacv/plan/56_POSETRACK21_SEGMENTATION_SENSITIVITY.md",
-      "source_sha256": {
-        "docs/wacv/plan/56_POSETRACK21_SEGMENTATION_SENSITIVITY.md": "53b4db1c1c70cef2e8419435ad97036bcb58ac169e40255cb07583a43c62a31a"
-      },
-      "transformation": "none (byte-identical copy)",
-      "redistribution": "OWN_RECORD",
-      "public_sha256": "53b4db1c1c70cef2e8419435ad97036bcb58ac169e40255cb07583a43c62a31a",
-      "bytes": 6175
-    },
-    {
-      "public_file": "other-work/provenance/frozen_records/controlled/KITTI_descriptive_summary.json",
-      "role": "KITTI frozen descriptive summary, released verbatim",
-      "source_frozen_artifact": "docs/q1/kitti_result_artifacts_20260824/descriptive_summary.json",
-      "source_sha256": {
-        "docs/q1/kitti_result_artifacts_20260824/descriptive_summary.json": "f18a620c80006a5950ecfcff72ec23fd2afb2209493513c1f0e4047d272400a0"
-      },
-      "transformation": "none (byte-identical copy)",
-      "redistribution": "OWN_RECORD",
-      "public_sha256": "f18a620c80006a5950ecfcff72ec23fd2afb2209493513c1f0e4047d272400a0",
-      "bytes": 39346
-    },
-    {
-      "public_file": "other-work/provenance/frozen_records/controlled/KITTI_execution_log.txt",
-      "role": "KITTI one-shot execution log, released verbatim",
-      "source_frozen_artifact": "docs/q1/kitti_result_artifacts_20260824/execution_log.txt",
-      "source_sha256": {
-        "docs/q1/kitti_result_artifacts_20260824/execution_log.txt": "7e97857797f15eecfdb358f184b9d0f0a1d8c9ab77dd75021a5be94e148d602c"
-      },
-      "transformation": "none (byte-identical copy)",
-      "redistribution": "OWN_RECORD",
-      "public_sha256": "7e97857797f15eecfdb358f184b9d0f0a1d8c9ab77dd75021a5be94e148d602c",
-      "bytes": 625
-    },
-    {
-      "public_file": "other-work/provenance/frozen_records/controlled/KITTI_hypothesis_status.json",
-      "role": "KITTI frozen hypothesis status, released verbatim",
-      "source_frozen_artifact": "docs/q1/kitti_result_artifacts_20260824/hypothesis_status.json",
-      "source_sha256": {
-        "docs/q1/kitti_result_artifacts_20260824/hypothesis_status.json": "80b64b98773b676539de82e0517f5b005db010d30c80af6a1646970da684b336"
-      },
-      "transformation": "none (byte-identical copy)",
-      "redistribution": "OWN_RECORD",
-      "public_sha256": "80b64b98773b676539de82e0517f5b005db010d30c80af6a1646970da684b336",
-      "bytes": 508
-    },
-    {
       "public_file": "provenance/path_map.json",
       "role": "machine-readable resolution of every path reference inside the verbatim frozen records",
       "source_frozen_artifact": "authored for this release",
@@ -851,171 +1250,6 @@
       "redistribution": "OWN_RECORD",
       "public_sha256": "51fa48ac8a329dc778898381746498bc16c37649a129cb573e8516d5ebfd4a3e",
       "bytes": 4282
-    },
-    {
-      "public_file": "other-work/results/controlled/jta_applicability.csv",
-      "role": "JTA within-corpus structural replication: the Gate-1R applicability partition on the held-out val+test population",
-      "source_frozen_artifact": "docs/wacv/plan/51_JTA_PROSPECTIVE_EVALUATION_RESULT.json",
-      "source_sha256": {
-        "docs/wacv/plan/51_JTA_PROSPECTIVE_EVALUATION_RESULT.json": "4cdb4c38eb30af6681f49874146276701c8e74c178f25c0218e5e1a526d2ffaa"
-      },
-      "transformation": "selected the applicability block; every count and rate verbatim",
-      "redistribution": "OWN_DERIVED_AGGREGATE",
-      "public_sha256": "de0ca3a0245271d9095285c780f52bdeb7586007e73c0a62374c96acf20b0707",
-      "bytes": 367
-    },
-    {
-      "public_file": "other-work/results/controlled/jta_headline.json",
-      "role": "JTA frozen headline: the classical/learned estimates and the reading the frozen protocol licenses",
-      "source_frozen_artifact": "docs/wacv/plan/51_JTA_PROSPECTIVE_EVALUATION_RESULT.json",
-      "source_sha256": {
-        "docs/wacv/plan/51_JTA_PROSPECTIVE_EVALUATION_RESULT.json": "4cdb4c38eb30af6681f49874146276701c8e74c178f25c0218e5e1a526d2ffaa"
-      },
-      "transformation": "selected headline fields; values and wording verbatim",
-      "redistribution": "OWN_DERIVED_AGGREGATE",
-      "public_sha256": "63d7829bc3a11bdb9e979f2069f347e34ff18c7dbbb61989b268f22a53d320e9",
-      "bytes": 1812
-    },
-    {
-      "public_file": "other-work/results/controlled/kitti_applicability.csv",
-      "role": "KITTI applicability partition, pooled (D1)",
-      "source_frozen_artifact": [
-        "q1-kitti-generality-result-20260824",
-        "docs/q1/kitti_result_artifacts_20260824/descriptive_summary.json"
-      ],
-      "source_sha256": {
-        "docs/q1/kitti_result_artifacts_20260824/descriptive_summary.json": "f18a620c80006a5950ecfcff72ec23fd2afb2209493513c1f0e4047d272400a0"
-      },
-      "transformation": "selected D1_overall; values verbatim",
-      "redistribution": "OWN_DERIVED_AGGREGATE",
-      "public_sha256": "c557951f8f5006fb6956c9c30e33224c2bfc5711bf757aa5ca9fb53d474c11ab",
-      "bytes": 877
-    },
-    {
-      "public_file": "other-work/results/controlled/kitti_hypothesis.json",
-      "role": "KITTI transfer: the single pre-frozen confirmatory hypothesis and its observed status",
-      "source_frozen_artifact": [
-        "q1-kitti-generality-result-20260824",
-        "docs/q1/kitti_result_artifacts_20260824/hypothesis_status.json"
-      ],
-      "source_sha256": {
-        "docs/q1/kitti_result_artifacts_20260824/hypothesis_status.json": "80b64b98773b676539de82e0517f5b005db010d30c80af6a1646970da684b336"
-      },
-      "transformation": "none (byte-identical content, re-serialised)",
-      "redistribution": "OWN_DERIVED_AGGREGATE",
-      "public_sha256": "1ed48b56be8c8f1be8a2e4f89a09f3befe168dd3d1af5397f9222653619d1227",
-      "bytes": 500
-    },
-    {
-      "public_file": "other-work/results/controlled/learned_architecture_diagnostics.json",
-      "role": "Learned-model architecture diagnostics: the frozen seed-disagreement summary and the interpretation the protocol licenses",
-      "source_frozen_artifact": "docs/wacv/plan/45_THIRD_FAMILY_EVALUATION_RESULT.json",
-      "source_sha256": {
-        "docs/wacv/plan/45_THIRD_FAMILY_EVALUATION_RESULT.json": "c1d0ab27e8e1cb584233d88fc3e8a2c7d1d4b1cedbb20b95f12e07ef70fcfd7b"
-      },
-      "transformation": "selected estimand, seed and interpretation blocks; values and wording verbatim",
-      "redistribution": "OWN_DERIVED_AGGREGATE",
-      "public_sha256": "552cc54aa97d1cd8d086ee5b64344688d95d3c5121874fb872d980226127bc1e",
-      "bytes": 5936
-    },
-    {
-      "public_file": "other-work/results/controlled/learned_beta_by_phi.csv",
-      "role": "Noise-sensitivity coefficient beta at each anchor-noise correlation phi, per operator and per trained checkpoint",
-      "source_frozen_artifact": "docs/wacv/plan/45_THIRD_FAMILY_EVALUATION_RESULT.json",
-      "source_sha256": {
-        "docs/wacv/plan/45_THIRD_FAMILY_EVALUATION_RESULT.json": "c1d0ab27e8e1cb584233d88fc3e8a2c7d1d4b1cedbb20b95f12e07ef70fcfd7b"
-      },
-      "transformation": "flattened results[*].beta_by_phi to CSV; values verbatim",
-      "redistribution": "OWN_DERIVED_AGGREGATE",
-      "public_sha256": "4af4148a705dfe8bf99ec7f9af5d179d3938ed1a42ed5a0cbc18bdf5aca46edd",
-      "bytes": 3843
-    },
-    {
-      "public_file": "other-work/results/controlled/learned_input_contract.json",
-      "role": "The frozen learned-model input contract on the cross-population evaluation: 17 slots, 13 available, 4 unavailable, no confidence channel",
-      "source_frozen_artifact": "docs/wacv/plan/54_POSETRACK21_PROSPECTIVE_EVALUATION_RESULT.json",
-      "source_sha256": {
-        "docs/wacv/plan/54_POSETRACK21_PROSPECTIVE_EVALUATION_RESULT.json": "f8dc7b54cc780921bda1717789b2370095e8f2aecc58b0409ba3b8b6d1e720c2"
-      },
-      "transformation": "selected the learned_cross_population.input_contract block and its guarantees; values verbatim",
-      "redistribution": "OWN_DERIVED_AGGREGATE",
-      "public_sha256": "45982dbd5ae19d021428ed649d180bbd0db5eb771dce06b7a82065ee395077d4",
-      "bytes": 873
-    },
-    {
-      "public_file": "other-work/results/controlled/ntu_support_accounting.json",
-      "role": "NTU RGB+D controlled support-accounting audit: the reclassification, the affected gap rows and the common-support reversal",
-      "source_frozen_artifact": [
-        "78a439a",
-        "results/frozen_sources/a2_correction_summary.json"
-      ],
-      "source_sha256": {
-        "results/frozen_sources/a2_correction_summary.json": "f090b61ffdc90722769c646d12ce5349d6cbe379236e5eaf803f7ef3525e81ae"
-      },
-      "transformation": "selected fields; two absolute host paths omitted; all values verbatim",
-      "redistribution": "OWN_DERIVED_AGGREGATE",
-      "public_sha256": "0783e2bb06a8a7c817616d55b6513437dfe58ec2369b4bce73628faaeb0f2cab",
-      "bytes": 4886
-    },
-    {
-      "public_file": "other-work/results/controlled/objecttraj_applicability.csv",
-      "role": "Object-trajectory Gate-1R applicability on the BDD100K-derived subset and on MOT17 ground truth",
-      "source_frozen_artifact": [
-        "78a439a",
-        "results/frozen_sources/bdd_result.json"
-      ],
-      "source_sha256": {
-        "results/frozen_sources/bdd_result.json": "b26da30bbc2a48a5262bccdcfe29a5253537d64185e7f5251bb3429b0b4a8bbb"
-      },
-      "transformation": "selected the two applicability blocks; counts and fractions verbatim; totals recomputed from the released counts",
-      "redistribution": "OWN_DERIVED_AGGREGATE",
-      "public_sha256": "25943c6e1078c9d49f792567fc0a1046c93dcd9f6cfffb39d55beeabf561fca2",
-      "bytes": 418
-    },
-    {
-      "public_file": "other-work/results/controlled/posetrack21_applicability.csv",
-      "role": "PoseTrack21 Gate-1R applicability partition under the three audited segmentation rules; rule B is the frozen primary",
-      "source_frozen_artifact": [
-        "78a439a",
-        "docs/wacv/plan/56_POSETRACK21_SEGMENTATION_SENSITIVITY.json"
-      ],
-      "source_sha256": {
-        "docs/wacv/plan/56_POSETRACK21_SEGMENTATION_SENSITIVITY.json": "bcf127dca9fe32a5746557b456bdb8bfed9d1b38679767bcb265033ff57907fe"
-      },
-      "transformation": "flattened the three variant blocks to CSV; every count and percentage verbatim",
-      "redistribution": "OWN_DERIVED_AGGREGATE",
-      "public_sha256": "2496ad40acfef8d5d0e36fbab944caccf4e9aab61c8fedffd63b4bde5f7e5514",
-      "bytes": 560
-    },
-    {
-      "public_file": "other-work/results/controlled/posetrack21_bootstrap.csv",
-      "role": "PoseTrack21 sequence-clustered bootstrap: marginal per-method estimates and the paired differences",
-      "source_frozen_artifact": [
-        "78a439a",
-        "docs/wacv/plan/55_POSETRACK21_SEQUENCE_UNCERTAINTY.json"
-      ],
-      "source_sha256": {
-        "docs/wacv/plan/55_POSETRACK21_SEQUENCE_UNCERTAINTY.json": "07ccf2f93e966fd9b87df4ac8633b993a6c6a8ecced38f250b231a08253cf2d9"
-      },
-      "transformation": "flattened results and paired_differences to CSV; values verbatim",
-      "redistribution": "OWN_DERIVED_AGGREGATE",
-      "public_sha256": "de7df73365d84a3b69dee413fa88d0b863db3c7e8661fc4502665d5d7d210a4f",
-      "bytes": 1680
-    },
-    {
-      "public_file": "other-work/results/controlled/posetrack21_support_by_gap.csv",
-      "role": "PoseTrack21 evaluated support by gap length, and which gap lengths enter the primary aggregate",
-      "source_frozen_artifact": [
-        "78a439a",
-        "docs/wacv/plan/54_POSETRACK21_PROSPECTIVE_EVALUATION_RESULT.json"
-      ],
-      "source_sha256": {
-        "docs/wacv/plan/54_POSETRACK21_PROSPECTIVE_EVALUATION_RESULT.json": "f8dc7b54cc780921bda1717789b2370095e8f2aecc58b0409ba3b8b6d1e720c2"
-      },
-      "transformation": "flattened support.per_g to CSV; values verbatim",
-      "redistribution": "OWN_DERIVED_AGGREGATE",
-      "public_sha256": "af6c9ebe14c85f4244e4beacf57a3a363bed823258f6042e75556ff4858eda68",
-      "bytes": 295
     },
     {
       "public_file": "results/mot17/SEQUENCE_HETEROGENEITY_README.md",
@@ -1314,6 +1548,16 @@
       "bytes": 1639
     },
     {
+      "public_file": "scripts/reproduce_random_control.py",
+      "role": "released reproduction helper",
+      "source_frozen_artifact": "reproduce_random_control.py",
+      "source_sha256": {},
+      "transformation": "authored",
+      "redistribution": "OWN_CODE",
+      "public_sha256": "2c347a55c6ec7f81bb4746014a4b29805341559aab24d22898f126cab79ba31c",
+      "bytes": 14325
+    },
+    {
       "public_file": "scripts/verify_admission.py",
       "role": "offline verification script, authored for this release; two-layer (recompute + frozen-record cross-check)",
       "source_frozen_artifact": "authored for this release",
@@ -1322,16 +1566,6 @@
       "redistribution": "OWN_CODE",
       "public_sha256": "72edc918a657019d7cc16f0e086fe05fd183545cc30831b93e2c519d10486a7c",
       "bytes": 10856
-    },
-    {
-      "public_file": "other-work/scripts/verify_controlled_arm.py",
-      "role": "offline verification script, authored for this release",
-      "source_frozen_artifact": "authored for this release",
-      "source_sha256": {},
-      "transformation": "authored",
-      "redistribution": "OWN_CODE",
-      "public_sha256": "34f1a7ca9e0d4d3618ecd204df0b4f6e52cecaf12d2d732fb905dd6a418f9b49",
-      "bytes": 17184
     },
     {
       "public_file": "scripts/verify_mot20_eligibility.py",
@@ -1362,184 +1596,6 @@
       "redistribution": "OWN_CODE",
       "public_sha256": "582136680245f68e48b769cf43aa4cd7afdc4e96ce0e72548fbf0b5e516b7a8c",
       "bytes": 6253
-    },
-    {
-      "public_file": "other-work/scripts/verify_support_accounting.py",
-      "role": "offline verification script, authored for this release",
-      "source_frozen_artifact": "authored for this release",
-      "source_sha256": {},
-      "transformation": "authored",
-      "redistribution": "OWN_CODE",
-      "public_sha256": "60b80168fd760024f152edc4ecd9e487c4eb3e9c28ae61b04202c07908811888",
-      "bytes": 6793
-    },
-    {
-      "public_file": "other-work/src/applicability_audit/README.md",
-      "role": "released audit source",
-      "source_frozen_artifact": "applicability_audit/README.md",
-      "source_sha256": {
-        "applicability_audit/README.md": "68557c428e9279872f2965b7f77c38929e626724cb3ea34e34a74645187d0d2e"
-      },
-      "transformation": "two internal path references updated for the release layout; text otherwise verbatim",
-      "redistribution": "OWN_CODE",
-      "public_sha256": "6c9d1e4ea9fc1ff88e56af1c4ad9da6e055c922b1250dc245fbdebd18dc6e69f",
-      "bytes": 5572
-    },
-    {
-      "public_file": "other-work/src/applicability_audit/__init__.py",
-      "role": "released audit source",
-      "source_frozen_artifact": "applicability_audit/__init__.py",
-      "source_sha256": {
-        "applicability_audit/__init__.py": "fcd3bb158d5bd8b02e0b18d7bf1704debc592edc86ecbca79faee95201950477"
-      },
-      "transformation": "none (byte-identical copy)",
-      "redistribution": "OWN_CODE",
-      "public_sha256": "fcd3bb158d5bd8b02e0b18d7bf1704debc592edc86ecbca79faee95201950477",
-      "bytes": 2197
-    },
-    {
-      "public_file": "other-work/src/applicability_audit/adapters/__init__.py",
-      "role": "released audit source",
-      "source_frozen_artifact": "applicability_audit/adapters/__init__.py",
-      "source_sha256": {
-        "applicability_audit/adapters/__init__.py": "8427bf6cd139e3d6e86c444afe6dcd5d4d6db6071c9da349ae06179d7faf3ec6"
-      },
-      "transformation": "none (byte-identical copy)",
-      "redistribution": "OWN_CODE",
-      "public_sha256": "8427bf6cd139e3d6e86c444afe6dcd5d4d6db6071c9da349ae06179d7faf3ec6",
-      "bytes": 206
-    },
-    {
-      "public_file": "other-work/src/applicability_audit/adapters/motchallenge.py",
-      "role": "released audit source",
-      "source_frozen_artifact": "applicability_audit/adapters/motchallenge.py",
-      "source_sha256": {
-        "applicability_audit/adapters/motchallenge.py": "e2f695664b6dd42efe6729ccc8a114c588b9b2bf09ba4825c7666642b16ea426"
-      },
-      "transformation": "none (byte-identical copy)",
-      "redistribution": "OWN_CODE",
-      "public_sha256": "e2f695664b6dd42efe6729ccc8a114c588b9b2bf09ba4825c7666642b16ea426",
-      "bytes": 11151
-    },
-    {
-      "public_file": "other-work/src/applicability_audit/aggregation.py",
-      "role": "released audit source",
-      "source_frozen_artifact": "applicability_audit/aggregation.py",
-      "source_sha256": {
-        "applicability_audit/aggregation.py": "ba8f37a2ca5e010a605ab81b27129a7ae09e1537ebe4c71fbd450248af16fe5c"
-      },
-      "transformation": "none (byte-identical copy)",
-      "redistribution": "OWN_CODE",
-      "public_sha256": "ba8f37a2ca5e010a605ab81b27129a7ae09e1537ebe4c71fbd450248af16fe5c",
-      "bytes": 6437
-    },
-    {
-      "public_file": "other-work/src/applicability_audit/applicability.py",
-      "role": "released audit source",
-      "source_frozen_artifact": "applicability_audit/applicability.py",
-      "source_sha256": {
-        "applicability_audit/applicability.py": "c0345853c4af6101f699ef3e992694f62fd1b520c53d3b0c30765be209c6784e"
-      },
-      "transformation": "none (byte-identical copy)",
-      "redistribution": "OWN_CODE",
-      "public_sha256": "c0345853c4af6101f699ef3e992694f62fd1b520c53d3b0c30765be209c6784e",
-      "bytes": 5090
-    },
-    {
-      "public_file": "other-work/src/applicability_audit/audit.py",
-      "role": "released audit source",
-      "source_frozen_artifact": "applicability_audit/audit.py",
-      "source_sha256": {
-        "applicability_audit/audit.py": "69372097950009ddef4c1f81383bfadb51cd628e72587c39c2b37550fa08544d"
-      },
-      "transformation": "none (byte-identical copy)",
-      "redistribution": "OWN_CODE",
-      "public_sha256": "69372097950009ddef4c1f81383bfadb51cd628e72587c39c2b37550fa08544d",
-      "bytes": 28428
-    },
-    {
-      "public_file": "other-work/src/applicability_audit/cases.py",
-      "role": "released audit source",
-      "source_frozen_artifact": "applicability_audit/cases.py",
-      "source_sha256": {
-        "applicability_audit/cases.py": "3edd3659f76af6ca8c88be4d68c35603563a8d2c1d212eecbfeb1f9f039edb16"
-      },
-      "transformation": "none (byte-identical copy)",
-      "redistribution": "OWN_CODE",
-      "public_sha256": "3edd3659f76af6ca8c88be4d68c35603563a8d2c1d212eecbfeb1f9f039edb16",
-      "bytes": 3904
-    },
-    {
-      "public_file": "other-work/src/applicability_audit/certificate.py",
-      "role": "released audit source",
-      "source_frozen_artifact": "applicability_audit/certificate.py",
-      "source_sha256": {
-        "applicability_audit/certificate.py": "bfdf9274478843e796a0eaa99e403624330fd2efabb5244a8695613def8d4633"
-      },
-      "transformation": "none (byte-identical copy)",
-      "redistribution": "OWN_CODE",
-      "public_sha256": "bfdf9274478843e796a0eaa99e403624330fd2efabb5244a8695613def8d4633",
-      "bytes": 9178
-    },
-    {
-      "public_file": "other-work/src/applicability_audit/contracts.py",
-      "role": "released audit source",
-      "source_frozen_artifact": "applicability_audit/contracts.py",
-      "source_sha256": {
-        "applicability_audit/contracts.py": "eef98d01dc3e920f74c788c9ffb5c5f60292b62e8aa833fb767f9cad64d7a9a7"
-      },
-      "transformation": "none (byte-identical copy)",
-      "redistribution": "OWN_CODE",
-      "public_sha256": "eef98d01dc3e920f74c788c9ffb5c5f60292b62e8aa833fb767f9cad64d7a9a7",
-      "bytes": 8751
-    },
-    {
-      "public_file": "other-work/src/applicability_audit/diagnostics.py",
-      "role": "released audit source",
-      "source_frozen_artifact": "applicability_audit/diagnostics.py",
-      "source_sha256": {
-        "applicability_audit/diagnostics.py": "af9fdabb5d73c054375f8c3b77f0ee1e397226192684b0300669750a631574dc"
-      },
-      "transformation": "none (byte-identical copy)",
-      "redistribution": "OWN_CODE",
-      "public_sha256": "af9fdabb5d73c054375f8c3b77f0ee1e397226192684b0300669750a631574dc",
-      "bytes": 3550
-    },
-    {
-      "public_file": "other-work/src/applicability_audit/serialization.py",
-      "role": "released audit source",
-      "source_frozen_artifact": "applicability_audit/serialization.py",
-      "source_sha256": {
-        "applicability_audit/serialization.py": "aac294898e82652f8199a090343ef4cec6a917571e0320d56e4633804042eb29"
-      },
-      "transformation": "none (byte-identical copy)",
-      "redistribution": "OWN_CODE",
-      "public_sha256": "aac294898e82652f8199a090343ef4cec6a917571e0320d56e4633804042eb29",
-      "bytes": 2227
-    },
-    {
-      "public_file": "other-work/src/applicability_audit/support.py",
-      "role": "released audit source",
-      "source_frozen_artifact": "applicability_audit/support.py",
-      "source_sha256": {
-        "applicability_audit/support.py": "8df81caca70710e740f2a4cc0ea00014ef66f1c5b8bde0b562365039f8a3555d"
-      },
-      "transformation": "none (byte-identical copy)",
-      "redistribution": "OWN_CODE",
-      "public_sha256": "8df81caca70710e740f2a4cc0ea00014ef66f1c5b8bde0b562365039f8a3555d",
-      "bytes": 4620
-    },
-    {
-      "public_file": "other-work/src/applicability_audit/synthesis.py",
-      "role": "released audit source",
-      "source_frozen_artifact": "applicability_audit/synthesis.py",
-      "source_sha256": {
-        "applicability_audit/synthesis.py": "b43a2cda7418517abe3d429eca7c7f095ed2e20f82452feda9280bf38c69b070"
-      },
-      "transformation": "none (byte-identical copy)",
-      "redistribution": "OWN_CODE",
-      "public_sha256": "b43a2cda7418517abe3d429eca7c7f095ed2e20f82452feda9280bf38c69b070",
-      "bytes": 2907
     },
     {
       "public_file": "src/tracking_provenance_audit/__init__.py",
@@ -1756,42 +1812,6 @@
       "bytes": 0
     },
     {
-      "public_file": "other-work/tests/test_applicability_audit.py",
-      "role": "test",
-      "source_frozen_artifact": "tests/test_applicability_audit.py",
-      "source_sha256": {
-        "tests/test_applicability_audit.py": "930ed3176616415029ab359cac2c5afae9b882221e82217939ac718a9c2afa5e"
-      },
-      "transformation": "none (byte-identical copy)",
-      "redistribution": "OWN_CODE",
-      "public_sha256": "930ed3176616415029ab359cac2c5afae9b882221e82217939ac718a9c2afa5e",
-      "bytes": 27917
-    },
-    {
-      "public_file": "other-work/tests/test_applicability_audit_certificate.py",
-      "role": "test",
-      "source_frozen_artifact": "tests/test_applicability_audit_certificate.py",
-      "source_sha256": {
-        "tests/test_applicability_audit_certificate.py": "54f3347006a1736433797692cdde6af098c793f1a38e3913c34bacbc4f671e65"
-      },
-      "transformation": "none (byte-identical copy)",
-      "redistribution": "OWN_CODE",
-      "public_sha256": "6276eb10418bb8f647fb57563f46c63c0a31018fdbd45a58338c2822bf8e09b7",
-      "bytes": 12677
-    },
-    {
-      "public_file": "other-work/tests/test_applicability_audit_precomputed.py",
-      "role": "test",
-      "source_frozen_artifact": "tests/test_applicability_audit_precomputed.py",
-      "source_sha256": {
-        "tests/test_applicability_audit_precomputed.py": "69c55a5a1d44c46f007c03c475653623dca1e82abc8c56b845bf8f399a2753da"
-      },
-      "transformation": "none (byte-identical copy)",
-      "redistribution": "OWN_CODE",
-      "public_sha256": "c2ec727c5ea3a5f7007af61a7b63191ef85229e10253f67191340694148fe57e",
-      "bytes": 12837
-    },
-    {
       "public_file": "tests/test_corruption_detection.py",
       "role": "test: the verifiers must fail on corrupted public or frozen data",
       "source_frozen_artifact": "authored for this release",
@@ -1983,6 +2003,36 @@
       "redistribution": "OWN_CODE",
       "public_sha256": "f285769cdded39dc46d6570efef955c5eb8b5316628840493ba92cb49864f75d",
       "bytes": 6557
+    },
+    {
+      "public_file": "tpami/protocol/EXAMPLE_bytetrack_mot17_valhalf.json",
+      "role": "proposed evaluated-state report schema",
+      "source_frozen_artifact": "EXAMPLE_bytetrack_mot17_valhalf.json",
+      "source_sha256": {},
+      "transformation": "copied verbatim from the frozen audit package",
+      "redistribution": "OWN_RECORD",
+      "public_sha256": "8b76acd1e0892ab18257d74ddc9bca5446863f17f435741c0582093f5c4a4c72",
+      "bytes": 4999
+    },
+    {
+      "public_file": "tpami/protocol/PROPOSED_EVALUATED_STATE_REPORT_SCHEMA.json",
+      "role": "proposed evaluated-state report schema",
+      "source_frozen_artifact": "PROPOSED_EVALUATED_STATE_REPORT_SCHEMA.json",
+      "source_sha256": {},
+      "transformation": "copied verbatim from the frozen audit package",
+      "redistribution": "OWN_RECORD",
+      "public_sha256": "ea976011496c52d5663add5ea43105e2d76e30269eddb6a88c59a92af98b2e34",
+      "bytes": 10494
+    },
+    {
+      "public_file": "tpami/protocol/PROPOSED_EVALUATED_STATE_REPORT_SCHEMA.md",
+      "role": "proposed evaluated-state report schema",
+      "source_frozen_artifact": "PROPOSED_EVALUATED_STATE_REPORT_SCHEMA.md",
+      "source_sha256": {},
+      "transformation": "authored",
+      "redistribution": "OWN_RECORD",
+      "public_sha256": "e8536da685e22de806487807082e3e61f5dcc2f87915bf6ffccfd0204fb431ef",
+      "bytes": 6639
     },
     {
       "public_file": "tpami/results/dancetrack_dti/D1B1_corrections.csv",
@@ -2354,6 +2404,202 @@
       "bytes": 36649
     },
     {
+      "bytes": 12162,
+      "public_file": "tpami/results/mot17_bootstrap/D1_bootstrap_10000.csv",
+      "public_sha256": "8b6029c7fd52d20c299df8c6c254e4d606cf3f05ddb49eb5ea580580e3682b75",
+      "redistribution": "OWN_RECORD",
+      "role": "released-arm bootstrap, all 50 pairwise cells: margins, percentile intervals and sign-reversal frequencies",
+      "source_frozen_artifact": "this project's own audit output",
+      "transformation": "copied verbatim from the frozen audit tree"
+    },
+    {
+      "bytes": 134,
+      "public_file": "tpami/results/mot17_bootstrap/D1_bootstrap_indices.sha256",
+      "public_sha256": "d89b150c7bd52642ac5114addbe31a90598f194fc613230f026fe35eddfabab6",
+      "redistribution": "OWN_RECORD",
+      "role": "sha256, seed, shape and dtype of the released-arm draw-index matrix",
+      "source_frozen_artifact": "this project's own audit output",
+      "transformation": "copied verbatim from the frozen audit tree"
+    },
+    {
+      "bytes": 240,
+      "public_file": "tpami/results/mot17_bootstrap/D1_bootstrap_summary.csv",
+      "public_sha256": "6d8126db23da6e14e7b399da8203834f8b0923c550174e53e5975d8b73d9c41a",
+      "redistribution": "OWN_RECORD",
+      "role": "released-arm sequence-cluster bootstrap summary: draws, seed, cell count, interval counts, draw-index hash",
+      "source_frozen_artifact": "this project's own audit output",
+      "transformation": "copied verbatim from the frozen audit tree"
+    },
+    {
+      "bytes": 2178,
+      "public_file": "tpami/results/mot17_bootstrap/D1_bootstrap_summary.json",
+      "public_sha256": "946308558f6f6a63e256ee7bad9cfbfdf5ade4eba028dca6448e2352f564d833",
+      "redistribution": "OWN_RECORD",
+      "role": "released-arm bootstrap summary with the seven sequence clusters and the per-state point estimates",
+      "source_frozen_artifact": "this project's own audit output",
+      "transformation": "copied verbatim from the frozen audit tree"
+    },
+    {
+      "public_file": "tpami/results/preproc_sensitivity/R1_PREPROC_DISTRACTOR_BY_CLASS.csv",
+      "role": "preprocessing sensitivity of the composition figures",
+      "source_frozen_artifact": "R1_PREPROC_DISTRACTOR_BY_CLASS.csv",
+      "source_sha256": {},
+      "transformation": "copied verbatim from the frozen audit package",
+      "redistribution": "OWN_DERIVED_AGGREGATE",
+      "public_sha256": "15b26af51a15595723356e88ca008cf94cb7a9d0c5655d542ef4a8fe5f4bd7db",
+      "bytes": 1530
+    },
+    {
+      "public_file": "tpami/results/preproc_sensitivity/R1_PREPROC_DISTRACTOR_SUMMARY.csv",
+      "role": "preprocessing sensitivity of the composition figures",
+      "source_frozen_artifact": "R1_PREPROC_DISTRACTOR_SUMMARY.csv",
+      "source_sha256": {},
+      "transformation": "copied verbatim from the frozen audit package",
+      "redistribution": "OWN_DERIVED_AGGREGATE",
+      "public_sha256": "c71a721cb0acf982b1364686b5399c755d0d189e8ff197ecf1afaa1cbbc75d06",
+      "bytes": 622
+    },
+    {
+      "public_file": "tpami/results/random_control/R1_RANDOM_CONTROL_POOLS.csv",
+      "role": "random-subset control for the intermediate state",
+      "source_frozen_artifact": "R1_RANDOM_CONTROL_POOLS.csv",
+      "source_sha256": {},
+      "transformation": "copied verbatim from the frozen audit package",
+      "redistribution": "OWN_DERIVED_AGGREGATE",
+      "public_sha256": "907e1cdb59c39968a740d132000a3ae4e33c498d96a6a805ff61b378a479cff7",
+      "bytes": 30679
+    },
+    {
+      "public_file": "tpami/results/random_control/R1_RANDOM_CONTROL_R2_HASHES.csv",
+      "role": "random-subset control for the intermediate state",
+      "source_frozen_artifact": "R1_RANDOM_CONTROL_R2_HASHES.csv",
+      "source_sha256": {},
+      "transformation": "copied verbatim from the frozen audit package",
+      "redistribution": "OWN_DERIVED_AGGREGATE",
+      "public_sha256": "beaf94b2ad8392d3f9971de81ee0989faa5d1127993a0c062f3e5d0190395279",
+      "bytes": 2670
+    },
+    {
+      "public_file": "tpami/results/random_control/R1_RANDOM_CONTROL_SEEDS.csv",
+      "role": "random-subset control for the intermediate state",
+      "source_frozen_artifact": "R1_RANDOM_CONTROL_SEEDS.csv",
+      "source_sha256": {},
+      "transformation": "copied verbatim from the frozen audit package",
+      "redistribution": "OWN_DERIVED_AGGREGATE",
+      "public_sha256": "8239dc374f8c6522e1ac3741b823f114ad2e8fb35a964a285229c2ce37b87d8e",
+      "bytes": 193663
+    },
+    {
+      "public_file": "tpami/results/random_control/R1_RANDOM_CONTROL_SEEDS_PROVENANCE.json",
+      "role": "random-subset control for the intermediate state",
+      "source_frozen_artifact": "R1_RANDOM_CONTROL_SEEDS_PROVENANCE.json",
+      "source_sha256": {},
+      "transformation": "copied verbatim from the frozen audit package",
+      "redistribution": "OWN_DERIVED_AGGREGATE",
+      "public_sha256": "faba22fc0e167593f9672c7f6bf35604638d797b72e4ffa017c729eac9161c75",
+      "bytes": 1368
+    },
+    {
+      "public_file": "tpami/results/random_control/R1_RANDOM_SUBSET_CONTROL.csv",
+      "role": "random-subset control for the intermediate state",
+      "source_frozen_artifact": "R1_RANDOM_SUBSET_CONTROL.csv",
+      "source_sha256": {},
+      "transformation": "copied verbatim from the frozen audit package",
+      "redistribution": "OWN_DERIVED_AGGREGATE",
+      "public_sha256": "7895b11a2b06f0d28b0795f8afa20899c02cb239d86877c8af1c51a03d38f024",
+      "bytes": 8041
+    },
+    {
+      "public_file": "tpami/results/state_path/LEADER_PAIR_BOOTSTRAP_DANCETRACK.csv",
+      "role": "evaluated-state path result",
+      "source_frozen_artifact": "LEADER_PAIR_BOOTSTRAP_DANCETRACK.csv",
+      "source_sha256": {},
+      "transformation": "copied verbatim from the frozen audit package",
+      "redistribution": "OWN_DERIVED_AGGREGATE",
+      "public_sha256": "301b774dd2031df63de7b5f6d99591eeed74661d96ff45e123961d40a2feb9c6",
+      "bytes": 722
+    },
+    {
+      "public_file": "tpami/results/state_path/MOT20_ELIGIBILITY_RECONSTRUCTION.csv",
+      "role": "evaluated-state path result",
+      "source_frozen_artifact": "MOT20_ELIGIBILITY_RECONSTRUCTION.csv",
+      "source_sha256": {},
+      "transformation": "copied verbatim from the frozen audit package",
+      "redistribution": "OWN_DERIVED_AGGREGATE",
+      "public_sha256": "3eec9c300caad6d467129dc2fbec38cbfce7692f6ea01895fd33a989bdd8c98a",
+      "bytes": 4961
+    },
+    {
+      "public_file": "tpami/results/state_path/R1_ALL_STATES_THREE_POPULATIONS.csv",
+      "role": "evaluated-state path result",
+      "source_frozen_artifact": "R1_ALL_STATES_THREE_POPULATIONS.csv",
+      "source_sha256": {},
+      "transformation": "copied verbatim from the frozen audit package",
+      "redistribution": "OWN_DERIVED_AGGREGATE",
+      "public_sha256": "95f50126ee8fa289e24835a96d6661cf781a4d0f6f61d3ca3a85a82a529e4207",
+      "bytes": 3688
+    },
+    {
+      "public_file": "tpami/results/state_path/R1_BOOTSTRAP_MARGIN_TRANSITIONS_DANCETRACK.csv",
+      "role": "evaluated-state path result",
+      "source_frozen_artifact": "R1_BOOTSTRAP_MARGIN_TRANSITIONS_DANCETRACK.csv",
+      "source_sha256": {},
+      "transformation": "copied verbatim from the frozen audit package",
+      "redistribution": "OWN_DERIVED_AGGREGATE",
+      "public_sha256": "07034ad4f9444bb859b349120b6a1264d93e0a527c7c61e5acd2b616975bc15f",
+      "bytes": 4149
+    },
+    {
+      "public_file": "tpami/results/state_path/R1_BOOTSTRAP_MARGIN_TRANSITIONS_MOT17.csv",
+      "role": "evaluated-state path result",
+      "source_frozen_artifact": "R1_BOOTSTRAP_MARGIN_TRANSITIONS_MOT17.csv",
+      "source_sha256": {},
+      "transformation": "copied verbatim from the frozen audit package",
+      "redistribution": "OWN_DERIVED_AGGREGATE",
+      "public_sha256": "ca09cecc99019a6f3a29f37b326dab041ee96d1c486e26e08373055ed9a25a95",
+      "bytes": 6846
+    },
+    {
+      "public_file": "tpami/results/state_path/R1_GATE_SENSITIVITY.csv",
+      "role": "evaluated-state path result",
+      "source_frozen_artifact": "R1_GATE_SENSITIVITY.csv",
+      "source_sha256": {},
+      "transformation": "copied verbatim from the frozen audit package",
+      "redistribution": "OWN_DERIVED_AGGREGATE",
+      "public_sha256": "b120a5c23be7955581f5130470b6f3949dd728a2d053afdba904794ae68066e5",
+      "bytes": 15777
+    },
+    {
+      "public_file": "tpami/results/state_path/R1_GATE_SENSITIVITY_CROSSINGS.csv",
+      "role": "evaluated-state path result",
+      "source_frozen_artifact": "R1_GATE_SENSITIVITY_CROSSINGS.csv",
+      "source_sha256": {},
+      "transformation": "copied verbatim from the frozen audit package",
+      "redistribution": "OWN_DERIVED_AGGREGATE",
+      "public_sha256": "bbf3bb376f0d608576aac55695b5e41785009369dc4bc5c85a24c681f2d5232d",
+      "bytes": 314
+    },
+    {
+      "public_file": "tpami/results/state_path/R1_MARGIN_PATHS_DANCETRACK.csv",
+      "role": "evaluated-state path result",
+      "source_frozen_artifact": "R1_MARGIN_PATHS_DANCETRACK.csv",
+      "source_sha256": {},
+      "transformation": "copied verbatim from the frozen audit package",
+      "redistribution": "OWN_DERIVED_AGGREGATE",
+      "public_sha256": "57a1e24f8ef258cf282d523aef8d11559f6da5e878ad36f7c0283f6100da4890",
+      "bytes": 4306
+    },
+    {
+      "public_file": "tpami/results/state_path/R1_MARGIN_PATHS_MOT17.csv",
+      "role": "evaluated-state path result",
+      "source_frozen_artifact": "R1_MARGIN_PATHS_MOT17.csv",
+      "source_sha256": {},
+      "transformation": "copied verbatim from the frozen audit package",
+      "redistribution": "OWN_DERIVED_AGGREGATE",
+      "public_sha256": "2ec1ee64385d8bfe378d32320401e5a1043e3ad5a6257ec7ccf6b5be51ba09f6",
+      "bytes": 8134
+    },
+    {
       "public_file": "tpami/source_of_truth/.audit_counts.json",
       "role": "frozen artifact set the manuscript's numbers are checked against",
       "source_frozen_artifact": "this project's own audit output",
@@ -2678,6 +2924,33 @@
       "bytes": 18807
     },
     {
+      "bytes": 4628,
+      "public_file": "tpami/source_of_truth/35_LITERATURE_COVERAGE.csv",
+      "public_sha256": "24bfec073a24758b267d8fbd8c7fcfad1e2e2449d1da1acdf006e8a691f6c9c7",
+      "redistribution": "OWN_RECORD",
+      "role": "machine-readable literature-coverage record: twelve reviewed areas, their representative works and their relation to evaluated-output provenance",
+      "source_frozen_artifact": "this project's own audit output",
+      "transformation": "exported from the supplement's literature-coverage table without changing its content"
+    },
+    {
+      "public_file": "tpami/source_of_truth/README_RELEASE.md",
+      "role": "release note for the published copies",
+      "source_frozen_artifact": "this project's own audit output",
+      "transformation": "generated over the published copies",
+      "redistribution": "OWN_RECORD",
+      "public_sha256": "c950b460efb72cad4ff03fa6a8df1e7ba12cfd543837d54b3b36005e7ae16483",
+      "bytes": 1353
+    },
+    {
+      "public_file": "tpami/source_of_truth/RELEASE_MANIFEST_SANITISED.sha256",
+      "role": "release manifest for the published, path-sanitised copies",
+      "source_frozen_artifact": "this project's own audit output",
+      "transformation": "generated over the published copies",
+      "redistribution": "OWN_RECORD",
+      "public_sha256": "3ac53c41bc24f5e3fea0f74cab139abd4e2f046f3b792783ec88276e6ec9455f",
+      "bytes": 4761
+    },
+    {
       "public_file": "tpami/source_of_truth/V6_SOURCE_OF_TRUTH_MANIFEST.sha256",
       "role": "frozen artifact set the manuscript's numbers are checked against",
       "source_frozen_artifact": "this project's own audit output",
@@ -2829,24 +3102,6 @@
       "redistribution": "OWN_CODE",
       "public_sha256": "dafe5aea358fc9cd9090bc512c8513df0fc3b0570a731c1debbc616a87e532b2",
       "bytes": 1602
-    },
-    {
-      "public_file": "tpami/source_of_truth/README_RELEASE.md",
-      "role": "release note for the published copies",
-      "source_frozen_artifact": "this project's own audit output",
-      "transformation": "generated over the published copies",
-      "redistribution": "OWN_RECORD",
-      "public_sha256": "c950b460efb72cad4ff03fa6a8df1e7ba12cfd543837d54b3b36005e7ae16483",
-      "bytes": 1353
-    },
-    {
-      "public_file": "tpami/source_of_truth/RELEASE_MANIFEST_SANITISED.sha256",
-      "role": "release manifest for the published, path-sanitised copies",
-      "source_frozen_artifact": "this project's own audit output",
-      "transformation": "generated over the published copies",
-      "redistribution": "OWN_RECORD",
-      "public_sha256": "3ac53c41bc24f5e3fea0f74cab139abd4e2f046f3b792783ec88276e6ec9455f",
-      "bytes": 4761
     }
   ],
   "licence": {

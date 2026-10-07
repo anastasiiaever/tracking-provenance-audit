@@ -1,0 +1,9 @@
+quantity,value
+draws,10000
+seed,20261003
+cells,50
+deterministic_sign_changes,5
+R0_ci_excludes_zero,33
+R2_ci_excludes_zero,28
+delta_ci_excludes_zero,32
+indices_sha256,8cd16bcc23a47d1f4ce8bd5275ad8df660fa69411390b8ee7e365970e2db7cd2

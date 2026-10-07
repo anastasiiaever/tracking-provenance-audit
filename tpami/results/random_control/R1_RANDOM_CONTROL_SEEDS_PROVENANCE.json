@@ -1,0 +1,13 @@
+{
+  "what": "explicit integer MT19937 seeds for the sequence-stratified random-subset control of R1",
+  "executed_interpreter": "CPython 3.8.10 (Linux-5.4.0-147-generic-x86_64-with-glibc2.29)",
+  "executed_seed_expression": "random.Random((SEED, d))  with SEED = 20261006",
+  "derivation": "CPython random_seed(): a non-int seed is hashed with PyObject_Hash and the result cast to size_t, so the MT19937 init key is hash((20261006, d)) mod 2**64. This is two's-complement reinterpretation of a negative hash, NOT abs(hash).",
+  "int_seed_rule": "CPython random_seed() applies int.__abs__ to an int seed; every key here is already non-negative, so Random(key) seeds MT19937 with exactly these bits.",
+  "why_an_integer_is_needed": "CPython 3.11 restricted seeds to None/int/float/str/bytes/bytearray, so the executed tuple expression raises TypeError there. The integer form runs everywhere.",
+  "hash_portability": "hash() of a tuple of ints is not salted by PYTHONHASHSEED and is unchanged from 3.8 through 3.12, so these keys are re-derivable; str/bytes hashing IS salted, which is why a string seed would not have been safe.",
+  "draws": 1000,
+  "seed_root": 20261006,
+  "systems_using_these_seeds": 10,
+  "note": "Seeds depend only on (SEED, draw index), so all ten systems share this one mapping. No metric value and no drawn subset is changed by recording it."
+}

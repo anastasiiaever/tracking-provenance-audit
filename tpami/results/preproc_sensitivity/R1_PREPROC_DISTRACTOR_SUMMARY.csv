@@ -1,0 +1,7 @@
+population,tracker,tracker_rows_total,inserted_n,removed_n,removed_percent,input_state_nonadmitted_pct,evaluator_consumed_nonadmitted_pct,difference_pp,distractor_hits_by_gt_class
+mot17,ByteTrack,50241,2072,81,3.909,40.93,38.93,-2.001,2:131;7:655;8:27
+mot17,BoT-SORT,50779,2090,77,3.684,38.42,36.46,-1.958,2:135;7:658;8:35
+mot17,OC-SORT,45927,2622,52,1.983,29.86,28.44,-1.419,2:87;7:284;8:7
+mot17,Deep-OC-SORT,46541,2960,52,1.757,28.92,27.65,-1.271,2:87;7:286;8:6
+mot17,Hybrid-SORT,52183,3023,148,4.896,49.02,46.54,-2.485,2:101;7:856;8:84
+mot20,Deep-OC-SORT,564679,34814,2412,6.928,25.14,19.73,-5.406,6:230;7:45360

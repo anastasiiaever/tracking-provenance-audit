@@ -25,3 +25,23 @@ Every row was checked to exist in this release at the tagged commit.
 | every numeral in the paper | supp. S26 ledger | `tpami/source_of_truth/05_NUMERIC_LEDGER.csv` | yes |
 | transition-type normative table | Sec. 3.1, Fig. 2 | `tpami/source_of_truth/07_METHOD_DEFINITIONS.md` | yes |
 | evidence architecture, per-arm applicability | Sec. 3.4, Fig. 2 | `tpami/source_of_truth/06_EVIDENCE_ARCHITECTURE.csv` | yes |
+| evaluated-state path, all 50 system-by-metric cells | Sec. 5.7, Table 5, supp. S20 | `tpami/results/state_path/R1_ALL_STATES_THREE_POPULATIONS.csv` | yes |
+| gate sensitivity of the state-path result | supp. S21, Table S33 | `tpami/results/state_path/R1_GATE_SENSITIVITY.csv` | yes |
+| gate sensitivity, crossing locations | supp. S21 | `tpami/results/state_path/R1_GATE_SENSITIVITY_CROSSINGS.csv` | yes |
+| margin paths, MOT17 released arm | Sec. 5.7, Table 5 | `tpami/results/state_path/R1_MARGIN_PATHS_MOT17.csv` | yes |
+| margin paths, DanceTrack controlled arm | Sec. 5.7, Table 5 | `tpami/results/state_path/R1_MARGIN_PATHS_DANCETRACK.csv` | yes |
+| sequence-cluster resampling of margin transitions, MOT17 | supp. S19 | `tpami/results/state_path/R1_BOOTSTRAP_MARGIN_TRANSITIONS_MOT17.csv` | yes |
+| sequence-cluster resampling of margin transitions, DanceTrack | Sec. 5.7, supp. S19 | `tpami/results/state_path/R1_BOOTSTRAP_MARGIN_TRANSITIONS_DANCETRACK.csv` | yes |
+| leader-pair resampling, DanceTrack | Sec. 5.7 | `tpami/results/state_path/LEADER_PAIR_BOOTSTRAP_DANCETRACK.csv` | yes |
+| MOT20 eligibility reconstruction, 7 configurations | Sec. 4.4, Table 1, supp. S7 | `tpami/results/state_path/MOT20_ELIGIBILITY_RECONSTRUCTION.csv` | yes |
+| random-subset control for the intermediate state | Sec. 3.2, supp. S22, Table S34 | `tpami/results/random_control/R1_RANDOM_SUBSET_CONTROL.csv` | yes |
+| random-subset control, candidate pools and ordering | supp. S22 | `tpami/results/random_control/R1_RANDOM_CONTROL_POOLS.csv` | yes |
+| random-subset control, authoritative R2 state digests | supp. S22 | `tpami/results/random_control/R1_RANDOM_CONTROL_R2_HASHES.csv` | yes |
+| random-subset control, portable integer MT19937 seeds | supp. S22 | `tpami/results/random_control/R1_RANDOM_CONTROL_SEEDS.csv` | yes |
+| random-subset control, seed provenance | supp. S22 | `tpami/results/random_control/R1_RANDOM_CONTROL_SEEDS_PROVENANCE.json` | yes |
+| random-subset control, reproduction helper | supp. S22, S25 | `scripts/reproduce_random_control.py` | yes |
+| preprocessing sensitivity of the composition figures, per class | supp. S30 | `tpami/results/preproc_sensitivity/R1_PREPROC_DISTRACTOR_BY_CLASS.csv` | yes |
+| preprocessing sensitivity of the composition figures, per deployment | supp. S30, Table S39 | `tpami/results/preproc_sensitivity/R1_PREPROC_DISTRACTOR_SUMMARY.csv` | yes |
+| proposed evaluated-state report schema | Sec. 7.1, Table 6, supp. S26 | `tpami/protocol/PROPOSED_EVALUATED_STATE_REPORT_SCHEMA.json` | yes |
+| proposed schema, prose description | Sec. 7.1, supp. S26 | `tpami/protocol/PROPOSED_EVALUATED_STATE_REPORT_SCHEMA.md` | yes |
+| proposed schema, filled example | Sec. 7.1, supp. S26 | `tpami/protocol/EXAMPLE_bytetrack_mot17_valhalf.json` | yes |

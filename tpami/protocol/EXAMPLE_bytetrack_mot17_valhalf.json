@@ -1,0 +1,106 @@
+{
+  "record_version": "evaluated-state-report/1.0",
+
+  "pre_transition_state": {
+    "artifact_identifier": "ByteTrack_R0 / MOT17-val_half",
+    "sha256": "1a36f7a2b6842e11e1cea960002f66626234187422c23f67f5843a999cf3b164",
+    "row_count": 48169,
+    "row_identity_fields": ["sequence", "frame", "track_id"],
+    "producer": {
+      "repository": "github.com/ifzhang/ByteTrack",
+      "commit": "d1bf0191",
+      "entry_point": "tools/track.py",
+      "detector": {
+        "identifier": "NOT RECORDED",
+        "training_split_disjoint_from_evaluated_split": "unresolved",
+        "selection_provenance": "unresolved"
+      },
+      "execution_commit_is_the_declared_commit": true
+    }
+  },
+
+  "transition": {
+    "structural_type": "row-additive",
+    "stages": [
+      {
+        "order": 1,
+        "name": "linear disconnected-track interpolation",
+        "implementation": {
+          "repository": "github.com/ifzhang/ByteTrack",
+          "commit": "d1bf0191",
+          "source_file": "tools/interpolation.py",
+          "symbol": "dti",
+          "call_site": "__main__ block, dti(txt_path, save_path, n_min=5, n_dti=20); note the signature default is n_min=25, so the signature alone would misreport this run"
+        },
+        "parameters": { "n_min": 5, "n_dti": 20 },
+        "parameter_semantics": {
+          "n_min": "Minimum tracklet LENGTH, not a gap. A track is interpolated only if its retained row count strictly exceeds n_min (code: if n_frame > n_min).",
+          "n_dti": "Maximum interpolated gap. A gap between consecutive retained frames is filled only if 1 < (right_frame - left_frame) < n_dti, both strict; with n_dti=20 the longest filled gap spans 19 frames and inserts 18 rows."
+        },
+        "inserted_row_marking": "none. Verified at byte level on this artifact: all 2072 inserted rows and all 48169 surviving rows carry confidence -1, so the submitted file contains no field that distinguishes an inserted row from a tracked one."
+      }
+    ],
+    "row_delta": {
+      "inserted": 2072,
+      "deleted": 0,
+      "surviving_content_changed": 0,
+      "identities_remapped": 0
+    }
+  },
+
+  "evaluated_state": {
+    "artifact_identifier": "ByteTrack_R2 / MOT17-val_half",
+    "sha256": "f7b84a6b4d58d5add395a6938cdbf255a93e620934474f3f1a0abc65ff676d94",
+    "row_count": 50241,
+    "format": "MOTChallenge-2D-10-column"
+  },
+
+  "evaluation": {
+    "dataset": "MOT17",
+    "split": {
+      "identifier": "MOT17-val_half",
+      "definition": "For each of the seven MOT17 TRAIN sequences of native length n, retain native frames [floor(n/2)+2 .. n] and rebase them by floor(n/2)+1 so the clip starts at frame 1; val_half length = n - floor(n/2) - 1. This is a locally derived split of the public training set, not an official benchmark split.",
+      "sequence_count": 7,
+      "frame_count": 2652,
+      "ground_truth_sha256": "91c4d8704e9f499766b8f4dc47d23eb1114ccf7927a38efad70067780c5f9a77",
+      "is_official_benchmark_split": false
+    },
+    "evaluator": "TrackEval",
+    "evaluator_commit": "12c8791b303e0a0b50f753af204249e622d0281a",
+    "evaluator_modified": false,
+    "configuration": {
+      "invocation": "python scripts/run_mot_challenge.py --BENCHMARK MOT17 --SPLIT_TO_EVAL val_half --METRICS HOTA CLEAR Identity --DO_PREPROC True --USE_PARALLEL False --NUM_PARALLEL_CORES 1",
+      "resolved_settings": {
+        "BENCHMARK": "MOT17",
+        "SPLIT_TO_EVAL": "val_half",
+        "METRICS": ["HOTA", "CLEAR", "Identity"],
+        "DO_PREPROC": true,
+        "CLASS_TO_EVAL": "pedestrian",
+        "scoreable_reference_rule": "DO_PREPROC=true keeps ground-truth rows with mark != 0 AND class == 1 (mot_challenge_2d_box.py:390-392); this rule comes from the evaluator, not from the reporter",
+        "USE_PARALLEL": false
+      },
+      "omitted_arguments_and_why": "none omitted for this benchmark. For BENCHMARK DANCE at this pinned commit, --SEQMAP_FILE and --OUTPUT_FOLDER must be omitted: run_mot_challenge.py registers every None-default argument with nargs='+', so passing either yields a one-element list and raises TypeError."
+    },
+    "reported_metrics": { "HOTA": 68.967, "DetA": 67.971, "AssA": 70.558, "IDF1": 80.82, "MOTA": 79.74 },
+    "reported_precision_decimals": 2
+  },
+
+  "reference_side_diagnostics": {
+    "computable": true,
+    "admission_gate": 0.5,
+    "gate_sweep": [0.3, 0.4, 0.5, 0.6, 0.7],
+    "scoreable_reference_definition": "ground-truth rows with mark != 0 AND class == 1, i.e. the evaluator's own DO_PREPROC retention rule",
+    "class_counts": {
+      "SEMANTICALLY_ADMITTED": 1224,
+      "ANCHOR_UNMATCHED": 604,
+      "ANCHOR_ID_MISMATCH": 244,
+      "TARGET_REFERENCE_ABSENT": 0
+    },
+    "withheld_row_state": {
+      "artifact_identifier": "ByteTrack_R1 / MOT17-val_half",
+      "sha256": "1a92e0ff9da3bc5ff3d2158e6d888f6e9b78f2d404750dc1409689bb977e3667",
+      "row_count": 49393,
+      "metrics": { "HOTA": 69.067, "DetA": 68.05, "AssA": 70.663, "IDF1": 80.932, "MOTA": 80.017 }
+    }
+  }
+}
